@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dasl" nsURI="http://www.sabsa.org/dasl/Dasl" nsPrefix="dasl">
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//AbstractElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="NodeType">
+    <eLiterals name="PHYSICAL" literal="PHYSICAL"/>
+    <eLiterals name="VIRTUAL" value="1" literal="VIRTUAL"/>
+    <eLiterals name="CONTAINER" value="2" literal="CONTAINER"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import" eSuperTypes="#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Zone" eSuperTypes="#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trust" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ingressZones" unique="false"
+        upperBound="-1" eType="#//Zone"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="egressZones" unique="false"
+        upperBound="-1" eType="#//Zone"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" unique="false" upperBound="-1"
+        eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" unique="false"
+        upperBound="-1" eType="#//Control"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="host" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="os" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//NodeType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" unique="false"
+        upperBound="-1" eType="#//Component"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vendor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assets" unique="false"
+        upperBound="-1" eType="#//InformationAsset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//Component" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InformationAsset" eSuperTypes="#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="confidentiality" eType="#//ConfidentialityType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="integrity" eType="#//IntegrityType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="availability" eType="#//AvailabilityType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Flow" eSuperTypes="#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assets" unique="false"
+        upperBound="-1" eType="#//InformationAsset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" unique="false"
+        upperBound="-1" eType="#//Control"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="area" eType="#//ControlType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="implementation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ControlType">
+    <eLiterals name="IdentityValidation" literal="IdentityValidation"/>
+    <eLiterals name="UserProvisioning" value="1" literal="UserProvisioning"/>
+    <eLiterals name="SystemUserProvisioning" value="2" literal="SystemUserProvisioning"/>
+    <eLiterals name="IdentityTransformation" value="3" literal="IdentityTransformation"/>
+    <eLiterals name="UserRegistries" value="4" literal="UserRegistries"/>
+    <eLiterals name="CredentialManagement" value="5" literal="CredentialManagement"/>
+    <eLiterals name="Authentication" value="6" literal="Authentication"/>
+    <eLiterals name="Authorisation" value="7" literal="Authorisation"/>
+    <eLiterals name="PrivilegeManagement" value="8" literal="PrivilegeManagement"/>
+    <eLiterals name="ReducedSignOn" value="9" literal="ReducedSignOn"/>
+    <eLiterals name="Federation" value="10" literal="Federation"/>
+    <eLiterals name="AccessEntitlementGovernance" value="11" literal="AccessEntitlementGovernance"/>
+    <eLiterals name="FirewallsNetwork" value="12" literal="FirewallsNetwork"/>
+    <eLiterals name="FirewallsApplication" value="13" literal="FirewallsApplication"/>
+    <eLiterals name="DenialofService" value="14" literal="DenialofService"/>
+    <eLiterals name="NetworkAdmissionControl" value="15" literal="NetworkAdmissionControl"/>
+    <eLiterals name="RemoteAccessGateway" value="16" literal="RemoteAccessGateway"/>
+    <eLiterals name="IntrusionPreventionDetection" value="17" literal="IntrusionPreventionDetection"/>
+    <eLiterals name="Antivirus" value="18" literal="Antivirus"/>
+    <eLiterals name="ContentFilter" value="19" literal="ContentFilter"/>
+    <eLiterals name="MessageSecurity" value="20" literal="MessageSecurity"/>
+    <eLiterals name="TransportSecurity" value="21" literal="TransportSecurity"/>
+    <eLiterals name="StoredDataSecurity" value="22" literal="StoredDataSecurity"/>
+    <eLiterals name="DataLossPrevention" value="23" literal="DataLossPrevention"/>
+    <eLiterals name="DataObfuscation" value="24" literal="DataObfuscation"/>
+    <eLiterals name="DataDestruction" value="25" literal="DataDestruction"/>
+    <eLiterals name="FraudSecurity" value="26" literal="FraudSecurity"/>
+    <eLiterals name="DataTransactionSecurity" value="27" literal="DataTransactionSecurity"/>
+    <eLiterals name="CentralisedHSM_CA_PKI" value="28" literal="CentralisedHSM_CA_PKI"/>
+    <eLiterals name="Standalone" value="29" literal="Standalone"/>
+    <eLiterals name="SecurityTesting" value="30" literal="SecurityTesting"/>
+    <eLiterals name="PatchManagement" value="31" literal="PatchManagement"/>
+    <eLiterals name="VulnerabilityManagement" value="32" literal="VulnerabilityManagement"/>
+    <eLiterals name="CentralisedReporting" value="33" literal="CentralisedReporting"/>
+    <eLiterals name="EventCorrelation" value="34" literal="EventCorrelation"/>
+    <eLiterals name="SecurityAuditLogMonitoring" value="35" literal="SecurityAuditLogMonitoring"/>
+    <eLiterals name="ComplianceTesting" value="36" literal="ComplianceTesting"/>
+    <eLiterals name="IncidentManagement" value="37" literal="IncidentManagement"/>
+    <eLiterals name="Forensic" value="38" literal="Forensic"/>
+    <eLiterals name="Legal" value="39" literal="Legal"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConfidentialityType">
+    <eLiterals name="Public" literal="Public"/>
+    <eLiterals name="Internal" value="1" literal="Internal"/>
+    <eLiterals name="Restricted" value="2" literal="Restricted"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IntegrityType">
+    <eLiterals name="Accurate" literal="Accurate"/>
+    <eLiterals name="HighlyTrusted" value="1" literal="HighlyTrusted"/>
+    <eLiterals name="Trusted" value="2" literal="Trusted"/>
+    <eLiterals name="Uncontrolled" value="3" literal="Uncontrolled"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AvailabilityType">
+    <eLiterals name="Platinum" literal="Platinum"/>
+    <eLiterals name="Gold" value="1" literal="Gold"/>
+    <eLiterals name="Silver" value="2" literal="Silver"/>
+    <eLiterals name="Bronze" value="3" literal="Bronze"/>
+    <eLiterals name="Plastic" value="4" literal="Plastic"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractElement"/>
+</ecore:EPackage>

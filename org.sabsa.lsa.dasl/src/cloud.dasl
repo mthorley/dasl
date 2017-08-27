@@ -1,0 +1,61 @@
+
+import "assets.dasl"
+import "controls.dasl"
+
+//-----------------------------------------------------------------------------
+// Zones
+zone PresentationZone {
+	trustLevel 1
+	ingress
+	egress
+	nodes EC2WebServer
+}
+ 
+zone ApplicationZone {
+	trustLevel 2
+	ingress PresentationZone
+	egress
+	nodes EC2AppServer
+} 
+ 
+//-----------------------------------------------------------------------------
+// Nodes
+node EC2WebServer {
+	ref N1
+	host ""
+	os "Redhat"
+	type VIRTUAL
+	components APIConnect
+}
+
+node EC2AppServer {
+	ref N2
+	host ""
+	os "Redhat"
+	type VIRTUAL
+	components PaymentAPI	
+}
+
+component APIConnect {
+	ref C12
+	stereotype "api gateway"
+	desc "API gateway"
+	version ""
+	assets
+}
+
+component PaymentAPI {
+	ref C13
+	stereotype "uservice"
+	desc "payment api"
+	version ""
+	assets
+}
+
+//-----------------------------------------------------------------------------
+// Flows
+flow F1 {
+	from APIConnect to PaymentAPI
+	informationassets Payment
+	controls mTLS
+}

@@ -1,0 +1,3 @@
+ - no information assets for component
+ - confidential assets over a flow must have encryption
+ - public zone cannot store <  >

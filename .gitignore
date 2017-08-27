@@ -1,0 +1,9 @@
+# Package files
+*.jar
+
+# Ignore generated and binary directories
+**/.metadata
+**/src-gen
+**/xtend-gen
+**/bin
+

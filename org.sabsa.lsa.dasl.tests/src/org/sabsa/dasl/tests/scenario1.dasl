@@ -1,0 +1,22 @@
+	zone UncontrolledZone {
+		trustLevel 1
+		ingress
+		egress
+		nodes CustomersDevice
+	}
+	
+	node CustomersDevice {
+		ref N1
+		host ""
+		os "iOS or Android"
+		type PHYSICAL
+		components iOSDevice
+	}
+	
+	component iOSDevice {
+		ref C1
+		stereotype "device"
+		desc "Mobile, tablet or wearable Apple hardware"
+		version ">9.3.5"
+		assets
+	}

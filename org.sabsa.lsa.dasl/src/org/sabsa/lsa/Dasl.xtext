@@ -1,0 +1,143 @@
+grammar org.sabsa.dasl.Dasl with org.eclipse.xtext.common.Terminals
+
+generate dasl "http://www.sabsa.org/dasl/Dasl"
+
+// The security view of the architecture - this can be expanded to other views later.
+
+SecurityModel:
+	(elements+=AbstractElement)*
+;
+
+enum NodeType :
+	PHYSICAL | VIRTUAL | CONTAINER
+;
+
+QualifiedName: 
+	ID ('.' ID)*
+;
+
+QualifiedNameWithWildcard:
+  QualifiedName '.*'?
+;
+
+Import:
+  'import' importURI = STRING
+;	
+
+Zone: 
+  'zone' name=ID '{'
+	'trustLevel'	trust=INT
+	'ingress'		(ingressZones+=[Zone])*
+	'egress'		(egressZones+=[Zone])*
+  	'nodes' 		nodes+=[Node]*
+  	('controls' 	controls+=[Control])?
+  '}'
+;
+
+/** 
+Nodes represent either a physical or virtual environment
+upon which components are deployed too.
+*/ 
+Node:
+	'node' name=ID '{'
+		'ref' 		 	ref=ID
+		'host'  		host=STRING
+		'os'    		os=STRING
+		'type' 			(value=NodeType)
+		'components' 	components+=[Component]*
+	'}';
+
+Component:
+	'component' name=ID '{'
+		'ref' 		 ref=ID
+		'stereotype' stereotype=STRING
+		('vendor'    vendor=STRING)?
+		'desc'       desc=STRING
+		'version'    version=STRING
+		'assets' 	 (assets+=[InformationAsset | QualifiedName])*
+		components+=Component*
+	'}';
+	
+InformationAsset:
+	'informationasset' name=ID '{'
+		'ref' 		 		ref=ID
+		'desc'     			desc=STRING
+		'confidentiality' 	confidentiality=ConfidentialityType
+		'integrity' 		integrity=IntegrityType
+		'availability' 		availability=AvailabilityType
+	'}';
+
+Flow:
+	'flow' name=ID '{'
+		'from'  			from=[Component]
+		'to' 				to=[Component]
+		'informationassets' (assets+=[InformationAsset | QualifiedName])*
+		'controls' 			(controls+=[Control])*
+	'}';
+	
+Control:
+	'control' name=ID '{'
+		'ref'				ref=ID
+		'type' 				area=ControlType
+		'implementation'	implementation=STRING
+	'}'
+;
+
+enum ControlType:
+	IdentityValidation | 
+	UserProvisioning |
+	SystemUserProvisioning |
+	IdentityTransformation |
+	UserRegistries |
+	CredentialManagement |
+	Authentication |
+	Authorisation |
+	PrivilegeManagement |
+	ReducedSignOn |
+	Federation |
+	AccessEntitlementGovernance |
+	FirewallsNetwork |
+	FirewallsApplication |
+	DenialofService |
+	NetworkAdmissionControl |
+	RemoteAccessGateway |
+	IntrusionPreventionDetection |
+	Antivirus |
+	ContentFilter |
+	MessageSecurity |
+	TransportSecurity |
+	StoredDataSecurity |
+	DataLossPrevention |
+	DataObfuscation |
+	DataDestruction |
+	FraudSecurity |
+	DataTransactionSecurity |
+	CentralisedHSM_CA_PKI |
+	Standalone |
+	SecurityTesting |
+	PatchManagement |
+	VulnerabilityManagement |
+	CentralisedReporting |
+	EventCorrelation |
+	SecurityAuditLogMonitoring |
+	ComplianceTesting |
+	IncidentManagement |
+	Forensic |
+	Legal
+;
+
+enum ConfidentialityType:
+	Public | Internal | Restricted
+;
+
+enum IntegrityType:
+	Accurate | HighlyTrusted | Trusted | Uncontrolled
+;
+
+enum AvailabilityType:
+	Platinum | Gold | Silver | Bronze | Plastic
+;
+
+AbstractElement:
+	InformationAsset | Component | Zone | Node | Control | Flow | Import
+;
