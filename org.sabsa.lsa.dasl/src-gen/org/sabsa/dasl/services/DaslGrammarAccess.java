@@ -145,12 +145,12 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		//	'trustLevel' trust=INT
 		//	'ingress' ingressZones+=[Zone]*
 		//	'egress' egressZones+=[Zone]*
-		//	'nodes' nodes+=[Node]* ('controls' controls+=[Control])?
+		//	'nodes' nodes+=[Node]* ('controls' controls+=[Control]*)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'zone' name=ID '{' 'trustLevel' trust=INT 'ingress' ingressZones+=[Zone]* 'egress' egressZones+=[Zone]* 'nodes'
-		//nodes+=[Node]* ('controls' controls+=[Control])? '}'
+		//nodes+=[Node]* ('controls' controls+=[Control]*)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'zone'
@@ -210,13 +210,13 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNodesNodeIDTerminalRuleCall_10_0_1() { return cNodesNodeIDTerminalRuleCall_10_0_1; }
 		
-		//('controls' controls+=[Control])?
+		//('controls' controls+=[Control]*)?
 		public Group getGroup_11() { return cGroup_11; }
 		
 		//'controls'
 		public Keyword getControlsKeyword_11_0() { return cControlsKeyword_11_0; }
 		
-		//controls+=[Control]
+		//controls+=[Control]*
 		public Assignment getControlsAssignment_11_1() { return cControlsAssignment_11_1; }
 		
 		//[Control]
@@ -251,7 +251,12 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cComponentsAssignment_12 = (Assignment)cGroup.eContents().get(12);
 		private final CrossReference cComponentsComponentCrossReference_12_0 = (CrossReference)cComponentsAssignment_12.eContents().get(0);
 		private final RuleCall cComponentsComponentIDTerminalRuleCall_12_0_1 = (RuleCall)cComponentsComponentCrossReference_12_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
+		private final Keyword cControlsKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
+		private final Assignment cControlsAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
+		private final CrossReference cControlsControlCrossReference_13_1_0 = (CrossReference)cControlsAssignment_13_1.eContents().get(0);
+		private final RuleCall cControlsControlIDTerminalRuleCall_13_1_0_1 = (RuleCall)cControlsControlCrossReference_13_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		
 		///** 
 		//Nodes represent either a physical or virtual environment
@@ -261,12 +266,12 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		//	'ref' ref=ID
 		//	'host' host=STRING
 		//	'os' os=STRING
-		//	'type' value=NodeType 'components' components+=[Component]*
+		//	'type' value=NodeType 'components' components+=[Component]* ('controls' controls+=[Control]*)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'node' name=ID '{' 'ref' ref=ID 'host' host=STRING 'os' os=STRING 'type' value=NodeType 'components'
-		//components+=[Component]* '}'
+		//components+=[Component]* ('controls' controls+=[Control]*)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'node'
@@ -329,8 +334,23 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getComponentsComponentIDTerminalRuleCall_12_0_1() { return cComponentsComponentIDTerminalRuleCall_12_0_1; }
 		
+		//('controls' controls+=[Control]*)?
+		public Group getGroup_13() { return cGroup_13; }
+		
+		//'controls'
+		public Keyword getControlsKeyword_13_0() { return cControlsKeyword_13_0; }
+		
+		//controls+=[Control]*
+		public Assignment getControlsAssignment_13_1() { return cControlsAssignment_13_1; }
+		
+		//[Control]
+		public CrossReference getControlsControlCrossReference_13_1_0() { return cControlsControlCrossReference_13_1_0; }
+		
+		//ID
+		public RuleCall getControlsControlIDTerminalRuleCall_13_1_0_1() { return cControlsControlIDTerminalRuleCall_13_1_0_1; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
+		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
 	}
 	public class ComponentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.sabsa.dasl.Dasl.Component");
@@ -355,10 +375,16 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cVersionKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Assignment cVersionAssignment_11 = (Assignment)cGroup.eContents().get(11);
 		private final RuleCall cVersionSTRINGTerminalRuleCall_11_0 = (RuleCall)cVersionAssignment_11.eContents().get(0);
-		private final Keyword cAssetsKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final Assignment cAssetsAssignment_13 = (Assignment)cGroup.eContents().get(13);
-		private final CrossReference cAssetsInformationAssetCrossReference_13_0 = (CrossReference)cAssetsAssignment_13.eContents().get(0);
-		private final RuleCall cAssetsInformationAssetQualifiedNameParserRuleCall_13_0_1 = (RuleCall)cAssetsInformationAssetCrossReference_13_0.eContents().get(1);
+		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
+		private final Keyword cAssetsKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Assignment cAssetsAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
+		private final CrossReference cAssetsInformationAssetCrossReference_12_1_0 = (CrossReference)cAssetsAssignment_12_1.eContents().get(0);
+		private final RuleCall cAssetsInformationAssetQualifiedNameParserRuleCall_12_1_0_1 = (RuleCall)cAssetsInformationAssetCrossReference_12_1_0.eContents().get(1);
+		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
+		private final Keyword cControlsKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
+		private final Assignment cControlsAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
+		private final CrossReference cControlsControlCrossReference_13_1_0 = (CrossReference)cControlsAssignment_13_1.eContents().get(0);
+		private final RuleCall cControlsControlIDTerminalRuleCall_13_1_0_1 = (RuleCall)cControlsControlCrossReference_13_1_0.eContents().get(1);
 		private final Assignment cComponentsAssignment_14 = (Assignment)cGroup.eContents().get(14);
 		private final RuleCall cComponentsComponentParserRuleCall_14_0 = (RuleCall)cComponentsAssignment_14.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
@@ -368,14 +394,14 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		//	'ref' ref=ID
 		//	'stereotype' stereotype=STRING ('vendor' vendor=STRING)?
 		//	'desc' desc=STRING
-		//	'version' version=STRING
-		//	'assets' assets+=[InformationAsset|QualifiedName]*
+		//	'version' version=STRING ('assets' assets+=[InformationAsset|QualifiedName]*)? ('controls' controls+=[Control]*)?
 		//	components+=Component*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'component' name=ID '{' 'ref' ref=ID 'stereotype' stereotype=STRING ('vendor' vendor=STRING)? 'desc' desc=STRING
-		//'version' version=STRING 'assets' assets+=[InformationAsset|QualifiedName]* components+=Component* '}'
+		//'version' version=STRING ('assets' assets+=[InformationAsset|QualifiedName]*)? ('controls' controls+=[Control]*)?
+		//components+=Component* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'component'
@@ -438,17 +464,35 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getVersionSTRINGTerminalRuleCall_11_0() { return cVersionSTRINGTerminalRuleCall_11_0; }
 		
+		//('assets' assets+=[InformationAsset|QualifiedName]*)?
+		public Group getGroup_12() { return cGroup_12; }
+		
 		//'assets'
-		public Keyword getAssetsKeyword_12() { return cAssetsKeyword_12; }
+		public Keyword getAssetsKeyword_12_0() { return cAssetsKeyword_12_0; }
 		
 		//assets+=[InformationAsset|QualifiedName]*
-		public Assignment getAssetsAssignment_13() { return cAssetsAssignment_13; }
+		public Assignment getAssetsAssignment_12_1() { return cAssetsAssignment_12_1; }
 		
 		//[InformationAsset|QualifiedName]
-		public CrossReference getAssetsInformationAssetCrossReference_13_0() { return cAssetsInformationAssetCrossReference_13_0; }
+		public CrossReference getAssetsInformationAssetCrossReference_12_1_0() { return cAssetsInformationAssetCrossReference_12_1_0; }
 		
 		//QualifiedName
-		public RuleCall getAssetsInformationAssetQualifiedNameParserRuleCall_13_0_1() { return cAssetsInformationAssetQualifiedNameParserRuleCall_13_0_1; }
+		public RuleCall getAssetsInformationAssetQualifiedNameParserRuleCall_12_1_0_1() { return cAssetsInformationAssetQualifiedNameParserRuleCall_12_1_0_1; }
+		
+		//('controls' controls+=[Control]*)?
+		public Group getGroup_13() { return cGroup_13; }
+		
+		//'controls'
+		public Keyword getControlsKeyword_13_0() { return cControlsKeyword_13_0; }
+		
+		//controls+=[Control]*
+		public Assignment getControlsAssignment_13_1() { return cControlsAssignment_13_1; }
+		
+		//[Control]
+		public CrossReference getControlsControlCrossReference_13_1_0() { return cControlsControlCrossReference_13_1_0; }
+		
+		//ID
+		public RuleCall getControlsControlIDTerminalRuleCall_13_1_0_1() { return cControlsControlIDTerminalRuleCall_13_1_0_1; }
 		
 		//components+=Component*
 		public Assignment getComponentsAssignment_14() { return cComponentsAssignment_14; }
@@ -572,27 +616,27 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cToAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final CrossReference cToComponentCrossReference_6_0 = (CrossReference)cToAssignment_6.eContents().get(0);
 		private final RuleCall cToComponentIDTerminalRuleCall_6_0_1 = (RuleCall)cToComponentCrossReference_6_0.eContents().get(1);
-		private final Keyword cInformationassetsKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cAssetsAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final CrossReference cAssetsInformationAssetCrossReference_8_0 = (CrossReference)cAssetsAssignment_8.eContents().get(0);
-		private final RuleCall cAssetsInformationAssetQualifiedNameParserRuleCall_8_0_1 = (RuleCall)cAssetsInformationAssetCrossReference_8_0.eContents().get(1);
-		private final Keyword cControlsKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cControlsAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final CrossReference cControlsControlCrossReference_10_0 = (CrossReference)cControlsAssignment_10.eContents().get(0);
-		private final RuleCall cControlsControlIDTerminalRuleCall_10_0_1 = (RuleCall)cControlsControlCrossReference_10_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cAssetsKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cAssetsAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final CrossReference cAssetsInformationAssetCrossReference_7_1_0 = (CrossReference)cAssetsAssignment_7_1.eContents().get(0);
+		private final RuleCall cAssetsInformationAssetQualifiedNameParserRuleCall_7_1_0_1 = (RuleCall)cAssetsInformationAssetCrossReference_7_1_0.eContents().get(1);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cControlsKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cControlsAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final CrossReference cControlsControlCrossReference_8_1_0 = (CrossReference)cControlsAssignment_8_1.eContents().get(0);
+		private final RuleCall cControlsControlIDTerminalRuleCall_8_1_0_1 = (RuleCall)cControlsControlCrossReference_8_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Flow:
 		//	'flow' name=ID '{'
 		//	'from' from=[Component]
-		//	'to' to=[Component]
-		//	'informationassets' assets+=[InformationAsset|QualifiedName]*
-		//	'controls' controls+=[Control]*
+		//	'to' to=[Component] ('assets' assets+=[InformationAsset|QualifiedName]*)? ('controls' controls+=[Control]*)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'flow' name=ID '{' 'from' from=[Component] 'to' to=[Component] 'informationassets'
-		//assets+=[InformationAsset|QualifiedName]* 'controls' controls+=[Control]* '}'
+		//'flow' name=ID '{' 'from' from=[Component] 'to' to=[Component] ('assets' assets+=[InformationAsset|QualifiedName]*)?
+		//('controls' controls+=[Control]*)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'flow'
@@ -631,32 +675,38 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getToComponentIDTerminalRuleCall_6_0_1() { return cToComponentIDTerminalRuleCall_6_0_1; }
 		
-		//'informationassets'
-		public Keyword getInformationassetsKeyword_7() { return cInformationassetsKeyword_7; }
+		//('assets' assets+=[InformationAsset|QualifiedName]*)?
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//'assets'
+		public Keyword getAssetsKeyword_7_0() { return cAssetsKeyword_7_0; }
 		
 		//assets+=[InformationAsset|QualifiedName]*
-		public Assignment getAssetsAssignment_8() { return cAssetsAssignment_8; }
+		public Assignment getAssetsAssignment_7_1() { return cAssetsAssignment_7_1; }
 		
 		//[InformationAsset|QualifiedName]
-		public CrossReference getAssetsInformationAssetCrossReference_8_0() { return cAssetsInformationAssetCrossReference_8_0; }
+		public CrossReference getAssetsInformationAssetCrossReference_7_1_0() { return cAssetsInformationAssetCrossReference_7_1_0; }
 		
 		//QualifiedName
-		public RuleCall getAssetsInformationAssetQualifiedNameParserRuleCall_8_0_1() { return cAssetsInformationAssetQualifiedNameParserRuleCall_8_0_1; }
+		public RuleCall getAssetsInformationAssetQualifiedNameParserRuleCall_7_1_0_1() { return cAssetsInformationAssetQualifiedNameParserRuleCall_7_1_0_1; }
+		
+		//('controls' controls+=[Control]*)?
+		public Group getGroup_8() { return cGroup_8; }
 		
 		//'controls'
-		public Keyword getControlsKeyword_9() { return cControlsKeyword_9; }
+		public Keyword getControlsKeyword_8_0() { return cControlsKeyword_8_0; }
 		
 		//controls+=[Control]*
-		public Assignment getControlsAssignment_10() { return cControlsAssignment_10; }
+		public Assignment getControlsAssignment_8_1() { return cControlsAssignment_8_1; }
 		
 		//[Control]
-		public CrossReference getControlsControlCrossReference_10_0() { return cControlsControlCrossReference_10_0; }
+		public CrossReference getControlsControlCrossReference_8_1_0() { return cControlsControlCrossReference_8_1_0; }
 		
 		//ID
-		public RuleCall getControlsControlIDTerminalRuleCall_10_0_1() { return cControlsControlIDTerminalRuleCall_10_0_1; }
+		public RuleCall getControlsControlIDTerminalRuleCall_8_1_0_1() { return cControlsControlIDTerminalRuleCall_8_1_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class ControlElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.sabsa.dasl.Dasl.Control");
@@ -1187,14 +1237,16 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPublicPublicKeyword_0_0 = (Keyword)cPublicEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cInternalEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
 		private final Keyword cInternalInternalKeyword_1_0 = (Keyword)cInternalEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cRestrictedEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cRestrictedRestrictedKeyword_2_0 = (Keyword)cRestrictedEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cConfidentialEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cConfidentialConfidentialKeyword_2_0 = (Keyword)cConfidentialEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cRestrictedEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cRestrictedRestrictedKeyword_3_0 = (Keyword)cRestrictedEnumLiteralDeclaration_3.eContents().get(0);
 		
 		//enum ConfidentialityType:
-		//	Public | Internal | Restricted;
+		//	Public | Internal | Confidential | Restricted;
 		public EnumRule getRule() { return rule; }
 		
-		//Public | Internal | Restricted
+		//Public | Internal | Confidential | Restricted
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Public
@@ -1209,11 +1261,17 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		//"Internal"
 		public Keyword getInternalInternalKeyword_1_0() { return cInternalInternalKeyword_1_0; }
 		
+		//Confidential
+		public EnumLiteralDeclaration getConfidentialEnumLiteralDeclaration_2() { return cConfidentialEnumLiteralDeclaration_2; }
+		
+		//"Confidential"
+		public Keyword getConfidentialConfidentialKeyword_2_0() { return cConfidentialConfidentialKeyword_2_0; }
+		
 		//Restricted
-		public EnumLiteralDeclaration getRestrictedEnumLiteralDeclaration_2() { return cRestrictedEnumLiteralDeclaration_2; }
+		public EnumLiteralDeclaration getRestrictedEnumLiteralDeclaration_3() { return cRestrictedEnumLiteralDeclaration_3; }
 		
 		//"Restricted"
-		public Keyword getRestrictedRestrictedKeyword_2_0() { return cRestrictedRestrictedKeyword_2_0; }
+		public Keyword getRestrictedRestrictedKeyword_3_0() { return cRestrictedRestrictedKeyword_3_0; }
 	}
 	public class IntegrityTypeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.sabsa.dasl.Dasl.IntegrityType");
@@ -1437,7 +1495,7 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'trustLevel' trust=INT
 	//	'ingress' ingressZones+=[Zone]*
 	//	'egress' egressZones+=[Zone]*
-	//	'nodes' nodes+=[Node]* ('controls' controls+=[Control])?
+	//	'nodes' nodes+=[Node]* ('controls' controls+=[Control]*)?
 	//	'}';
 	public ZoneElements getZoneAccess() {
 		return pZone;
@@ -1455,7 +1513,7 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'ref' ref=ID
 	//	'host' host=STRING
 	//	'os' os=STRING
-	//	'type' value=NodeType 'components' components+=[Component]*
+	//	'type' value=NodeType 'components' components+=[Component]* ('controls' controls+=[Control]*)?
 	//	'}';
 	public NodeElements getNodeAccess() {
 		return pNode;
@@ -1470,8 +1528,7 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'ref' ref=ID
 	//	'stereotype' stereotype=STRING ('vendor' vendor=STRING)?
 	//	'desc' desc=STRING
-	//	'version' version=STRING
-	//	'assets' assets+=[InformationAsset|QualifiedName]*
+	//	'version' version=STRING ('assets' assets+=[InformationAsset|QualifiedName]*)? ('controls' controls+=[Control]*)?
 	//	components+=Component*
 	//	'}';
 	public ComponentElements getComponentAccess() {
@@ -1501,9 +1558,7 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 	//Flow:
 	//	'flow' name=ID '{'
 	//	'from' from=[Component]
-	//	'to' to=[Component]
-	//	'informationassets' assets+=[InformationAsset|QualifiedName]*
-	//	'controls' controls+=[Control]*
+	//	'to' to=[Component] ('assets' assets+=[InformationAsset|QualifiedName]*)? ('controls' controls+=[Control]*)?
 	//	'}';
 	public FlowElements getFlowAccess() {
 		return pFlow;
@@ -1577,7 +1632,7 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//enum ConfidentialityType:
-	//	Public | Internal | Restricted;
+	//	Public | Internal | Confidential | Restricted;
 	public ConfidentialityTypeElements getConfidentialityTypeAccess() {
 		return eConfidentialityType;
 	}

@@ -2,6 +2,7 @@
 *.jar
 
 # Ignore generated and binary directories
+**/.*
 **/.metadata
 **/bin
-
+**/.xtendbin

@@ -33,6 +33,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//NodeType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" unique="false"
         upperBound="-1" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" unique="false"
+        upperBound="-1" eType="#//Control"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//AbstractElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -43,6 +45,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assets" unique="false"
         upperBound="-1" eType="#//InformationAsset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" unique="false"
+        upperBound="-1" eType="#//Control"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
         eType="#//Component" containment="true"/>
   </eClassifiers>
@@ -114,7 +118,8 @@
   <eClassifiers xsi:type="ecore:EEnum" name="ConfidentialityType">
     <eLiterals name="Public" literal="Public"/>
     <eLiterals name="Internal" value="1" literal="Internal"/>
-    <eLiterals name="Restricted" value="2" literal="Restricted"/>
+    <eLiterals name="Confidential" value="2" literal="Confidential"/>
+    <eLiterals name="Restricted" value="3" literal="Restricted"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="IntegrityType">
     <eLiterals name="Accurate" literal="Accurate"/>

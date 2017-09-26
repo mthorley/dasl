@@ -7,6 +7,7 @@ import com.google.inject.Inject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
 import org.sabsa.dasl.dasl.Component;
+import org.sabsa.dasl.dasl.Control;
 import org.sabsa.dasl.dasl.InformationAsset;
 import org.sabsa.dasl.dasl.Node;
 
@@ -43,6 +44,14 @@ public class DaslLabelProvider extends DefaultEObjectLabelProvider {
     String _plus = ("[" + _ref);
     String _plus_1 = (_plus + "] ");
     String _name = ia.getName();
+    return (_plus_1 + _name);
+  }
+  
+  public String text(final Control c) {
+    String _ref = c.getRef();
+    String _plus = ("[" + _ref);
+    String _plus_1 = (_plus + "]");
+    String _name = c.getName();
     return (_plus_1 + _name);
   }
 }

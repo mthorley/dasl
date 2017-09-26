@@ -7,11 +7,14 @@ import org.sabsa.dasl.dasl.InformationAsset;
 import org.sabsa.dasl.dasl.Node;
 import org.sabsa.dasl.dasl.SecurityModel;
 import org.sabsa.dasl.dasl.Zone;
+import org.sabsa.dasl.validation.Validator;
 
 public class DaslPlantUMLPrinter {
 	
 	public static String print(SecurityModel model) {
 		StringBuffer buf = new StringBuffer();
+
+		buf.append("skinparam componentArrowColor #696969 \n");
 
 		// generate all zones first
 		for (AbstractElement element : model.getElements()) {
@@ -29,7 +32,7 @@ public class DaslPlantUMLPrinter {
 		return buf.toString();
 	}
 	
-	public static String print(Zone zone) {
+	private static String print(Zone zone) {
 		StringBuffer buf = new StringBuffer();
 		buf.append("rectangle \"" + zone.getName() + "\" #D3D3D3 {\n");
 		for (Node node : zone.getNodes()) {
@@ -39,7 +42,7 @@ public class DaslPlantUMLPrinter {
 		return buf.toString();		
 	}
 	
-	public static String print(Node node) {
+	private static String print(Node node) {
 		StringBuffer buf = new StringBuffer();
 		buf.append("rectangle \"" + node.getName() + " [" + node.getRef() + "]\" #FFFFFF {\n");
 		for (Component comp : node.getComponents()) {
@@ -49,9 +52,14 @@ public class DaslPlantUMLPrinter {
 		return buf.toString();
 	}
 	
-	public static String print(Flow flow) {
+	private static String print(Flow flow) {
 		StringBuffer buf = new StringBuffer();
-		buf.append(flow.getFrom().getName() + "-->" + flow.getTo().getName() + ": ");
+		if (Validator.doesFlowViolateZoneRules(flow)) {
+			buf.append(flow.getFrom().getName() + "-[#FF0000]-->" + flow.getTo().getName() + ": ");			
+		}
+		else {
+			buf.append(flow.getFrom().getName() + "-->" + flow.getTo().getName() + ": ");
+		}
 		buf.append(flow.getName());
 //		for (InformationAsset asset : flow.getReferencedObjects()) {
 //			buf.append(asset.getName() + " ");
@@ -60,11 +68,11 @@ public class DaslPlantUMLPrinter {
 		return buf.toString();
 	}
 	
-	public static String print(InformationAsset asset) {
+	private static String print(InformationAsset asset) {
 		return "<b>[" + asset.getRef() + "]</b> " + asset.getName() + "\n";
 	}
 	
-	public static String print(Component comp) {
+	private static String print(Component comp) {
 		StringBuffer buf = new StringBuffer();
 		buf.append("rectangle " + comp.getName().replace(' ', '_') + "[\n");
 		buf.append("<b>" + comp.getName() + " [" + comp.getRef() + "]</b>\n");

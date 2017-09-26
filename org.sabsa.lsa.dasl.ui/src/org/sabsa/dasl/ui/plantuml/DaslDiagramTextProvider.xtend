@@ -8,12 +8,12 @@ import org.sabsa.dasl.dasl.SecurityModel
 class DaslDiagramTextProvider extends AbstractDiagramTextProvider {
 	
     def DomainmodelDiagramTextProvider() {
-        fileExtensions = "dasl";
+        fileExtensions = "dasl"
         editorType = typeof(XtextEditor)
     }
          
 	override protected getDiagramTextInternal(IEditorPart editorPart, ISelection selection) {
-    
+
     	if (editorPart instanceof XtextEditor) {
 	    
 	        // Retrieve the "semantic" EMF from XtextEditor
@@ -22,13 +22,13 @@ class DaslDiagramTextProvider extends AbstractDiagramTextProvider {
 	        val SecurityModel model = document.readOnly[
 	            return contents.head as SecurityModel
 	        ]
-
-	        val buf = DaslPlantUMLPrinter.print(model);
+	
+		    //System.out.println(DaslMxGraphPrinter.print(model));
+	        val buf = DaslPlantUMLPrinter.print(model)
 	        
 	        '''
 	          «buf»
 	        '''
-	    
 	    }
     } 
 }

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.sabsa.dasl.dasl.Component;
+import org.sabsa.dasl.dasl.Control;
 import org.sabsa.dasl.dasl.DaslPackage;
 import org.sabsa.dasl.dasl.InformationAsset;
 
@@ -38,6 +39,7 @@ import org.sabsa.dasl.dasl.InformationAsset;
  *   <li>{@link org.sabsa.dasl.dasl.impl.ComponentImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link org.sabsa.dasl.dasl.impl.ComponentImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link org.sabsa.dasl.dasl.impl.ComponentImpl#getAssets <em>Assets</em>}</li>
+ *   <li>{@link org.sabsa.dasl.dasl.impl.ComponentImpl#getControls <em>Controls</em>}</li>
  *   <li>{@link org.sabsa.dasl.dasl.impl.ComponentImpl#getComponents <em>Components</em>}</li>
  * </ul>
  *
@@ -174,6 +176,16 @@ public class ComponentImpl extends AbstractElementImpl implements Component
    * @ordered
    */
   protected EList<InformationAsset> assets;
+
+  /**
+   * The cached value of the '{@link #getControls() <em>Controls</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getControls()
+   * @generated
+   * @ordered
+   */
+  protected EList<Control> controls;
 
   /**
    * The cached value of the '{@link #getComponents() <em>Components</em>}' containment reference list.
@@ -363,6 +375,20 @@ public class ComponentImpl extends AbstractElementImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Control> getControls()
+  {
+    if (controls == null)
+    {
+      controls = new EObjectResolvingEList<Control>(Control.class, this, DaslPackage.COMPONENT__CONTROLS);
+    }
+    return controls;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Component> getComponents()
   {
     if (components == null)
@@ -412,6 +438,8 @@ public class ComponentImpl extends AbstractElementImpl implements Component
         return getVersion();
       case DaslPackage.COMPONENT__ASSETS:
         return getAssets();
+      case DaslPackage.COMPONENT__CONTROLS:
+        return getControls();
       case DaslPackage.COMPONENT__COMPONENTS:
         return getComponents();
     }
@@ -450,6 +478,10 @@ public class ComponentImpl extends AbstractElementImpl implements Component
       case DaslPackage.COMPONENT__ASSETS:
         getAssets().clear();
         getAssets().addAll((Collection<? extends InformationAsset>)newValue);
+        return;
+      case DaslPackage.COMPONENT__CONTROLS:
+        getControls().clear();
+        getControls().addAll((Collection<? extends Control>)newValue);
         return;
       case DaslPackage.COMPONENT__COMPONENTS:
         getComponents().clear();
@@ -490,6 +522,9 @@ public class ComponentImpl extends AbstractElementImpl implements Component
       case DaslPackage.COMPONENT__ASSETS:
         getAssets().clear();
         return;
+      case DaslPackage.COMPONENT__CONTROLS:
+        getControls().clear();
+        return;
       case DaslPackage.COMPONENT__COMPONENTS:
         getComponents().clear();
         return;
@@ -521,6 +556,8 @@ public class ComponentImpl extends AbstractElementImpl implements Component
         return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
       case DaslPackage.COMPONENT__ASSETS:
         return assets != null && !assets.isEmpty();
+      case DaslPackage.COMPONENT__CONTROLS:
+        return controls != null && !controls.isEmpty();
       case DaslPackage.COMPONENT__COMPONENTS:
         return components != null && !components.isEmpty();
     }

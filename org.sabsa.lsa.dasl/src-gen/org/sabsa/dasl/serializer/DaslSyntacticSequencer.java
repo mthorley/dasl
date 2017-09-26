@@ -10,6 +10,8 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import org.sabsa.dasl.services.DaslGrammarAccess;
@@ -18,10 +20,22 @@ import org.sabsa.dasl.services.DaslGrammarAccess;
 public class DaslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected DaslGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Component_AssetsKeyword_12_0_q;
+	protected AbstractElementAlias match_Component_ControlsKeyword_13_0_q;
+	protected AbstractElementAlias match_Flow_AssetsKeyword_7_0_q;
+	protected AbstractElementAlias match_Flow_ControlsKeyword_8_0_q;
+	protected AbstractElementAlias match_Node_ControlsKeyword_13_0_q;
+	protected AbstractElementAlias match_Zone_ControlsKeyword_11_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DaslGrammarAccess) access;
+		match_Component_AssetsKeyword_12_0_q = new TokenAlias(false, true, grammarAccess.getComponentAccess().getAssetsKeyword_12_0());
+		match_Component_ControlsKeyword_13_0_q = new TokenAlias(false, true, grammarAccess.getComponentAccess().getControlsKeyword_13_0());
+		match_Flow_AssetsKeyword_7_0_q = new TokenAlias(false, true, grammarAccess.getFlowAccess().getAssetsKeyword_7_0());
+		match_Flow_ControlsKeyword_8_0_q = new TokenAlias(false, true, grammarAccess.getFlowAccess().getControlsKeyword_8_0());
+		match_Node_ControlsKeyword_13_0_q = new TokenAlias(false, true, grammarAccess.getNodeAccess().getControlsKeyword_13_0());
+		match_Zone_ControlsKeyword_11_0_q = new TokenAlias(false, true, grammarAccess.getZoneAccess().getControlsKeyword_11_0());
 	}
 	
 	@Override
@@ -36,8 +50,97 @@ public class DaslSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_Component_AssetsKeyword_12_0_q.equals(syntax))
+				emit_Component_AssetsKeyword_12_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Component_ControlsKeyword_13_0_q.equals(syntax))
+				emit_Component_ControlsKeyword_13_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Flow_AssetsKeyword_7_0_q.equals(syntax))
+				emit_Flow_AssetsKeyword_7_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Flow_ControlsKeyword_8_0_q.equals(syntax))
+				emit_Flow_ControlsKeyword_8_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Node_ControlsKeyword_13_0_q.equals(syntax))
+				emit_Node_ControlsKeyword_13_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Zone_ControlsKeyword_11_0_q.equals(syntax))
+				emit_Zone_ControlsKeyword_11_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     'assets'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     version=STRING (ambiguity) 'controls' controls+=[Control|ID]
+	 *     version=STRING (ambiguity) 'controls'? '}' (rule end)
+	 *     version=STRING (ambiguity) 'controls'? components+=Component
+	 */
+	protected void emit_Component_AssetsKeyword_12_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'controls'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     assets+=[InformationAsset|QualifiedName] (ambiguity) '}' (rule end)
+	 *     assets+=[InformationAsset|QualifiedName] (ambiguity) components+=Component
+	 *     version=STRING 'assets'? (ambiguity) '}' (rule end)
+	 *     version=STRING 'assets'? (ambiguity) components+=Component
+	 */
+	protected void emit_Component_ControlsKeyword_13_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'assets'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     to=[Component|ID] (ambiguity) 'controls' controls+=[Control|ID]
+	 *     to=[Component|ID] (ambiguity) 'controls'? '}' (rule end)
+	 */
+	protected void emit_Flow_AssetsKeyword_7_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'controls'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     assets+=[InformationAsset|QualifiedName] (ambiguity) '}' (rule end)
+	 *     to=[Component|ID] 'assets'? (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Flow_ControlsKeyword_8_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'controls'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     components+=[Component|ID] (ambiguity) '}' (rule end)
+	 *     value=NodeType 'components' (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Node_ControlsKeyword_13_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'controls'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     egressZones+=[Zone|ID] 'nodes' (ambiguity) '}' (rule end)
+	 *     ingressZones+=[Zone|ID] 'egress' 'nodes' (ambiguity) '}' (rule end)
+	 *     nodes+=[Node|ID] (ambiguity) '}' (rule end)
+	 *     trust=INT 'ingress' 'egress' 'nodes' (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Zone_ControlsKeyword_11_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

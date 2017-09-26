@@ -310,7 +310,7 @@ ruleZone returns [EObject current=null]
 						newLeafNode(otherlv_12, grammarAccess.getZoneAccess().getControlsControlCrossReference_11_1_0());
 					}
 				)
-			)
+			)*
 		)?
 		otherlv_13='}'
 		{
@@ -467,9 +467,28 @@ ruleNode returns [EObject current=null]
 				}
 			)
 		)*
-		otherlv_13='}'
+		(
+			otherlv_13='controls'
+			{
+				newLeafNode(otherlv_13, grammarAccess.getNodeAccess().getControlsKeyword_13_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getNodeRule());
+						}
+					}
+					otherlv_14=RULE_ID
+					{
+						newLeafNode(otherlv_14, grammarAccess.getNodeAccess().getControlsControlCrossReference_13_1_0());
+					}
+				)
+			)*
+		)?
+		otherlv_15='}'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_13());
+			newLeafNode(otherlv_15, grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_14());
 		}
 	)
 ;
@@ -628,32 +647,53 @@ ruleComponent returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_13='assets'
-		{
-			newLeafNode(otherlv_13, grammarAccess.getComponentAccess().getAssetsKeyword_12());
-		}
 		(
+			otherlv_13='assets'
+			{
+				newLeafNode(otherlv_13, grammarAccess.getComponentAccess().getAssetsKeyword_12_0());
+			}
 			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getComponentRule());
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getComponentRule());
+						}
 					}
-				}
-				{
-					newCompositeNode(grammarAccess.getComponentAccess().getAssetsInformationAssetCrossReference_13_0());
-				}
-				ruleQualifiedName
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
+					{
+						newCompositeNode(grammarAccess.getComponentAccess().getAssetsInformationAssetCrossReference_12_1_0());
+					}
+					ruleQualifiedName
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+		)?
+		(
+			otherlv_15='controls'
+			{
+				newLeafNode(otherlv_15, grammarAccess.getComponentAccess().getControlsKeyword_13_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getComponentRule());
+						}
+					}
+					otherlv_16=RULE_ID
+					{
+						newLeafNode(otherlv_16, grammarAccess.getComponentAccess().getControlsControlCrossReference_13_1_0());
+					}
+				)
+			)*
+		)?
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getComponentAccess().getComponentsComponentParserRuleCall_14_0());
 				}
-				lv_components_15_0=ruleComponent
+				lv_components_17_0=ruleComponent
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getComponentRule());
@@ -661,15 +701,15 @@ ruleComponent returns [EObject current=null]
 					add(
 						$current,
 						"components",
-						lv_components_15_0,
+						lv_components_17_0,
 						"org.sabsa.dasl.Dasl.Component");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_16='}'
+		otherlv_18='}'
 		{
-			newLeafNode(otherlv_16, grammarAccess.getComponentAccess().getRightCurlyBracketKeyword_15());
+			newLeafNode(otherlv_18, grammarAccess.getComponentAccess().getRightCurlyBracketKeyword_15());
 		}
 	)
 ;
@@ -912,46 +952,50 @@ ruleFlow returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_7='informationassets'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getFlowAccess().getInformationassetsKeyword_7());
-		}
 		(
+			otherlv_7='assets'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getFlowAccess().getAssetsKeyword_7_0());
+			}
 			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFlowRule());
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFlowRule());
+						}
 					}
-				}
-				{
-					newCompositeNode(grammarAccess.getFlowAccess().getAssetsInformationAssetCrossReference_8_0());
-				}
-				ruleQualifiedName
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_9='controls'
-		{
-			newLeafNode(otherlv_9, grammarAccess.getFlowAccess().getControlsKeyword_9());
-		}
+					{
+						newCompositeNode(grammarAccess.getFlowAccess().getAssetsInformationAssetCrossReference_7_1_0());
+					}
+					ruleQualifiedName
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+		)?
 		(
+			otherlv_9='controls'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getFlowAccess().getControlsKeyword_8_0());
+			}
 			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFlowRule());
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFlowRule());
+						}
 					}
-				}
-				otherlv_10=RULE_ID
-				{
-					newLeafNode(otherlv_10, grammarAccess.getFlowAccess().getControlsControlCrossReference_10_0());
-				}
-			)
-		)*
+					otherlv_10=RULE_ID
+					{
+						newLeafNode(otherlv_10, grammarAccess.getFlowAccess().getControlsControlCrossReference_8_1_0());
+					}
+				)
+			)*
+		)?
 		otherlv_11='}'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getFlowAccess().getRightCurlyBracketKeyword_11());
+			newLeafNode(otherlv_11, grammarAccess.getFlowAccess().getRightCurlyBracketKeyword_9());
 		}
 	)
 ;
@@ -1545,10 +1589,18 @@ ruleConfidentialityType returns [Enumerator current=null]
 		)
 		    |
 		(
-			enumLiteral_2='Restricted'
+			enumLiteral_2='Confidential'
 			{
-				$current = grammarAccess.getConfidentialityTypeAccess().getRestrictedEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getConfidentialityTypeAccess().getRestrictedEnumLiteralDeclaration_2());
+				$current = grammarAccess.getConfidentialityTypeAccess().getConfidentialEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getConfidentialityTypeAccess().getConfidentialEnumLiteralDeclaration_2());
+			}
+		)
+		    |
+		(
+			enumLiteral_3='Restricted'
+			{
+				$current = grammarAccess.getConfidentialityTypeAccess().getRestrictedEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getConfidentialityTypeAccess().getRestrictedEnumLiteralDeclaration_3());
 			}
 		)
 	)

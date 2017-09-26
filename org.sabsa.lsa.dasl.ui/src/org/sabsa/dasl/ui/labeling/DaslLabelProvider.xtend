@@ -9,6 +9,8 @@ import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
 import org.sabsa.dasl.dasl.Node
 import org.sabsa.dasl.dasl.Component
 import org.sabsa.dasl.dasl.InformationAsset
+import org.sabsa.dasl.dasl.Control
+import org.sabsa.dasl.dasl.Zone
 
 /**
  * Provides labels for EObjects.
@@ -35,7 +37,11 @@ class DaslLabelProvider extends DefaultEObjectLabelProvider {
 	def text(InformationAsset ia) {
 		'[' + ia.ref + '] ' + ia.name		
 	}
-	
+
+	def text(Control c) {
+		'[' + c.ref + ']' + c.name		
+	}
+ 	
 //	def text(Greeting ele) {
 //		'A greeting to ' + ele.name
 //	}

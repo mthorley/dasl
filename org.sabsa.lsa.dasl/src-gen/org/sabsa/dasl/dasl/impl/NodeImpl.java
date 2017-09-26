@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.sabsa.dasl.dasl.Component;
+import org.sabsa.dasl.dasl.Control;
 import org.sabsa.dasl.dasl.DaslPackage;
 import org.sabsa.dasl.dasl.Node;
 import org.sabsa.dasl.dasl.NodeType;
@@ -34,6 +35,7 @@ import org.sabsa.dasl.dasl.NodeType;
  *   <li>{@link org.sabsa.dasl.dasl.impl.NodeImpl#getOs <em>Os</em>}</li>
  *   <li>{@link org.sabsa.dasl.dasl.impl.NodeImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.sabsa.dasl.dasl.impl.NodeImpl#getComponents <em>Components</em>}</li>
+ *   <li>{@link org.sabsa.dasl.dasl.impl.NodeImpl#getControls <em>Controls</em>}</li>
  * </ul>
  *
  * @generated
@@ -149,6 +151,16 @@ public class NodeImpl extends AbstractElementImpl implements Node
    * @ordered
    */
   protected EList<Component> components;
+
+  /**
+   * The cached value of the '{@link #getControls() <em>Controls</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getControls()
+   * @generated
+   * @ordered
+   */
+  protected EList<Control> controls;
 
   /**
    * <!-- begin-user-doc -->
@@ -305,6 +317,20 @@ public class NodeImpl extends AbstractElementImpl implements Node
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Control> getControls()
+  {
+    if (controls == null)
+    {
+      controls = new EObjectResolvingEList<Control>(Control.class, this, DaslPackage.NODE__CONTROLS);
+    }
+    return controls;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -322,6 +348,8 @@ public class NodeImpl extends AbstractElementImpl implements Node
         return getValue();
       case DaslPackage.NODE__COMPONENTS:
         return getComponents();
+      case DaslPackage.NODE__CONTROLS:
+        return getControls();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -356,6 +384,10 @@ public class NodeImpl extends AbstractElementImpl implements Node
         getComponents().clear();
         getComponents().addAll((Collection<? extends Component>)newValue);
         return;
+      case DaslPackage.NODE__CONTROLS:
+        getControls().clear();
+        getControls().addAll((Collection<? extends Control>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -388,6 +420,9 @@ public class NodeImpl extends AbstractElementImpl implements Node
       case DaslPackage.NODE__COMPONENTS:
         getComponents().clear();
         return;
+      case DaslPackage.NODE__CONTROLS:
+        getControls().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -414,6 +449,8 @@ public class NodeImpl extends AbstractElementImpl implements Node
         return value != VALUE_EDEFAULT;
       case DaslPackage.NODE__COMPONENTS:
         return components != null && !components.isEmpty();
+      case DaslPackage.NODE__CONTROLS:
+        return controls != null && !controls.isEmpty();
     }
     return super.eIsSet(featureID);
   }

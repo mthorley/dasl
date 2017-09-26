@@ -271,13 +271,22 @@ public interface DaslPackage extends EPackage
   int NODE__COMPONENTS = ABSTRACT_ELEMENT_FEATURE_COUNT + 5;
 
   /**
+   * The feature id for the '<em><b>Controls</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__CONTROLS = ABSTRACT_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
    * The number of structural features of the '<em>Node</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NODE_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 6;
+  int NODE_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link org.sabsa.dasl.dasl.impl.ComponentImpl <em>Component</em>}' class.
@@ -353,13 +362,22 @@ public interface DaslPackage extends EPackage
   int COMPONENT__ASSETS = ABSTRACT_ELEMENT_FEATURE_COUNT + 6;
 
   /**
+   * The feature id for the '<em><b>Controls</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT__CONTROLS = ABSTRACT_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
    * The feature id for the '<em><b>Components</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT__COMPONENTS = ABSTRACT_ELEMENT_FEATURE_COUNT + 7;
+  int COMPONENT__COMPONENTS = ABSTRACT_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>Component</em>' class.
@@ -368,7 +386,7 @@ public interface DaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 8;
+  int COMPONENT_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link org.sabsa.dasl.dasl.impl.InformationAssetImpl <em>Information Asset</em>}' class.
@@ -808,6 +826,17 @@ public interface DaslPackage extends EPackage
   EReference getNode_Components();
 
   /**
+   * Returns the meta object for the reference list '{@link org.sabsa.dasl.dasl.Node#getControls <em>Controls</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Controls</em>'.
+   * @see org.sabsa.dasl.dasl.Node#getControls()
+   * @see #getNode()
+   * @generated
+   */
+  EReference getNode_Controls();
+
+  /**
    * Returns the meta object for class '{@link org.sabsa.dasl.dasl.Component <em>Component</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -893,6 +922,17 @@ public interface DaslPackage extends EPackage
    * @generated
    */
   EReference getComponent_Assets();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.sabsa.dasl.dasl.Component#getControls <em>Controls</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Controls</em>'.
+   * @see org.sabsa.dasl.dasl.Component#getControls()
+   * @see #getComponent()
+   * @generated
+   */
+  EReference getComponent_Controls();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.sabsa.dasl.dasl.Component#getComponents <em>Components</em>}'.
@@ -1336,6 +1376,14 @@ public interface DaslPackage extends EPackage
     EReference NODE__COMPONENTS = eINSTANCE.getNode_Components();
 
     /**
+     * The meta object literal for the '<em><b>Controls</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NODE__CONTROLS = eINSTANCE.getNode_Controls();
+
+    /**
      * The meta object literal for the '{@link org.sabsa.dasl.dasl.impl.ComponentImpl <em>Component</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1400,6 +1448,14 @@ public interface DaslPackage extends EPackage
      * @generated
      */
     EReference COMPONENT__ASSETS = eINSTANCE.getComponent_Assets();
+
+    /**
+     * The meta object literal for the '<em><b>Controls</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT__CONTROLS = eINSTANCE.getComponent_Controls();
 
     /**
      * The meta object literal for the '<em><b>Components</b></em>' containment reference list feature.

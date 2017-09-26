@@ -82,6 +82,7 @@ public class DaslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         desc=STRING 
 	 *         version=STRING 
 	 *         assets+=[InformationAsset|QualifiedName]* 
+	 *         controls+=[Control|ID]* 
 	 *         components+=Component*
 	 *     )
 	 */
@@ -203,7 +204,8 @@ public class DaslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         host=STRING 
 	 *         os=STRING 
 	 *         value=NodeType 
-	 *         components+=[Component|ID]*
+	 *         components+=[Component|ID]* 
+	 *         controls+=[Control|ID]*
 	 *     )
 	 */
 	protected void sequence_Node(ISerializationContext context, Node semanticObject) {
@@ -235,7 +237,7 @@ public class DaslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         ingressZones+=[Zone|ID]* 
 	 *         egressZones+=[Zone|ID]* 
 	 *         nodes+=[Node|ID]* 
-	 *         controls+=[Control|ID]?
+	 *         controls+=[Control|ID]*
 	 *     )
 	 */
 	protected void sequence_Zone(ISerializationContext context, Zone semanticObject) {

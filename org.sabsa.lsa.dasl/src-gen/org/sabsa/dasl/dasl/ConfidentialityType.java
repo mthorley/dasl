@@ -41,6 +41,16 @@ public enum ConfidentialityType implements Enumerator
   INTERNAL(1, "Internal", "Internal"),
 
   /**
+   * The '<em><b>Confidential</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #CONFIDENTIAL_VALUE
+   * @generated
+   * @ordered
+   */
+  CONFIDENTIAL(2, "Confidential", "Confidential"),
+
+  /**
    * The '<em><b>Restricted</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -48,7 +58,7 @@ public enum ConfidentialityType implements Enumerator
    * @generated
    * @ordered
    */
-  RESTRICTED(2, "Restricted", "Restricted");
+  RESTRICTED(3, "Restricted", "Restricted");
 
   /**
    * The '<em><b>Public</b></em>' literal value.
@@ -81,6 +91,21 @@ public enum ConfidentialityType implements Enumerator
   public static final int INTERNAL_VALUE = 1;
 
   /**
+   * The '<em><b>Confidential</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>Confidential</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #CONFIDENTIAL
+   * @model name="Confidential"
+   * @generated
+   * @ordered
+   */
+  public static final int CONFIDENTIAL_VALUE = 2;
+
+  /**
    * The '<em><b>Restricted</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
@@ -93,7 +118,7 @@ public enum ConfidentialityType implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int RESTRICTED_VALUE = 2;
+  public static final int RESTRICTED_VALUE = 3;
 
   /**
    * An array of all the '<em><b>Confidentiality Type</b></em>' enumerators.
@@ -106,6 +131,7 @@ public enum ConfidentialityType implements Enumerator
     {
       PUBLIC,
       INTERNAL,
+      CONFIDENTIAL,
       RESTRICTED,
     };
 
@@ -173,6 +199,7 @@ public enum ConfidentialityType implements Enumerator
     {
       case PUBLIC_VALUE: return PUBLIC;
       case INTERNAL_VALUE: return INTERNAL;
+      case CONFIDENTIAL_VALUE: return CONFIDENTIAL;
       case RESTRICTED_VALUE: return RESTRICTED;
     }
     return null;

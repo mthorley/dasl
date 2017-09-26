@@ -56,6 +56,7 @@
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Dasl.ecore#//ConfidentialityType">
       <genEnumLiterals ecoreEnumLiteral="Dasl.ecore#//ConfidentialityType/Public"/>
       <genEnumLiterals ecoreEnumLiteral="Dasl.ecore#//ConfidentialityType/Internal"/>
+      <genEnumLiterals ecoreEnumLiteral="Dasl.ecore#//ConfidentialityType/Confidential"/>
       <genEnumLiterals ecoreEnumLiteral="Dasl.ecore#//ConfidentialityType/Restricted"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Dasl.ecore#//IntegrityType">
@@ -92,6 +93,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dasl.ecore#//Node/os"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dasl.ecore#//Node/value"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dasl.ecore#//Node/components"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dasl.ecore#//Node/controls"/>
     </genClasses>
     <genClasses ecoreClass="Dasl.ecore#//Component">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dasl.ecore#//Component/name"/>
@@ -101,6 +103,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dasl.ecore#//Component/desc"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dasl.ecore#//Component/version"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dasl.ecore#//Component/assets"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dasl.ecore#//Component/controls"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dasl.ecore#//Component/components"/>
     </genClasses>
     <genClasses ecoreClass="Dasl.ecore#//InformationAsset">

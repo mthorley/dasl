@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDaslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'PHYSICAL'", "'VIRTUAL'", "'CONTAINER'", "'IdentityValidation'", "'UserProvisioning'", "'SystemUserProvisioning'", "'IdentityTransformation'", "'UserRegistries'", "'CredentialManagement'", "'Authentication'", "'Authorisation'", "'PrivilegeManagement'", "'ReducedSignOn'", "'Federation'", "'AccessEntitlementGovernance'", "'FirewallsNetwork'", "'FirewallsApplication'", "'DenialofService'", "'NetworkAdmissionControl'", "'RemoteAccessGateway'", "'IntrusionPreventionDetection'", "'Antivirus'", "'ContentFilter'", "'MessageSecurity'", "'TransportSecurity'", "'StoredDataSecurity'", "'DataLossPrevention'", "'DataObfuscation'", "'DataDestruction'", "'FraudSecurity'", "'DataTransactionSecurity'", "'CentralisedHSM_CA_PKI'", "'Standalone'", "'SecurityTesting'", "'PatchManagement'", "'VulnerabilityManagement'", "'CentralisedReporting'", "'EventCorrelation'", "'SecurityAuditLogMonitoring'", "'ComplianceTesting'", "'IncidentManagement'", "'Forensic'", "'Legal'", "'Public'", "'Internal'", "'Restricted'", "'Accurate'", "'HighlyTrusted'", "'Trusted'", "'Uncontrolled'", "'Platinum'", "'Gold'", "'Silver'", "'Bronze'", "'Plastic'", "'.'", "'import'", "'zone'", "'{'", "'trustLevel'", "'ingress'", "'egress'", "'nodes'", "'}'", "'controls'", "'node'", "'ref'", "'host'", "'os'", "'type'", "'components'", "'component'", "'stereotype'", "'desc'", "'version'", "'assets'", "'vendor'", "'informationasset'", "'confidentiality'", "'integrity'", "'availability'", "'flow'", "'from'", "'to'", "'informationassets'", "'control'", "'implementation'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'PHYSICAL'", "'VIRTUAL'", "'CONTAINER'", "'IdentityValidation'", "'UserProvisioning'", "'SystemUserProvisioning'", "'IdentityTransformation'", "'UserRegistries'", "'CredentialManagement'", "'Authentication'", "'Authorisation'", "'PrivilegeManagement'", "'ReducedSignOn'", "'Federation'", "'AccessEntitlementGovernance'", "'FirewallsNetwork'", "'FirewallsApplication'", "'DenialofService'", "'NetworkAdmissionControl'", "'RemoteAccessGateway'", "'IntrusionPreventionDetection'", "'Antivirus'", "'ContentFilter'", "'MessageSecurity'", "'TransportSecurity'", "'StoredDataSecurity'", "'DataLossPrevention'", "'DataObfuscation'", "'DataDestruction'", "'FraudSecurity'", "'DataTransactionSecurity'", "'CentralisedHSM_CA_PKI'", "'Standalone'", "'SecurityTesting'", "'PatchManagement'", "'VulnerabilityManagement'", "'CentralisedReporting'", "'EventCorrelation'", "'SecurityAuditLogMonitoring'", "'ComplianceTesting'", "'IncidentManagement'", "'Forensic'", "'Legal'", "'Public'", "'Internal'", "'Confidential'", "'Restricted'", "'Accurate'", "'HighlyTrusted'", "'Trusted'", "'Uncontrolled'", "'Platinum'", "'Gold'", "'Silver'", "'Bronze'", "'Plastic'", "'.'", "'import'", "'zone'", "'{'", "'trustLevel'", "'ingress'", "'egress'", "'nodes'", "'}'", "'controls'", "'node'", "'ref'", "'host'", "'os'", "'type'", "'components'", "'component'", "'stereotype'", "'desc'", "'version'", "'vendor'", "'assets'", "'informationasset'", "'confidentiality'", "'integrity'", "'availability'", "'flow'", "'from'", "'to'", "'control'", "'implementation'"
     };
     public static final int T__50=50;
     public static final int T__59=59;
@@ -205,7 +205,7 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=67 && LA1_0<=68)||LA1_0==76||LA1_0==82||LA1_0==88||LA1_0==92||LA1_0==96) ) {
+                if ( ((LA1_0>=68 && LA1_0<=69)||LA1_0==77||LA1_0==83||LA1_0==89||LA1_0==93||LA1_0==96) ) {
                     alt1=1;
                 }
 
@@ -1188,22 +1188,22 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
             // InternalDasl.g:386:1: ( ( ruleInformationAsset ) | ( ruleComponent ) | ( ruleZone ) | ( ruleNode ) | ( ruleControl ) | ( ruleFlow ) | ( ruleImport ) )
             int alt2=7;
             switch ( input.LA(1) ) {
-            case 88:
+            case 89:
                 {
                 alt2=1;
                 }
                 break;
-            case 82:
+            case 83:
                 {
                 alt2=2;
                 }
                 break;
-            case 68:
+            case 69:
                 {
                 alt2=3;
                 }
                 break;
-            case 76:
+            case 77:
                 {
                 alt2=4;
                 }
@@ -1213,12 +1213,12 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
                 alt2=5;
                 }
                 break;
-            case 92:
+            case 93:
                 {
                 alt2=6;
                 }
                 break;
-            case 67:
+            case 68:
                 {
                 alt2=7;
                 }
@@ -2570,14 +2570,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConfidentialityType__Alternatives"
-    // InternalDasl.g:709:1: rule__ConfidentialityType__Alternatives : ( ( ( 'Public' ) ) | ( ( 'Internal' ) ) | ( ( 'Restricted' ) ) );
+    // InternalDasl.g:709:1: rule__ConfidentialityType__Alternatives : ( ( ( 'Public' ) ) | ( ( 'Internal' ) ) | ( ( 'Confidential' ) ) | ( ( 'Restricted' ) ) );
     public final void rule__ConfidentialityType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:713:1: ( ( ( 'Public' ) ) | ( ( 'Internal' ) ) | ( ( 'Restricted' ) ) )
-            int alt5=3;
+            // InternalDasl.g:713:1: ( ( ( 'Public' ) ) | ( ( 'Internal' ) ) | ( ( 'Confidential' ) ) | ( ( 'Restricted' ) ) )
+            int alt5=4;
             switch ( input.LA(1) ) {
             case 54:
                 {
@@ -2592,6 +2592,11 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
             case 56:
                 {
                 alt5=3;
+                }
+                break;
+            case 57:
+                {
+                alt5=4;
                 }
                 break;
             default:
@@ -2645,20 +2650,41 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalDasl.g:726:2: ( ( 'Restricted' ) )
+                    // InternalDasl.g:726:2: ( ( 'Confidential' ) )
                     {
-                    // InternalDasl.g:726:2: ( ( 'Restricted' ) )
-                    // InternalDasl.g:727:3: ( 'Restricted' )
+                    // InternalDasl.g:726:2: ( ( 'Confidential' ) )
+                    // InternalDasl.g:727:3: ( 'Confidential' )
                     {
-                     before(grammarAccess.getConfidentialityTypeAccess().getRestrictedEnumLiteralDeclaration_2()); 
-                    // InternalDasl.g:728:3: ( 'Restricted' )
-                    // InternalDasl.g:728:4: 'Restricted'
+                     before(grammarAccess.getConfidentialityTypeAccess().getConfidentialEnumLiteralDeclaration_2()); 
+                    // InternalDasl.g:728:3: ( 'Confidential' )
+                    // InternalDasl.g:728:4: 'Confidential'
                     {
                     match(input,56,FOLLOW_2); 
 
                     }
 
-                     after(grammarAccess.getConfidentialityTypeAccess().getRestrictedEnumLiteralDeclaration_2()); 
+                     after(grammarAccess.getConfidentialityTypeAccess().getConfidentialEnumLiteralDeclaration_2()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalDasl.g:732:2: ( ( 'Restricted' ) )
+                    {
+                    // InternalDasl.g:732:2: ( ( 'Restricted' ) )
+                    // InternalDasl.g:733:3: ( 'Restricted' )
+                    {
+                     before(grammarAccess.getConfidentialityTypeAccess().getRestrictedEnumLiteralDeclaration_3()); 
+                    // InternalDasl.g:734:3: ( 'Restricted' )
+                    // InternalDasl.g:734:4: 'Restricted'
+                    {
+                    match(input,57,FOLLOW_2); 
+
+                    }
+
+                     after(grammarAccess.getConfidentialityTypeAccess().getRestrictedEnumLiteralDeclaration_3()); 
 
                     }
 
@@ -2683,31 +2709,31 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegrityType__Alternatives"
-    // InternalDasl.g:736:1: rule__IntegrityType__Alternatives : ( ( ( 'Accurate' ) ) | ( ( 'HighlyTrusted' ) ) | ( ( 'Trusted' ) ) | ( ( 'Uncontrolled' ) ) );
+    // InternalDasl.g:742:1: rule__IntegrityType__Alternatives : ( ( ( 'Accurate' ) ) | ( ( 'HighlyTrusted' ) ) | ( ( 'Trusted' ) ) | ( ( 'Uncontrolled' ) ) );
     public final void rule__IntegrityType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:740:1: ( ( ( 'Accurate' ) ) | ( ( 'HighlyTrusted' ) ) | ( ( 'Trusted' ) ) | ( ( 'Uncontrolled' ) ) )
+            // InternalDasl.g:746:1: ( ( ( 'Accurate' ) ) | ( ( 'HighlyTrusted' ) ) | ( ( 'Trusted' ) ) | ( ( 'Uncontrolled' ) ) )
             int alt6=4;
             switch ( input.LA(1) ) {
-            case 57:
+            case 58:
                 {
                 alt6=1;
                 }
                 break;
-            case 58:
+            case 59:
                 {
                 alt6=2;
                 }
                 break;
-            case 59:
+            case 60:
                 {
                 alt6=3;
                 }
                 break;
-            case 60:
+            case 61:
                 {
                 alt6=4;
                 }
@@ -2721,16 +2747,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
             switch (alt6) {
                 case 1 :
-                    // InternalDasl.g:741:2: ( ( 'Accurate' ) )
+                    // InternalDasl.g:747:2: ( ( 'Accurate' ) )
                     {
-                    // InternalDasl.g:741:2: ( ( 'Accurate' ) )
-                    // InternalDasl.g:742:3: ( 'Accurate' )
+                    // InternalDasl.g:747:2: ( ( 'Accurate' ) )
+                    // InternalDasl.g:748:3: ( 'Accurate' )
                     {
                      before(grammarAccess.getIntegrityTypeAccess().getAccurateEnumLiteralDeclaration_0()); 
-                    // InternalDasl.g:743:3: ( 'Accurate' )
-                    // InternalDasl.g:743:4: 'Accurate'
+                    // InternalDasl.g:749:3: ( 'Accurate' )
+                    // InternalDasl.g:749:4: 'Accurate'
                     {
-                    match(input,57,FOLLOW_2); 
+                    match(input,58,FOLLOW_2); 
 
                     }
 
@@ -2742,16 +2768,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalDasl.g:747:2: ( ( 'HighlyTrusted' ) )
+                    // InternalDasl.g:753:2: ( ( 'HighlyTrusted' ) )
                     {
-                    // InternalDasl.g:747:2: ( ( 'HighlyTrusted' ) )
-                    // InternalDasl.g:748:3: ( 'HighlyTrusted' )
+                    // InternalDasl.g:753:2: ( ( 'HighlyTrusted' ) )
+                    // InternalDasl.g:754:3: ( 'HighlyTrusted' )
                     {
                      before(grammarAccess.getIntegrityTypeAccess().getHighlyTrustedEnumLiteralDeclaration_1()); 
-                    // InternalDasl.g:749:3: ( 'HighlyTrusted' )
-                    // InternalDasl.g:749:4: 'HighlyTrusted'
+                    // InternalDasl.g:755:3: ( 'HighlyTrusted' )
+                    // InternalDasl.g:755:4: 'HighlyTrusted'
                     {
-                    match(input,58,FOLLOW_2); 
+                    match(input,59,FOLLOW_2); 
 
                     }
 
@@ -2763,16 +2789,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalDasl.g:753:2: ( ( 'Trusted' ) )
+                    // InternalDasl.g:759:2: ( ( 'Trusted' ) )
                     {
-                    // InternalDasl.g:753:2: ( ( 'Trusted' ) )
-                    // InternalDasl.g:754:3: ( 'Trusted' )
+                    // InternalDasl.g:759:2: ( ( 'Trusted' ) )
+                    // InternalDasl.g:760:3: ( 'Trusted' )
                     {
                      before(grammarAccess.getIntegrityTypeAccess().getTrustedEnumLiteralDeclaration_2()); 
-                    // InternalDasl.g:755:3: ( 'Trusted' )
-                    // InternalDasl.g:755:4: 'Trusted'
+                    // InternalDasl.g:761:3: ( 'Trusted' )
+                    // InternalDasl.g:761:4: 'Trusted'
                     {
-                    match(input,59,FOLLOW_2); 
+                    match(input,60,FOLLOW_2); 
 
                     }
 
@@ -2784,16 +2810,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalDasl.g:759:2: ( ( 'Uncontrolled' ) )
+                    // InternalDasl.g:765:2: ( ( 'Uncontrolled' ) )
                     {
-                    // InternalDasl.g:759:2: ( ( 'Uncontrolled' ) )
-                    // InternalDasl.g:760:3: ( 'Uncontrolled' )
+                    // InternalDasl.g:765:2: ( ( 'Uncontrolled' ) )
+                    // InternalDasl.g:766:3: ( 'Uncontrolled' )
                     {
                      before(grammarAccess.getIntegrityTypeAccess().getUncontrolledEnumLiteralDeclaration_3()); 
-                    // InternalDasl.g:761:3: ( 'Uncontrolled' )
-                    // InternalDasl.g:761:4: 'Uncontrolled'
+                    // InternalDasl.g:767:3: ( 'Uncontrolled' )
+                    // InternalDasl.g:767:4: 'Uncontrolled'
                     {
-                    match(input,60,FOLLOW_2); 
+                    match(input,61,FOLLOW_2); 
 
                     }
 
@@ -2822,36 +2848,36 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AvailabilityType__Alternatives"
-    // InternalDasl.g:769:1: rule__AvailabilityType__Alternatives : ( ( ( 'Platinum' ) ) | ( ( 'Gold' ) ) | ( ( 'Silver' ) ) | ( ( 'Bronze' ) ) | ( ( 'Plastic' ) ) );
+    // InternalDasl.g:775:1: rule__AvailabilityType__Alternatives : ( ( ( 'Platinum' ) ) | ( ( 'Gold' ) ) | ( ( 'Silver' ) ) | ( ( 'Bronze' ) ) | ( ( 'Plastic' ) ) );
     public final void rule__AvailabilityType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:773:1: ( ( ( 'Platinum' ) ) | ( ( 'Gold' ) ) | ( ( 'Silver' ) ) | ( ( 'Bronze' ) ) | ( ( 'Plastic' ) ) )
+            // InternalDasl.g:779:1: ( ( ( 'Platinum' ) ) | ( ( 'Gold' ) ) | ( ( 'Silver' ) ) | ( ( 'Bronze' ) ) | ( ( 'Plastic' ) ) )
             int alt7=5;
             switch ( input.LA(1) ) {
-            case 61:
+            case 62:
                 {
                 alt7=1;
                 }
                 break;
-            case 62:
+            case 63:
                 {
                 alt7=2;
                 }
                 break;
-            case 63:
+            case 64:
                 {
                 alt7=3;
                 }
                 break;
-            case 64:
+            case 65:
                 {
                 alt7=4;
                 }
                 break;
-            case 65:
+            case 66:
                 {
                 alt7=5;
                 }
@@ -2865,16 +2891,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
             switch (alt7) {
                 case 1 :
-                    // InternalDasl.g:774:2: ( ( 'Platinum' ) )
+                    // InternalDasl.g:780:2: ( ( 'Platinum' ) )
                     {
-                    // InternalDasl.g:774:2: ( ( 'Platinum' ) )
-                    // InternalDasl.g:775:3: ( 'Platinum' )
+                    // InternalDasl.g:780:2: ( ( 'Platinum' ) )
+                    // InternalDasl.g:781:3: ( 'Platinum' )
                     {
                      before(grammarAccess.getAvailabilityTypeAccess().getPlatinumEnumLiteralDeclaration_0()); 
-                    // InternalDasl.g:776:3: ( 'Platinum' )
-                    // InternalDasl.g:776:4: 'Platinum'
+                    // InternalDasl.g:782:3: ( 'Platinum' )
+                    // InternalDasl.g:782:4: 'Platinum'
                     {
-                    match(input,61,FOLLOW_2); 
+                    match(input,62,FOLLOW_2); 
 
                     }
 
@@ -2886,16 +2912,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalDasl.g:780:2: ( ( 'Gold' ) )
+                    // InternalDasl.g:786:2: ( ( 'Gold' ) )
                     {
-                    // InternalDasl.g:780:2: ( ( 'Gold' ) )
-                    // InternalDasl.g:781:3: ( 'Gold' )
+                    // InternalDasl.g:786:2: ( ( 'Gold' ) )
+                    // InternalDasl.g:787:3: ( 'Gold' )
                     {
                      before(grammarAccess.getAvailabilityTypeAccess().getGoldEnumLiteralDeclaration_1()); 
-                    // InternalDasl.g:782:3: ( 'Gold' )
-                    // InternalDasl.g:782:4: 'Gold'
+                    // InternalDasl.g:788:3: ( 'Gold' )
+                    // InternalDasl.g:788:4: 'Gold'
                     {
-                    match(input,62,FOLLOW_2); 
+                    match(input,63,FOLLOW_2); 
 
                     }
 
@@ -2907,16 +2933,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalDasl.g:786:2: ( ( 'Silver' ) )
+                    // InternalDasl.g:792:2: ( ( 'Silver' ) )
                     {
-                    // InternalDasl.g:786:2: ( ( 'Silver' ) )
-                    // InternalDasl.g:787:3: ( 'Silver' )
+                    // InternalDasl.g:792:2: ( ( 'Silver' ) )
+                    // InternalDasl.g:793:3: ( 'Silver' )
                     {
                      before(grammarAccess.getAvailabilityTypeAccess().getSilverEnumLiteralDeclaration_2()); 
-                    // InternalDasl.g:788:3: ( 'Silver' )
-                    // InternalDasl.g:788:4: 'Silver'
+                    // InternalDasl.g:794:3: ( 'Silver' )
+                    // InternalDasl.g:794:4: 'Silver'
                     {
-                    match(input,63,FOLLOW_2); 
+                    match(input,64,FOLLOW_2); 
 
                     }
 
@@ -2928,16 +2954,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalDasl.g:792:2: ( ( 'Bronze' ) )
+                    // InternalDasl.g:798:2: ( ( 'Bronze' ) )
                     {
-                    // InternalDasl.g:792:2: ( ( 'Bronze' ) )
-                    // InternalDasl.g:793:3: ( 'Bronze' )
+                    // InternalDasl.g:798:2: ( ( 'Bronze' ) )
+                    // InternalDasl.g:799:3: ( 'Bronze' )
                     {
                      before(grammarAccess.getAvailabilityTypeAccess().getBronzeEnumLiteralDeclaration_3()); 
-                    // InternalDasl.g:794:3: ( 'Bronze' )
-                    // InternalDasl.g:794:4: 'Bronze'
+                    // InternalDasl.g:800:3: ( 'Bronze' )
+                    // InternalDasl.g:800:4: 'Bronze'
                     {
-                    match(input,64,FOLLOW_2); 
+                    match(input,65,FOLLOW_2); 
 
                     }
 
@@ -2949,16 +2975,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalDasl.g:798:2: ( ( 'Plastic' ) )
+                    // InternalDasl.g:804:2: ( ( 'Plastic' ) )
                     {
-                    // InternalDasl.g:798:2: ( ( 'Plastic' ) )
-                    // InternalDasl.g:799:3: ( 'Plastic' )
+                    // InternalDasl.g:804:2: ( ( 'Plastic' ) )
+                    // InternalDasl.g:805:3: ( 'Plastic' )
                     {
                      before(grammarAccess.getAvailabilityTypeAccess().getPlasticEnumLiteralDeclaration_4()); 
-                    // InternalDasl.g:800:3: ( 'Plastic' )
-                    // InternalDasl.g:800:4: 'Plastic'
+                    // InternalDasl.g:806:3: ( 'Plastic' )
+                    // InternalDasl.g:806:4: 'Plastic'
                     {
-                    match(input,65,FOLLOW_2); 
+                    match(input,66,FOLLOW_2); 
 
                     }
 
@@ -2987,14 +3013,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__0"
-    // InternalDasl.g:808:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
+    // InternalDasl.g:814:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
     public final void rule__QualifiedName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:812:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
-            // InternalDasl.g:813:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
+            // InternalDasl.g:818:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
+            // InternalDasl.g:819:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__QualifiedName__Group__0__Impl();
@@ -3025,17 +3051,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__0__Impl"
-    // InternalDasl.g:820:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
+    // InternalDasl.g:826:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:824:1: ( ( RULE_ID ) )
-            // InternalDasl.g:825:1: ( RULE_ID )
+            // InternalDasl.g:830:1: ( ( RULE_ID ) )
+            // InternalDasl.g:831:1: ( RULE_ID )
             {
-            // InternalDasl.g:825:1: ( RULE_ID )
-            // InternalDasl.g:826:2: RULE_ID
+            // InternalDasl.g:831:1: ( RULE_ID )
+            // InternalDasl.g:832:2: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3062,14 +3088,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1"
-    // InternalDasl.g:835:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
+    // InternalDasl.g:841:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
     public final void rule__QualifiedName__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:839:1: ( rule__QualifiedName__Group__1__Impl )
-            // InternalDasl.g:840:2: rule__QualifiedName__Group__1__Impl
+            // InternalDasl.g:845:1: ( rule__QualifiedName__Group__1__Impl )
+            // InternalDasl.g:846:2: rule__QualifiedName__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group__1__Impl();
@@ -3095,33 +3121,33 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1__Impl"
-    // InternalDasl.g:846:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
+    // InternalDasl.g:852:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
     public final void rule__QualifiedName__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:850:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
-            // InternalDasl.g:851:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // InternalDasl.g:856:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
+            // InternalDasl.g:857:1: ( ( rule__QualifiedName__Group_1__0 )* )
             {
-            // InternalDasl.g:851:1: ( ( rule__QualifiedName__Group_1__0 )* )
-            // InternalDasl.g:852:2: ( rule__QualifiedName__Group_1__0 )*
+            // InternalDasl.g:857:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // InternalDasl.g:858:2: ( rule__QualifiedName__Group_1__0 )*
             {
              before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
-            // InternalDasl.g:853:2: ( rule__QualifiedName__Group_1__0 )*
+            // InternalDasl.g:859:2: ( rule__QualifiedName__Group_1__0 )*
             loop8:
             do {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==66) ) {
+                if ( (LA8_0==67) ) {
                     alt8=1;
                 }
 
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalDasl.g:853:3: rule__QualifiedName__Group_1__0
+            	    // InternalDasl.g:859:3: rule__QualifiedName__Group_1__0
             	    {
             	    pushFollow(FOLLOW_5);
             	    rule__QualifiedName__Group_1__0();
@@ -3160,14 +3186,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0"
-    // InternalDasl.g:862:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
+    // InternalDasl.g:868:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
     public final void rule__QualifiedName__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:866:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
-            // InternalDasl.g:867:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
+            // InternalDasl.g:872:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
+            // InternalDasl.g:873:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
             {
             pushFollow(FOLLOW_6);
             rule__QualifiedName__Group_1__0__Impl();
@@ -3198,20 +3224,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0__Impl"
-    // InternalDasl.g:874:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
+    // InternalDasl.g:880:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
     public final void rule__QualifiedName__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:878:1: ( ( '.' ) )
-            // InternalDasl.g:879:1: ( '.' )
+            // InternalDasl.g:884:1: ( ( '.' ) )
+            // InternalDasl.g:885:1: ( '.' )
             {
-            // InternalDasl.g:879:1: ( '.' )
-            // InternalDasl.g:880:2: '.'
+            // InternalDasl.g:885:1: ( '.' )
+            // InternalDasl.g:886:2: '.'
             {
              before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
-            match(input,66,FOLLOW_2); 
+            match(input,67,FOLLOW_2); 
              after(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -3235,14 +3261,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1"
-    // InternalDasl.g:889:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
+    // InternalDasl.g:895:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
     public final void rule__QualifiedName__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:893:1: ( rule__QualifiedName__Group_1__1__Impl )
-            // InternalDasl.g:894:2: rule__QualifiedName__Group_1__1__Impl
+            // InternalDasl.g:899:1: ( rule__QualifiedName__Group_1__1__Impl )
+            // InternalDasl.g:900:2: rule__QualifiedName__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group_1__1__Impl();
@@ -3268,17 +3294,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1__Impl"
-    // InternalDasl.g:900:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
+    // InternalDasl.g:906:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:904:1: ( ( RULE_ID ) )
-            // InternalDasl.g:905:1: ( RULE_ID )
+            // InternalDasl.g:910:1: ( ( RULE_ID ) )
+            // InternalDasl.g:911:1: ( RULE_ID )
             {
-            // InternalDasl.g:905:1: ( RULE_ID )
-            // InternalDasl.g:906:2: RULE_ID
+            // InternalDasl.g:911:1: ( RULE_ID )
+            // InternalDasl.g:912:2: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3305,14 +3331,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__Group__0"
-    // InternalDasl.g:916:1: rule__Import__Group__0 : rule__Import__Group__0__Impl rule__Import__Group__1 ;
+    // InternalDasl.g:922:1: rule__Import__Group__0 : rule__Import__Group__0__Impl rule__Import__Group__1 ;
     public final void rule__Import__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:920:1: ( rule__Import__Group__0__Impl rule__Import__Group__1 )
-            // InternalDasl.g:921:2: rule__Import__Group__0__Impl rule__Import__Group__1
+            // InternalDasl.g:926:1: ( rule__Import__Group__0__Impl rule__Import__Group__1 )
+            // InternalDasl.g:927:2: rule__Import__Group__0__Impl rule__Import__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__Import__Group__0__Impl();
@@ -3343,20 +3369,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__Group__0__Impl"
-    // InternalDasl.g:928:1: rule__Import__Group__0__Impl : ( 'import' ) ;
+    // InternalDasl.g:934:1: rule__Import__Group__0__Impl : ( 'import' ) ;
     public final void rule__Import__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:932:1: ( ( 'import' ) )
-            // InternalDasl.g:933:1: ( 'import' )
+            // InternalDasl.g:938:1: ( ( 'import' ) )
+            // InternalDasl.g:939:1: ( 'import' )
             {
-            // InternalDasl.g:933:1: ( 'import' )
-            // InternalDasl.g:934:2: 'import'
+            // InternalDasl.g:939:1: ( 'import' )
+            // InternalDasl.g:940:2: 'import'
             {
              before(grammarAccess.getImportAccess().getImportKeyword_0()); 
-            match(input,67,FOLLOW_2); 
+            match(input,68,FOLLOW_2); 
              after(grammarAccess.getImportAccess().getImportKeyword_0()); 
 
             }
@@ -3380,14 +3406,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__Group__1"
-    // InternalDasl.g:943:1: rule__Import__Group__1 : rule__Import__Group__1__Impl ;
+    // InternalDasl.g:949:1: rule__Import__Group__1 : rule__Import__Group__1__Impl ;
     public final void rule__Import__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:947:1: ( rule__Import__Group__1__Impl )
-            // InternalDasl.g:948:2: rule__Import__Group__1__Impl
+            // InternalDasl.g:953:1: ( rule__Import__Group__1__Impl )
+            // InternalDasl.g:954:2: rule__Import__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Import__Group__1__Impl();
@@ -3413,21 +3439,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__Group__1__Impl"
-    // InternalDasl.g:954:1: rule__Import__Group__1__Impl : ( ( rule__Import__ImportURIAssignment_1 ) ) ;
+    // InternalDasl.g:960:1: rule__Import__Group__1__Impl : ( ( rule__Import__ImportURIAssignment_1 ) ) ;
     public final void rule__Import__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:958:1: ( ( ( rule__Import__ImportURIAssignment_1 ) ) )
-            // InternalDasl.g:959:1: ( ( rule__Import__ImportURIAssignment_1 ) )
+            // InternalDasl.g:964:1: ( ( ( rule__Import__ImportURIAssignment_1 ) ) )
+            // InternalDasl.g:965:1: ( ( rule__Import__ImportURIAssignment_1 ) )
             {
-            // InternalDasl.g:959:1: ( ( rule__Import__ImportURIAssignment_1 ) )
-            // InternalDasl.g:960:2: ( rule__Import__ImportURIAssignment_1 )
+            // InternalDasl.g:965:1: ( ( rule__Import__ImportURIAssignment_1 ) )
+            // InternalDasl.g:966:2: ( rule__Import__ImportURIAssignment_1 )
             {
              before(grammarAccess.getImportAccess().getImportURIAssignment_1()); 
-            // InternalDasl.g:961:2: ( rule__Import__ImportURIAssignment_1 )
-            // InternalDasl.g:961:3: rule__Import__ImportURIAssignment_1
+            // InternalDasl.g:967:2: ( rule__Import__ImportURIAssignment_1 )
+            // InternalDasl.g:967:3: rule__Import__ImportURIAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Import__ImportURIAssignment_1();
@@ -3460,14 +3486,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__0"
-    // InternalDasl.g:970:1: rule__Zone__Group__0 : rule__Zone__Group__0__Impl rule__Zone__Group__1 ;
+    // InternalDasl.g:976:1: rule__Zone__Group__0 : rule__Zone__Group__0__Impl rule__Zone__Group__1 ;
     public final void rule__Zone__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:974:1: ( rule__Zone__Group__0__Impl rule__Zone__Group__1 )
-            // InternalDasl.g:975:2: rule__Zone__Group__0__Impl rule__Zone__Group__1
+            // InternalDasl.g:980:1: ( rule__Zone__Group__0__Impl rule__Zone__Group__1 )
+            // InternalDasl.g:981:2: rule__Zone__Group__0__Impl rule__Zone__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Zone__Group__0__Impl();
@@ -3498,20 +3524,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__0__Impl"
-    // InternalDasl.g:982:1: rule__Zone__Group__0__Impl : ( 'zone' ) ;
+    // InternalDasl.g:988:1: rule__Zone__Group__0__Impl : ( 'zone' ) ;
     public final void rule__Zone__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:986:1: ( ( 'zone' ) )
-            // InternalDasl.g:987:1: ( 'zone' )
+            // InternalDasl.g:992:1: ( ( 'zone' ) )
+            // InternalDasl.g:993:1: ( 'zone' )
             {
-            // InternalDasl.g:987:1: ( 'zone' )
-            // InternalDasl.g:988:2: 'zone'
+            // InternalDasl.g:993:1: ( 'zone' )
+            // InternalDasl.g:994:2: 'zone'
             {
              before(grammarAccess.getZoneAccess().getZoneKeyword_0()); 
-            match(input,68,FOLLOW_2); 
+            match(input,69,FOLLOW_2); 
              after(grammarAccess.getZoneAccess().getZoneKeyword_0()); 
 
             }
@@ -3535,14 +3561,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__1"
-    // InternalDasl.g:997:1: rule__Zone__Group__1 : rule__Zone__Group__1__Impl rule__Zone__Group__2 ;
+    // InternalDasl.g:1003:1: rule__Zone__Group__1 : rule__Zone__Group__1__Impl rule__Zone__Group__2 ;
     public final void rule__Zone__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1001:1: ( rule__Zone__Group__1__Impl rule__Zone__Group__2 )
-            // InternalDasl.g:1002:2: rule__Zone__Group__1__Impl rule__Zone__Group__2
+            // InternalDasl.g:1007:1: ( rule__Zone__Group__1__Impl rule__Zone__Group__2 )
+            // InternalDasl.g:1008:2: rule__Zone__Group__1__Impl rule__Zone__Group__2
             {
             pushFollow(FOLLOW_8);
             rule__Zone__Group__1__Impl();
@@ -3573,21 +3599,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__1__Impl"
-    // InternalDasl.g:1009:1: rule__Zone__Group__1__Impl : ( ( rule__Zone__NameAssignment_1 ) ) ;
+    // InternalDasl.g:1015:1: rule__Zone__Group__1__Impl : ( ( rule__Zone__NameAssignment_1 ) ) ;
     public final void rule__Zone__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1013:1: ( ( ( rule__Zone__NameAssignment_1 ) ) )
-            // InternalDasl.g:1014:1: ( ( rule__Zone__NameAssignment_1 ) )
+            // InternalDasl.g:1019:1: ( ( ( rule__Zone__NameAssignment_1 ) ) )
+            // InternalDasl.g:1020:1: ( ( rule__Zone__NameAssignment_1 ) )
             {
-            // InternalDasl.g:1014:1: ( ( rule__Zone__NameAssignment_1 ) )
-            // InternalDasl.g:1015:2: ( rule__Zone__NameAssignment_1 )
+            // InternalDasl.g:1020:1: ( ( rule__Zone__NameAssignment_1 ) )
+            // InternalDasl.g:1021:2: ( rule__Zone__NameAssignment_1 )
             {
              before(grammarAccess.getZoneAccess().getNameAssignment_1()); 
-            // InternalDasl.g:1016:2: ( rule__Zone__NameAssignment_1 )
-            // InternalDasl.g:1016:3: rule__Zone__NameAssignment_1
+            // InternalDasl.g:1022:2: ( rule__Zone__NameAssignment_1 )
+            // InternalDasl.g:1022:3: rule__Zone__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Zone__NameAssignment_1();
@@ -3620,14 +3646,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__2"
-    // InternalDasl.g:1024:1: rule__Zone__Group__2 : rule__Zone__Group__2__Impl rule__Zone__Group__3 ;
+    // InternalDasl.g:1030:1: rule__Zone__Group__2 : rule__Zone__Group__2__Impl rule__Zone__Group__3 ;
     public final void rule__Zone__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1028:1: ( rule__Zone__Group__2__Impl rule__Zone__Group__3 )
-            // InternalDasl.g:1029:2: rule__Zone__Group__2__Impl rule__Zone__Group__3
+            // InternalDasl.g:1034:1: ( rule__Zone__Group__2__Impl rule__Zone__Group__3 )
+            // InternalDasl.g:1035:2: rule__Zone__Group__2__Impl rule__Zone__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__Zone__Group__2__Impl();
@@ -3658,20 +3684,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__2__Impl"
-    // InternalDasl.g:1036:1: rule__Zone__Group__2__Impl : ( '{' ) ;
+    // InternalDasl.g:1042:1: rule__Zone__Group__2__Impl : ( '{' ) ;
     public final void rule__Zone__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1040:1: ( ( '{' ) )
-            // InternalDasl.g:1041:1: ( '{' )
+            // InternalDasl.g:1046:1: ( ( '{' ) )
+            // InternalDasl.g:1047:1: ( '{' )
             {
-            // InternalDasl.g:1041:1: ( '{' )
-            // InternalDasl.g:1042:2: '{'
+            // InternalDasl.g:1047:1: ( '{' )
+            // InternalDasl.g:1048:2: '{'
             {
              before(grammarAccess.getZoneAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,69,FOLLOW_2); 
+            match(input,70,FOLLOW_2); 
              after(grammarAccess.getZoneAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -3695,14 +3721,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__3"
-    // InternalDasl.g:1051:1: rule__Zone__Group__3 : rule__Zone__Group__3__Impl rule__Zone__Group__4 ;
+    // InternalDasl.g:1057:1: rule__Zone__Group__3 : rule__Zone__Group__3__Impl rule__Zone__Group__4 ;
     public final void rule__Zone__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1055:1: ( rule__Zone__Group__3__Impl rule__Zone__Group__4 )
-            // InternalDasl.g:1056:2: rule__Zone__Group__3__Impl rule__Zone__Group__4
+            // InternalDasl.g:1061:1: ( rule__Zone__Group__3__Impl rule__Zone__Group__4 )
+            // InternalDasl.g:1062:2: rule__Zone__Group__3__Impl rule__Zone__Group__4
             {
             pushFollow(FOLLOW_10);
             rule__Zone__Group__3__Impl();
@@ -3733,20 +3759,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__3__Impl"
-    // InternalDasl.g:1063:1: rule__Zone__Group__3__Impl : ( 'trustLevel' ) ;
+    // InternalDasl.g:1069:1: rule__Zone__Group__3__Impl : ( 'trustLevel' ) ;
     public final void rule__Zone__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1067:1: ( ( 'trustLevel' ) )
-            // InternalDasl.g:1068:1: ( 'trustLevel' )
+            // InternalDasl.g:1073:1: ( ( 'trustLevel' ) )
+            // InternalDasl.g:1074:1: ( 'trustLevel' )
             {
-            // InternalDasl.g:1068:1: ( 'trustLevel' )
-            // InternalDasl.g:1069:2: 'trustLevel'
+            // InternalDasl.g:1074:1: ( 'trustLevel' )
+            // InternalDasl.g:1075:2: 'trustLevel'
             {
              before(grammarAccess.getZoneAccess().getTrustLevelKeyword_3()); 
-            match(input,70,FOLLOW_2); 
+            match(input,71,FOLLOW_2); 
              after(grammarAccess.getZoneAccess().getTrustLevelKeyword_3()); 
 
             }
@@ -3770,14 +3796,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__4"
-    // InternalDasl.g:1078:1: rule__Zone__Group__4 : rule__Zone__Group__4__Impl rule__Zone__Group__5 ;
+    // InternalDasl.g:1084:1: rule__Zone__Group__4 : rule__Zone__Group__4__Impl rule__Zone__Group__5 ;
     public final void rule__Zone__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1082:1: ( rule__Zone__Group__4__Impl rule__Zone__Group__5 )
-            // InternalDasl.g:1083:2: rule__Zone__Group__4__Impl rule__Zone__Group__5
+            // InternalDasl.g:1088:1: ( rule__Zone__Group__4__Impl rule__Zone__Group__5 )
+            // InternalDasl.g:1089:2: rule__Zone__Group__4__Impl rule__Zone__Group__5
             {
             pushFollow(FOLLOW_11);
             rule__Zone__Group__4__Impl();
@@ -3808,21 +3834,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__4__Impl"
-    // InternalDasl.g:1090:1: rule__Zone__Group__4__Impl : ( ( rule__Zone__TrustAssignment_4 ) ) ;
+    // InternalDasl.g:1096:1: rule__Zone__Group__4__Impl : ( ( rule__Zone__TrustAssignment_4 ) ) ;
     public final void rule__Zone__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1094:1: ( ( ( rule__Zone__TrustAssignment_4 ) ) )
-            // InternalDasl.g:1095:1: ( ( rule__Zone__TrustAssignment_4 ) )
+            // InternalDasl.g:1100:1: ( ( ( rule__Zone__TrustAssignment_4 ) ) )
+            // InternalDasl.g:1101:1: ( ( rule__Zone__TrustAssignment_4 ) )
             {
-            // InternalDasl.g:1095:1: ( ( rule__Zone__TrustAssignment_4 ) )
-            // InternalDasl.g:1096:2: ( rule__Zone__TrustAssignment_4 )
+            // InternalDasl.g:1101:1: ( ( rule__Zone__TrustAssignment_4 ) )
+            // InternalDasl.g:1102:2: ( rule__Zone__TrustAssignment_4 )
             {
              before(grammarAccess.getZoneAccess().getTrustAssignment_4()); 
-            // InternalDasl.g:1097:2: ( rule__Zone__TrustAssignment_4 )
-            // InternalDasl.g:1097:3: rule__Zone__TrustAssignment_4
+            // InternalDasl.g:1103:2: ( rule__Zone__TrustAssignment_4 )
+            // InternalDasl.g:1103:3: rule__Zone__TrustAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Zone__TrustAssignment_4();
@@ -3855,14 +3881,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__5"
-    // InternalDasl.g:1105:1: rule__Zone__Group__5 : rule__Zone__Group__5__Impl rule__Zone__Group__6 ;
+    // InternalDasl.g:1111:1: rule__Zone__Group__5 : rule__Zone__Group__5__Impl rule__Zone__Group__6 ;
     public final void rule__Zone__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1109:1: ( rule__Zone__Group__5__Impl rule__Zone__Group__6 )
-            // InternalDasl.g:1110:2: rule__Zone__Group__5__Impl rule__Zone__Group__6
+            // InternalDasl.g:1115:1: ( rule__Zone__Group__5__Impl rule__Zone__Group__6 )
+            // InternalDasl.g:1116:2: rule__Zone__Group__5__Impl rule__Zone__Group__6
             {
             pushFollow(FOLLOW_12);
             rule__Zone__Group__5__Impl();
@@ -3893,20 +3919,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__5__Impl"
-    // InternalDasl.g:1117:1: rule__Zone__Group__5__Impl : ( 'ingress' ) ;
+    // InternalDasl.g:1123:1: rule__Zone__Group__5__Impl : ( 'ingress' ) ;
     public final void rule__Zone__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1121:1: ( ( 'ingress' ) )
-            // InternalDasl.g:1122:1: ( 'ingress' )
+            // InternalDasl.g:1127:1: ( ( 'ingress' ) )
+            // InternalDasl.g:1128:1: ( 'ingress' )
             {
-            // InternalDasl.g:1122:1: ( 'ingress' )
-            // InternalDasl.g:1123:2: 'ingress'
+            // InternalDasl.g:1128:1: ( 'ingress' )
+            // InternalDasl.g:1129:2: 'ingress'
             {
              before(grammarAccess.getZoneAccess().getIngressKeyword_5()); 
-            match(input,71,FOLLOW_2); 
+            match(input,72,FOLLOW_2); 
              after(grammarAccess.getZoneAccess().getIngressKeyword_5()); 
 
             }
@@ -3930,14 +3956,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__6"
-    // InternalDasl.g:1132:1: rule__Zone__Group__6 : rule__Zone__Group__6__Impl rule__Zone__Group__7 ;
+    // InternalDasl.g:1138:1: rule__Zone__Group__6 : rule__Zone__Group__6__Impl rule__Zone__Group__7 ;
     public final void rule__Zone__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1136:1: ( rule__Zone__Group__6__Impl rule__Zone__Group__7 )
-            // InternalDasl.g:1137:2: rule__Zone__Group__6__Impl rule__Zone__Group__7
+            // InternalDasl.g:1142:1: ( rule__Zone__Group__6__Impl rule__Zone__Group__7 )
+            // InternalDasl.g:1143:2: rule__Zone__Group__6__Impl rule__Zone__Group__7
             {
             pushFollow(FOLLOW_12);
             rule__Zone__Group__6__Impl();
@@ -3968,20 +3994,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__6__Impl"
-    // InternalDasl.g:1144:1: rule__Zone__Group__6__Impl : ( ( rule__Zone__IngressZonesAssignment_6 )* ) ;
+    // InternalDasl.g:1150:1: rule__Zone__Group__6__Impl : ( ( rule__Zone__IngressZonesAssignment_6 )* ) ;
     public final void rule__Zone__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1148:1: ( ( ( rule__Zone__IngressZonesAssignment_6 )* ) )
-            // InternalDasl.g:1149:1: ( ( rule__Zone__IngressZonesAssignment_6 )* )
+            // InternalDasl.g:1154:1: ( ( ( rule__Zone__IngressZonesAssignment_6 )* ) )
+            // InternalDasl.g:1155:1: ( ( rule__Zone__IngressZonesAssignment_6 )* )
             {
-            // InternalDasl.g:1149:1: ( ( rule__Zone__IngressZonesAssignment_6 )* )
-            // InternalDasl.g:1150:2: ( rule__Zone__IngressZonesAssignment_6 )*
+            // InternalDasl.g:1155:1: ( ( rule__Zone__IngressZonesAssignment_6 )* )
+            // InternalDasl.g:1156:2: ( rule__Zone__IngressZonesAssignment_6 )*
             {
              before(grammarAccess.getZoneAccess().getIngressZonesAssignment_6()); 
-            // InternalDasl.g:1151:2: ( rule__Zone__IngressZonesAssignment_6 )*
+            // InternalDasl.g:1157:2: ( rule__Zone__IngressZonesAssignment_6 )*
             loop9:
             do {
                 int alt9=2;
@@ -3994,7 +4020,7 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalDasl.g:1151:3: rule__Zone__IngressZonesAssignment_6
+            	    // InternalDasl.g:1157:3: rule__Zone__IngressZonesAssignment_6
             	    {
             	    pushFollow(FOLLOW_13);
             	    rule__Zone__IngressZonesAssignment_6();
@@ -4033,14 +4059,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__7"
-    // InternalDasl.g:1159:1: rule__Zone__Group__7 : rule__Zone__Group__7__Impl rule__Zone__Group__8 ;
+    // InternalDasl.g:1165:1: rule__Zone__Group__7 : rule__Zone__Group__7__Impl rule__Zone__Group__8 ;
     public final void rule__Zone__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1163:1: ( rule__Zone__Group__7__Impl rule__Zone__Group__8 )
-            // InternalDasl.g:1164:2: rule__Zone__Group__7__Impl rule__Zone__Group__8
+            // InternalDasl.g:1169:1: ( rule__Zone__Group__7__Impl rule__Zone__Group__8 )
+            // InternalDasl.g:1170:2: rule__Zone__Group__7__Impl rule__Zone__Group__8
             {
             pushFollow(FOLLOW_14);
             rule__Zone__Group__7__Impl();
@@ -4071,20 +4097,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__7__Impl"
-    // InternalDasl.g:1171:1: rule__Zone__Group__7__Impl : ( 'egress' ) ;
+    // InternalDasl.g:1177:1: rule__Zone__Group__7__Impl : ( 'egress' ) ;
     public final void rule__Zone__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1175:1: ( ( 'egress' ) )
-            // InternalDasl.g:1176:1: ( 'egress' )
+            // InternalDasl.g:1181:1: ( ( 'egress' ) )
+            // InternalDasl.g:1182:1: ( 'egress' )
             {
-            // InternalDasl.g:1176:1: ( 'egress' )
-            // InternalDasl.g:1177:2: 'egress'
+            // InternalDasl.g:1182:1: ( 'egress' )
+            // InternalDasl.g:1183:2: 'egress'
             {
              before(grammarAccess.getZoneAccess().getEgressKeyword_7()); 
-            match(input,72,FOLLOW_2); 
+            match(input,73,FOLLOW_2); 
              after(grammarAccess.getZoneAccess().getEgressKeyword_7()); 
 
             }
@@ -4108,14 +4134,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__8"
-    // InternalDasl.g:1186:1: rule__Zone__Group__8 : rule__Zone__Group__8__Impl rule__Zone__Group__9 ;
+    // InternalDasl.g:1192:1: rule__Zone__Group__8 : rule__Zone__Group__8__Impl rule__Zone__Group__9 ;
     public final void rule__Zone__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1190:1: ( rule__Zone__Group__8__Impl rule__Zone__Group__9 )
-            // InternalDasl.g:1191:2: rule__Zone__Group__8__Impl rule__Zone__Group__9
+            // InternalDasl.g:1196:1: ( rule__Zone__Group__8__Impl rule__Zone__Group__9 )
+            // InternalDasl.g:1197:2: rule__Zone__Group__8__Impl rule__Zone__Group__9
             {
             pushFollow(FOLLOW_14);
             rule__Zone__Group__8__Impl();
@@ -4146,20 +4172,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__8__Impl"
-    // InternalDasl.g:1198:1: rule__Zone__Group__8__Impl : ( ( rule__Zone__EgressZonesAssignment_8 )* ) ;
+    // InternalDasl.g:1204:1: rule__Zone__Group__8__Impl : ( ( rule__Zone__EgressZonesAssignment_8 )* ) ;
     public final void rule__Zone__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1202:1: ( ( ( rule__Zone__EgressZonesAssignment_8 )* ) )
-            // InternalDasl.g:1203:1: ( ( rule__Zone__EgressZonesAssignment_8 )* )
+            // InternalDasl.g:1208:1: ( ( ( rule__Zone__EgressZonesAssignment_8 )* ) )
+            // InternalDasl.g:1209:1: ( ( rule__Zone__EgressZonesAssignment_8 )* )
             {
-            // InternalDasl.g:1203:1: ( ( rule__Zone__EgressZonesAssignment_8 )* )
-            // InternalDasl.g:1204:2: ( rule__Zone__EgressZonesAssignment_8 )*
+            // InternalDasl.g:1209:1: ( ( rule__Zone__EgressZonesAssignment_8 )* )
+            // InternalDasl.g:1210:2: ( rule__Zone__EgressZonesAssignment_8 )*
             {
              before(grammarAccess.getZoneAccess().getEgressZonesAssignment_8()); 
-            // InternalDasl.g:1205:2: ( rule__Zone__EgressZonesAssignment_8 )*
+            // InternalDasl.g:1211:2: ( rule__Zone__EgressZonesAssignment_8 )*
             loop10:
             do {
                 int alt10=2;
@@ -4172,7 +4198,7 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalDasl.g:1205:3: rule__Zone__EgressZonesAssignment_8
+            	    // InternalDasl.g:1211:3: rule__Zone__EgressZonesAssignment_8
             	    {
             	    pushFollow(FOLLOW_13);
             	    rule__Zone__EgressZonesAssignment_8();
@@ -4211,14 +4237,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__9"
-    // InternalDasl.g:1213:1: rule__Zone__Group__9 : rule__Zone__Group__9__Impl rule__Zone__Group__10 ;
+    // InternalDasl.g:1219:1: rule__Zone__Group__9 : rule__Zone__Group__9__Impl rule__Zone__Group__10 ;
     public final void rule__Zone__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1217:1: ( rule__Zone__Group__9__Impl rule__Zone__Group__10 )
-            // InternalDasl.g:1218:2: rule__Zone__Group__9__Impl rule__Zone__Group__10
+            // InternalDasl.g:1223:1: ( rule__Zone__Group__9__Impl rule__Zone__Group__10 )
+            // InternalDasl.g:1224:2: rule__Zone__Group__9__Impl rule__Zone__Group__10
             {
             pushFollow(FOLLOW_15);
             rule__Zone__Group__9__Impl();
@@ -4249,20 +4275,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__9__Impl"
-    // InternalDasl.g:1225:1: rule__Zone__Group__9__Impl : ( 'nodes' ) ;
+    // InternalDasl.g:1231:1: rule__Zone__Group__9__Impl : ( 'nodes' ) ;
     public final void rule__Zone__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1229:1: ( ( 'nodes' ) )
-            // InternalDasl.g:1230:1: ( 'nodes' )
+            // InternalDasl.g:1235:1: ( ( 'nodes' ) )
+            // InternalDasl.g:1236:1: ( 'nodes' )
             {
-            // InternalDasl.g:1230:1: ( 'nodes' )
-            // InternalDasl.g:1231:2: 'nodes'
+            // InternalDasl.g:1236:1: ( 'nodes' )
+            // InternalDasl.g:1237:2: 'nodes'
             {
              before(grammarAccess.getZoneAccess().getNodesKeyword_9()); 
-            match(input,73,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getZoneAccess().getNodesKeyword_9()); 
 
             }
@@ -4286,14 +4312,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__10"
-    // InternalDasl.g:1240:1: rule__Zone__Group__10 : rule__Zone__Group__10__Impl rule__Zone__Group__11 ;
+    // InternalDasl.g:1246:1: rule__Zone__Group__10 : rule__Zone__Group__10__Impl rule__Zone__Group__11 ;
     public final void rule__Zone__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1244:1: ( rule__Zone__Group__10__Impl rule__Zone__Group__11 )
-            // InternalDasl.g:1245:2: rule__Zone__Group__10__Impl rule__Zone__Group__11
+            // InternalDasl.g:1250:1: ( rule__Zone__Group__10__Impl rule__Zone__Group__11 )
+            // InternalDasl.g:1251:2: rule__Zone__Group__10__Impl rule__Zone__Group__11
             {
             pushFollow(FOLLOW_15);
             rule__Zone__Group__10__Impl();
@@ -4324,20 +4350,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__10__Impl"
-    // InternalDasl.g:1252:1: rule__Zone__Group__10__Impl : ( ( rule__Zone__NodesAssignment_10 )* ) ;
+    // InternalDasl.g:1258:1: rule__Zone__Group__10__Impl : ( ( rule__Zone__NodesAssignment_10 )* ) ;
     public final void rule__Zone__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1256:1: ( ( ( rule__Zone__NodesAssignment_10 )* ) )
-            // InternalDasl.g:1257:1: ( ( rule__Zone__NodesAssignment_10 )* )
+            // InternalDasl.g:1262:1: ( ( ( rule__Zone__NodesAssignment_10 )* ) )
+            // InternalDasl.g:1263:1: ( ( rule__Zone__NodesAssignment_10 )* )
             {
-            // InternalDasl.g:1257:1: ( ( rule__Zone__NodesAssignment_10 )* )
-            // InternalDasl.g:1258:2: ( rule__Zone__NodesAssignment_10 )*
+            // InternalDasl.g:1263:1: ( ( rule__Zone__NodesAssignment_10 )* )
+            // InternalDasl.g:1264:2: ( rule__Zone__NodesAssignment_10 )*
             {
              before(grammarAccess.getZoneAccess().getNodesAssignment_10()); 
-            // InternalDasl.g:1259:2: ( rule__Zone__NodesAssignment_10 )*
+            // InternalDasl.g:1265:2: ( rule__Zone__NodesAssignment_10 )*
             loop11:
             do {
                 int alt11=2;
@@ -4350,7 +4376,7 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalDasl.g:1259:3: rule__Zone__NodesAssignment_10
+            	    // InternalDasl.g:1265:3: rule__Zone__NodesAssignment_10
             	    {
             	    pushFollow(FOLLOW_13);
             	    rule__Zone__NodesAssignment_10();
@@ -4389,14 +4415,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__11"
-    // InternalDasl.g:1267:1: rule__Zone__Group__11 : rule__Zone__Group__11__Impl rule__Zone__Group__12 ;
+    // InternalDasl.g:1273:1: rule__Zone__Group__11 : rule__Zone__Group__11__Impl rule__Zone__Group__12 ;
     public final void rule__Zone__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1271:1: ( rule__Zone__Group__11__Impl rule__Zone__Group__12 )
-            // InternalDasl.g:1272:2: rule__Zone__Group__11__Impl rule__Zone__Group__12
+            // InternalDasl.g:1277:1: ( rule__Zone__Group__11__Impl rule__Zone__Group__12 )
+            // InternalDasl.g:1278:2: rule__Zone__Group__11__Impl rule__Zone__Group__12
             {
             pushFollow(FOLLOW_15);
             rule__Zone__Group__11__Impl();
@@ -4427,29 +4453,29 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__11__Impl"
-    // InternalDasl.g:1279:1: rule__Zone__Group__11__Impl : ( ( rule__Zone__Group_11__0 )? ) ;
+    // InternalDasl.g:1285:1: rule__Zone__Group__11__Impl : ( ( rule__Zone__Group_11__0 )? ) ;
     public final void rule__Zone__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1283:1: ( ( ( rule__Zone__Group_11__0 )? ) )
-            // InternalDasl.g:1284:1: ( ( rule__Zone__Group_11__0 )? )
+            // InternalDasl.g:1289:1: ( ( ( rule__Zone__Group_11__0 )? ) )
+            // InternalDasl.g:1290:1: ( ( rule__Zone__Group_11__0 )? )
             {
-            // InternalDasl.g:1284:1: ( ( rule__Zone__Group_11__0 )? )
-            // InternalDasl.g:1285:2: ( rule__Zone__Group_11__0 )?
+            // InternalDasl.g:1290:1: ( ( rule__Zone__Group_11__0 )? )
+            // InternalDasl.g:1291:2: ( rule__Zone__Group_11__0 )?
             {
              before(grammarAccess.getZoneAccess().getGroup_11()); 
-            // InternalDasl.g:1286:2: ( rule__Zone__Group_11__0 )?
+            // InternalDasl.g:1292:2: ( rule__Zone__Group_11__0 )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( (LA12_0==75) ) {
+            if ( (LA12_0==76) ) {
                 alt12=1;
             }
             switch (alt12) {
                 case 1 :
-                    // InternalDasl.g:1286:3: rule__Zone__Group_11__0
+                    // InternalDasl.g:1292:3: rule__Zone__Group_11__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Zone__Group_11__0();
@@ -4485,14 +4511,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__12"
-    // InternalDasl.g:1294:1: rule__Zone__Group__12 : rule__Zone__Group__12__Impl ;
+    // InternalDasl.g:1300:1: rule__Zone__Group__12 : rule__Zone__Group__12__Impl ;
     public final void rule__Zone__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1298:1: ( rule__Zone__Group__12__Impl )
-            // InternalDasl.g:1299:2: rule__Zone__Group__12__Impl
+            // InternalDasl.g:1304:1: ( rule__Zone__Group__12__Impl )
+            // InternalDasl.g:1305:2: rule__Zone__Group__12__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Zone__Group__12__Impl();
@@ -4518,20 +4544,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group__12__Impl"
-    // InternalDasl.g:1305:1: rule__Zone__Group__12__Impl : ( '}' ) ;
+    // InternalDasl.g:1311:1: rule__Zone__Group__12__Impl : ( '}' ) ;
     public final void rule__Zone__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1309:1: ( ( '}' ) )
-            // InternalDasl.g:1310:1: ( '}' )
+            // InternalDasl.g:1315:1: ( ( '}' ) )
+            // InternalDasl.g:1316:1: ( '}' )
             {
-            // InternalDasl.g:1310:1: ( '}' )
-            // InternalDasl.g:1311:2: '}'
+            // InternalDasl.g:1316:1: ( '}' )
+            // InternalDasl.g:1317:2: '}'
             {
              before(grammarAccess.getZoneAccess().getRightCurlyBracketKeyword_12()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getZoneAccess().getRightCurlyBracketKeyword_12()); 
 
             }
@@ -4555,14 +4581,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group_11__0"
-    // InternalDasl.g:1321:1: rule__Zone__Group_11__0 : rule__Zone__Group_11__0__Impl rule__Zone__Group_11__1 ;
+    // InternalDasl.g:1327:1: rule__Zone__Group_11__0 : rule__Zone__Group_11__0__Impl rule__Zone__Group_11__1 ;
     public final void rule__Zone__Group_11__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1325:1: ( rule__Zone__Group_11__0__Impl rule__Zone__Group_11__1 )
-            // InternalDasl.g:1326:2: rule__Zone__Group_11__0__Impl rule__Zone__Group_11__1
+            // InternalDasl.g:1331:1: ( rule__Zone__Group_11__0__Impl rule__Zone__Group_11__1 )
+            // InternalDasl.g:1332:2: rule__Zone__Group_11__0__Impl rule__Zone__Group_11__1
             {
             pushFollow(FOLLOW_6);
             rule__Zone__Group_11__0__Impl();
@@ -4593,20 +4619,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group_11__0__Impl"
-    // InternalDasl.g:1333:1: rule__Zone__Group_11__0__Impl : ( 'controls' ) ;
+    // InternalDasl.g:1339:1: rule__Zone__Group_11__0__Impl : ( 'controls' ) ;
     public final void rule__Zone__Group_11__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1337:1: ( ( 'controls' ) )
-            // InternalDasl.g:1338:1: ( 'controls' )
+            // InternalDasl.g:1343:1: ( ( 'controls' ) )
+            // InternalDasl.g:1344:1: ( 'controls' )
             {
-            // InternalDasl.g:1338:1: ( 'controls' )
-            // InternalDasl.g:1339:2: 'controls'
+            // InternalDasl.g:1344:1: ( 'controls' )
+            // InternalDasl.g:1345:2: 'controls'
             {
              before(grammarAccess.getZoneAccess().getControlsKeyword_11_0()); 
-            match(input,75,FOLLOW_2); 
+            match(input,76,FOLLOW_2); 
              after(grammarAccess.getZoneAccess().getControlsKeyword_11_0()); 
 
             }
@@ -4630,14 +4656,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group_11__1"
-    // InternalDasl.g:1348:1: rule__Zone__Group_11__1 : rule__Zone__Group_11__1__Impl ;
+    // InternalDasl.g:1354:1: rule__Zone__Group_11__1 : rule__Zone__Group_11__1__Impl ;
     public final void rule__Zone__Group_11__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1352:1: ( rule__Zone__Group_11__1__Impl )
-            // InternalDasl.g:1353:2: rule__Zone__Group_11__1__Impl
+            // InternalDasl.g:1358:1: ( rule__Zone__Group_11__1__Impl )
+            // InternalDasl.g:1359:2: rule__Zone__Group_11__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Zone__Group_11__1__Impl();
@@ -4663,29 +4689,47 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__Group_11__1__Impl"
-    // InternalDasl.g:1359:1: rule__Zone__Group_11__1__Impl : ( ( rule__Zone__ControlsAssignment_11_1 ) ) ;
+    // InternalDasl.g:1365:1: rule__Zone__Group_11__1__Impl : ( ( rule__Zone__ControlsAssignment_11_1 )* ) ;
     public final void rule__Zone__Group_11__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1363:1: ( ( ( rule__Zone__ControlsAssignment_11_1 ) ) )
-            // InternalDasl.g:1364:1: ( ( rule__Zone__ControlsAssignment_11_1 ) )
+            // InternalDasl.g:1369:1: ( ( ( rule__Zone__ControlsAssignment_11_1 )* ) )
+            // InternalDasl.g:1370:1: ( ( rule__Zone__ControlsAssignment_11_1 )* )
             {
-            // InternalDasl.g:1364:1: ( ( rule__Zone__ControlsAssignment_11_1 ) )
-            // InternalDasl.g:1365:2: ( rule__Zone__ControlsAssignment_11_1 )
+            // InternalDasl.g:1370:1: ( ( rule__Zone__ControlsAssignment_11_1 )* )
+            // InternalDasl.g:1371:2: ( rule__Zone__ControlsAssignment_11_1 )*
             {
              before(grammarAccess.getZoneAccess().getControlsAssignment_11_1()); 
-            // InternalDasl.g:1366:2: ( rule__Zone__ControlsAssignment_11_1 )
-            // InternalDasl.g:1366:3: rule__Zone__ControlsAssignment_11_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Zone__ControlsAssignment_11_1();
+            // InternalDasl.g:1372:2: ( rule__Zone__ControlsAssignment_11_1 )*
+            loop13:
+            do {
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-            state._fsp--;
+                if ( (LA13_0==RULE_ID) ) {
+                    alt13=1;
+                }
 
 
-            }
+                switch (alt13) {
+            	case 1 :
+            	    // InternalDasl.g:1372:3: rule__Zone__ControlsAssignment_11_1
+            	    {
+            	    pushFollow(FOLLOW_13);
+            	    rule__Zone__ControlsAssignment_11_1();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop13;
+                }
+            } while (true);
 
              after(grammarAccess.getZoneAccess().getControlsAssignment_11_1()); 
 
@@ -4710,14 +4754,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__0"
-    // InternalDasl.g:1375:1: rule__Node__Group__0 : rule__Node__Group__0__Impl rule__Node__Group__1 ;
+    // InternalDasl.g:1381:1: rule__Node__Group__0 : rule__Node__Group__0__Impl rule__Node__Group__1 ;
     public final void rule__Node__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1379:1: ( rule__Node__Group__0__Impl rule__Node__Group__1 )
-            // InternalDasl.g:1380:2: rule__Node__Group__0__Impl rule__Node__Group__1
+            // InternalDasl.g:1385:1: ( rule__Node__Group__0__Impl rule__Node__Group__1 )
+            // InternalDasl.g:1386:2: rule__Node__Group__0__Impl rule__Node__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Node__Group__0__Impl();
@@ -4748,20 +4792,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__0__Impl"
-    // InternalDasl.g:1387:1: rule__Node__Group__0__Impl : ( 'node' ) ;
+    // InternalDasl.g:1393:1: rule__Node__Group__0__Impl : ( 'node' ) ;
     public final void rule__Node__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1391:1: ( ( 'node' ) )
-            // InternalDasl.g:1392:1: ( 'node' )
+            // InternalDasl.g:1397:1: ( ( 'node' ) )
+            // InternalDasl.g:1398:1: ( 'node' )
             {
-            // InternalDasl.g:1392:1: ( 'node' )
-            // InternalDasl.g:1393:2: 'node'
+            // InternalDasl.g:1398:1: ( 'node' )
+            // InternalDasl.g:1399:2: 'node'
             {
              before(grammarAccess.getNodeAccess().getNodeKeyword_0()); 
-            match(input,76,FOLLOW_2); 
+            match(input,77,FOLLOW_2); 
              after(grammarAccess.getNodeAccess().getNodeKeyword_0()); 
 
             }
@@ -4785,14 +4829,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__1"
-    // InternalDasl.g:1402:1: rule__Node__Group__1 : rule__Node__Group__1__Impl rule__Node__Group__2 ;
+    // InternalDasl.g:1408:1: rule__Node__Group__1 : rule__Node__Group__1__Impl rule__Node__Group__2 ;
     public final void rule__Node__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1406:1: ( rule__Node__Group__1__Impl rule__Node__Group__2 )
-            // InternalDasl.g:1407:2: rule__Node__Group__1__Impl rule__Node__Group__2
+            // InternalDasl.g:1412:1: ( rule__Node__Group__1__Impl rule__Node__Group__2 )
+            // InternalDasl.g:1413:2: rule__Node__Group__1__Impl rule__Node__Group__2
             {
             pushFollow(FOLLOW_8);
             rule__Node__Group__1__Impl();
@@ -4823,21 +4867,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__1__Impl"
-    // InternalDasl.g:1414:1: rule__Node__Group__1__Impl : ( ( rule__Node__NameAssignment_1 ) ) ;
+    // InternalDasl.g:1420:1: rule__Node__Group__1__Impl : ( ( rule__Node__NameAssignment_1 ) ) ;
     public final void rule__Node__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1418:1: ( ( ( rule__Node__NameAssignment_1 ) ) )
-            // InternalDasl.g:1419:1: ( ( rule__Node__NameAssignment_1 ) )
+            // InternalDasl.g:1424:1: ( ( ( rule__Node__NameAssignment_1 ) ) )
+            // InternalDasl.g:1425:1: ( ( rule__Node__NameAssignment_1 ) )
             {
-            // InternalDasl.g:1419:1: ( ( rule__Node__NameAssignment_1 ) )
-            // InternalDasl.g:1420:2: ( rule__Node__NameAssignment_1 )
+            // InternalDasl.g:1425:1: ( ( rule__Node__NameAssignment_1 ) )
+            // InternalDasl.g:1426:2: ( rule__Node__NameAssignment_1 )
             {
              before(grammarAccess.getNodeAccess().getNameAssignment_1()); 
-            // InternalDasl.g:1421:2: ( rule__Node__NameAssignment_1 )
-            // InternalDasl.g:1421:3: rule__Node__NameAssignment_1
+            // InternalDasl.g:1427:2: ( rule__Node__NameAssignment_1 )
+            // InternalDasl.g:1427:3: rule__Node__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Node__NameAssignment_1();
@@ -4870,14 +4914,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__2"
-    // InternalDasl.g:1429:1: rule__Node__Group__2 : rule__Node__Group__2__Impl rule__Node__Group__3 ;
+    // InternalDasl.g:1435:1: rule__Node__Group__2 : rule__Node__Group__2__Impl rule__Node__Group__3 ;
     public final void rule__Node__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1433:1: ( rule__Node__Group__2__Impl rule__Node__Group__3 )
-            // InternalDasl.g:1434:2: rule__Node__Group__2__Impl rule__Node__Group__3
+            // InternalDasl.g:1439:1: ( rule__Node__Group__2__Impl rule__Node__Group__3 )
+            // InternalDasl.g:1440:2: rule__Node__Group__2__Impl rule__Node__Group__3
             {
             pushFollow(FOLLOW_16);
             rule__Node__Group__2__Impl();
@@ -4908,20 +4952,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__2__Impl"
-    // InternalDasl.g:1441:1: rule__Node__Group__2__Impl : ( '{' ) ;
+    // InternalDasl.g:1447:1: rule__Node__Group__2__Impl : ( '{' ) ;
     public final void rule__Node__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1445:1: ( ( '{' ) )
-            // InternalDasl.g:1446:1: ( '{' )
+            // InternalDasl.g:1451:1: ( ( '{' ) )
+            // InternalDasl.g:1452:1: ( '{' )
             {
-            // InternalDasl.g:1446:1: ( '{' )
-            // InternalDasl.g:1447:2: '{'
+            // InternalDasl.g:1452:1: ( '{' )
+            // InternalDasl.g:1453:2: '{'
             {
              before(grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,69,FOLLOW_2); 
+            match(input,70,FOLLOW_2); 
              after(grammarAccess.getNodeAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -4945,14 +4989,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__3"
-    // InternalDasl.g:1456:1: rule__Node__Group__3 : rule__Node__Group__3__Impl rule__Node__Group__4 ;
+    // InternalDasl.g:1462:1: rule__Node__Group__3 : rule__Node__Group__3__Impl rule__Node__Group__4 ;
     public final void rule__Node__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1460:1: ( rule__Node__Group__3__Impl rule__Node__Group__4 )
-            // InternalDasl.g:1461:2: rule__Node__Group__3__Impl rule__Node__Group__4
+            // InternalDasl.g:1466:1: ( rule__Node__Group__3__Impl rule__Node__Group__4 )
+            // InternalDasl.g:1467:2: rule__Node__Group__3__Impl rule__Node__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__Node__Group__3__Impl();
@@ -4983,20 +5027,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__3__Impl"
-    // InternalDasl.g:1468:1: rule__Node__Group__3__Impl : ( 'ref' ) ;
+    // InternalDasl.g:1474:1: rule__Node__Group__3__Impl : ( 'ref' ) ;
     public final void rule__Node__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1472:1: ( ( 'ref' ) )
-            // InternalDasl.g:1473:1: ( 'ref' )
+            // InternalDasl.g:1478:1: ( ( 'ref' ) )
+            // InternalDasl.g:1479:1: ( 'ref' )
             {
-            // InternalDasl.g:1473:1: ( 'ref' )
-            // InternalDasl.g:1474:2: 'ref'
+            // InternalDasl.g:1479:1: ( 'ref' )
+            // InternalDasl.g:1480:2: 'ref'
             {
              before(grammarAccess.getNodeAccess().getRefKeyword_3()); 
-            match(input,77,FOLLOW_2); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getNodeAccess().getRefKeyword_3()); 
 
             }
@@ -5020,14 +5064,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__4"
-    // InternalDasl.g:1483:1: rule__Node__Group__4 : rule__Node__Group__4__Impl rule__Node__Group__5 ;
+    // InternalDasl.g:1489:1: rule__Node__Group__4 : rule__Node__Group__4__Impl rule__Node__Group__5 ;
     public final void rule__Node__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1487:1: ( rule__Node__Group__4__Impl rule__Node__Group__5 )
-            // InternalDasl.g:1488:2: rule__Node__Group__4__Impl rule__Node__Group__5
+            // InternalDasl.g:1493:1: ( rule__Node__Group__4__Impl rule__Node__Group__5 )
+            // InternalDasl.g:1494:2: rule__Node__Group__4__Impl rule__Node__Group__5
             {
             pushFollow(FOLLOW_17);
             rule__Node__Group__4__Impl();
@@ -5058,21 +5102,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__4__Impl"
-    // InternalDasl.g:1495:1: rule__Node__Group__4__Impl : ( ( rule__Node__RefAssignment_4 ) ) ;
+    // InternalDasl.g:1501:1: rule__Node__Group__4__Impl : ( ( rule__Node__RefAssignment_4 ) ) ;
     public final void rule__Node__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1499:1: ( ( ( rule__Node__RefAssignment_4 ) ) )
-            // InternalDasl.g:1500:1: ( ( rule__Node__RefAssignment_4 ) )
+            // InternalDasl.g:1505:1: ( ( ( rule__Node__RefAssignment_4 ) ) )
+            // InternalDasl.g:1506:1: ( ( rule__Node__RefAssignment_4 ) )
             {
-            // InternalDasl.g:1500:1: ( ( rule__Node__RefAssignment_4 ) )
-            // InternalDasl.g:1501:2: ( rule__Node__RefAssignment_4 )
+            // InternalDasl.g:1506:1: ( ( rule__Node__RefAssignment_4 ) )
+            // InternalDasl.g:1507:2: ( rule__Node__RefAssignment_4 )
             {
              before(grammarAccess.getNodeAccess().getRefAssignment_4()); 
-            // InternalDasl.g:1502:2: ( rule__Node__RefAssignment_4 )
-            // InternalDasl.g:1502:3: rule__Node__RefAssignment_4
+            // InternalDasl.g:1508:2: ( rule__Node__RefAssignment_4 )
+            // InternalDasl.g:1508:3: rule__Node__RefAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Node__RefAssignment_4();
@@ -5105,14 +5149,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__5"
-    // InternalDasl.g:1510:1: rule__Node__Group__5 : rule__Node__Group__5__Impl rule__Node__Group__6 ;
+    // InternalDasl.g:1516:1: rule__Node__Group__5 : rule__Node__Group__5__Impl rule__Node__Group__6 ;
     public final void rule__Node__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1514:1: ( rule__Node__Group__5__Impl rule__Node__Group__6 )
-            // InternalDasl.g:1515:2: rule__Node__Group__5__Impl rule__Node__Group__6
+            // InternalDasl.g:1520:1: ( rule__Node__Group__5__Impl rule__Node__Group__6 )
+            // InternalDasl.g:1521:2: rule__Node__Group__5__Impl rule__Node__Group__6
             {
             pushFollow(FOLLOW_7);
             rule__Node__Group__5__Impl();
@@ -5143,20 +5187,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__5__Impl"
-    // InternalDasl.g:1522:1: rule__Node__Group__5__Impl : ( 'host' ) ;
+    // InternalDasl.g:1528:1: rule__Node__Group__5__Impl : ( 'host' ) ;
     public final void rule__Node__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1526:1: ( ( 'host' ) )
-            // InternalDasl.g:1527:1: ( 'host' )
+            // InternalDasl.g:1532:1: ( ( 'host' ) )
+            // InternalDasl.g:1533:1: ( 'host' )
             {
-            // InternalDasl.g:1527:1: ( 'host' )
-            // InternalDasl.g:1528:2: 'host'
+            // InternalDasl.g:1533:1: ( 'host' )
+            // InternalDasl.g:1534:2: 'host'
             {
              before(grammarAccess.getNodeAccess().getHostKeyword_5()); 
-            match(input,78,FOLLOW_2); 
+            match(input,79,FOLLOW_2); 
              after(grammarAccess.getNodeAccess().getHostKeyword_5()); 
 
             }
@@ -5180,14 +5224,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__6"
-    // InternalDasl.g:1537:1: rule__Node__Group__6 : rule__Node__Group__6__Impl rule__Node__Group__7 ;
+    // InternalDasl.g:1543:1: rule__Node__Group__6 : rule__Node__Group__6__Impl rule__Node__Group__7 ;
     public final void rule__Node__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1541:1: ( rule__Node__Group__6__Impl rule__Node__Group__7 )
-            // InternalDasl.g:1542:2: rule__Node__Group__6__Impl rule__Node__Group__7
+            // InternalDasl.g:1547:1: ( rule__Node__Group__6__Impl rule__Node__Group__7 )
+            // InternalDasl.g:1548:2: rule__Node__Group__6__Impl rule__Node__Group__7
             {
             pushFollow(FOLLOW_18);
             rule__Node__Group__6__Impl();
@@ -5218,21 +5262,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__6__Impl"
-    // InternalDasl.g:1549:1: rule__Node__Group__6__Impl : ( ( rule__Node__HostAssignment_6 ) ) ;
+    // InternalDasl.g:1555:1: rule__Node__Group__6__Impl : ( ( rule__Node__HostAssignment_6 ) ) ;
     public final void rule__Node__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1553:1: ( ( ( rule__Node__HostAssignment_6 ) ) )
-            // InternalDasl.g:1554:1: ( ( rule__Node__HostAssignment_6 ) )
+            // InternalDasl.g:1559:1: ( ( ( rule__Node__HostAssignment_6 ) ) )
+            // InternalDasl.g:1560:1: ( ( rule__Node__HostAssignment_6 ) )
             {
-            // InternalDasl.g:1554:1: ( ( rule__Node__HostAssignment_6 ) )
-            // InternalDasl.g:1555:2: ( rule__Node__HostAssignment_6 )
+            // InternalDasl.g:1560:1: ( ( rule__Node__HostAssignment_6 ) )
+            // InternalDasl.g:1561:2: ( rule__Node__HostAssignment_6 )
             {
              before(grammarAccess.getNodeAccess().getHostAssignment_6()); 
-            // InternalDasl.g:1556:2: ( rule__Node__HostAssignment_6 )
-            // InternalDasl.g:1556:3: rule__Node__HostAssignment_6
+            // InternalDasl.g:1562:2: ( rule__Node__HostAssignment_6 )
+            // InternalDasl.g:1562:3: rule__Node__HostAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__Node__HostAssignment_6();
@@ -5265,14 +5309,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__7"
-    // InternalDasl.g:1564:1: rule__Node__Group__7 : rule__Node__Group__7__Impl rule__Node__Group__8 ;
+    // InternalDasl.g:1570:1: rule__Node__Group__7 : rule__Node__Group__7__Impl rule__Node__Group__8 ;
     public final void rule__Node__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1568:1: ( rule__Node__Group__7__Impl rule__Node__Group__8 )
-            // InternalDasl.g:1569:2: rule__Node__Group__7__Impl rule__Node__Group__8
+            // InternalDasl.g:1574:1: ( rule__Node__Group__7__Impl rule__Node__Group__8 )
+            // InternalDasl.g:1575:2: rule__Node__Group__7__Impl rule__Node__Group__8
             {
             pushFollow(FOLLOW_7);
             rule__Node__Group__7__Impl();
@@ -5303,20 +5347,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__7__Impl"
-    // InternalDasl.g:1576:1: rule__Node__Group__7__Impl : ( 'os' ) ;
+    // InternalDasl.g:1582:1: rule__Node__Group__7__Impl : ( 'os' ) ;
     public final void rule__Node__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1580:1: ( ( 'os' ) )
-            // InternalDasl.g:1581:1: ( 'os' )
+            // InternalDasl.g:1586:1: ( ( 'os' ) )
+            // InternalDasl.g:1587:1: ( 'os' )
             {
-            // InternalDasl.g:1581:1: ( 'os' )
-            // InternalDasl.g:1582:2: 'os'
+            // InternalDasl.g:1587:1: ( 'os' )
+            // InternalDasl.g:1588:2: 'os'
             {
              before(grammarAccess.getNodeAccess().getOsKeyword_7()); 
-            match(input,79,FOLLOW_2); 
+            match(input,80,FOLLOW_2); 
              after(grammarAccess.getNodeAccess().getOsKeyword_7()); 
 
             }
@@ -5340,14 +5384,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__8"
-    // InternalDasl.g:1591:1: rule__Node__Group__8 : rule__Node__Group__8__Impl rule__Node__Group__9 ;
+    // InternalDasl.g:1597:1: rule__Node__Group__8 : rule__Node__Group__8__Impl rule__Node__Group__9 ;
     public final void rule__Node__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1595:1: ( rule__Node__Group__8__Impl rule__Node__Group__9 )
-            // InternalDasl.g:1596:2: rule__Node__Group__8__Impl rule__Node__Group__9
+            // InternalDasl.g:1601:1: ( rule__Node__Group__8__Impl rule__Node__Group__9 )
+            // InternalDasl.g:1602:2: rule__Node__Group__8__Impl rule__Node__Group__9
             {
             pushFollow(FOLLOW_19);
             rule__Node__Group__8__Impl();
@@ -5378,21 +5422,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__8__Impl"
-    // InternalDasl.g:1603:1: rule__Node__Group__8__Impl : ( ( rule__Node__OsAssignment_8 ) ) ;
+    // InternalDasl.g:1609:1: rule__Node__Group__8__Impl : ( ( rule__Node__OsAssignment_8 ) ) ;
     public final void rule__Node__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1607:1: ( ( ( rule__Node__OsAssignment_8 ) ) )
-            // InternalDasl.g:1608:1: ( ( rule__Node__OsAssignment_8 ) )
+            // InternalDasl.g:1613:1: ( ( ( rule__Node__OsAssignment_8 ) ) )
+            // InternalDasl.g:1614:1: ( ( rule__Node__OsAssignment_8 ) )
             {
-            // InternalDasl.g:1608:1: ( ( rule__Node__OsAssignment_8 ) )
-            // InternalDasl.g:1609:2: ( rule__Node__OsAssignment_8 )
+            // InternalDasl.g:1614:1: ( ( rule__Node__OsAssignment_8 ) )
+            // InternalDasl.g:1615:2: ( rule__Node__OsAssignment_8 )
             {
              before(grammarAccess.getNodeAccess().getOsAssignment_8()); 
-            // InternalDasl.g:1610:2: ( rule__Node__OsAssignment_8 )
-            // InternalDasl.g:1610:3: rule__Node__OsAssignment_8
+            // InternalDasl.g:1616:2: ( rule__Node__OsAssignment_8 )
+            // InternalDasl.g:1616:3: rule__Node__OsAssignment_8
             {
             pushFollow(FOLLOW_2);
             rule__Node__OsAssignment_8();
@@ -5425,14 +5469,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__9"
-    // InternalDasl.g:1618:1: rule__Node__Group__9 : rule__Node__Group__9__Impl rule__Node__Group__10 ;
+    // InternalDasl.g:1624:1: rule__Node__Group__9 : rule__Node__Group__9__Impl rule__Node__Group__10 ;
     public final void rule__Node__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1622:1: ( rule__Node__Group__9__Impl rule__Node__Group__10 )
-            // InternalDasl.g:1623:2: rule__Node__Group__9__Impl rule__Node__Group__10
+            // InternalDasl.g:1628:1: ( rule__Node__Group__9__Impl rule__Node__Group__10 )
+            // InternalDasl.g:1629:2: rule__Node__Group__9__Impl rule__Node__Group__10
             {
             pushFollow(FOLLOW_20);
             rule__Node__Group__9__Impl();
@@ -5463,20 +5507,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__9__Impl"
-    // InternalDasl.g:1630:1: rule__Node__Group__9__Impl : ( 'type' ) ;
+    // InternalDasl.g:1636:1: rule__Node__Group__9__Impl : ( 'type' ) ;
     public final void rule__Node__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1634:1: ( ( 'type' ) )
-            // InternalDasl.g:1635:1: ( 'type' )
+            // InternalDasl.g:1640:1: ( ( 'type' ) )
+            // InternalDasl.g:1641:1: ( 'type' )
             {
-            // InternalDasl.g:1635:1: ( 'type' )
-            // InternalDasl.g:1636:2: 'type'
+            // InternalDasl.g:1641:1: ( 'type' )
+            // InternalDasl.g:1642:2: 'type'
             {
              before(grammarAccess.getNodeAccess().getTypeKeyword_9()); 
-            match(input,80,FOLLOW_2); 
+            match(input,81,FOLLOW_2); 
              after(grammarAccess.getNodeAccess().getTypeKeyword_9()); 
 
             }
@@ -5500,14 +5544,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__10"
-    // InternalDasl.g:1645:1: rule__Node__Group__10 : rule__Node__Group__10__Impl rule__Node__Group__11 ;
+    // InternalDasl.g:1651:1: rule__Node__Group__10 : rule__Node__Group__10__Impl rule__Node__Group__11 ;
     public final void rule__Node__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1649:1: ( rule__Node__Group__10__Impl rule__Node__Group__11 )
-            // InternalDasl.g:1650:2: rule__Node__Group__10__Impl rule__Node__Group__11
+            // InternalDasl.g:1655:1: ( rule__Node__Group__10__Impl rule__Node__Group__11 )
+            // InternalDasl.g:1656:2: rule__Node__Group__10__Impl rule__Node__Group__11
             {
             pushFollow(FOLLOW_21);
             rule__Node__Group__10__Impl();
@@ -5538,21 +5582,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__10__Impl"
-    // InternalDasl.g:1657:1: rule__Node__Group__10__Impl : ( ( rule__Node__ValueAssignment_10 ) ) ;
+    // InternalDasl.g:1663:1: rule__Node__Group__10__Impl : ( ( rule__Node__ValueAssignment_10 ) ) ;
     public final void rule__Node__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1661:1: ( ( ( rule__Node__ValueAssignment_10 ) ) )
-            // InternalDasl.g:1662:1: ( ( rule__Node__ValueAssignment_10 ) )
+            // InternalDasl.g:1667:1: ( ( ( rule__Node__ValueAssignment_10 ) ) )
+            // InternalDasl.g:1668:1: ( ( rule__Node__ValueAssignment_10 ) )
             {
-            // InternalDasl.g:1662:1: ( ( rule__Node__ValueAssignment_10 ) )
-            // InternalDasl.g:1663:2: ( rule__Node__ValueAssignment_10 )
+            // InternalDasl.g:1668:1: ( ( rule__Node__ValueAssignment_10 ) )
+            // InternalDasl.g:1669:2: ( rule__Node__ValueAssignment_10 )
             {
              before(grammarAccess.getNodeAccess().getValueAssignment_10()); 
-            // InternalDasl.g:1664:2: ( rule__Node__ValueAssignment_10 )
-            // InternalDasl.g:1664:3: rule__Node__ValueAssignment_10
+            // InternalDasl.g:1670:2: ( rule__Node__ValueAssignment_10 )
+            // InternalDasl.g:1670:3: rule__Node__ValueAssignment_10
             {
             pushFollow(FOLLOW_2);
             rule__Node__ValueAssignment_10();
@@ -5585,16 +5629,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__11"
-    // InternalDasl.g:1672:1: rule__Node__Group__11 : rule__Node__Group__11__Impl rule__Node__Group__12 ;
+    // InternalDasl.g:1678:1: rule__Node__Group__11 : rule__Node__Group__11__Impl rule__Node__Group__12 ;
     public final void rule__Node__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1676:1: ( rule__Node__Group__11__Impl rule__Node__Group__12 )
-            // InternalDasl.g:1677:2: rule__Node__Group__11__Impl rule__Node__Group__12
+            // InternalDasl.g:1682:1: ( rule__Node__Group__11__Impl rule__Node__Group__12 )
+            // InternalDasl.g:1683:2: rule__Node__Group__11__Impl rule__Node__Group__12
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_15);
             rule__Node__Group__11__Impl();
 
             state._fsp--;
@@ -5623,20 +5667,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__11__Impl"
-    // InternalDasl.g:1684:1: rule__Node__Group__11__Impl : ( 'components' ) ;
+    // InternalDasl.g:1690:1: rule__Node__Group__11__Impl : ( 'components' ) ;
     public final void rule__Node__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1688:1: ( ( 'components' ) )
-            // InternalDasl.g:1689:1: ( 'components' )
+            // InternalDasl.g:1694:1: ( ( 'components' ) )
+            // InternalDasl.g:1695:1: ( 'components' )
             {
-            // InternalDasl.g:1689:1: ( 'components' )
-            // InternalDasl.g:1690:2: 'components'
+            // InternalDasl.g:1695:1: ( 'components' )
+            // InternalDasl.g:1696:2: 'components'
             {
              before(grammarAccess.getNodeAccess().getComponentsKeyword_11()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getNodeAccess().getComponentsKeyword_11()); 
 
             }
@@ -5660,16 +5704,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__12"
-    // InternalDasl.g:1699:1: rule__Node__Group__12 : rule__Node__Group__12__Impl rule__Node__Group__13 ;
+    // InternalDasl.g:1705:1: rule__Node__Group__12 : rule__Node__Group__12__Impl rule__Node__Group__13 ;
     public final void rule__Node__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1703:1: ( rule__Node__Group__12__Impl rule__Node__Group__13 )
-            // InternalDasl.g:1704:2: rule__Node__Group__12__Impl rule__Node__Group__13
+            // InternalDasl.g:1709:1: ( rule__Node__Group__12__Impl rule__Node__Group__13 )
+            // InternalDasl.g:1710:2: rule__Node__Group__12__Impl rule__Node__Group__13
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_15);
             rule__Node__Group__12__Impl();
 
             state._fsp--;
@@ -5698,33 +5742,33 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__12__Impl"
-    // InternalDasl.g:1711:1: rule__Node__Group__12__Impl : ( ( rule__Node__ComponentsAssignment_12 )* ) ;
+    // InternalDasl.g:1717:1: rule__Node__Group__12__Impl : ( ( rule__Node__ComponentsAssignment_12 )* ) ;
     public final void rule__Node__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1715:1: ( ( ( rule__Node__ComponentsAssignment_12 )* ) )
-            // InternalDasl.g:1716:1: ( ( rule__Node__ComponentsAssignment_12 )* )
+            // InternalDasl.g:1721:1: ( ( ( rule__Node__ComponentsAssignment_12 )* ) )
+            // InternalDasl.g:1722:1: ( ( rule__Node__ComponentsAssignment_12 )* )
             {
-            // InternalDasl.g:1716:1: ( ( rule__Node__ComponentsAssignment_12 )* )
-            // InternalDasl.g:1717:2: ( rule__Node__ComponentsAssignment_12 )*
+            // InternalDasl.g:1722:1: ( ( rule__Node__ComponentsAssignment_12 )* )
+            // InternalDasl.g:1723:2: ( rule__Node__ComponentsAssignment_12 )*
             {
              before(grammarAccess.getNodeAccess().getComponentsAssignment_12()); 
-            // InternalDasl.g:1718:2: ( rule__Node__ComponentsAssignment_12 )*
-            loop13:
+            // InternalDasl.g:1724:2: ( rule__Node__ComponentsAssignment_12 )*
+            loop14:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( (LA13_0==RULE_ID) ) {
-                    alt13=1;
+                if ( (LA14_0==RULE_ID) ) {
+                    alt14=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt14) {
             	case 1 :
-            	    // InternalDasl.g:1718:3: rule__Node__ComponentsAssignment_12
+            	    // InternalDasl.g:1724:3: rule__Node__ComponentsAssignment_12
             	    {
             	    pushFollow(FOLLOW_13);
             	    rule__Node__ComponentsAssignment_12();
@@ -5736,7 +5780,7 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop14;
                 }
             } while (true);
 
@@ -5763,17 +5807,22 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__13"
-    // InternalDasl.g:1726:1: rule__Node__Group__13 : rule__Node__Group__13__Impl ;
+    // InternalDasl.g:1732:1: rule__Node__Group__13 : rule__Node__Group__13__Impl rule__Node__Group__14 ;
     public final void rule__Node__Group__13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1730:1: ( rule__Node__Group__13__Impl )
-            // InternalDasl.g:1731:2: rule__Node__Group__13__Impl
+            // InternalDasl.g:1736:1: ( rule__Node__Group__13__Impl rule__Node__Group__14 )
+            // InternalDasl.g:1737:2: rule__Node__Group__13__Impl rule__Node__Group__14
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_15);
             rule__Node__Group__13__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Node__Group__14();
 
             state._fsp--;
 
@@ -5796,21 +5845,42 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__Group__13__Impl"
-    // InternalDasl.g:1737:1: rule__Node__Group__13__Impl : ( '}' ) ;
+    // InternalDasl.g:1744:1: rule__Node__Group__13__Impl : ( ( rule__Node__Group_13__0 )? ) ;
     public final void rule__Node__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1741:1: ( ( '}' ) )
-            // InternalDasl.g:1742:1: ( '}' )
+            // InternalDasl.g:1748:1: ( ( ( rule__Node__Group_13__0 )? ) )
+            // InternalDasl.g:1749:1: ( ( rule__Node__Group_13__0 )? )
             {
-            // InternalDasl.g:1742:1: ( '}' )
-            // InternalDasl.g:1743:2: '}'
+            // InternalDasl.g:1749:1: ( ( rule__Node__Group_13__0 )? )
+            // InternalDasl.g:1750:2: ( rule__Node__Group_13__0 )?
             {
-             before(grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_13()); 
-            match(input,74,FOLLOW_2); 
-             after(grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_13()); 
+             before(grammarAccess.getNodeAccess().getGroup_13()); 
+            // InternalDasl.g:1751:2: ( rule__Node__Group_13__0 )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
+
+            if ( (LA15_0==76) ) {
+                alt15=1;
+            }
+            switch (alt15) {
+                case 1 :
+                    // InternalDasl.g:1751:3: rule__Node__Group_13__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Node__Group_13__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getNodeAccess().getGroup_13()); 
 
             }
 
@@ -5832,15 +5902,258 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Node__Group__13__Impl"
 
 
+    // $ANTLR start "rule__Node__Group__14"
+    // InternalDasl.g:1759:1: rule__Node__Group__14 : rule__Node__Group__14__Impl ;
+    public final void rule__Node__Group__14() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:1763:1: ( rule__Node__Group__14__Impl )
+            // InternalDasl.g:1764:2: rule__Node__Group__14__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Node__Group__14__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Node__Group__14"
+
+
+    // $ANTLR start "rule__Node__Group__14__Impl"
+    // InternalDasl.g:1770:1: rule__Node__Group__14__Impl : ( '}' ) ;
+    public final void rule__Node__Group__14__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:1774:1: ( ( '}' ) )
+            // InternalDasl.g:1775:1: ( '}' )
+            {
+            // InternalDasl.g:1775:1: ( '}' )
+            // InternalDasl.g:1776:2: '}'
+            {
+             before(grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_14()); 
+            match(input,75,FOLLOW_2); 
+             after(grammarAccess.getNodeAccess().getRightCurlyBracketKeyword_14()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Node__Group__14__Impl"
+
+
+    // $ANTLR start "rule__Node__Group_13__0"
+    // InternalDasl.g:1786:1: rule__Node__Group_13__0 : rule__Node__Group_13__0__Impl rule__Node__Group_13__1 ;
+    public final void rule__Node__Group_13__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:1790:1: ( rule__Node__Group_13__0__Impl rule__Node__Group_13__1 )
+            // InternalDasl.g:1791:2: rule__Node__Group_13__0__Impl rule__Node__Group_13__1
+            {
+            pushFollow(FOLLOW_6);
+            rule__Node__Group_13__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Node__Group_13__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Node__Group_13__0"
+
+
+    // $ANTLR start "rule__Node__Group_13__0__Impl"
+    // InternalDasl.g:1798:1: rule__Node__Group_13__0__Impl : ( 'controls' ) ;
+    public final void rule__Node__Group_13__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:1802:1: ( ( 'controls' ) )
+            // InternalDasl.g:1803:1: ( 'controls' )
+            {
+            // InternalDasl.g:1803:1: ( 'controls' )
+            // InternalDasl.g:1804:2: 'controls'
+            {
+             before(grammarAccess.getNodeAccess().getControlsKeyword_13_0()); 
+            match(input,76,FOLLOW_2); 
+             after(grammarAccess.getNodeAccess().getControlsKeyword_13_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Node__Group_13__0__Impl"
+
+
+    // $ANTLR start "rule__Node__Group_13__1"
+    // InternalDasl.g:1813:1: rule__Node__Group_13__1 : rule__Node__Group_13__1__Impl ;
+    public final void rule__Node__Group_13__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:1817:1: ( rule__Node__Group_13__1__Impl )
+            // InternalDasl.g:1818:2: rule__Node__Group_13__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Node__Group_13__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Node__Group_13__1"
+
+
+    // $ANTLR start "rule__Node__Group_13__1__Impl"
+    // InternalDasl.g:1824:1: rule__Node__Group_13__1__Impl : ( ( rule__Node__ControlsAssignment_13_1 )* ) ;
+    public final void rule__Node__Group_13__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:1828:1: ( ( ( rule__Node__ControlsAssignment_13_1 )* ) )
+            // InternalDasl.g:1829:1: ( ( rule__Node__ControlsAssignment_13_1 )* )
+            {
+            // InternalDasl.g:1829:1: ( ( rule__Node__ControlsAssignment_13_1 )* )
+            // InternalDasl.g:1830:2: ( rule__Node__ControlsAssignment_13_1 )*
+            {
+             before(grammarAccess.getNodeAccess().getControlsAssignment_13_1()); 
+            // InternalDasl.g:1831:2: ( rule__Node__ControlsAssignment_13_1 )*
+            loop16:
+            do {
+                int alt16=2;
+                int LA16_0 = input.LA(1);
+
+                if ( (LA16_0==RULE_ID) ) {
+                    alt16=1;
+                }
+
+
+                switch (alt16) {
+            	case 1 :
+            	    // InternalDasl.g:1831:3: rule__Node__ControlsAssignment_13_1
+            	    {
+            	    pushFollow(FOLLOW_13);
+            	    rule__Node__ControlsAssignment_13_1();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop16;
+                }
+            } while (true);
+
+             after(grammarAccess.getNodeAccess().getControlsAssignment_13_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Node__Group_13__1__Impl"
+
+
     // $ANTLR start "rule__Component__Group__0"
-    // InternalDasl.g:1753:1: rule__Component__Group__0 : rule__Component__Group__0__Impl rule__Component__Group__1 ;
+    // InternalDasl.g:1840:1: rule__Component__Group__0 : rule__Component__Group__0__Impl rule__Component__Group__1 ;
     public final void rule__Component__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1757:1: ( rule__Component__Group__0__Impl rule__Component__Group__1 )
-            // InternalDasl.g:1758:2: rule__Component__Group__0__Impl rule__Component__Group__1
+            // InternalDasl.g:1844:1: ( rule__Component__Group__0__Impl rule__Component__Group__1 )
+            // InternalDasl.g:1845:2: rule__Component__Group__0__Impl rule__Component__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Component__Group__0__Impl();
@@ -5871,20 +6184,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__0__Impl"
-    // InternalDasl.g:1765:1: rule__Component__Group__0__Impl : ( 'component' ) ;
+    // InternalDasl.g:1852:1: rule__Component__Group__0__Impl : ( 'component' ) ;
     public final void rule__Component__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1769:1: ( ( 'component' ) )
-            // InternalDasl.g:1770:1: ( 'component' )
+            // InternalDasl.g:1856:1: ( ( 'component' ) )
+            // InternalDasl.g:1857:1: ( 'component' )
             {
-            // InternalDasl.g:1770:1: ( 'component' )
-            // InternalDasl.g:1771:2: 'component'
+            // InternalDasl.g:1857:1: ( 'component' )
+            // InternalDasl.g:1858:2: 'component'
             {
              before(grammarAccess.getComponentAccess().getComponentKeyword_0()); 
-            match(input,82,FOLLOW_2); 
+            match(input,83,FOLLOW_2); 
              after(grammarAccess.getComponentAccess().getComponentKeyword_0()); 
 
             }
@@ -5908,14 +6221,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__1"
-    // InternalDasl.g:1780:1: rule__Component__Group__1 : rule__Component__Group__1__Impl rule__Component__Group__2 ;
+    // InternalDasl.g:1867:1: rule__Component__Group__1 : rule__Component__Group__1__Impl rule__Component__Group__2 ;
     public final void rule__Component__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1784:1: ( rule__Component__Group__1__Impl rule__Component__Group__2 )
-            // InternalDasl.g:1785:2: rule__Component__Group__1__Impl rule__Component__Group__2
+            // InternalDasl.g:1871:1: ( rule__Component__Group__1__Impl rule__Component__Group__2 )
+            // InternalDasl.g:1872:2: rule__Component__Group__1__Impl rule__Component__Group__2
             {
             pushFollow(FOLLOW_8);
             rule__Component__Group__1__Impl();
@@ -5946,21 +6259,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__1__Impl"
-    // InternalDasl.g:1792:1: rule__Component__Group__1__Impl : ( ( rule__Component__NameAssignment_1 ) ) ;
+    // InternalDasl.g:1879:1: rule__Component__Group__1__Impl : ( ( rule__Component__NameAssignment_1 ) ) ;
     public final void rule__Component__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1796:1: ( ( ( rule__Component__NameAssignment_1 ) ) )
-            // InternalDasl.g:1797:1: ( ( rule__Component__NameAssignment_1 ) )
+            // InternalDasl.g:1883:1: ( ( ( rule__Component__NameAssignment_1 ) ) )
+            // InternalDasl.g:1884:1: ( ( rule__Component__NameAssignment_1 ) )
             {
-            // InternalDasl.g:1797:1: ( ( rule__Component__NameAssignment_1 ) )
-            // InternalDasl.g:1798:2: ( rule__Component__NameAssignment_1 )
+            // InternalDasl.g:1884:1: ( ( rule__Component__NameAssignment_1 ) )
+            // InternalDasl.g:1885:2: ( rule__Component__NameAssignment_1 )
             {
              before(grammarAccess.getComponentAccess().getNameAssignment_1()); 
-            // InternalDasl.g:1799:2: ( rule__Component__NameAssignment_1 )
-            // InternalDasl.g:1799:3: rule__Component__NameAssignment_1
+            // InternalDasl.g:1886:2: ( rule__Component__NameAssignment_1 )
+            // InternalDasl.g:1886:3: rule__Component__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Component__NameAssignment_1();
@@ -5993,14 +6306,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__2"
-    // InternalDasl.g:1807:1: rule__Component__Group__2 : rule__Component__Group__2__Impl rule__Component__Group__3 ;
+    // InternalDasl.g:1894:1: rule__Component__Group__2 : rule__Component__Group__2__Impl rule__Component__Group__3 ;
     public final void rule__Component__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1811:1: ( rule__Component__Group__2__Impl rule__Component__Group__3 )
-            // InternalDasl.g:1812:2: rule__Component__Group__2__Impl rule__Component__Group__3
+            // InternalDasl.g:1898:1: ( rule__Component__Group__2__Impl rule__Component__Group__3 )
+            // InternalDasl.g:1899:2: rule__Component__Group__2__Impl rule__Component__Group__3
             {
             pushFollow(FOLLOW_16);
             rule__Component__Group__2__Impl();
@@ -6031,20 +6344,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__2__Impl"
-    // InternalDasl.g:1819:1: rule__Component__Group__2__Impl : ( '{' ) ;
+    // InternalDasl.g:1906:1: rule__Component__Group__2__Impl : ( '{' ) ;
     public final void rule__Component__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1823:1: ( ( '{' ) )
-            // InternalDasl.g:1824:1: ( '{' )
+            // InternalDasl.g:1910:1: ( ( '{' ) )
+            // InternalDasl.g:1911:1: ( '{' )
             {
-            // InternalDasl.g:1824:1: ( '{' )
-            // InternalDasl.g:1825:2: '{'
+            // InternalDasl.g:1911:1: ( '{' )
+            // InternalDasl.g:1912:2: '{'
             {
              before(grammarAccess.getComponentAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,69,FOLLOW_2); 
+            match(input,70,FOLLOW_2); 
              after(grammarAccess.getComponentAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -6068,14 +6381,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__3"
-    // InternalDasl.g:1834:1: rule__Component__Group__3 : rule__Component__Group__3__Impl rule__Component__Group__4 ;
+    // InternalDasl.g:1921:1: rule__Component__Group__3 : rule__Component__Group__3__Impl rule__Component__Group__4 ;
     public final void rule__Component__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1838:1: ( rule__Component__Group__3__Impl rule__Component__Group__4 )
-            // InternalDasl.g:1839:2: rule__Component__Group__3__Impl rule__Component__Group__4
+            // InternalDasl.g:1925:1: ( rule__Component__Group__3__Impl rule__Component__Group__4 )
+            // InternalDasl.g:1926:2: rule__Component__Group__3__Impl rule__Component__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__Component__Group__3__Impl();
@@ -6106,20 +6419,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__3__Impl"
-    // InternalDasl.g:1846:1: rule__Component__Group__3__Impl : ( 'ref' ) ;
+    // InternalDasl.g:1933:1: rule__Component__Group__3__Impl : ( 'ref' ) ;
     public final void rule__Component__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1850:1: ( ( 'ref' ) )
-            // InternalDasl.g:1851:1: ( 'ref' )
+            // InternalDasl.g:1937:1: ( ( 'ref' ) )
+            // InternalDasl.g:1938:1: ( 'ref' )
             {
-            // InternalDasl.g:1851:1: ( 'ref' )
-            // InternalDasl.g:1852:2: 'ref'
+            // InternalDasl.g:1938:1: ( 'ref' )
+            // InternalDasl.g:1939:2: 'ref'
             {
              before(grammarAccess.getComponentAccess().getRefKeyword_3()); 
-            match(input,77,FOLLOW_2); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getComponentAccess().getRefKeyword_3()); 
 
             }
@@ -6143,16 +6456,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__4"
-    // InternalDasl.g:1861:1: rule__Component__Group__4 : rule__Component__Group__4__Impl rule__Component__Group__5 ;
+    // InternalDasl.g:1948:1: rule__Component__Group__4 : rule__Component__Group__4__Impl rule__Component__Group__5 ;
     public final void rule__Component__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1865:1: ( rule__Component__Group__4__Impl rule__Component__Group__5 )
-            // InternalDasl.g:1866:2: rule__Component__Group__4__Impl rule__Component__Group__5
+            // InternalDasl.g:1952:1: ( rule__Component__Group__4__Impl rule__Component__Group__5 )
+            // InternalDasl.g:1953:2: rule__Component__Group__4__Impl rule__Component__Group__5
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__Component__Group__4__Impl();
 
             state._fsp--;
@@ -6181,21 +6494,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__4__Impl"
-    // InternalDasl.g:1873:1: rule__Component__Group__4__Impl : ( ( rule__Component__RefAssignment_4 ) ) ;
+    // InternalDasl.g:1960:1: rule__Component__Group__4__Impl : ( ( rule__Component__RefAssignment_4 ) ) ;
     public final void rule__Component__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1877:1: ( ( ( rule__Component__RefAssignment_4 ) ) )
-            // InternalDasl.g:1878:1: ( ( rule__Component__RefAssignment_4 ) )
+            // InternalDasl.g:1964:1: ( ( ( rule__Component__RefAssignment_4 ) ) )
+            // InternalDasl.g:1965:1: ( ( rule__Component__RefAssignment_4 ) )
             {
-            // InternalDasl.g:1878:1: ( ( rule__Component__RefAssignment_4 ) )
-            // InternalDasl.g:1879:2: ( rule__Component__RefAssignment_4 )
+            // InternalDasl.g:1965:1: ( ( rule__Component__RefAssignment_4 ) )
+            // InternalDasl.g:1966:2: ( rule__Component__RefAssignment_4 )
             {
              before(grammarAccess.getComponentAccess().getRefAssignment_4()); 
-            // InternalDasl.g:1880:2: ( rule__Component__RefAssignment_4 )
-            // InternalDasl.g:1880:3: rule__Component__RefAssignment_4
+            // InternalDasl.g:1967:2: ( rule__Component__RefAssignment_4 )
+            // InternalDasl.g:1967:3: rule__Component__RefAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Component__RefAssignment_4();
@@ -6228,14 +6541,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__5"
-    // InternalDasl.g:1888:1: rule__Component__Group__5 : rule__Component__Group__5__Impl rule__Component__Group__6 ;
+    // InternalDasl.g:1975:1: rule__Component__Group__5 : rule__Component__Group__5__Impl rule__Component__Group__6 ;
     public final void rule__Component__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1892:1: ( rule__Component__Group__5__Impl rule__Component__Group__6 )
-            // InternalDasl.g:1893:2: rule__Component__Group__5__Impl rule__Component__Group__6
+            // InternalDasl.g:1979:1: ( rule__Component__Group__5__Impl rule__Component__Group__6 )
+            // InternalDasl.g:1980:2: rule__Component__Group__5__Impl rule__Component__Group__6
             {
             pushFollow(FOLLOW_7);
             rule__Component__Group__5__Impl();
@@ -6266,20 +6579,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__5__Impl"
-    // InternalDasl.g:1900:1: rule__Component__Group__5__Impl : ( 'stereotype' ) ;
+    // InternalDasl.g:1987:1: rule__Component__Group__5__Impl : ( 'stereotype' ) ;
     public final void rule__Component__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1904:1: ( ( 'stereotype' ) )
-            // InternalDasl.g:1905:1: ( 'stereotype' )
+            // InternalDasl.g:1991:1: ( ( 'stereotype' ) )
+            // InternalDasl.g:1992:1: ( 'stereotype' )
             {
-            // InternalDasl.g:1905:1: ( 'stereotype' )
-            // InternalDasl.g:1906:2: 'stereotype'
+            // InternalDasl.g:1992:1: ( 'stereotype' )
+            // InternalDasl.g:1993:2: 'stereotype'
             {
              before(grammarAccess.getComponentAccess().getStereotypeKeyword_5()); 
-            match(input,83,FOLLOW_2); 
+            match(input,84,FOLLOW_2); 
              after(grammarAccess.getComponentAccess().getStereotypeKeyword_5()); 
 
             }
@@ -6303,16 +6616,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__6"
-    // InternalDasl.g:1915:1: rule__Component__Group__6 : rule__Component__Group__6__Impl rule__Component__Group__7 ;
+    // InternalDasl.g:2002:1: rule__Component__Group__6 : rule__Component__Group__6__Impl rule__Component__Group__7 ;
     public final void rule__Component__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1919:1: ( rule__Component__Group__6__Impl rule__Component__Group__7 )
-            // InternalDasl.g:1920:2: rule__Component__Group__6__Impl rule__Component__Group__7
+            // InternalDasl.g:2006:1: ( rule__Component__Group__6__Impl rule__Component__Group__7 )
+            // InternalDasl.g:2007:2: rule__Component__Group__6__Impl rule__Component__Group__7
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__Component__Group__6__Impl();
 
             state._fsp--;
@@ -6341,21 +6654,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__6__Impl"
-    // InternalDasl.g:1927:1: rule__Component__Group__6__Impl : ( ( rule__Component__StereotypeAssignment_6 ) ) ;
+    // InternalDasl.g:2014:1: rule__Component__Group__6__Impl : ( ( rule__Component__StereotypeAssignment_6 ) ) ;
     public final void rule__Component__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1931:1: ( ( ( rule__Component__StereotypeAssignment_6 ) ) )
-            // InternalDasl.g:1932:1: ( ( rule__Component__StereotypeAssignment_6 ) )
+            // InternalDasl.g:2018:1: ( ( ( rule__Component__StereotypeAssignment_6 ) ) )
+            // InternalDasl.g:2019:1: ( ( rule__Component__StereotypeAssignment_6 ) )
             {
-            // InternalDasl.g:1932:1: ( ( rule__Component__StereotypeAssignment_6 ) )
-            // InternalDasl.g:1933:2: ( rule__Component__StereotypeAssignment_6 )
+            // InternalDasl.g:2019:1: ( ( rule__Component__StereotypeAssignment_6 ) )
+            // InternalDasl.g:2020:2: ( rule__Component__StereotypeAssignment_6 )
             {
              before(grammarAccess.getComponentAccess().getStereotypeAssignment_6()); 
-            // InternalDasl.g:1934:2: ( rule__Component__StereotypeAssignment_6 )
-            // InternalDasl.g:1934:3: rule__Component__StereotypeAssignment_6
+            // InternalDasl.g:2021:2: ( rule__Component__StereotypeAssignment_6 )
+            // InternalDasl.g:2021:3: rule__Component__StereotypeAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__Component__StereotypeAssignment_6();
@@ -6388,16 +6701,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__7"
-    // InternalDasl.g:1942:1: rule__Component__Group__7 : rule__Component__Group__7__Impl rule__Component__Group__8 ;
+    // InternalDasl.g:2029:1: rule__Component__Group__7 : rule__Component__Group__7__Impl rule__Component__Group__8 ;
     public final void rule__Component__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1946:1: ( rule__Component__Group__7__Impl rule__Component__Group__8 )
-            // InternalDasl.g:1947:2: rule__Component__Group__7__Impl rule__Component__Group__8
+            // InternalDasl.g:2033:1: ( rule__Component__Group__7__Impl rule__Component__Group__8 )
+            // InternalDasl.g:2034:2: rule__Component__Group__7__Impl rule__Component__Group__8
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__Component__Group__7__Impl();
 
             state._fsp--;
@@ -6426,29 +6739,29 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__7__Impl"
-    // InternalDasl.g:1954:1: rule__Component__Group__7__Impl : ( ( rule__Component__Group_7__0 )? ) ;
+    // InternalDasl.g:2041:1: rule__Component__Group__7__Impl : ( ( rule__Component__Group_7__0 )? ) ;
     public final void rule__Component__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1958:1: ( ( ( rule__Component__Group_7__0 )? ) )
-            // InternalDasl.g:1959:1: ( ( rule__Component__Group_7__0 )? )
+            // InternalDasl.g:2045:1: ( ( ( rule__Component__Group_7__0 )? ) )
+            // InternalDasl.g:2046:1: ( ( rule__Component__Group_7__0 )? )
             {
-            // InternalDasl.g:1959:1: ( ( rule__Component__Group_7__0 )? )
-            // InternalDasl.g:1960:2: ( rule__Component__Group_7__0 )?
+            // InternalDasl.g:2046:1: ( ( rule__Component__Group_7__0 )? )
+            // InternalDasl.g:2047:2: ( rule__Component__Group_7__0 )?
             {
              before(grammarAccess.getComponentAccess().getGroup_7()); 
-            // InternalDasl.g:1961:2: ( rule__Component__Group_7__0 )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // InternalDasl.g:2048:2: ( rule__Component__Group_7__0 )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA14_0==87) ) {
-                alt14=1;
+            if ( (LA17_0==87) ) {
+                alt17=1;
             }
-            switch (alt14) {
+            switch (alt17) {
                 case 1 :
-                    // InternalDasl.g:1961:3: rule__Component__Group_7__0
+                    // InternalDasl.g:2048:3: rule__Component__Group_7__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Component__Group_7__0();
@@ -6484,14 +6797,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__8"
-    // InternalDasl.g:1969:1: rule__Component__Group__8 : rule__Component__Group__8__Impl rule__Component__Group__9 ;
+    // InternalDasl.g:2056:1: rule__Component__Group__8 : rule__Component__Group__8__Impl rule__Component__Group__9 ;
     public final void rule__Component__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1973:1: ( rule__Component__Group__8__Impl rule__Component__Group__9 )
-            // InternalDasl.g:1974:2: rule__Component__Group__8__Impl rule__Component__Group__9
+            // InternalDasl.g:2060:1: ( rule__Component__Group__8__Impl rule__Component__Group__9 )
+            // InternalDasl.g:2061:2: rule__Component__Group__8__Impl rule__Component__Group__9
             {
             pushFollow(FOLLOW_7);
             rule__Component__Group__8__Impl();
@@ -6522,20 +6835,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__8__Impl"
-    // InternalDasl.g:1981:1: rule__Component__Group__8__Impl : ( 'desc' ) ;
+    // InternalDasl.g:2068:1: rule__Component__Group__8__Impl : ( 'desc' ) ;
     public final void rule__Component__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:1985:1: ( ( 'desc' ) )
-            // InternalDasl.g:1986:1: ( 'desc' )
+            // InternalDasl.g:2072:1: ( ( 'desc' ) )
+            // InternalDasl.g:2073:1: ( 'desc' )
             {
-            // InternalDasl.g:1986:1: ( 'desc' )
-            // InternalDasl.g:1987:2: 'desc'
+            // InternalDasl.g:2073:1: ( 'desc' )
+            // InternalDasl.g:2074:2: 'desc'
             {
              before(grammarAccess.getComponentAccess().getDescKeyword_8()); 
-            match(input,84,FOLLOW_2); 
+            match(input,85,FOLLOW_2); 
              after(grammarAccess.getComponentAccess().getDescKeyword_8()); 
 
             }
@@ -6559,16 +6872,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__9"
-    // InternalDasl.g:1996:1: rule__Component__Group__9 : rule__Component__Group__9__Impl rule__Component__Group__10 ;
+    // InternalDasl.g:2083:1: rule__Component__Group__9 : rule__Component__Group__9__Impl rule__Component__Group__10 ;
     public final void rule__Component__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2000:1: ( rule__Component__Group__9__Impl rule__Component__Group__10 )
-            // InternalDasl.g:2001:2: rule__Component__Group__9__Impl rule__Component__Group__10
+            // InternalDasl.g:2087:1: ( rule__Component__Group__9__Impl rule__Component__Group__10 )
+            // InternalDasl.g:2088:2: rule__Component__Group__9__Impl rule__Component__Group__10
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_24);
             rule__Component__Group__9__Impl();
 
             state._fsp--;
@@ -6597,21 +6910,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__9__Impl"
-    // InternalDasl.g:2008:1: rule__Component__Group__9__Impl : ( ( rule__Component__DescAssignment_9 ) ) ;
+    // InternalDasl.g:2095:1: rule__Component__Group__9__Impl : ( ( rule__Component__DescAssignment_9 ) ) ;
     public final void rule__Component__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2012:1: ( ( ( rule__Component__DescAssignment_9 ) ) )
-            // InternalDasl.g:2013:1: ( ( rule__Component__DescAssignment_9 ) )
+            // InternalDasl.g:2099:1: ( ( ( rule__Component__DescAssignment_9 ) ) )
+            // InternalDasl.g:2100:1: ( ( rule__Component__DescAssignment_9 ) )
             {
-            // InternalDasl.g:2013:1: ( ( rule__Component__DescAssignment_9 ) )
-            // InternalDasl.g:2014:2: ( rule__Component__DescAssignment_9 )
+            // InternalDasl.g:2100:1: ( ( rule__Component__DescAssignment_9 ) )
+            // InternalDasl.g:2101:2: ( rule__Component__DescAssignment_9 )
             {
              before(grammarAccess.getComponentAccess().getDescAssignment_9()); 
-            // InternalDasl.g:2015:2: ( rule__Component__DescAssignment_9 )
-            // InternalDasl.g:2015:3: rule__Component__DescAssignment_9
+            // InternalDasl.g:2102:2: ( rule__Component__DescAssignment_9 )
+            // InternalDasl.g:2102:3: rule__Component__DescAssignment_9
             {
             pushFollow(FOLLOW_2);
             rule__Component__DescAssignment_9();
@@ -6644,14 +6957,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__10"
-    // InternalDasl.g:2023:1: rule__Component__Group__10 : rule__Component__Group__10__Impl rule__Component__Group__11 ;
+    // InternalDasl.g:2110:1: rule__Component__Group__10 : rule__Component__Group__10__Impl rule__Component__Group__11 ;
     public final void rule__Component__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2027:1: ( rule__Component__Group__10__Impl rule__Component__Group__11 )
-            // InternalDasl.g:2028:2: rule__Component__Group__10__Impl rule__Component__Group__11
+            // InternalDasl.g:2114:1: ( rule__Component__Group__10__Impl rule__Component__Group__11 )
+            // InternalDasl.g:2115:2: rule__Component__Group__10__Impl rule__Component__Group__11
             {
             pushFollow(FOLLOW_7);
             rule__Component__Group__10__Impl();
@@ -6682,20 +6995,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__10__Impl"
-    // InternalDasl.g:2035:1: rule__Component__Group__10__Impl : ( 'version' ) ;
+    // InternalDasl.g:2122:1: rule__Component__Group__10__Impl : ( 'version' ) ;
     public final void rule__Component__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2039:1: ( ( 'version' ) )
-            // InternalDasl.g:2040:1: ( 'version' )
+            // InternalDasl.g:2126:1: ( ( 'version' ) )
+            // InternalDasl.g:2127:1: ( 'version' )
             {
-            // InternalDasl.g:2040:1: ( 'version' )
-            // InternalDasl.g:2041:2: 'version'
+            // InternalDasl.g:2127:1: ( 'version' )
+            // InternalDasl.g:2128:2: 'version'
             {
              before(grammarAccess.getComponentAccess().getVersionKeyword_10()); 
-            match(input,85,FOLLOW_2); 
+            match(input,86,FOLLOW_2); 
              after(grammarAccess.getComponentAccess().getVersionKeyword_10()); 
 
             }
@@ -6719,16 +7032,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__11"
-    // InternalDasl.g:2050:1: rule__Component__Group__11 : rule__Component__Group__11__Impl rule__Component__Group__12 ;
+    // InternalDasl.g:2137:1: rule__Component__Group__11 : rule__Component__Group__11__Impl rule__Component__Group__12 ;
     public final void rule__Component__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2054:1: ( rule__Component__Group__11__Impl rule__Component__Group__12 )
-            // InternalDasl.g:2055:2: rule__Component__Group__11__Impl rule__Component__Group__12
+            // InternalDasl.g:2141:1: ( rule__Component__Group__11__Impl rule__Component__Group__12 )
+            // InternalDasl.g:2142:2: rule__Component__Group__11__Impl rule__Component__Group__12
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             rule__Component__Group__11__Impl();
 
             state._fsp--;
@@ -6757,21 +7070,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__11__Impl"
-    // InternalDasl.g:2062:1: rule__Component__Group__11__Impl : ( ( rule__Component__VersionAssignment_11 ) ) ;
+    // InternalDasl.g:2149:1: rule__Component__Group__11__Impl : ( ( rule__Component__VersionAssignment_11 ) ) ;
     public final void rule__Component__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2066:1: ( ( ( rule__Component__VersionAssignment_11 ) ) )
-            // InternalDasl.g:2067:1: ( ( rule__Component__VersionAssignment_11 ) )
+            // InternalDasl.g:2153:1: ( ( ( rule__Component__VersionAssignment_11 ) ) )
+            // InternalDasl.g:2154:1: ( ( rule__Component__VersionAssignment_11 ) )
             {
-            // InternalDasl.g:2067:1: ( ( rule__Component__VersionAssignment_11 ) )
-            // InternalDasl.g:2068:2: ( rule__Component__VersionAssignment_11 )
+            // InternalDasl.g:2154:1: ( ( rule__Component__VersionAssignment_11 ) )
+            // InternalDasl.g:2155:2: ( rule__Component__VersionAssignment_11 )
             {
              before(grammarAccess.getComponentAccess().getVersionAssignment_11()); 
-            // InternalDasl.g:2069:2: ( rule__Component__VersionAssignment_11 )
-            // InternalDasl.g:2069:3: rule__Component__VersionAssignment_11
+            // InternalDasl.g:2156:2: ( rule__Component__VersionAssignment_11 )
+            // InternalDasl.g:2156:3: rule__Component__VersionAssignment_11
             {
             pushFollow(FOLLOW_2);
             rule__Component__VersionAssignment_11();
@@ -6804,16 +7117,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__12"
-    // InternalDasl.g:2077:1: rule__Component__Group__12 : rule__Component__Group__12__Impl rule__Component__Group__13 ;
+    // InternalDasl.g:2164:1: rule__Component__Group__12 : rule__Component__Group__12__Impl rule__Component__Group__13 ;
     public final void rule__Component__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2081:1: ( rule__Component__Group__12__Impl rule__Component__Group__13 )
-            // InternalDasl.g:2082:2: rule__Component__Group__12__Impl rule__Component__Group__13
+            // InternalDasl.g:2168:1: ( rule__Component__Group__12__Impl rule__Component__Group__13 )
+            // InternalDasl.g:2169:2: rule__Component__Group__12__Impl rule__Component__Group__13
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_25);
             rule__Component__Group__12__Impl();
 
             state._fsp--;
@@ -6842,21 +7155,42 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__12__Impl"
-    // InternalDasl.g:2089:1: rule__Component__Group__12__Impl : ( 'assets' ) ;
+    // InternalDasl.g:2176:1: rule__Component__Group__12__Impl : ( ( rule__Component__Group_12__0 )? ) ;
     public final void rule__Component__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2093:1: ( ( 'assets' ) )
-            // InternalDasl.g:2094:1: ( 'assets' )
+            // InternalDasl.g:2180:1: ( ( ( rule__Component__Group_12__0 )? ) )
+            // InternalDasl.g:2181:1: ( ( rule__Component__Group_12__0 )? )
             {
-            // InternalDasl.g:2094:1: ( 'assets' )
-            // InternalDasl.g:2095:2: 'assets'
+            // InternalDasl.g:2181:1: ( ( rule__Component__Group_12__0 )? )
+            // InternalDasl.g:2182:2: ( rule__Component__Group_12__0 )?
             {
-             before(grammarAccess.getComponentAccess().getAssetsKeyword_12()); 
-            match(input,86,FOLLOW_2); 
-             after(grammarAccess.getComponentAccess().getAssetsKeyword_12()); 
+             before(grammarAccess.getComponentAccess().getGroup_12()); 
+            // InternalDasl.g:2183:2: ( rule__Component__Group_12__0 )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
+
+            if ( (LA18_0==88) ) {
+                alt18=1;
+            }
+            switch (alt18) {
+                case 1 :
+                    // InternalDasl.g:2183:3: rule__Component__Group_12__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Component__Group_12__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getComponentAccess().getGroup_12()); 
 
             }
 
@@ -6879,16 +7213,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__13"
-    // InternalDasl.g:2104:1: rule__Component__Group__13 : rule__Component__Group__13__Impl rule__Component__Group__14 ;
+    // InternalDasl.g:2191:1: rule__Component__Group__13 : rule__Component__Group__13__Impl rule__Component__Group__14 ;
     public final void rule__Component__Group__13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2108:1: ( rule__Component__Group__13__Impl rule__Component__Group__14 )
-            // InternalDasl.g:2109:2: rule__Component__Group__13__Impl rule__Component__Group__14
+            // InternalDasl.g:2195:1: ( rule__Component__Group__13__Impl rule__Component__Group__14 )
+            // InternalDasl.g:2196:2: rule__Component__Group__13__Impl rule__Component__Group__14
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_25);
             rule__Component__Group__13__Impl();
 
             state._fsp--;
@@ -6917,49 +7251,42 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__13__Impl"
-    // InternalDasl.g:2116:1: rule__Component__Group__13__Impl : ( ( rule__Component__AssetsAssignment_13 )* ) ;
+    // InternalDasl.g:2203:1: rule__Component__Group__13__Impl : ( ( rule__Component__Group_13__0 )? ) ;
     public final void rule__Component__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2120:1: ( ( ( rule__Component__AssetsAssignment_13 )* ) )
-            // InternalDasl.g:2121:1: ( ( rule__Component__AssetsAssignment_13 )* )
+            // InternalDasl.g:2207:1: ( ( ( rule__Component__Group_13__0 )? ) )
+            // InternalDasl.g:2208:1: ( ( rule__Component__Group_13__0 )? )
             {
-            // InternalDasl.g:2121:1: ( ( rule__Component__AssetsAssignment_13 )* )
-            // InternalDasl.g:2122:2: ( rule__Component__AssetsAssignment_13 )*
+            // InternalDasl.g:2208:1: ( ( rule__Component__Group_13__0 )? )
+            // InternalDasl.g:2209:2: ( rule__Component__Group_13__0 )?
             {
-             before(grammarAccess.getComponentAccess().getAssetsAssignment_13()); 
-            // InternalDasl.g:2123:2: ( rule__Component__AssetsAssignment_13 )*
-            loop15:
-            do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+             before(grammarAccess.getComponentAccess().getGroup_13()); 
+            // InternalDasl.g:2210:2: ( rule__Component__Group_13__0 )?
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-                if ( (LA15_0==RULE_ID) ) {
-                    alt15=1;
-                }
+            if ( (LA19_0==76) ) {
+                alt19=1;
+            }
+            switch (alt19) {
+                case 1 :
+                    // InternalDasl.g:2210:3: rule__Component__Group_13__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Component__Group_13__0();
 
-
-                switch (alt15) {
-            	case 1 :
-            	    // InternalDasl.g:2123:3: rule__Component__AssetsAssignment_13
-            	    {
-            	    pushFollow(FOLLOW_13);
-            	    rule__Component__AssetsAssignment_13();
-
-            	    state._fsp--;
+                    state._fsp--;
 
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    break loop15;
-                }
-            } while (true);
+            }
 
-             after(grammarAccess.getComponentAccess().getAssetsAssignment_13()); 
+             after(grammarAccess.getComponentAccess().getGroup_13()); 
 
             }
 
@@ -6982,16 +7309,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__14"
-    // InternalDasl.g:2131:1: rule__Component__Group__14 : rule__Component__Group__14__Impl rule__Component__Group__15 ;
+    // InternalDasl.g:2218:1: rule__Component__Group__14 : rule__Component__Group__14__Impl rule__Component__Group__15 ;
     public final void rule__Component__Group__14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2135:1: ( rule__Component__Group__14__Impl rule__Component__Group__15 )
-            // InternalDasl.g:2136:2: rule__Component__Group__14__Impl rule__Component__Group__15
+            // InternalDasl.g:2222:1: ( rule__Component__Group__14__Impl rule__Component__Group__15 )
+            // InternalDasl.g:2223:2: rule__Component__Group__14__Impl rule__Component__Group__15
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_25);
             rule__Component__Group__14__Impl();
 
             state._fsp--;
@@ -7020,35 +7347,35 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__14__Impl"
-    // InternalDasl.g:2143:1: rule__Component__Group__14__Impl : ( ( rule__Component__ComponentsAssignment_14 )* ) ;
+    // InternalDasl.g:2230:1: rule__Component__Group__14__Impl : ( ( rule__Component__ComponentsAssignment_14 )* ) ;
     public final void rule__Component__Group__14__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2147:1: ( ( ( rule__Component__ComponentsAssignment_14 )* ) )
-            // InternalDasl.g:2148:1: ( ( rule__Component__ComponentsAssignment_14 )* )
+            // InternalDasl.g:2234:1: ( ( ( rule__Component__ComponentsAssignment_14 )* ) )
+            // InternalDasl.g:2235:1: ( ( rule__Component__ComponentsAssignment_14 )* )
             {
-            // InternalDasl.g:2148:1: ( ( rule__Component__ComponentsAssignment_14 )* )
-            // InternalDasl.g:2149:2: ( rule__Component__ComponentsAssignment_14 )*
+            // InternalDasl.g:2235:1: ( ( rule__Component__ComponentsAssignment_14 )* )
+            // InternalDasl.g:2236:2: ( rule__Component__ComponentsAssignment_14 )*
             {
              before(grammarAccess.getComponentAccess().getComponentsAssignment_14()); 
-            // InternalDasl.g:2150:2: ( rule__Component__ComponentsAssignment_14 )*
-            loop16:
+            // InternalDasl.g:2237:2: ( rule__Component__ComponentsAssignment_14 )*
+            loop20:
             do {
-                int alt16=2;
-                int LA16_0 = input.LA(1);
+                int alt20=2;
+                int LA20_0 = input.LA(1);
 
-                if ( (LA16_0==82) ) {
-                    alt16=1;
+                if ( (LA20_0==83) ) {
+                    alt20=1;
                 }
 
 
-                switch (alt16) {
+                switch (alt20) {
             	case 1 :
-            	    // InternalDasl.g:2150:3: rule__Component__ComponentsAssignment_14
+            	    // InternalDasl.g:2237:3: rule__Component__ComponentsAssignment_14
             	    {
-            	    pushFollow(FOLLOW_28);
+            	    pushFollow(FOLLOW_26);
             	    rule__Component__ComponentsAssignment_14();
 
             	    state._fsp--;
@@ -7058,7 +7385,7 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop16;
+            	    break loop20;
                 }
             } while (true);
 
@@ -7085,14 +7412,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__15"
-    // InternalDasl.g:2158:1: rule__Component__Group__15 : rule__Component__Group__15__Impl ;
+    // InternalDasl.g:2245:1: rule__Component__Group__15 : rule__Component__Group__15__Impl ;
     public final void rule__Component__Group__15() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2162:1: ( rule__Component__Group__15__Impl )
-            // InternalDasl.g:2163:2: rule__Component__Group__15__Impl
+            // InternalDasl.g:2249:1: ( rule__Component__Group__15__Impl )
+            // InternalDasl.g:2250:2: rule__Component__Group__15__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Component__Group__15__Impl();
@@ -7118,20 +7445,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group__15__Impl"
-    // InternalDasl.g:2169:1: rule__Component__Group__15__Impl : ( '}' ) ;
+    // InternalDasl.g:2256:1: rule__Component__Group__15__Impl : ( '}' ) ;
     public final void rule__Component__Group__15__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2173:1: ( ( '}' ) )
-            // InternalDasl.g:2174:1: ( '}' )
+            // InternalDasl.g:2260:1: ( ( '}' ) )
+            // InternalDasl.g:2261:1: ( '}' )
             {
-            // InternalDasl.g:2174:1: ( '}' )
-            // InternalDasl.g:2175:2: '}'
+            // InternalDasl.g:2261:1: ( '}' )
+            // InternalDasl.g:2262:2: '}'
             {
              before(grammarAccess.getComponentAccess().getRightCurlyBracketKeyword_15()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getComponentAccess().getRightCurlyBracketKeyword_15()); 
 
             }
@@ -7155,14 +7482,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group_7__0"
-    // InternalDasl.g:2185:1: rule__Component__Group_7__0 : rule__Component__Group_7__0__Impl rule__Component__Group_7__1 ;
+    // InternalDasl.g:2272:1: rule__Component__Group_7__0 : rule__Component__Group_7__0__Impl rule__Component__Group_7__1 ;
     public final void rule__Component__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2189:1: ( rule__Component__Group_7__0__Impl rule__Component__Group_7__1 )
-            // InternalDasl.g:2190:2: rule__Component__Group_7__0__Impl rule__Component__Group_7__1
+            // InternalDasl.g:2276:1: ( rule__Component__Group_7__0__Impl rule__Component__Group_7__1 )
+            // InternalDasl.g:2277:2: rule__Component__Group_7__0__Impl rule__Component__Group_7__1
             {
             pushFollow(FOLLOW_7);
             rule__Component__Group_7__0__Impl();
@@ -7193,17 +7520,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group_7__0__Impl"
-    // InternalDasl.g:2197:1: rule__Component__Group_7__0__Impl : ( 'vendor' ) ;
+    // InternalDasl.g:2284:1: rule__Component__Group_7__0__Impl : ( 'vendor' ) ;
     public final void rule__Component__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2201:1: ( ( 'vendor' ) )
-            // InternalDasl.g:2202:1: ( 'vendor' )
+            // InternalDasl.g:2288:1: ( ( 'vendor' ) )
+            // InternalDasl.g:2289:1: ( 'vendor' )
             {
-            // InternalDasl.g:2202:1: ( 'vendor' )
-            // InternalDasl.g:2203:2: 'vendor'
+            // InternalDasl.g:2289:1: ( 'vendor' )
+            // InternalDasl.g:2290:2: 'vendor'
             {
              before(grammarAccess.getComponentAccess().getVendorKeyword_7_0()); 
             match(input,87,FOLLOW_2); 
@@ -7230,14 +7557,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group_7__1"
-    // InternalDasl.g:2212:1: rule__Component__Group_7__1 : rule__Component__Group_7__1__Impl ;
+    // InternalDasl.g:2299:1: rule__Component__Group_7__1 : rule__Component__Group_7__1__Impl ;
     public final void rule__Component__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2216:1: ( rule__Component__Group_7__1__Impl )
-            // InternalDasl.g:2217:2: rule__Component__Group_7__1__Impl
+            // InternalDasl.g:2303:1: ( rule__Component__Group_7__1__Impl )
+            // InternalDasl.g:2304:2: rule__Component__Group_7__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Component__Group_7__1__Impl();
@@ -7263,21 +7590,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group_7__1__Impl"
-    // InternalDasl.g:2223:1: rule__Component__Group_7__1__Impl : ( ( rule__Component__VendorAssignment_7_1 ) ) ;
+    // InternalDasl.g:2310:1: rule__Component__Group_7__1__Impl : ( ( rule__Component__VendorAssignment_7_1 ) ) ;
     public final void rule__Component__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2227:1: ( ( ( rule__Component__VendorAssignment_7_1 ) ) )
-            // InternalDasl.g:2228:1: ( ( rule__Component__VendorAssignment_7_1 ) )
+            // InternalDasl.g:2314:1: ( ( ( rule__Component__VendorAssignment_7_1 ) ) )
+            // InternalDasl.g:2315:1: ( ( rule__Component__VendorAssignment_7_1 ) )
             {
-            // InternalDasl.g:2228:1: ( ( rule__Component__VendorAssignment_7_1 ) )
-            // InternalDasl.g:2229:2: ( rule__Component__VendorAssignment_7_1 )
+            // InternalDasl.g:2315:1: ( ( rule__Component__VendorAssignment_7_1 ) )
+            // InternalDasl.g:2316:2: ( rule__Component__VendorAssignment_7_1 )
             {
              before(grammarAccess.getComponentAccess().getVendorAssignment_7_1()); 
-            // InternalDasl.g:2230:2: ( rule__Component__VendorAssignment_7_1 )
-            // InternalDasl.g:2230:3: rule__Component__VendorAssignment_7_1
+            // InternalDasl.g:2317:2: ( rule__Component__VendorAssignment_7_1 )
+            // InternalDasl.g:2317:3: rule__Component__VendorAssignment_7_1
             {
             pushFollow(FOLLOW_2);
             rule__Component__VendorAssignment_7_1();
@@ -7309,15 +7636,361 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Component__Group_7__1__Impl"
 
 
+    // $ANTLR start "rule__Component__Group_12__0"
+    // InternalDasl.g:2326:1: rule__Component__Group_12__0 : rule__Component__Group_12__0__Impl rule__Component__Group_12__1 ;
+    public final void rule__Component__Group_12__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:2330:1: ( rule__Component__Group_12__0__Impl rule__Component__Group_12__1 )
+            // InternalDasl.g:2331:2: rule__Component__Group_12__0__Impl rule__Component__Group_12__1
+            {
+            pushFollow(FOLLOW_6);
+            rule__Component__Group_12__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Component__Group_12__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Component__Group_12__0"
+
+
+    // $ANTLR start "rule__Component__Group_12__0__Impl"
+    // InternalDasl.g:2338:1: rule__Component__Group_12__0__Impl : ( 'assets' ) ;
+    public final void rule__Component__Group_12__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:2342:1: ( ( 'assets' ) )
+            // InternalDasl.g:2343:1: ( 'assets' )
+            {
+            // InternalDasl.g:2343:1: ( 'assets' )
+            // InternalDasl.g:2344:2: 'assets'
+            {
+             before(grammarAccess.getComponentAccess().getAssetsKeyword_12_0()); 
+            match(input,88,FOLLOW_2); 
+             after(grammarAccess.getComponentAccess().getAssetsKeyword_12_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Component__Group_12__0__Impl"
+
+
+    // $ANTLR start "rule__Component__Group_12__1"
+    // InternalDasl.g:2353:1: rule__Component__Group_12__1 : rule__Component__Group_12__1__Impl ;
+    public final void rule__Component__Group_12__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:2357:1: ( rule__Component__Group_12__1__Impl )
+            // InternalDasl.g:2358:2: rule__Component__Group_12__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Component__Group_12__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Component__Group_12__1"
+
+
+    // $ANTLR start "rule__Component__Group_12__1__Impl"
+    // InternalDasl.g:2364:1: rule__Component__Group_12__1__Impl : ( ( rule__Component__AssetsAssignment_12_1 )* ) ;
+    public final void rule__Component__Group_12__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:2368:1: ( ( ( rule__Component__AssetsAssignment_12_1 )* ) )
+            // InternalDasl.g:2369:1: ( ( rule__Component__AssetsAssignment_12_1 )* )
+            {
+            // InternalDasl.g:2369:1: ( ( rule__Component__AssetsAssignment_12_1 )* )
+            // InternalDasl.g:2370:2: ( rule__Component__AssetsAssignment_12_1 )*
+            {
+             before(grammarAccess.getComponentAccess().getAssetsAssignment_12_1()); 
+            // InternalDasl.g:2371:2: ( rule__Component__AssetsAssignment_12_1 )*
+            loop21:
+            do {
+                int alt21=2;
+                int LA21_0 = input.LA(1);
+
+                if ( (LA21_0==RULE_ID) ) {
+                    alt21=1;
+                }
+
+
+                switch (alt21) {
+            	case 1 :
+            	    // InternalDasl.g:2371:3: rule__Component__AssetsAssignment_12_1
+            	    {
+            	    pushFollow(FOLLOW_13);
+            	    rule__Component__AssetsAssignment_12_1();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop21;
+                }
+            } while (true);
+
+             after(grammarAccess.getComponentAccess().getAssetsAssignment_12_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Component__Group_12__1__Impl"
+
+
+    // $ANTLR start "rule__Component__Group_13__0"
+    // InternalDasl.g:2380:1: rule__Component__Group_13__0 : rule__Component__Group_13__0__Impl rule__Component__Group_13__1 ;
+    public final void rule__Component__Group_13__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:2384:1: ( rule__Component__Group_13__0__Impl rule__Component__Group_13__1 )
+            // InternalDasl.g:2385:2: rule__Component__Group_13__0__Impl rule__Component__Group_13__1
+            {
+            pushFollow(FOLLOW_6);
+            rule__Component__Group_13__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Component__Group_13__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Component__Group_13__0"
+
+
+    // $ANTLR start "rule__Component__Group_13__0__Impl"
+    // InternalDasl.g:2392:1: rule__Component__Group_13__0__Impl : ( 'controls' ) ;
+    public final void rule__Component__Group_13__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:2396:1: ( ( 'controls' ) )
+            // InternalDasl.g:2397:1: ( 'controls' )
+            {
+            // InternalDasl.g:2397:1: ( 'controls' )
+            // InternalDasl.g:2398:2: 'controls'
+            {
+             before(grammarAccess.getComponentAccess().getControlsKeyword_13_0()); 
+            match(input,76,FOLLOW_2); 
+             after(grammarAccess.getComponentAccess().getControlsKeyword_13_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Component__Group_13__0__Impl"
+
+
+    // $ANTLR start "rule__Component__Group_13__1"
+    // InternalDasl.g:2407:1: rule__Component__Group_13__1 : rule__Component__Group_13__1__Impl ;
+    public final void rule__Component__Group_13__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:2411:1: ( rule__Component__Group_13__1__Impl )
+            // InternalDasl.g:2412:2: rule__Component__Group_13__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Component__Group_13__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Component__Group_13__1"
+
+
+    // $ANTLR start "rule__Component__Group_13__1__Impl"
+    // InternalDasl.g:2418:1: rule__Component__Group_13__1__Impl : ( ( rule__Component__ControlsAssignment_13_1 )* ) ;
+    public final void rule__Component__Group_13__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:2422:1: ( ( ( rule__Component__ControlsAssignment_13_1 )* ) )
+            // InternalDasl.g:2423:1: ( ( rule__Component__ControlsAssignment_13_1 )* )
+            {
+            // InternalDasl.g:2423:1: ( ( rule__Component__ControlsAssignment_13_1 )* )
+            // InternalDasl.g:2424:2: ( rule__Component__ControlsAssignment_13_1 )*
+            {
+             before(grammarAccess.getComponentAccess().getControlsAssignment_13_1()); 
+            // InternalDasl.g:2425:2: ( rule__Component__ControlsAssignment_13_1 )*
+            loop22:
+            do {
+                int alt22=2;
+                int LA22_0 = input.LA(1);
+
+                if ( (LA22_0==RULE_ID) ) {
+                    alt22=1;
+                }
+
+
+                switch (alt22) {
+            	case 1 :
+            	    // InternalDasl.g:2425:3: rule__Component__ControlsAssignment_13_1
+            	    {
+            	    pushFollow(FOLLOW_13);
+            	    rule__Component__ControlsAssignment_13_1();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop22;
+                }
+            } while (true);
+
+             after(grammarAccess.getComponentAccess().getControlsAssignment_13_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Component__Group_13__1__Impl"
+
+
     // $ANTLR start "rule__InformationAsset__Group__0"
-    // InternalDasl.g:2239:1: rule__InformationAsset__Group__0 : rule__InformationAsset__Group__0__Impl rule__InformationAsset__Group__1 ;
+    // InternalDasl.g:2434:1: rule__InformationAsset__Group__0 : rule__InformationAsset__Group__0__Impl rule__InformationAsset__Group__1 ;
     public final void rule__InformationAsset__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2243:1: ( rule__InformationAsset__Group__0__Impl rule__InformationAsset__Group__1 )
-            // InternalDasl.g:2244:2: rule__InformationAsset__Group__0__Impl rule__InformationAsset__Group__1
+            // InternalDasl.g:2438:1: ( rule__InformationAsset__Group__0__Impl rule__InformationAsset__Group__1 )
+            // InternalDasl.g:2439:2: rule__InformationAsset__Group__0__Impl rule__InformationAsset__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__InformationAsset__Group__0__Impl();
@@ -7348,20 +8021,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__0__Impl"
-    // InternalDasl.g:2251:1: rule__InformationAsset__Group__0__Impl : ( 'informationasset' ) ;
+    // InternalDasl.g:2446:1: rule__InformationAsset__Group__0__Impl : ( 'informationasset' ) ;
     public final void rule__InformationAsset__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2255:1: ( ( 'informationasset' ) )
-            // InternalDasl.g:2256:1: ( 'informationasset' )
+            // InternalDasl.g:2450:1: ( ( 'informationasset' ) )
+            // InternalDasl.g:2451:1: ( 'informationasset' )
             {
-            // InternalDasl.g:2256:1: ( 'informationasset' )
-            // InternalDasl.g:2257:2: 'informationasset'
+            // InternalDasl.g:2451:1: ( 'informationasset' )
+            // InternalDasl.g:2452:2: 'informationasset'
             {
              before(grammarAccess.getInformationAssetAccess().getInformationassetKeyword_0()); 
-            match(input,88,FOLLOW_2); 
+            match(input,89,FOLLOW_2); 
              after(grammarAccess.getInformationAssetAccess().getInformationassetKeyword_0()); 
 
             }
@@ -7385,14 +8058,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__1"
-    // InternalDasl.g:2266:1: rule__InformationAsset__Group__1 : rule__InformationAsset__Group__1__Impl rule__InformationAsset__Group__2 ;
+    // InternalDasl.g:2461:1: rule__InformationAsset__Group__1 : rule__InformationAsset__Group__1__Impl rule__InformationAsset__Group__2 ;
     public final void rule__InformationAsset__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2270:1: ( rule__InformationAsset__Group__1__Impl rule__InformationAsset__Group__2 )
-            // InternalDasl.g:2271:2: rule__InformationAsset__Group__1__Impl rule__InformationAsset__Group__2
+            // InternalDasl.g:2465:1: ( rule__InformationAsset__Group__1__Impl rule__InformationAsset__Group__2 )
+            // InternalDasl.g:2466:2: rule__InformationAsset__Group__1__Impl rule__InformationAsset__Group__2
             {
             pushFollow(FOLLOW_8);
             rule__InformationAsset__Group__1__Impl();
@@ -7423,21 +8096,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__1__Impl"
-    // InternalDasl.g:2278:1: rule__InformationAsset__Group__1__Impl : ( ( rule__InformationAsset__NameAssignment_1 ) ) ;
+    // InternalDasl.g:2473:1: rule__InformationAsset__Group__1__Impl : ( ( rule__InformationAsset__NameAssignment_1 ) ) ;
     public final void rule__InformationAsset__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2282:1: ( ( ( rule__InformationAsset__NameAssignment_1 ) ) )
-            // InternalDasl.g:2283:1: ( ( rule__InformationAsset__NameAssignment_1 ) )
+            // InternalDasl.g:2477:1: ( ( ( rule__InformationAsset__NameAssignment_1 ) ) )
+            // InternalDasl.g:2478:1: ( ( rule__InformationAsset__NameAssignment_1 ) )
             {
-            // InternalDasl.g:2283:1: ( ( rule__InformationAsset__NameAssignment_1 ) )
-            // InternalDasl.g:2284:2: ( rule__InformationAsset__NameAssignment_1 )
+            // InternalDasl.g:2478:1: ( ( rule__InformationAsset__NameAssignment_1 ) )
+            // InternalDasl.g:2479:2: ( rule__InformationAsset__NameAssignment_1 )
             {
              before(grammarAccess.getInformationAssetAccess().getNameAssignment_1()); 
-            // InternalDasl.g:2285:2: ( rule__InformationAsset__NameAssignment_1 )
-            // InternalDasl.g:2285:3: rule__InformationAsset__NameAssignment_1
+            // InternalDasl.g:2480:2: ( rule__InformationAsset__NameAssignment_1 )
+            // InternalDasl.g:2480:3: rule__InformationAsset__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__InformationAsset__NameAssignment_1();
@@ -7470,14 +8143,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__2"
-    // InternalDasl.g:2293:1: rule__InformationAsset__Group__2 : rule__InformationAsset__Group__2__Impl rule__InformationAsset__Group__3 ;
+    // InternalDasl.g:2488:1: rule__InformationAsset__Group__2 : rule__InformationAsset__Group__2__Impl rule__InformationAsset__Group__3 ;
     public final void rule__InformationAsset__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2297:1: ( rule__InformationAsset__Group__2__Impl rule__InformationAsset__Group__3 )
-            // InternalDasl.g:2298:2: rule__InformationAsset__Group__2__Impl rule__InformationAsset__Group__3
+            // InternalDasl.g:2492:1: ( rule__InformationAsset__Group__2__Impl rule__InformationAsset__Group__3 )
+            // InternalDasl.g:2493:2: rule__InformationAsset__Group__2__Impl rule__InformationAsset__Group__3
             {
             pushFollow(FOLLOW_16);
             rule__InformationAsset__Group__2__Impl();
@@ -7508,20 +8181,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__2__Impl"
-    // InternalDasl.g:2305:1: rule__InformationAsset__Group__2__Impl : ( '{' ) ;
+    // InternalDasl.g:2500:1: rule__InformationAsset__Group__2__Impl : ( '{' ) ;
     public final void rule__InformationAsset__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2309:1: ( ( '{' ) )
-            // InternalDasl.g:2310:1: ( '{' )
+            // InternalDasl.g:2504:1: ( ( '{' ) )
+            // InternalDasl.g:2505:1: ( '{' )
             {
-            // InternalDasl.g:2310:1: ( '{' )
-            // InternalDasl.g:2311:2: '{'
+            // InternalDasl.g:2505:1: ( '{' )
+            // InternalDasl.g:2506:2: '{'
             {
              before(grammarAccess.getInformationAssetAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,69,FOLLOW_2); 
+            match(input,70,FOLLOW_2); 
              after(grammarAccess.getInformationAssetAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -7545,14 +8218,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__3"
-    // InternalDasl.g:2320:1: rule__InformationAsset__Group__3 : rule__InformationAsset__Group__3__Impl rule__InformationAsset__Group__4 ;
+    // InternalDasl.g:2515:1: rule__InformationAsset__Group__3 : rule__InformationAsset__Group__3__Impl rule__InformationAsset__Group__4 ;
     public final void rule__InformationAsset__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2324:1: ( rule__InformationAsset__Group__3__Impl rule__InformationAsset__Group__4 )
-            // InternalDasl.g:2325:2: rule__InformationAsset__Group__3__Impl rule__InformationAsset__Group__4
+            // InternalDasl.g:2519:1: ( rule__InformationAsset__Group__3__Impl rule__InformationAsset__Group__4 )
+            // InternalDasl.g:2520:2: rule__InformationAsset__Group__3__Impl rule__InformationAsset__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__InformationAsset__Group__3__Impl();
@@ -7583,20 +8256,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__3__Impl"
-    // InternalDasl.g:2332:1: rule__InformationAsset__Group__3__Impl : ( 'ref' ) ;
+    // InternalDasl.g:2527:1: rule__InformationAsset__Group__3__Impl : ( 'ref' ) ;
     public final void rule__InformationAsset__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2336:1: ( ( 'ref' ) )
-            // InternalDasl.g:2337:1: ( 'ref' )
+            // InternalDasl.g:2531:1: ( ( 'ref' ) )
+            // InternalDasl.g:2532:1: ( 'ref' )
             {
-            // InternalDasl.g:2337:1: ( 'ref' )
-            // InternalDasl.g:2338:2: 'ref'
+            // InternalDasl.g:2532:1: ( 'ref' )
+            // InternalDasl.g:2533:2: 'ref'
             {
              before(grammarAccess.getInformationAssetAccess().getRefKeyword_3()); 
-            match(input,77,FOLLOW_2); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getInformationAssetAccess().getRefKeyword_3()); 
 
             }
@@ -7620,16 +8293,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__4"
-    // InternalDasl.g:2347:1: rule__InformationAsset__Group__4 : rule__InformationAsset__Group__4__Impl rule__InformationAsset__Group__5 ;
+    // InternalDasl.g:2542:1: rule__InformationAsset__Group__4 : rule__InformationAsset__Group__4__Impl rule__InformationAsset__Group__5 ;
     public final void rule__InformationAsset__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2351:1: ( rule__InformationAsset__Group__4__Impl rule__InformationAsset__Group__5 )
-            // InternalDasl.g:2352:2: rule__InformationAsset__Group__4__Impl rule__InformationAsset__Group__5
+            // InternalDasl.g:2546:1: ( rule__InformationAsset__Group__4__Impl rule__InformationAsset__Group__5 )
+            // InternalDasl.g:2547:2: rule__InformationAsset__Group__4__Impl rule__InformationAsset__Group__5
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_27);
             rule__InformationAsset__Group__4__Impl();
 
             state._fsp--;
@@ -7658,21 +8331,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__4__Impl"
-    // InternalDasl.g:2359:1: rule__InformationAsset__Group__4__Impl : ( ( rule__InformationAsset__RefAssignment_4 ) ) ;
+    // InternalDasl.g:2554:1: rule__InformationAsset__Group__4__Impl : ( ( rule__InformationAsset__RefAssignment_4 ) ) ;
     public final void rule__InformationAsset__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2363:1: ( ( ( rule__InformationAsset__RefAssignment_4 ) ) )
-            // InternalDasl.g:2364:1: ( ( rule__InformationAsset__RefAssignment_4 ) )
+            // InternalDasl.g:2558:1: ( ( ( rule__InformationAsset__RefAssignment_4 ) ) )
+            // InternalDasl.g:2559:1: ( ( rule__InformationAsset__RefAssignment_4 ) )
             {
-            // InternalDasl.g:2364:1: ( ( rule__InformationAsset__RefAssignment_4 ) )
-            // InternalDasl.g:2365:2: ( rule__InformationAsset__RefAssignment_4 )
+            // InternalDasl.g:2559:1: ( ( rule__InformationAsset__RefAssignment_4 ) )
+            // InternalDasl.g:2560:2: ( rule__InformationAsset__RefAssignment_4 )
             {
              before(grammarAccess.getInformationAssetAccess().getRefAssignment_4()); 
-            // InternalDasl.g:2366:2: ( rule__InformationAsset__RefAssignment_4 )
-            // InternalDasl.g:2366:3: rule__InformationAsset__RefAssignment_4
+            // InternalDasl.g:2561:2: ( rule__InformationAsset__RefAssignment_4 )
+            // InternalDasl.g:2561:3: rule__InformationAsset__RefAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__InformationAsset__RefAssignment_4();
@@ -7705,14 +8378,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__5"
-    // InternalDasl.g:2374:1: rule__InformationAsset__Group__5 : rule__InformationAsset__Group__5__Impl rule__InformationAsset__Group__6 ;
+    // InternalDasl.g:2569:1: rule__InformationAsset__Group__5 : rule__InformationAsset__Group__5__Impl rule__InformationAsset__Group__6 ;
     public final void rule__InformationAsset__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2378:1: ( rule__InformationAsset__Group__5__Impl rule__InformationAsset__Group__6 )
-            // InternalDasl.g:2379:2: rule__InformationAsset__Group__5__Impl rule__InformationAsset__Group__6
+            // InternalDasl.g:2573:1: ( rule__InformationAsset__Group__5__Impl rule__InformationAsset__Group__6 )
+            // InternalDasl.g:2574:2: rule__InformationAsset__Group__5__Impl rule__InformationAsset__Group__6
             {
             pushFollow(FOLLOW_7);
             rule__InformationAsset__Group__5__Impl();
@@ -7743,20 +8416,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__5__Impl"
-    // InternalDasl.g:2386:1: rule__InformationAsset__Group__5__Impl : ( 'desc' ) ;
+    // InternalDasl.g:2581:1: rule__InformationAsset__Group__5__Impl : ( 'desc' ) ;
     public final void rule__InformationAsset__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2390:1: ( ( 'desc' ) )
-            // InternalDasl.g:2391:1: ( 'desc' )
+            // InternalDasl.g:2585:1: ( ( 'desc' ) )
+            // InternalDasl.g:2586:1: ( 'desc' )
             {
-            // InternalDasl.g:2391:1: ( 'desc' )
-            // InternalDasl.g:2392:2: 'desc'
+            // InternalDasl.g:2586:1: ( 'desc' )
+            // InternalDasl.g:2587:2: 'desc'
             {
              before(grammarAccess.getInformationAssetAccess().getDescKeyword_5()); 
-            match(input,84,FOLLOW_2); 
+            match(input,85,FOLLOW_2); 
              after(grammarAccess.getInformationAssetAccess().getDescKeyword_5()); 
 
             }
@@ -7780,16 +8453,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__6"
-    // InternalDasl.g:2401:1: rule__InformationAsset__Group__6 : rule__InformationAsset__Group__6__Impl rule__InformationAsset__Group__7 ;
+    // InternalDasl.g:2596:1: rule__InformationAsset__Group__6 : rule__InformationAsset__Group__6__Impl rule__InformationAsset__Group__7 ;
     public final void rule__InformationAsset__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2405:1: ( rule__InformationAsset__Group__6__Impl rule__InformationAsset__Group__7 )
-            // InternalDasl.g:2406:2: rule__InformationAsset__Group__6__Impl rule__InformationAsset__Group__7
+            // InternalDasl.g:2600:1: ( rule__InformationAsset__Group__6__Impl rule__InformationAsset__Group__7 )
+            // InternalDasl.g:2601:2: rule__InformationAsset__Group__6__Impl rule__InformationAsset__Group__7
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_28);
             rule__InformationAsset__Group__6__Impl();
 
             state._fsp--;
@@ -7818,21 +8491,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__6__Impl"
-    // InternalDasl.g:2413:1: rule__InformationAsset__Group__6__Impl : ( ( rule__InformationAsset__DescAssignment_6 ) ) ;
+    // InternalDasl.g:2608:1: rule__InformationAsset__Group__6__Impl : ( ( rule__InformationAsset__DescAssignment_6 ) ) ;
     public final void rule__InformationAsset__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2417:1: ( ( ( rule__InformationAsset__DescAssignment_6 ) ) )
-            // InternalDasl.g:2418:1: ( ( rule__InformationAsset__DescAssignment_6 ) )
+            // InternalDasl.g:2612:1: ( ( ( rule__InformationAsset__DescAssignment_6 ) ) )
+            // InternalDasl.g:2613:1: ( ( rule__InformationAsset__DescAssignment_6 ) )
             {
-            // InternalDasl.g:2418:1: ( ( rule__InformationAsset__DescAssignment_6 ) )
-            // InternalDasl.g:2419:2: ( rule__InformationAsset__DescAssignment_6 )
+            // InternalDasl.g:2613:1: ( ( rule__InformationAsset__DescAssignment_6 ) )
+            // InternalDasl.g:2614:2: ( rule__InformationAsset__DescAssignment_6 )
             {
              before(grammarAccess.getInformationAssetAccess().getDescAssignment_6()); 
-            // InternalDasl.g:2420:2: ( rule__InformationAsset__DescAssignment_6 )
-            // InternalDasl.g:2420:3: rule__InformationAsset__DescAssignment_6
+            // InternalDasl.g:2615:2: ( rule__InformationAsset__DescAssignment_6 )
+            // InternalDasl.g:2615:3: rule__InformationAsset__DescAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__InformationAsset__DescAssignment_6();
@@ -7865,16 +8538,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__7"
-    // InternalDasl.g:2428:1: rule__InformationAsset__Group__7 : rule__InformationAsset__Group__7__Impl rule__InformationAsset__Group__8 ;
+    // InternalDasl.g:2623:1: rule__InformationAsset__Group__7 : rule__InformationAsset__Group__7__Impl rule__InformationAsset__Group__8 ;
     public final void rule__InformationAsset__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2432:1: ( rule__InformationAsset__Group__7__Impl rule__InformationAsset__Group__8 )
-            // InternalDasl.g:2433:2: rule__InformationAsset__Group__7__Impl rule__InformationAsset__Group__8
+            // InternalDasl.g:2627:1: ( rule__InformationAsset__Group__7__Impl rule__InformationAsset__Group__8 )
+            // InternalDasl.g:2628:2: rule__InformationAsset__Group__7__Impl rule__InformationAsset__Group__8
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_29);
             rule__InformationAsset__Group__7__Impl();
 
             state._fsp--;
@@ -7903,20 +8576,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__7__Impl"
-    // InternalDasl.g:2440:1: rule__InformationAsset__Group__7__Impl : ( 'confidentiality' ) ;
+    // InternalDasl.g:2635:1: rule__InformationAsset__Group__7__Impl : ( 'confidentiality' ) ;
     public final void rule__InformationAsset__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2444:1: ( ( 'confidentiality' ) )
-            // InternalDasl.g:2445:1: ( 'confidentiality' )
+            // InternalDasl.g:2639:1: ( ( 'confidentiality' ) )
+            // InternalDasl.g:2640:1: ( 'confidentiality' )
             {
-            // InternalDasl.g:2445:1: ( 'confidentiality' )
-            // InternalDasl.g:2446:2: 'confidentiality'
+            // InternalDasl.g:2640:1: ( 'confidentiality' )
+            // InternalDasl.g:2641:2: 'confidentiality'
             {
              before(grammarAccess.getInformationAssetAccess().getConfidentialityKeyword_7()); 
-            match(input,89,FOLLOW_2); 
+            match(input,90,FOLLOW_2); 
              after(grammarAccess.getInformationAssetAccess().getConfidentialityKeyword_7()); 
 
             }
@@ -7940,16 +8613,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__8"
-    // InternalDasl.g:2455:1: rule__InformationAsset__Group__8 : rule__InformationAsset__Group__8__Impl rule__InformationAsset__Group__9 ;
+    // InternalDasl.g:2650:1: rule__InformationAsset__Group__8 : rule__InformationAsset__Group__8__Impl rule__InformationAsset__Group__9 ;
     public final void rule__InformationAsset__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2459:1: ( rule__InformationAsset__Group__8__Impl rule__InformationAsset__Group__9 )
-            // InternalDasl.g:2460:2: rule__InformationAsset__Group__8__Impl rule__InformationAsset__Group__9
+            // InternalDasl.g:2654:1: ( rule__InformationAsset__Group__8__Impl rule__InformationAsset__Group__9 )
+            // InternalDasl.g:2655:2: rule__InformationAsset__Group__8__Impl rule__InformationAsset__Group__9
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_30);
             rule__InformationAsset__Group__8__Impl();
 
             state._fsp--;
@@ -7978,21 +8651,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__8__Impl"
-    // InternalDasl.g:2467:1: rule__InformationAsset__Group__8__Impl : ( ( rule__InformationAsset__ConfidentialityAssignment_8 ) ) ;
+    // InternalDasl.g:2662:1: rule__InformationAsset__Group__8__Impl : ( ( rule__InformationAsset__ConfidentialityAssignment_8 ) ) ;
     public final void rule__InformationAsset__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2471:1: ( ( ( rule__InformationAsset__ConfidentialityAssignment_8 ) ) )
-            // InternalDasl.g:2472:1: ( ( rule__InformationAsset__ConfidentialityAssignment_8 ) )
+            // InternalDasl.g:2666:1: ( ( ( rule__InformationAsset__ConfidentialityAssignment_8 ) ) )
+            // InternalDasl.g:2667:1: ( ( rule__InformationAsset__ConfidentialityAssignment_8 ) )
             {
-            // InternalDasl.g:2472:1: ( ( rule__InformationAsset__ConfidentialityAssignment_8 ) )
-            // InternalDasl.g:2473:2: ( rule__InformationAsset__ConfidentialityAssignment_8 )
+            // InternalDasl.g:2667:1: ( ( rule__InformationAsset__ConfidentialityAssignment_8 ) )
+            // InternalDasl.g:2668:2: ( rule__InformationAsset__ConfidentialityAssignment_8 )
             {
              before(grammarAccess.getInformationAssetAccess().getConfidentialityAssignment_8()); 
-            // InternalDasl.g:2474:2: ( rule__InformationAsset__ConfidentialityAssignment_8 )
-            // InternalDasl.g:2474:3: rule__InformationAsset__ConfidentialityAssignment_8
+            // InternalDasl.g:2669:2: ( rule__InformationAsset__ConfidentialityAssignment_8 )
+            // InternalDasl.g:2669:3: rule__InformationAsset__ConfidentialityAssignment_8
             {
             pushFollow(FOLLOW_2);
             rule__InformationAsset__ConfidentialityAssignment_8();
@@ -8025,16 +8698,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__9"
-    // InternalDasl.g:2482:1: rule__InformationAsset__Group__9 : rule__InformationAsset__Group__9__Impl rule__InformationAsset__Group__10 ;
+    // InternalDasl.g:2677:1: rule__InformationAsset__Group__9 : rule__InformationAsset__Group__9__Impl rule__InformationAsset__Group__10 ;
     public final void rule__InformationAsset__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2486:1: ( rule__InformationAsset__Group__9__Impl rule__InformationAsset__Group__10 )
-            // InternalDasl.g:2487:2: rule__InformationAsset__Group__9__Impl rule__InformationAsset__Group__10
+            // InternalDasl.g:2681:1: ( rule__InformationAsset__Group__9__Impl rule__InformationAsset__Group__10 )
+            // InternalDasl.g:2682:2: rule__InformationAsset__Group__9__Impl rule__InformationAsset__Group__10
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_31);
             rule__InformationAsset__Group__9__Impl();
 
             state._fsp--;
@@ -8063,20 +8736,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__9__Impl"
-    // InternalDasl.g:2494:1: rule__InformationAsset__Group__9__Impl : ( 'integrity' ) ;
+    // InternalDasl.g:2689:1: rule__InformationAsset__Group__9__Impl : ( 'integrity' ) ;
     public final void rule__InformationAsset__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2498:1: ( ( 'integrity' ) )
-            // InternalDasl.g:2499:1: ( 'integrity' )
+            // InternalDasl.g:2693:1: ( ( 'integrity' ) )
+            // InternalDasl.g:2694:1: ( 'integrity' )
             {
-            // InternalDasl.g:2499:1: ( 'integrity' )
-            // InternalDasl.g:2500:2: 'integrity'
+            // InternalDasl.g:2694:1: ( 'integrity' )
+            // InternalDasl.g:2695:2: 'integrity'
             {
              before(grammarAccess.getInformationAssetAccess().getIntegrityKeyword_9()); 
-            match(input,90,FOLLOW_2); 
+            match(input,91,FOLLOW_2); 
              after(grammarAccess.getInformationAssetAccess().getIntegrityKeyword_9()); 
 
             }
@@ -8100,16 +8773,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__10"
-    // InternalDasl.g:2509:1: rule__InformationAsset__Group__10 : rule__InformationAsset__Group__10__Impl rule__InformationAsset__Group__11 ;
+    // InternalDasl.g:2704:1: rule__InformationAsset__Group__10 : rule__InformationAsset__Group__10__Impl rule__InformationAsset__Group__11 ;
     public final void rule__InformationAsset__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2513:1: ( rule__InformationAsset__Group__10__Impl rule__InformationAsset__Group__11 )
-            // InternalDasl.g:2514:2: rule__InformationAsset__Group__10__Impl rule__InformationAsset__Group__11
+            // InternalDasl.g:2708:1: ( rule__InformationAsset__Group__10__Impl rule__InformationAsset__Group__11 )
+            // InternalDasl.g:2709:2: rule__InformationAsset__Group__10__Impl rule__InformationAsset__Group__11
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_32);
             rule__InformationAsset__Group__10__Impl();
 
             state._fsp--;
@@ -8138,21 +8811,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__10__Impl"
-    // InternalDasl.g:2521:1: rule__InformationAsset__Group__10__Impl : ( ( rule__InformationAsset__IntegrityAssignment_10 ) ) ;
+    // InternalDasl.g:2716:1: rule__InformationAsset__Group__10__Impl : ( ( rule__InformationAsset__IntegrityAssignment_10 ) ) ;
     public final void rule__InformationAsset__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2525:1: ( ( ( rule__InformationAsset__IntegrityAssignment_10 ) ) )
-            // InternalDasl.g:2526:1: ( ( rule__InformationAsset__IntegrityAssignment_10 ) )
+            // InternalDasl.g:2720:1: ( ( ( rule__InformationAsset__IntegrityAssignment_10 ) ) )
+            // InternalDasl.g:2721:1: ( ( rule__InformationAsset__IntegrityAssignment_10 ) )
             {
-            // InternalDasl.g:2526:1: ( ( rule__InformationAsset__IntegrityAssignment_10 ) )
-            // InternalDasl.g:2527:2: ( rule__InformationAsset__IntegrityAssignment_10 )
+            // InternalDasl.g:2721:1: ( ( rule__InformationAsset__IntegrityAssignment_10 ) )
+            // InternalDasl.g:2722:2: ( rule__InformationAsset__IntegrityAssignment_10 )
             {
              before(grammarAccess.getInformationAssetAccess().getIntegrityAssignment_10()); 
-            // InternalDasl.g:2528:2: ( rule__InformationAsset__IntegrityAssignment_10 )
-            // InternalDasl.g:2528:3: rule__InformationAsset__IntegrityAssignment_10
+            // InternalDasl.g:2723:2: ( rule__InformationAsset__IntegrityAssignment_10 )
+            // InternalDasl.g:2723:3: rule__InformationAsset__IntegrityAssignment_10
             {
             pushFollow(FOLLOW_2);
             rule__InformationAsset__IntegrityAssignment_10();
@@ -8185,16 +8858,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__11"
-    // InternalDasl.g:2536:1: rule__InformationAsset__Group__11 : rule__InformationAsset__Group__11__Impl rule__InformationAsset__Group__12 ;
+    // InternalDasl.g:2731:1: rule__InformationAsset__Group__11 : rule__InformationAsset__Group__11__Impl rule__InformationAsset__Group__12 ;
     public final void rule__InformationAsset__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2540:1: ( rule__InformationAsset__Group__11__Impl rule__InformationAsset__Group__12 )
-            // InternalDasl.g:2541:2: rule__InformationAsset__Group__11__Impl rule__InformationAsset__Group__12
+            // InternalDasl.g:2735:1: ( rule__InformationAsset__Group__11__Impl rule__InformationAsset__Group__12 )
+            // InternalDasl.g:2736:2: rule__InformationAsset__Group__11__Impl rule__InformationAsset__Group__12
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_33);
             rule__InformationAsset__Group__11__Impl();
 
             state._fsp--;
@@ -8223,20 +8896,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__11__Impl"
-    // InternalDasl.g:2548:1: rule__InformationAsset__Group__11__Impl : ( 'availability' ) ;
+    // InternalDasl.g:2743:1: rule__InformationAsset__Group__11__Impl : ( 'availability' ) ;
     public final void rule__InformationAsset__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2552:1: ( ( 'availability' ) )
-            // InternalDasl.g:2553:1: ( 'availability' )
+            // InternalDasl.g:2747:1: ( ( 'availability' ) )
+            // InternalDasl.g:2748:1: ( 'availability' )
             {
-            // InternalDasl.g:2553:1: ( 'availability' )
-            // InternalDasl.g:2554:2: 'availability'
+            // InternalDasl.g:2748:1: ( 'availability' )
+            // InternalDasl.g:2749:2: 'availability'
             {
              before(grammarAccess.getInformationAssetAccess().getAvailabilityKeyword_11()); 
-            match(input,91,FOLLOW_2); 
+            match(input,92,FOLLOW_2); 
              after(grammarAccess.getInformationAssetAccess().getAvailabilityKeyword_11()); 
 
             }
@@ -8260,16 +8933,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__12"
-    // InternalDasl.g:2563:1: rule__InformationAsset__Group__12 : rule__InformationAsset__Group__12__Impl rule__InformationAsset__Group__13 ;
+    // InternalDasl.g:2758:1: rule__InformationAsset__Group__12 : rule__InformationAsset__Group__12__Impl rule__InformationAsset__Group__13 ;
     public final void rule__InformationAsset__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2567:1: ( rule__InformationAsset__Group__12__Impl rule__InformationAsset__Group__13 )
-            // InternalDasl.g:2568:2: rule__InformationAsset__Group__12__Impl rule__InformationAsset__Group__13
+            // InternalDasl.g:2762:1: ( rule__InformationAsset__Group__12__Impl rule__InformationAsset__Group__13 )
+            // InternalDasl.g:2763:2: rule__InformationAsset__Group__12__Impl rule__InformationAsset__Group__13
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_34);
             rule__InformationAsset__Group__12__Impl();
 
             state._fsp--;
@@ -8298,21 +8971,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__12__Impl"
-    // InternalDasl.g:2575:1: rule__InformationAsset__Group__12__Impl : ( ( rule__InformationAsset__AvailabilityAssignment_12 ) ) ;
+    // InternalDasl.g:2770:1: rule__InformationAsset__Group__12__Impl : ( ( rule__InformationAsset__AvailabilityAssignment_12 ) ) ;
     public final void rule__InformationAsset__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2579:1: ( ( ( rule__InformationAsset__AvailabilityAssignment_12 ) ) )
-            // InternalDasl.g:2580:1: ( ( rule__InformationAsset__AvailabilityAssignment_12 ) )
+            // InternalDasl.g:2774:1: ( ( ( rule__InformationAsset__AvailabilityAssignment_12 ) ) )
+            // InternalDasl.g:2775:1: ( ( rule__InformationAsset__AvailabilityAssignment_12 ) )
             {
-            // InternalDasl.g:2580:1: ( ( rule__InformationAsset__AvailabilityAssignment_12 ) )
-            // InternalDasl.g:2581:2: ( rule__InformationAsset__AvailabilityAssignment_12 )
+            // InternalDasl.g:2775:1: ( ( rule__InformationAsset__AvailabilityAssignment_12 ) )
+            // InternalDasl.g:2776:2: ( rule__InformationAsset__AvailabilityAssignment_12 )
             {
              before(grammarAccess.getInformationAssetAccess().getAvailabilityAssignment_12()); 
-            // InternalDasl.g:2582:2: ( rule__InformationAsset__AvailabilityAssignment_12 )
-            // InternalDasl.g:2582:3: rule__InformationAsset__AvailabilityAssignment_12
+            // InternalDasl.g:2777:2: ( rule__InformationAsset__AvailabilityAssignment_12 )
+            // InternalDasl.g:2777:3: rule__InformationAsset__AvailabilityAssignment_12
             {
             pushFollow(FOLLOW_2);
             rule__InformationAsset__AvailabilityAssignment_12();
@@ -8345,14 +9018,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__13"
-    // InternalDasl.g:2590:1: rule__InformationAsset__Group__13 : rule__InformationAsset__Group__13__Impl ;
+    // InternalDasl.g:2785:1: rule__InformationAsset__Group__13 : rule__InformationAsset__Group__13__Impl ;
     public final void rule__InformationAsset__Group__13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2594:1: ( rule__InformationAsset__Group__13__Impl )
-            // InternalDasl.g:2595:2: rule__InformationAsset__Group__13__Impl
+            // InternalDasl.g:2789:1: ( rule__InformationAsset__Group__13__Impl )
+            // InternalDasl.g:2790:2: rule__InformationAsset__Group__13__Impl
             {
             pushFollow(FOLLOW_2);
             rule__InformationAsset__Group__13__Impl();
@@ -8378,20 +9051,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__Group__13__Impl"
-    // InternalDasl.g:2601:1: rule__InformationAsset__Group__13__Impl : ( '}' ) ;
+    // InternalDasl.g:2796:1: rule__InformationAsset__Group__13__Impl : ( '}' ) ;
     public final void rule__InformationAsset__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2605:1: ( ( '}' ) )
-            // InternalDasl.g:2606:1: ( '}' )
+            // InternalDasl.g:2800:1: ( ( '}' ) )
+            // InternalDasl.g:2801:1: ( '}' )
             {
-            // InternalDasl.g:2606:1: ( '}' )
-            // InternalDasl.g:2607:2: '}'
+            // InternalDasl.g:2801:1: ( '}' )
+            // InternalDasl.g:2802:2: '}'
             {
              before(grammarAccess.getInformationAssetAccess().getRightCurlyBracketKeyword_13()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getInformationAssetAccess().getRightCurlyBracketKeyword_13()); 
 
             }
@@ -8415,14 +9088,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__0"
-    // InternalDasl.g:2617:1: rule__Flow__Group__0 : rule__Flow__Group__0__Impl rule__Flow__Group__1 ;
+    // InternalDasl.g:2812:1: rule__Flow__Group__0 : rule__Flow__Group__0__Impl rule__Flow__Group__1 ;
     public final void rule__Flow__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2621:1: ( rule__Flow__Group__0__Impl rule__Flow__Group__1 )
-            // InternalDasl.g:2622:2: rule__Flow__Group__0__Impl rule__Flow__Group__1
+            // InternalDasl.g:2816:1: ( rule__Flow__Group__0__Impl rule__Flow__Group__1 )
+            // InternalDasl.g:2817:2: rule__Flow__Group__0__Impl rule__Flow__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Flow__Group__0__Impl();
@@ -8453,20 +9126,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__0__Impl"
-    // InternalDasl.g:2629:1: rule__Flow__Group__0__Impl : ( 'flow' ) ;
+    // InternalDasl.g:2824:1: rule__Flow__Group__0__Impl : ( 'flow' ) ;
     public final void rule__Flow__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2633:1: ( ( 'flow' ) )
-            // InternalDasl.g:2634:1: ( 'flow' )
+            // InternalDasl.g:2828:1: ( ( 'flow' ) )
+            // InternalDasl.g:2829:1: ( 'flow' )
             {
-            // InternalDasl.g:2634:1: ( 'flow' )
-            // InternalDasl.g:2635:2: 'flow'
+            // InternalDasl.g:2829:1: ( 'flow' )
+            // InternalDasl.g:2830:2: 'flow'
             {
              before(grammarAccess.getFlowAccess().getFlowKeyword_0()); 
-            match(input,92,FOLLOW_2); 
+            match(input,93,FOLLOW_2); 
              after(grammarAccess.getFlowAccess().getFlowKeyword_0()); 
 
             }
@@ -8490,14 +9163,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__1"
-    // InternalDasl.g:2644:1: rule__Flow__Group__1 : rule__Flow__Group__1__Impl rule__Flow__Group__2 ;
+    // InternalDasl.g:2839:1: rule__Flow__Group__1 : rule__Flow__Group__1__Impl rule__Flow__Group__2 ;
     public final void rule__Flow__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2648:1: ( rule__Flow__Group__1__Impl rule__Flow__Group__2 )
-            // InternalDasl.g:2649:2: rule__Flow__Group__1__Impl rule__Flow__Group__2
+            // InternalDasl.g:2843:1: ( rule__Flow__Group__1__Impl rule__Flow__Group__2 )
+            // InternalDasl.g:2844:2: rule__Flow__Group__1__Impl rule__Flow__Group__2
             {
             pushFollow(FOLLOW_8);
             rule__Flow__Group__1__Impl();
@@ -8528,21 +9201,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__1__Impl"
-    // InternalDasl.g:2656:1: rule__Flow__Group__1__Impl : ( ( rule__Flow__NameAssignment_1 ) ) ;
+    // InternalDasl.g:2851:1: rule__Flow__Group__1__Impl : ( ( rule__Flow__NameAssignment_1 ) ) ;
     public final void rule__Flow__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2660:1: ( ( ( rule__Flow__NameAssignment_1 ) ) )
-            // InternalDasl.g:2661:1: ( ( rule__Flow__NameAssignment_1 ) )
+            // InternalDasl.g:2855:1: ( ( ( rule__Flow__NameAssignment_1 ) ) )
+            // InternalDasl.g:2856:1: ( ( rule__Flow__NameAssignment_1 ) )
             {
-            // InternalDasl.g:2661:1: ( ( rule__Flow__NameAssignment_1 ) )
-            // InternalDasl.g:2662:2: ( rule__Flow__NameAssignment_1 )
+            // InternalDasl.g:2856:1: ( ( rule__Flow__NameAssignment_1 ) )
+            // InternalDasl.g:2857:2: ( rule__Flow__NameAssignment_1 )
             {
              before(grammarAccess.getFlowAccess().getNameAssignment_1()); 
-            // InternalDasl.g:2663:2: ( rule__Flow__NameAssignment_1 )
-            // InternalDasl.g:2663:3: rule__Flow__NameAssignment_1
+            // InternalDasl.g:2858:2: ( rule__Flow__NameAssignment_1 )
+            // InternalDasl.g:2858:3: rule__Flow__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Flow__NameAssignment_1();
@@ -8575,16 +9248,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__2"
-    // InternalDasl.g:2671:1: rule__Flow__Group__2 : rule__Flow__Group__2__Impl rule__Flow__Group__3 ;
+    // InternalDasl.g:2866:1: rule__Flow__Group__2 : rule__Flow__Group__2__Impl rule__Flow__Group__3 ;
     public final void rule__Flow__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2675:1: ( rule__Flow__Group__2__Impl rule__Flow__Group__3 )
-            // InternalDasl.g:2676:2: rule__Flow__Group__2__Impl rule__Flow__Group__3
+            // InternalDasl.g:2870:1: ( rule__Flow__Group__2__Impl rule__Flow__Group__3 )
+            // InternalDasl.g:2871:2: rule__Flow__Group__2__Impl rule__Flow__Group__3
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_35);
             rule__Flow__Group__2__Impl();
 
             state._fsp--;
@@ -8613,20 +9286,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__2__Impl"
-    // InternalDasl.g:2683:1: rule__Flow__Group__2__Impl : ( '{' ) ;
+    // InternalDasl.g:2878:1: rule__Flow__Group__2__Impl : ( '{' ) ;
     public final void rule__Flow__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2687:1: ( ( '{' ) )
-            // InternalDasl.g:2688:1: ( '{' )
+            // InternalDasl.g:2882:1: ( ( '{' ) )
+            // InternalDasl.g:2883:1: ( '{' )
             {
-            // InternalDasl.g:2688:1: ( '{' )
-            // InternalDasl.g:2689:2: '{'
+            // InternalDasl.g:2883:1: ( '{' )
+            // InternalDasl.g:2884:2: '{'
             {
              before(grammarAccess.getFlowAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,69,FOLLOW_2); 
+            match(input,70,FOLLOW_2); 
              after(grammarAccess.getFlowAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -8650,14 +9323,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__3"
-    // InternalDasl.g:2698:1: rule__Flow__Group__3 : rule__Flow__Group__3__Impl rule__Flow__Group__4 ;
+    // InternalDasl.g:2893:1: rule__Flow__Group__3 : rule__Flow__Group__3__Impl rule__Flow__Group__4 ;
     public final void rule__Flow__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2702:1: ( rule__Flow__Group__3__Impl rule__Flow__Group__4 )
-            // InternalDasl.g:2703:2: rule__Flow__Group__3__Impl rule__Flow__Group__4
+            // InternalDasl.g:2897:1: ( rule__Flow__Group__3__Impl rule__Flow__Group__4 )
+            // InternalDasl.g:2898:2: rule__Flow__Group__3__Impl rule__Flow__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__Flow__Group__3__Impl();
@@ -8688,20 +9361,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__3__Impl"
-    // InternalDasl.g:2710:1: rule__Flow__Group__3__Impl : ( 'from' ) ;
+    // InternalDasl.g:2905:1: rule__Flow__Group__3__Impl : ( 'from' ) ;
     public final void rule__Flow__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2714:1: ( ( 'from' ) )
-            // InternalDasl.g:2715:1: ( 'from' )
+            // InternalDasl.g:2909:1: ( ( 'from' ) )
+            // InternalDasl.g:2910:1: ( 'from' )
             {
-            // InternalDasl.g:2715:1: ( 'from' )
-            // InternalDasl.g:2716:2: 'from'
+            // InternalDasl.g:2910:1: ( 'from' )
+            // InternalDasl.g:2911:2: 'from'
             {
              before(grammarAccess.getFlowAccess().getFromKeyword_3()); 
-            match(input,93,FOLLOW_2); 
+            match(input,94,FOLLOW_2); 
              after(grammarAccess.getFlowAccess().getFromKeyword_3()); 
 
             }
@@ -8725,16 +9398,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__4"
-    // InternalDasl.g:2725:1: rule__Flow__Group__4 : rule__Flow__Group__4__Impl rule__Flow__Group__5 ;
+    // InternalDasl.g:2920:1: rule__Flow__Group__4 : rule__Flow__Group__4__Impl rule__Flow__Group__5 ;
     public final void rule__Flow__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2729:1: ( rule__Flow__Group__4__Impl rule__Flow__Group__5 )
-            // InternalDasl.g:2730:2: rule__Flow__Group__4__Impl rule__Flow__Group__5
+            // InternalDasl.g:2924:1: ( rule__Flow__Group__4__Impl rule__Flow__Group__5 )
+            // InternalDasl.g:2925:2: rule__Flow__Group__4__Impl rule__Flow__Group__5
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_36);
             rule__Flow__Group__4__Impl();
 
             state._fsp--;
@@ -8763,21 +9436,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__4__Impl"
-    // InternalDasl.g:2737:1: rule__Flow__Group__4__Impl : ( ( rule__Flow__FromAssignment_4 ) ) ;
+    // InternalDasl.g:2932:1: rule__Flow__Group__4__Impl : ( ( rule__Flow__FromAssignment_4 ) ) ;
     public final void rule__Flow__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2741:1: ( ( ( rule__Flow__FromAssignment_4 ) ) )
-            // InternalDasl.g:2742:1: ( ( rule__Flow__FromAssignment_4 ) )
+            // InternalDasl.g:2936:1: ( ( ( rule__Flow__FromAssignment_4 ) ) )
+            // InternalDasl.g:2937:1: ( ( rule__Flow__FromAssignment_4 ) )
             {
-            // InternalDasl.g:2742:1: ( ( rule__Flow__FromAssignment_4 ) )
-            // InternalDasl.g:2743:2: ( rule__Flow__FromAssignment_4 )
+            // InternalDasl.g:2937:1: ( ( rule__Flow__FromAssignment_4 ) )
+            // InternalDasl.g:2938:2: ( rule__Flow__FromAssignment_4 )
             {
              before(grammarAccess.getFlowAccess().getFromAssignment_4()); 
-            // InternalDasl.g:2744:2: ( rule__Flow__FromAssignment_4 )
-            // InternalDasl.g:2744:3: rule__Flow__FromAssignment_4
+            // InternalDasl.g:2939:2: ( rule__Flow__FromAssignment_4 )
+            // InternalDasl.g:2939:3: rule__Flow__FromAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Flow__FromAssignment_4();
@@ -8810,14 +9483,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__5"
-    // InternalDasl.g:2752:1: rule__Flow__Group__5 : rule__Flow__Group__5__Impl rule__Flow__Group__6 ;
+    // InternalDasl.g:2947:1: rule__Flow__Group__5 : rule__Flow__Group__5__Impl rule__Flow__Group__6 ;
     public final void rule__Flow__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2756:1: ( rule__Flow__Group__5__Impl rule__Flow__Group__6 )
-            // InternalDasl.g:2757:2: rule__Flow__Group__5__Impl rule__Flow__Group__6
+            // InternalDasl.g:2951:1: ( rule__Flow__Group__5__Impl rule__Flow__Group__6 )
+            // InternalDasl.g:2952:2: rule__Flow__Group__5__Impl rule__Flow__Group__6
             {
             pushFollow(FOLLOW_6);
             rule__Flow__Group__5__Impl();
@@ -8848,20 +9521,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__5__Impl"
-    // InternalDasl.g:2764:1: rule__Flow__Group__5__Impl : ( 'to' ) ;
+    // InternalDasl.g:2959:1: rule__Flow__Group__5__Impl : ( 'to' ) ;
     public final void rule__Flow__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2768:1: ( ( 'to' ) )
-            // InternalDasl.g:2769:1: ( 'to' )
+            // InternalDasl.g:2963:1: ( ( 'to' ) )
+            // InternalDasl.g:2964:1: ( 'to' )
             {
-            // InternalDasl.g:2769:1: ( 'to' )
-            // InternalDasl.g:2770:2: 'to'
+            // InternalDasl.g:2964:1: ( 'to' )
+            // InternalDasl.g:2965:2: 'to'
             {
              before(grammarAccess.getFlowAccess().getToKeyword_5()); 
-            match(input,94,FOLLOW_2); 
+            match(input,95,FOLLOW_2); 
              after(grammarAccess.getFlowAccess().getToKeyword_5()); 
 
             }
@@ -8885,16 +9558,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__6"
-    // InternalDasl.g:2779:1: rule__Flow__Group__6 : rule__Flow__Group__6__Impl rule__Flow__Group__7 ;
+    // InternalDasl.g:2974:1: rule__Flow__Group__6 : rule__Flow__Group__6__Impl rule__Flow__Group__7 ;
     public final void rule__Flow__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2783:1: ( rule__Flow__Group__6__Impl rule__Flow__Group__7 )
-            // InternalDasl.g:2784:2: rule__Flow__Group__6__Impl rule__Flow__Group__7
+            // InternalDasl.g:2978:1: ( rule__Flow__Group__6__Impl rule__Flow__Group__7 )
+            // InternalDasl.g:2979:2: rule__Flow__Group__6__Impl rule__Flow__Group__7
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_37);
             rule__Flow__Group__6__Impl();
 
             state._fsp--;
@@ -8923,21 +9596,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__6__Impl"
-    // InternalDasl.g:2791:1: rule__Flow__Group__6__Impl : ( ( rule__Flow__ToAssignment_6 ) ) ;
+    // InternalDasl.g:2986:1: rule__Flow__Group__6__Impl : ( ( rule__Flow__ToAssignment_6 ) ) ;
     public final void rule__Flow__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2795:1: ( ( ( rule__Flow__ToAssignment_6 ) ) )
-            // InternalDasl.g:2796:1: ( ( rule__Flow__ToAssignment_6 ) )
+            // InternalDasl.g:2990:1: ( ( ( rule__Flow__ToAssignment_6 ) ) )
+            // InternalDasl.g:2991:1: ( ( rule__Flow__ToAssignment_6 ) )
             {
-            // InternalDasl.g:2796:1: ( ( rule__Flow__ToAssignment_6 ) )
-            // InternalDasl.g:2797:2: ( rule__Flow__ToAssignment_6 )
+            // InternalDasl.g:2991:1: ( ( rule__Flow__ToAssignment_6 ) )
+            // InternalDasl.g:2992:2: ( rule__Flow__ToAssignment_6 )
             {
              before(grammarAccess.getFlowAccess().getToAssignment_6()); 
-            // InternalDasl.g:2798:2: ( rule__Flow__ToAssignment_6 )
-            // InternalDasl.g:2798:3: rule__Flow__ToAssignment_6
+            // InternalDasl.g:2993:2: ( rule__Flow__ToAssignment_6 )
+            // InternalDasl.g:2993:3: rule__Flow__ToAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__Flow__ToAssignment_6();
@@ -8970,16 +9643,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__7"
-    // InternalDasl.g:2806:1: rule__Flow__Group__7 : rule__Flow__Group__7__Impl rule__Flow__Group__8 ;
+    // InternalDasl.g:3001:1: rule__Flow__Group__7 : rule__Flow__Group__7__Impl rule__Flow__Group__8 ;
     public final void rule__Flow__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2810:1: ( rule__Flow__Group__7__Impl rule__Flow__Group__8 )
-            // InternalDasl.g:2811:2: rule__Flow__Group__7__Impl rule__Flow__Group__8
+            // InternalDasl.g:3005:1: ( rule__Flow__Group__7__Impl rule__Flow__Group__8 )
+            // InternalDasl.g:3006:2: rule__Flow__Group__7__Impl rule__Flow__Group__8
             {
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_37);
             rule__Flow__Group__7__Impl();
 
             state._fsp--;
@@ -9008,21 +9681,42 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__7__Impl"
-    // InternalDasl.g:2818:1: rule__Flow__Group__7__Impl : ( 'informationassets' ) ;
+    // InternalDasl.g:3013:1: rule__Flow__Group__7__Impl : ( ( rule__Flow__Group_7__0 )? ) ;
     public final void rule__Flow__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2822:1: ( ( 'informationassets' ) )
-            // InternalDasl.g:2823:1: ( 'informationassets' )
+            // InternalDasl.g:3017:1: ( ( ( rule__Flow__Group_7__0 )? ) )
+            // InternalDasl.g:3018:1: ( ( rule__Flow__Group_7__0 )? )
             {
-            // InternalDasl.g:2823:1: ( 'informationassets' )
-            // InternalDasl.g:2824:2: 'informationassets'
+            // InternalDasl.g:3018:1: ( ( rule__Flow__Group_7__0 )? )
+            // InternalDasl.g:3019:2: ( rule__Flow__Group_7__0 )?
             {
-             before(grammarAccess.getFlowAccess().getInformationassetsKeyword_7()); 
-            match(input,95,FOLLOW_2); 
-             after(grammarAccess.getFlowAccess().getInformationassetsKeyword_7()); 
+             before(grammarAccess.getFlowAccess().getGroup_7()); 
+            // InternalDasl.g:3020:2: ( rule__Flow__Group_7__0 )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
+
+            if ( (LA23_0==88) ) {
+                alt23=1;
+            }
+            switch (alt23) {
+                case 1 :
+                    // InternalDasl.g:3020:3: rule__Flow__Group_7__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Flow__Group_7__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getFlowAccess().getGroup_7()); 
 
             }
 
@@ -9045,16 +9739,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__8"
-    // InternalDasl.g:2833:1: rule__Flow__Group__8 : rule__Flow__Group__8__Impl rule__Flow__Group__9 ;
+    // InternalDasl.g:3028:1: rule__Flow__Group__8 : rule__Flow__Group__8__Impl rule__Flow__Group__9 ;
     public final void rule__Flow__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2837:1: ( rule__Flow__Group__8__Impl rule__Flow__Group__9 )
-            // InternalDasl.g:2838:2: rule__Flow__Group__8__Impl rule__Flow__Group__9
+            // InternalDasl.g:3032:1: ( rule__Flow__Group__8__Impl rule__Flow__Group__9 )
+            // InternalDasl.g:3033:2: rule__Flow__Group__8__Impl rule__Flow__Group__9
             {
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_37);
             rule__Flow__Group__8__Impl();
 
             state._fsp--;
@@ -9083,49 +9777,42 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__8__Impl"
-    // InternalDasl.g:2845:1: rule__Flow__Group__8__Impl : ( ( rule__Flow__AssetsAssignment_8 )* ) ;
+    // InternalDasl.g:3040:1: rule__Flow__Group__8__Impl : ( ( rule__Flow__Group_8__0 )? ) ;
     public final void rule__Flow__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2849:1: ( ( ( rule__Flow__AssetsAssignment_8 )* ) )
-            // InternalDasl.g:2850:1: ( ( rule__Flow__AssetsAssignment_8 )* )
+            // InternalDasl.g:3044:1: ( ( ( rule__Flow__Group_8__0 )? ) )
+            // InternalDasl.g:3045:1: ( ( rule__Flow__Group_8__0 )? )
             {
-            // InternalDasl.g:2850:1: ( ( rule__Flow__AssetsAssignment_8 )* )
-            // InternalDasl.g:2851:2: ( rule__Flow__AssetsAssignment_8 )*
+            // InternalDasl.g:3045:1: ( ( rule__Flow__Group_8__0 )? )
+            // InternalDasl.g:3046:2: ( rule__Flow__Group_8__0 )?
             {
-             before(grammarAccess.getFlowAccess().getAssetsAssignment_8()); 
-            // InternalDasl.g:2852:2: ( rule__Flow__AssetsAssignment_8 )*
-            loop17:
-            do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+             before(grammarAccess.getFlowAccess().getGroup_8()); 
+            // InternalDasl.g:3047:2: ( rule__Flow__Group_8__0 )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-                if ( (LA17_0==RULE_ID) ) {
-                    alt17=1;
-                }
+            if ( (LA24_0==76) ) {
+                alt24=1;
+            }
+            switch (alt24) {
+                case 1 :
+                    // InternalDasl.g:3047:3: rule__Flow__Group_8__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Flow__Group_8__0();
 
-
-                switch (alt17) {
-            	case 1 :
-            	    // InternalDasl.g:2852:3: rule__Flow__AssetsAssignment_8
-            	    {
-            	    pushFollow(FOLLOW_13);
-            	    rule__Flow__AssetsAssignment_8();
-
-            	    state._fsp--;
+                    state._fsp--;
 
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    break loop17;
-                }
-            } while (true);
+            }
 
-             after(grammarAccess.getFlowAccess().getAssetsAssignment_8()); 
+             after(grammarAccess.getFlowAccess().getGroup_8()); 
 
             }
 
@@ -9148,22 +9835,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__9"
-    // InternalDasl.g:2860:1: rule__Flow__Group__9 : rule__Flow__Group__9__Impl rule__Flow__Group__10 ;
+    // InternalDasl.g:3055:1: rule__Flow__Group__9 : rule__Flow__Group__9__Impl ;
     public final void rule__Flow__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2864:1: ( rule__Flow__Group__9__Impl rule__Flow__Group__10 )
-            // InternalDasl.g:2865:2: rule__Flow__Group__9__Impl rule__Flow__Group__10
+            // InternalDasl.g:3059:1: ( rule__Flow__Group__9__Impl )
+            // InternalDasl.g:3060:2: rule__Flow__Group__9__Impl
             {
-            pushFollow(FOLLOW_22);
-            rule__Flow__Group__9__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Flow__Group__10();
+            rule__Flow__Group__9__Impl();
 
             state._fsp--;
 
@@ -9186,21 +9868,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__9__Impl"
-    // InternalDasl.g:2872:1: rule__Flow__Group__9__Impl : ( 'controls' ) ;
+    // InternalDasl.g:3066:1: rule__Flow__Group__9__Impl : ( '}' ) ;
     public final void rule__Flow__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2876:1: ( ( 'controls' ) )
-            // InternalDasl.g:2877:1: ( 'controls' )
+            // InternalDasl.g:3070:1: ( ( '}' ) )
+            // InternalDasl.g:3071:1: ( '}' )
             {
-            // InternalDasl.g:2877:1: ( 'controls' )
-            // InternalDasl.g:2878:2: 'controls'
+            // InternalDasl.g:3071:1: ( '}' )
+            // InternalDasl.g:3072:2: '}'
             {
-             before(grammarAccess.getFlowAccess().getControlsKeyword_9()); 
+             before(grammarAccess.getFlowAccess().getRightCurlyBracketKeyword_9()); 
             match(input,75,FOLLOW_2); 
-             after(grammarAccess.getFlowAccess().getControlsKeyword_9()); 
+             after(grammarAccess.getFlowAccess().getRightCurlyBracketKeyword_9()); 
 
             }
 
@@ -9222,23 +9904,23 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Flow__Group__9__Impl"
 
 
-    // $ANTLR start "rule__Flow__Group__10"
-    // InternalDasl.g:2887:1: rule__Flow__Group__10 : rule__Flow__Group__10__Impl rule__Flow__Group__11 ;
-    public final void rule__Flow__Group__10() throws RecognitionException {
+    // $ANTLR start "rule__Flow__Group_7__0"
+    // InternalDasl.g:3082:1: rule__Flow__Group_7__0 : rule__Flow__Group_7__0__Impl rule__Flow__Group_7__1 ;
+    public final void rule__Flow__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2891:1: ( rule__Flow__Group__10__Impl rule__Flow__Group__11 )
-            // InternalDasl.g:2892:2: rule__Flow__Group__10__Impl rule__Flow__Group__11
+            // InternalDasl.g:3086:1: ( rule__Flow__Group_7__0__Impl rule__Flow__Group_7__1 )
+            // InternalDasl.g:3087:2: rule__Flow__Group_7__0__Impl rule__Flow__Group_7__1
             {
-            pushFollow(FOLLOW_22);
-            rule__Flow__Group__10__Impl();
+            pushFollow(FOLLOW_6);
+            rule__Flow__Group_7__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flow__Group__11();
+            rule__Flow__Group_7__1();
 
             state._fsp--;
 
@@ -9257,40 +9939,110 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flow__Group__10"
+    // $ANTLR end "rule__Flow__Group_7__0"
 
 
-    // $ANTLR start "rule__Flow__Group__10__Impl"
-    // InternalDasl.g:2899:1: rule__Flow__Group__10__Impl : ( ( rule__Flow__ControlsAssignment_10 )* ) ;
-    public final void rule__Flow__Group__10__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Flow__Group_7__0__Impl"
+    // InternalDasl.g:3094:1: rule__Flow__Group_7__0__Impl : ( 'assets' ) ;
+    public final void rule__Flow__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2903:1: ( ( ( rule__Flow__ControlsAssignment_10 )* ) )
-            // InternalDasl.g:2904:1: ( ( rule__Flow__ControlsAssignment_10 )* )
+            // InternalDasl.g:3098:1: ( ( 'assets' ) )
+            // InternalDasl.g:3099:1: ( 'assets' )
             {
-            // InternalDasl.g:2904:1: ( ( rule__Flow__ControlsAssignment_10 )* )
-            // InternalDasl.g:2905:2: ( rule__Flow__ControlsAssignment_10 )*
+            // InternalDasl.g:3099:1: ( 'assets' )
+            // InternalDasl.g:3100:2: 'assets'
             {
-             before(grammarAccess.getFlowAccess().getControlsAssignment_10()); 
-            // InternalDasl.g:2906:2: ( rule__Flow__ControlsAssignment_10 )*
-            loop18:
-            do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
+             before(grammarAccess.getFlowAccess().getAssetsKeyword_7_0()); 
+            match(input,88,FOLLOW_2); 
+             after(grammarAccess.getFlowAccess().getAssetsKeyword_7_0()); 
 
-                if ( (LA18_0==RULE_ID) ) {
-                    alt18=1;
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Flow__Group_7__0__Impl"
+
+
+    // $ANTLR start "rule__Flow__Group_7__1"
+    // InternalDasl.g:3109:1: rule__Flow__Group_7__1 : rule__Flow__Group_7__1__Impl ;
+    public final void rule__Flow__Group_7__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:3113:1: ( rule__Flow__Group_7__1__Impl )
+            // InternalDasl.g:3114:2: rule__Flow__Group_7__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Flow__Group_7__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Flow__Group_7__1"
+
+
+    // $ANTLR start "rule__Flow__Group_7__1__Impl"
+    // InternalDasl.g:3120:1: rule__Flow__Group_7__1__Impl : ( ( rule__Flow__AssetsAssignment_7_1 )* ) ;
+    public final void rule__Flow__Group_7__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:3124:1: ( ( ( rule__Flow__AssetsAssignment_7_1 )* ) )
+            // InternalDasl.g:3125:1: ( ( rule__Flow__AssetsAssignment_7_1 )* )
+            {
+            // InternalDasl.g:3125:1: ( ( rule__Flow__AssetsAssignment_7_1 )* )
+            // InternalDasl.g:3126:2: ( rule__Flow__AssetsAssignment_7_1 )*
+            {
+             before(grammarAccess.getFlowAccess().getAssetsAssignment_7_1()); 
+            // InternalDasl.g:3127:2: ( rule__Flow__AssetsAssignment_7_1 )*
+            loop25:
+            do {
+                int alt25=2;
+                int LA25_0 = input.LA(1);
+
+                if ( (LA25_0==RULE_ID) ) {
+                    alt25=1;
                 }
 
 
-                switch (alt18) {
+                switch (alt25) {
             	case 1 :
-            	    // InternalDasl.g:2906:3: rule__Flow__ControlsAssignment_10
+            	    // InternalDasl.g:3127:3: rule__Flow__AssetsAssignment_7_1
             	    {
             	    pushFollow(FOLLOW_13);
-            	    rule__Flow__ControlsAssignment_10();
+            	    rule__Flow__AssetsAssignment_7_1();
 
             	    state._fsp--;
 
@@ -9299,11 +10051,11 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop18;
+            	    break loop25;
                 }
             } while (true);
 
-             after(grammarAccess.getFlowAccess().getControlsAssignment_10()); 
+             after(grammarAccess.getFlowAccess().getAssetsAssignment_7_1()); 
 
             }
 
@@ -9322,21 +10074,26 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flow__Group__10__Impl"
+    // $ANTLR end "rule__Flow__Group_7__1__Impl"
 
 
-    // $ANTLR start "rule__Flow__Group__11"
-    // InternalDasl.g:2914:1: rule__Flow__Group__11 : rule__Flow__Group__11__Impl ;
-    public final void rule__Flow__Group__11() throws RecognitionException {
+    // $ANTLR start "rule__Flow__Group_8__0"
+    // InternalDasl.g:3136:1: rule__Flow__Group_8__0 : rule__Flow__Group_8__0__Impl rule__Flow__Group_8__1 ;
+    public final void rule__Flow__Group_8__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2918:1: ( rule__Flow__Group__11__Impl )
-            // InternalDasl.g:2919:2: rule__Flow__Group__11__Impl
+            // InternalDasl.g:3140:1: ( rule__Flow__Group_8__0__Impl rule__Flow__Group_8__1 )
+            // InternalDasl.g:3141:2: rule__Flow__Group_8__0__Impl rule__Flow__Group_8__1
             {
+            pushFollow(FOLLOW_6);
+            rule__Flow__Group_8__0__Impl();
+
+            state._fsp--;
+
             pushFollow(FOLLOW_2);
-            rule__Flow__Group__11__Impl();
+            rule__Flow__Group_8__1();
 
             state._fsp--;
 
@@ -9355,25 +10112,25 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flow__Group__11"
+    // $ANTLR end "rule__Flow__Group_8__0"
 
 
-    // $ANTLR start "rule__Flow__Group__11__Impl"
-    // InternalDasl.g:2925:1: rule__Flow__Group__11__Impl : ( '}' ) ;
-    public final void rule__Flow__Group__11__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Flow__Group_8__0__Impl"
+    // InternalDasl.g:3148:1: rule__Flow__Group_8__0__Impl : ( 'controls' ) ;
+    public final void rule__Flow__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2929:1: ( ( '}' ) )
-            // InternalDasl.g:2930:1: ( '}' )
+            // InternalDasl.g:3152:1: ( ( 'controls' ) )
+            // InternalDasl.g:3153:1: ( 'controls' )
             {
-            // InternalDasl.g:2930:1: ( '}' )
-            // InternalDasl.g:2931:2: '}'
+            // InternalDasl.g:3153:1: ( 'controls' )
+            // InternalDasl.g:3154:2: 'controls'
             {
-             before(grammarAccess.getFlowAccess().getRightCurlyBracketKeyword_11()); 
-            match(input,74,FOLLOW_2); 
-             after(grammarAccess.getFlowAccess().getRightCurlyBracketKeyword_11()); 
+             before(grammarAccess.getFlowAccess().getControlsKeyword_8_0()); 
+            match(input,76,FOLLOW_2); 
+             after(grammarAccess.getFlowAccess().getControlsKeyword_8_0()); 
 
             }
 
@@ -9392,18 +10149,116 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flow__Group__11__Impl"
+    // $ANTLR end "rule__Flow__Group_8__0__Impl"
+
+
+    // $ANTLR start "rule__Flow__Group_8__1"
+    // InternalDasl.g:3163:1: rule__Flow__Group_8__1 : rule__Flow__Group_8__1__Impl ;
+    public final void rule__Flow__Group_8__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:3167:1: ( rule__Flow__Group_8__1__Impl )
+            // InternalDasl.g:3168:2: rule__Flow__Group_8__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Flow__Group_8__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Flow__Group_8__1"
+
+
+    // $ANTLR start "rule__Flow__Group_8__1__Impl"
+    // InternalDasl.g:3174:1: rule__Flow__Group_8__1__Impl : ( ( rule__Flow__ControlsAssignment_8_1 )* ) ;
+    public final void rule__Flow__Group_8__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:3178:1: ( ( ( rule__Flow__ControlsAssignment_8_1 )* ) )
+            // InternalDasl.g:3179:1: ( ( rule__Flow__ControlsAssignment_8_1 )* )
+            {
+            // InternalDasl.g:3179:1: ( ( rule__Flow__ControlsAssignment_8_1 )* )
+            // InternalDasl.g:3180:2: ( rule__Flow__ControlsAssignment_8_1 )*
+            {
+             before(grammarAccess.getFlowAccess().getControlsAssignment_8_1()); 
+            // InternalDasl.g:3181:2: ( rule__Flow__ControlsAssignment_8_1 )*
+            loop26:
+            do {
+                int alt26=2;
+                int LA26_0 = input.LA(1);
+
+                if ( (LA26_0==RULE_ID) ) {
+                    alt26=1;
+                }
+
+
+                switch (alt26) {
+            	case 1 :
+            	    // InternalDasl.g:3181:3: rule__Flow__ControlsAssignment_8_1
+            	    {
+            	    pushFollow(FOLLOW_13);
+            	    rule__Flow__ControlsAssignment_8_1();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop26;
+                }
+            } while (true);
+
+             after(grammarAccess.getFlowAccess().getControlsAssignment_8_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Flow__Group_8__1__Impl"
 
 
     // $ANTLR start "rule__Control__Group__0"
-    // InternalDasl.g:2941:1: rule__Control__Group__0 : rule__Control__Group__0__Impl rule__Control__Group__1 ;
+    // InternalDasl.g:3190:1: rule__Control__Group__0 : rule__Control__Group__0__Impl rule__Control__Group__1 ;
     public final void rule__Control__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2945:1: ( rule__Control__Group__0__Impl rule__Control__Group__1 )
-            // InternalDasl.g:2946:2: rule__Control__Group__0__Impl rule__Control__Group__1
+            // InternalDasl.g:3194:1: ( rule__Control__Group__0__Impl rule__Control__Group__1 )
+            // InternalDasl.g:3195:2: rule__Control__Group__0__Impl rule__Control__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Control__Group__0__Impl();
@@ -9434,17 +10289,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__0__Impl"
-    // InternalDasl.g:2953:1: rule__Control__Group__0__Impl : ( 'control' ) ;
+    // InternalDasl.g:3202:1: rule__Control__Group__0__Impl : ( 'control' ) ;
     public final void rule__Control__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2957:1: ( ( 'control' ) )
-            // InternalDasl.g:2958:1: ( 'control' )
+            // InternalDasl.g:3206:1: ( ( 'control' ) )
+            // InternalDasl.g:3207:1: ( 'control' )
             {
-            // InternalDasl.g:2958:1: ( 'control' )
-            // InternalDasl.g:2959:2: 'control'
+            // InternalDasl.g:3207:1: ( 'control' )
+            // InternalDasl.g:3208:2: 'control'
             {
              before(grammarAccess.getControlAccess().getControlKeyword_0()); 
             match(input,96,FOLLOW_2); 
@@ -9471,14 +10326,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__1"
-    // InternalDasl.g:2968:1: rule__Control__Group__1 : rule__Control__Group__1__Impl rule__Control__Group__2 ;
+    // InternalDasl.g:3217:1: rule__Control__Group__1 : rule__Control__Group__1__Impl rule__Control__Group__2 ;
     public final void rule__Control__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2972:1: ( rule__Control__Group__1__Impl rule__Control__Group__2 )
-            // InternalDasl.g:2973:2: rule__Control__Group__1__Impl rule__Control__Group__2
+            // InternalDasl.g:3221:1: ( rule__Control__Group__1__Impl rule__Control__Group__2 )
+            // InternalDasl.g:3222:2: rule__Control__Group__1__Impl rule__Control__Group__2
             {
             pushFollow(FOLLOW_8);
             rule__Control__Group__1__Impl();
@@ -9509,21 +10364,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__1__Impl"
-    // InternalDasl.g:2980:1: rule__Control__Group__1__Impl : ( ( rule__Control__NameAssignment_1 ) ) ;
+    // InternalDasl.g:3229:1: rule__Control__Group__1__Impl : ( ( rule__Control__NameAssignment_1 ) ) ;
     public final void rule__Control__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2984:1: ( ( ( rule__Control__NameAssignment_1 ) ) )
-            // InternalDasl.g:2985:1: ( ( rule__Control__NameAssignment_1 ) )
+            // InternalDasl.g:3233:1: ( ( ( rule__Control__NameAssignment_1 ) ) )
+            // InternalDasl.g:3234:1: ( ( rule__Control__NameAssignment_1 ) )
             {
-            // InternalDasl.g:2985:1: ( ( rule__Control__NameAssignment_1 ) )
-            // InternalDasl.g:2986:2: ( rule__Control__NameAssignment_1 )
+            // InternalDasl.g:3234:1: ( ( rule__Control__NameAssignment_1 ) )
+            // InternalDasl.g:3235:2: ( rule__Control__NameAssignment_1 )
             {
              before(grammarAccess.getControlAccess().getNameAssignment_1()); 
-            // InternalDasl.g:2987:2: ( rule__Control__NameAssignment_1 )
-            // InternalDasl.g:2987:3: rule__Control__NameAssignment_1
+            // InternalDasl.g:3236:2: ( rule__Control__NameAssignment_1 )
+            // InternalDasl.g:3236:3: rule__Control__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Control__NameAssignment_1();
@@ -9556,14 +10411,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__2"
-    // InternalDasl.g:2995:1: rule__Control__Group__2 : rule__Control__Group__2__Impl rule__Control__Group__3 ;
+    // InternalDasl.g:3244:1: rule__Control__Group__2 : rule__Control__Group__2__Impl rule__Control__Group__3 ;
     public final void rule__Control__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:2999:1: ( rule__Control__Group__2__Impl rule__Control__Group__3 )
-            // InternalDasl.g:3000:2: rule__Control__Group__2__Impl rule__Control__Group__3
+            // InternalDasl.g:3248:1: ( rule__Control__Group__2__Impl rule__Control__Group__3 )
+            // InternalDasl.g:3249:2: rule__Control__Group__2__Impl rule__Control__Group__3
             {
             pushFollow(FOLLOW_16);
             rule__Control__Group__2__Impl();
@@ -9594,20 +10449,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__2__Impl"
-    // InternalDasl.g:3007:1: rule__Control__Group__2__Impl : ( '{' ) ;
+    // InternalDasl.g:3256:1: rule__Control__Group__2__Impl : ( '{' ) ;
     public final void rule__Control__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3011:1: ( ( '{' ) )
-            // InternalDasl.g:3012:1: ( '{' )
+            // InternalDasl.g:3260:1: ( ( '{' ) )
+            // InternalDasl.g:3261:1: ( '{' )
             {
-            // InternalDasl.g:3012:1: ( '{' )
-            // InternalDasl.g:3013:2: '{'
+            // InternalDasl.g:3261:1: ( '{' )
+            // InternalDasl.g:3262:2: '{'
             {
              before(grammarAccess.getControlAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,69,FOLLOW_2); 
+            match(input,70,FOLLOW_2); 
              after(grammarAccess.getControlAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -9631,14 +10486,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__3"
-    // InternalDasl.g:3022:1: rule__Control__Group__3 : rule__Control__Group__3__Impl rule__Control__Group__4 ;
+    // InternalDasl.g:3271:1: rule__Control__Group__3 : rule__Control__Group__3__Impl rule__Control__Group__4 ;
     public final void rule__Control__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3026:1: ( rule__Control__Group__3__Impl rule__Control__Group__4 )
-            // InternalDasl.g:3027:2: rule__Control__Group__3__Impl rule__Control__Group__4
+            // InternalDasl.g:3275:1: ( rule__Control__Group__3__Impl rule__Control__Group__4 )
+            // InternalDasl.g:3276:2: rule__Control__Group__3__Impl rule__Control__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__Control__Group__3__Impl();
@@ -9669,20 +10524,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__3__Impl"
-    // InternalDasl.g:3034:1: rule__Control__Group__3__Impl : ( 'ref' ) ;
+    // InternalDasl.g:3283:1: rule__Control__Group__3__Impl : ( 'ref' ) ;
     public final void rule__Control__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3038:1: ( ( 'ref' ) )
-            // InternalDasl.g:3039:1: ( 'ref' )
+            // InternalDasl.g:3287:1: ( ( 'ref' ) )
+            // InternalDasl.g:3288:1: ( 'ref' )
             {
-            // InternalDasl.g:3039:1: ( 'ref' )
-            // InternalDasl.g:3040:2: 'ref'
+            // InternalDasl.g:3288:1: ( 'ref' )
+            // InternalDasl.g:3289:2: 'ref'
             {
              before(grammarAccess.getControlAccess().getRefKeyword_3()); 
-            match(input,77,FOLLOW_2); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getControlAccess().getRefKeyword_3()); 
 
             }
@@ -9706,14 +10561,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__4"
-    // InternalDasl.g:3049:1: rule__Control__Group__4 : rule__Control__Group__4__Impl rule__Control__Group__5 ;
+    // InternalDasl.g:3298:1: rule__Control__Group__4 : rule__Control__Group__4__Impl rule__Control__Group__5 ;
     public final void rule__Control__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3053:1: ( rule__Control__Group__4__Impl rule__Control__Group__5 )
-            // InternalDasl.g:3054:2: rule__Control__Group__4__Impl rule__Control__Group__5
+            // InternalDasl.g:3302:1: ( rule__Control__Group__4__Impl rule__Control__Group__5 )
+            // InternalDasl.g:3303:2: rule__Control__Group__4__Impl rule__Control__Group__5
             {
             pushFollow(FOLLOW_19);
             rule__Control__Group__4__Impl();
@@ -9744,21 +10599,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__4__Impl"
-    // InternalDasl.g:3061:1: rule__Control__Group__4__Impl : ( ( rule__Control__RefAssignment_4 ) ) ;
+    // InternalDasl.g:3310:1: rule__Control__Group__4__Impl : ( ( rule__Control__RefAssignment_4 ) ) ;
     public final void rule__Control__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3065:1: ( ( ( rule__Control__RefAssignment_4 ) ) )
-            // InternalDasl.g:3066:1: ( ( rule__Control__RefAssignment_4 ) )
+            // InternalDasl.g:3314:1: ( ( ( rule__Control__RefAssignment_4 ) ) )
+            // InternalDasl.g:3315:1: ( ( rule__Control__RefAssignment_4 ) )
             {
-            // InternalDasl.g:3066:1: ( ( rule__Control__RefAssignment_4 ) )
-            // InternalDasl.g:3067:2: ( rule__Control__RefAssignment_4 )
+            // InternalDasl.g:3315:1: ( ( rule__Control__RefAssignment_4 ) )
+            // InternalDasl.g:3316:2: ( rule__Control__RefAssignment_4 )
             {
              before(grammarAccess.getControlAccess().getRefAssignment_4()); 
-            // InternalDasl.g:3068:2: ( rule__Control__RefAssignment_4 )
-            // InternalDasl.g:3068:3: rule__Control__RefAssignment_4
+            // InternalDasl.g:3317:2: ( rule__Control__RefAssignment_4 )
+            // InternalDasl.g:3317:3: rule__Control__RefAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Control__RefAssignment_4();
@@ -9791,16 +10646,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__5"
-    // InternalDasl.g:3076:1: rule__Control__Group__5 : rule__Control__Group__5__Impl rule__Control__Group__6 ;
+    // InternalDasl.g:3325:1: rule__Control__Group__5 : rule__Control__Group__5__Impl rule__Control__Group__6 ;
     public final void rule__Control__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3080:1: ( rule__Control__Group__5__Impl rule__Control__Group__6 )
-            // InternalDasl.g:3081:2: rule__Control__Group__5__Impl rule__Control__Group__6
+            // InternalDasl.g:3329:1: ( rule__Control__Group__5__Impl rule__Control__Group__6 )
+            // InternalDasl.g:3330:2: rule__Control__Group__5__Impl rule__Control__Group__6
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_38);
             rule__Control__Group__5__Impl();
 
             state._fsp--;
@@ -9829,20 +10684,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__5__Impl"
-    // InternalDasl.g:3088:1: rule__Control__Group__5__Impl : ( 'type' ) ;
+    // InternalDasl.g:3337:1: rule__Control__Group__5__Impl : ( 'type' ) ;
     public final void rule__Control__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3092:1: ( ( 'type' ) )
-            // InternalDasl.g:3093:1: ( 'type' )
+            // InternalDasl.g:3341:1: ( ( 'type' ) )
+            // InternalDasl.g:3342:1: ( 'type' )
             {
-            // InternalDasl.g:3093:1: ( 'type' )
-            // InternalDasl.g:3094:2: 'type'
+            // InternalDasl.g:3342:1: ( 'type' )
+            // InternalDasl.g:3343:2: 'type'
             {
              before(grammarAccess.getControlAccess().getTypeKeyword_5()); 
-            match(input,80,FOLLOW_2); 
+            match(input,81,FOLLOW_2); 
              after(grammarAccess.getControlAccess().getTypeKeyword_5()); 
 
             }
@@ -9866,16 +10721,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__6"
-    // InternalDasl.g:3103:1: rule__Control__Group__6 : rule__Control__Group__6__Impl rule__Control__Group__7 ;
+    // InternalDasl.g:3352:1: rule__Control__Group__6 : rule__Control__Group__6__Impl rule__Control__Group__7 ;
     public final void rule__Control__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3107:1: ( rule__Control__Group__6__Impl rule__Control__Group__7 )
-            // InternalDasl.g:3108:2: rule__Control__Group__6__Impl rule__Control__Group__7
+            // InternalDasl.g:3356:1: ( rule__Control__Group__6__Impl rule__Control__Group__7 )
+            // InternalDasl.g:3357:2: rule__Control__Group__6__Impl rule__Control__Group__7
             {
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_39);
             rule__Control__Group__6__Impl();
 
             state._fsp--;
@@ -9904,21 +10759,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__6__Impl"
-    // InternalDasl.g:3115:1: rule__Control__Group__6__Impl : ( ( rule__Control__AreaAssignment_6 ) ) ;
+    // InternalDasl.g:3364:1: rule__Control__Group__6__Impl : ( ( rule__Control__AreaAssignment_6 ) ) ;
     public final void rule__Control__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3119:1: ( ( ( rule__Control__AreaAssignment_6 ) ) )
-            // InternalDasl.g:3120:1: ( ( rule__Control__AreaAssignment_6 ) )
+            // InternalDasl.g:3368:1: ( ( ( rule__Control__AreaAssignment_6 ) ) )
+            // InternalDasl.g:3369:1: ( ( rule__Control__AreaAssignment_6 ) )
             {
-            // InternalDasl.g:3120:1: ( ( rule__Control__AreaAssignment_6 ) )
-            // InternalDasl.g:3121:2: ( rule__Control__AreaAssignment_6 )
+            // InternalDasl.g:3369:1: ( ( rule__Control__AreaAssignment_6 ) )
+            // InternalDasl.g:3370:2: ( rule__Control__AreaAssignment_6 )
             {
              before(grammarAccess.getControlAccess().getAreaAssignment_6()); 
-            // InternalDasl.g:3122:2: ( rule__Control__AreaAssignment_6 )
-            // InternalDasl.g:3122:3: rule__Control__AreaAssignment_6
+            // InternalDasl.g:3371:2: ( rule__Control__AreaAssignment_6 )
+            // InternalDasl.g:3371:3: rule__Control__AreaAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__Control__AreaAssignment_6();
@@ -9951,14 +10806,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__7"
-    // InternalDasl.g:3130:1: rule__Control__Group__7 : rule__Control__Group__7__Impl rule__Control__Group__8 ;
+    // InternalDasl.g:3379:1: rule__Control__Group__7 : rule__Control__Group__7__Impl rule__Control__Group__8 ;
     public final void rule__Control__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3134:1: ( rule__Control__Group__7__Impl rule__Control__Group__8 )
-            // InternalDasl.g:3135:2: rule__Control__Group__7__Impl rule__Control__Group__8
+            // InternalDasl.g:3383:1: ( rule__Control__Group__7__Impl rule__Control__Group__8 )
+            // InternalDasl.g:3384:2: rule__Control__Group__7__Impl rule__Control__Group__8
             {
             pushFollow(FOLLOW_7);
             rule__Control__Group__7__Impl();
@@ -9989,17 +10844,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__7__Impl"
-    // InternalDasl.g:3142:1: rule__Control__Group__7__Impl : ( 'implementation' ) ;
+    // InternalDasl.g:3391:1: rule__Control__Group__7__Impl : ( 'implementation' ) ;
     public final void rule__Control__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3146:1: ( ( 'implementation' ) )
-            // InternalDasl.g:3147:1: ( 'implementation' )
+            // InternalDasl.g:3395:1: ( ( 'implementation' ) )
+            // InternalDasl.g:3396:1: ( 'implementation' )
             {
-            // InternalDasl.g:3147:1: ( 'implementation' )
-            // InternalDasl.g:3148:2: 'implementation'
+            // InternalDasl.g:3396:1: ( 'implementation' )
+            // InternalDasl.g:3397:2: 'implementation'
             {
              before(grammarAccess.getControlAccess().getImplementationKeyword_7()); 
             match(input,97,FOLLOW_2); 
@@ -10026,16 +10881,16 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__8"
-    // InternalDasl.g:3157:1: rule__Control__Group__8 : rule__Control__Group__8__Impl rule__Control__Group__9 ;
+    // InternalDasl.g:3406:1: rule__Control__Group__8 : rule__Control__Group__8__Impl rule__Control__Group__9 ;
     public final void rule__Control__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3161:1: ( rule__Control__Group__8__Impl rule__Control__Group__9 )
-            // InternalDasl.g:3162:2: rule__Control__Group__8__Impl rule__Control__Group__9
+            // InternalDasl.g:3410:1: ( rule__Control__Group__8__Impl rule__Control__Group__9 )
+            // InternalDasl.g:3411:2: rule__Control__Group__8__Impl rule__Control__Group__9
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_34);
             rule__Control__Group__8__Impl();
 
             state._fsp--;
@@ -10064,21 +10919,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__8__Impl"
-    // InternalDasl.g:3169:1: rule__Control__Group__8__Impl : ( ( rule__Control__ImplementationAssignment_8 ) ) ;
+    // InternalDasl.g:3418:1: rule__Control__Group__8__Impl : ( ( rule__Control__ImplementationAssignment_8 ) ) ;
     public final void rule__Control__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3173:1: ( ( ( rule__Control__ImplementationAssignment_8 ) ) )
-            // InternalDasl.g:3174:1: ( ( rule__Control__ImplementationAssignment_8 ) )
+            // InternalDasl.g:3422:1: ( ( ( rule__Control__ImplementationAssignment_8 ) ) )
+            // InternalDasl.g:3423:1: ( ( rule__Control__ImplementationAssignment_8 ) )
             {
-            // InternalDasl.g:3174:1: ( ( rule__Control__ImplementationAssignment_8 ) )
-            // InternalDasl.g:3175:2: ( rule__Control__ImplementationAssignment_8 )
+            // InternalDasl.g:3423:1: ( ( rule__Control__ImplementationAssignment_8 ) )
+            // InternalDasl.g:3424:2: ( rule__Control__ImplementationAssignment_8 )
             {
              before(grammarAccess.getControlAccess().getImplementationAssignment_8()); 
-            // InternalDasl.g:3176:2: ( rule__Control__ImplementationAssignment_8 )
-            // InternalDasl.g:3176:3: rule__Control__ImplementationAssignment_8
+            // InternalDasl.g:3425:2: ( rule__Control__ImplementationAssignment_8 )
+            // InternalDasl.g:3425:3: rule__Control__ImplementationAssignment_8
             {
             pushFollow(FOLLOW_2);
             rule__Control__ImplementationAssignment_8();
@@ -10111,14 +10966,14 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__9"
-    // InternalDasl.g:3184:1: rule__Control__Group__9 : rule__Control__Group__9__Impl ;
+    // InternalDasl.g:3433:1: rule__Control__Group__9 : rule__Control__Group__9__Impl ;
     public final void rule__Control__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3188:1: ( rule__Control__Group__9__Impl )
-            // InternalDasl.g:3189:2: rule__Control__Group__9__Impl
+            // InternalDasl.g:3437:1: ( rule__Control__Group__9__Impl )
+            // InternalDasl.g:3438:2: rule__Control__Group__9__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Control__Group__9__Impl();
@@ -10144,20 +10999,20 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__Group__9__Impl"
-    // InternalDasl.g:3195:1: rule__Control__Group__9__Impl : ( '}' ) ;
+    // InternalDasl.g:3444:1: rule__Control__Group__9__Impl : ( '}' ) ;
     public final void rule__Control__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3199:1: ( ( '}' ) )
-            // InternalDasl.g:3200:1: ( '}' )
+            // InternalDasl.g:3448:1: ( ( '}' ) )
+            // InternalDasl.g:3449:1: ( '}' )
             {
-            // InternalDasl.g:3200:1: ( '}' )
-            // InternalDasl.g:3201:2: '}'
+            // InternalDasl.g:3449:1: ( '}' )
+            // InternalDasl.g:3450:2: '}'
             {
              before(grammarAccess.getControlAccess().getRightCurlyBracketKeyword_9()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getControlAccess().getRightCurlyBracketKeyword_9()); 
 
             }
@@ -10181,17 +11036,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecurityModel__ElementsAssignment"
-    // InternalDasl.g:3211:1: rule__SecurityModel__ElementsAssignment : ( ruleAbstractElement ) ;
+    // InternalDasl.g:3460:1: rule__SecurityModel__ElementsAssignment : ( ruleAbstractElement ) ;
     public final void rule__SecurityModel__ElementsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3215:1: ( ( ruleAbstractElement ) )
-            // InternalDasl.g:3216:2: ( ruleAbstractElement )
+            // InternalDasl.g:3464:1: ( ( ruleAbstractElement ) )
+            // InternalDasl.g:3465:2: ( ruleAbstractElement )
             {
-            // InternalDasl.g:3216:2: ( ruleAbstractElement )
-            // InternalDasl.g:3217:3: ruleAbstractElement
+            // InternalDasl.g:3465:2: ( ruleAbstractElement )
+            // InternalDasl.g:3466:3: ruleAbstractElement
             {
              before(grammarAccess.getSecurityModelAccess().getElementsAbstractElementParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -10222,17 +11077,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__ImportURIAssignment_1"
-    // InternalDasl.g:3226:1: rule__Import__ImportURIAssignment_1 : ( RULE_STRING ) ;
+    // InternalDasl.g:3475:1: rule__Import__ImportURIAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Import__ImportURIAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3230:1: ( ( RULE_STRING ) )
-            // InternalDasl.g:3231:2: ( RULE_STRING )
+            // InternalDasl.g:3479:1: ( ( RULE_STRING ) )
+            // InternalDasl.g:3480:2: ( RULE_STRING )
             {
-            // InternalDasl.g:3231:2: ( RULE_STRING )
-            // InternalDasl.g:3232:3: RULE_STRING
+            // InternalDasl.g:3480:2: ( RULE_STRING )
+            // InternalDasl.g:3481:3: RULE_STRING
             {
              before(grammarAccess.getImportAccess().getImportURISTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -10259,17 +11114,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__NameAssignment_1"
-    // InternalDasl.g:3241:1: rule__Zone__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDasl.g:3490:1: rule__Zone__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Zone__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3245:1: ( ( RULE_ID ) )
-            // InternalDasl.g:3246:2: ( RULE_ID )
+            // InternalDasl.g:3494:1: ( ( RULE_ID ) )
+            // InternalDasl.g:3495:2: ( RULE_ID )
             {
-            // InternalDasl.g:3246:2: ( RULE_ID )
-            // InternalDasl.g:3247:3: RULE_ID
+            // InternalDasl.g:3495:2: ( RULE_ID )
+            // InternalDasl.g:3496:3: RULE_ID
             {
              before(grammarAccess.getZoneAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10296,17 +11151,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__TrustAssignment_4"
-    // InternalDasl.g:3256:1: rule__Zone__TrustAssignment_4 : ( RULE_INT ) ;
+    // InternalDasl.g:3505:1: rule__Zone__TrustAssignment_4 : ( RULE_INT ) ;
     public final void rule__Zone__TrustAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3260:1: ( ( RULE_INT ) )
-            // InternalDasl.g:3261:2: ( RULE_INT )
+            // InternalDasl.g:3509:1: ( ( RULE_INT ) )
+            // InternalDasl.g:3510:2: ( RULE_INT )
             {
-            // InternalDasl.g:3261:2: ( RULE_INT )
-            // InternalDasl.g:3262:3: RULE_INT
+            // InternalDasl.g:3510:2: ( RULE_INT )
+            // InternalDasl.g:3511:3: RULE_INT
             {
              before(grammarAccess.getZoneAccess().getTrustINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -10333,21 +11188,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__IngressZonesAssignment_6"
-    // InternalDasl.g:3271:1: rule__Zone__IngressZonesAssignment_6 : ( ( RULE_ID ) ) ;
+    // InternalDasl.g:3520:1: rule__Zone__IngressZonesAssignment_6 : ( ( RULE_ID ) ) ;
     public final void rule__Zone__IngressZonesAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3275:1: ( ( ( RULE_ID ) ) )
-            // InternalDasl.g:3276:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3524:1: ( ( ( RULE_ID ) ) )
+            // InternalDasl.g:3525:2: ( ( RULE_ID ) )
             {
-            // InternalDasl.g:3276:2: ( ( RULE_ID ) )
-            // InternalDasl.g:3277:3: ( RULE_ID )
+            // InternalDasl.g:3525:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3526:3: ( RULE_ID )
             {
              before(grammarAccess.getZoneAccess().getIngressZonesZoneCrossReference_6_0()); 
-            // InternalDasl.g:3278:3: ( RULE_ID )
-            // InternalDasl.g:3279:4: RULE_ID
+            // InternalDasl.g:3527:3: ( RULE_ID )
+            // InternalDasl.g:3528:4: RULE_ID
             {
              before(grammarAccess.getZoneAccess().getIngressZonesZoneIDTerminalRuleCall_6_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10378,21 +11233,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__EgressZonesAssignment_8"
-    // InternalDasl.g:3290:1: rule__Zone__EgressZonesAssignment_8 : ( ( RULE_ID ) ) ;
+    // InternalDasl.g:3539:1: rule__Zone__EgressZonesAssignment_8 : ( ( RULE_ID ) ) ;
     public final void rule__Zone__EgressZonesAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3294:1: ( ( ( RULE_ID ) ) )
-            // InternalDasl.g:3295:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3543:1: ( ( ( RULE_ID ) ) )
+            // InternalDasl.g:3544:2: ( ( RULE_ID ) )
             {
-            // InternalDasl.g:3295:2: ( ( RULE_ID ) )
-            // InternalDasl.g:3296:3: ( RULE_ID )
+            // InternalDasl.g:3544:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3545:3: ( RULE_ID )
             {
              before(grammarAccess.getZoneAccess().getEgressZonesZoneCrossReference_8_0()); 
-            // InternalDasl.g:3297:3: ( RULE_ID )
-            // InternalDasl.g:3298:4: RULE_ID
+            // InternalDasl.g:3546:3: ( RULE_ID )
+            // InternalDasl.g:3547:4: RULE_ID
             {
              before(grammarAccess.getZoneAccess().getEgressZonesZoneIDTerminalRuleCall_8_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10423,21 +11278,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__NodesAssignment_10"
-    // InternalDasl.g:3309:1: rule__Zone__NodesAssignment_10 : ( ( RULE_ID ) ) ;
+    // InternalDasl.g:3558:1: rule__Zone__NodesAssignment_10 : ( ( RULE_ID ) ) ;
     public final void rule__Zone__NodesAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3313:1: ( ( ( RULE_ID ) ) )
-            // InternalDasl.g:3314:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3562:1: ( ( ( RULE_ID ) ) )
+            // InternalDasl.g:3563:2: ( ( RULE_ID ) )
             {
-            // InternalDasl.g:3314:2: ( ( RULE_ID ) )
-            // InternalDasl.g:3315:3: ( RULE_ID )
+            // InternalDasl.g:3563:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3564:3: ( RULE_ID )
             {
              before(grammarAccess.getZoneAccess().getNodesNodeCrossReference_10_0()); 
-            // InternalDasl.g:3316:3: ( RULE_ID )
-            // InternalDasl.g:3317:4: RULE_ID
+            // InternalDasl.g:3565:3: ( RULE_ID )
+            // InternalDasl.g:3566:4: RULE_ID
             {
              before(grammarAccess.getZoneAccess().getNodesNodeIDTerminalRuleCall_10_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10468,21 +11323,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Zone__ControlsAssignment_11_1"
-    // InternalDasl.g:3328:1: rule__Zone__ControlsAssignment_11_1 : ( ( RULE_ID ) ) ;
+    // InternalDasl.g:3577:1: rule__Zone__ControlsAssignment_11_1 : ( ( RULE_ID ) ) ;
     public final void rule__Zone__ControlsAssignment_11_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3332:1: ( ( ( RULE_ID ) ) )
-            // InternalDasl.g:3333:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3581:1: ( ( ( RULE_ID ) ) )
+            // InternalDasl.g:3582:2: ( ( RULE_ID ) )
             {
-            // InternalDasl.g:3333:2: ( ( RULE_ID ) )
-            // InternalDasl.g:3334:3: ( RULE_ID )
+            // InternalDasl.g:3582:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3583:3: ( RULE_ID )
             {
              before(grammarAccess.getZoneAccess().getControlsControlCrossReference_11_1_0()); 
-            // InternalDasl.g:3335:3: ( RULE_ID )
-            // InternalDasl.g:3336:4: RULE_ID
+            // InternalDasl.g:3584:3: ( RULE_ID )
+            // InternalDasl.g:3585:4: RULE_ID
             {
              before(grammarAccess.getZoneAccess().getControlsControlIDTerminalRuleCall_11_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10513,17 +11368,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__NameAssignment_1"
-    // InternalDasl.g:3347:1: rule__Node__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDasl.g:3596:1: rule__Node__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Node__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3351:1: ( ( RULE_ID ) )
-            // InternalDasl.g:3352:2: ( RULE_ID )
+            // InternalDasl.g:3600:1: ( ( RULE_ID ) )
+            // InternalDasl.g:3601:2: ( RULE_ID )
             {
-            // InternalDasl.g:3352:2: ( RULE_ID )
-            // InternalDasl.g:3353:3: RULE_ID
+            // InternalDasl.g:3601:2: ( RULE_ID )
+            // InternalDasl.g:3602:3: RULE_ID
             {
              before(grammarAccess.getNodeAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10550,17 +11405,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__RefAssignment_4"
-    // InternalDasl.g:3362:1: rule__Node__RefAssignment_4 : ( RULE_ID ) ;
+    // InternalDasl.g:3611:1: rule__Node__RefAssignment_4 : ( RULE_ID ) ;
     public final void rule__Node__RefAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3366:1: ( ( RULE_ID ) )
-            // InternalDasl.g:3367:2: ( RULE_ID )
+            // InternalDasl.g:3615:1: ( ( RULE_ID ) )
+            // InternalDasl.g:3616:2: ( RULE_ID )
             {
-            // InternalDasl.g:3367:2: ( RULE_ID )
-            // InternalDasl.g:3368:3: RULE_ID
+            // InternalDasl.g:3616:2: ( RULE_ID )
+            // InternalDasl.g:3617:3: RULE_ID
             {
              before(grammarAccess.getNodeAccess().getRefIDTerminalRuleCall_4_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10587,17 +11442,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__HostAssignment_6"
-    // InternalDasl.g:3377:1: rule__Node__HostAssignment_6 : ( RULE_STRING ) ;
+    // InternalDasl.g:3626:1: rule__Node__HostAssignment_6 : ( RULE_STRING ) ;
     public final void rule__Node__HostAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3381:1: ( ( RULE_STRING ) )
-            // InternalDasl.g:3382:2: ( RULE_STRING )
+            // InternalDasl.g:3630:1: ( ( RULE_STRING ) )
+            // InternalDasl.g:3631:2: ( RULE_STRING )
             {
-            // InternalDasl.g:3382:2: ( RULE_STRING )
-            // InternalDasl.g:3383:3: RULE_STRING
+            // InternalDasl.g:3631:2: ( RULE_STRING )
+            // InternalDasl.g:3632:3: RULE_STRING
             {
              before(grammarAccess.getNodeAccess().getHostSTRINGTerminalRuleCall_6_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -10624,17 +11479,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__OsAssignment_8"
-    // InternalDasl.g:3392:1: rule__Node__OsAssignment_8 : ( RULE_STRING ) ;
+    // InternalDasl.g:3641:1: rule__Node__OsAssignment_8 : ( RULE_STRING ) ;
     public final void rule__Node__OsAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3396:1: ( ( RULE_STRING ) )
-            // InternalDasl.g:3397:2: ( RULE_STRING )
+            // InternalDasl.g:3645:1: ( ( RULE_STRING ) )
+            // InternalDasl.g:3646:2: ( RULE_STRING )
             {
-            // InternalDasl.g:3397:2: ( RULE_STRING )
-            // InternalDasl.g:3398:3: RULE_STRING
+            // InternalDasl.g:3646:2: ( RULE_STRING )
+            // InternalDasl.g:3647:3: RULE_STRING
             {
              before(grammarAccess.getNodeAccess().getOsSTRINGTerminalRuleCall_8_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -10661,17 +11516,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__ValueAssignment_10"
-    // InternalDasl.g:3407:1: rule__Node__ValueAssignment_10 : ( ruleNodeType ) ;
+    // InternalDasl.g:3656:1: rule__Node__ValueAssignment_10 : ( ruleNodeType ) ;
     public final void rule__Node__ValueAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3411:1: ( ( ruleNodeType ) )
-            // InternalDasl.g:3412:2: ( ruleNodeType )
+            // InternalDasl.g:3660:1: ( ( ruleNodeType ) )
+            // InternalDasl.g:3661:2: ( ruleNodeType )
             {
-            // InternalDasl.g:3412:2: ( ruleNodeType )
-            // InternalDasl.g:3413:3: ruleNodeType
+            // InternalDasl.g:3661:2: ( ruleNodeType )
+            // InternalDasl.g:3662:3: ruleNodeType
             {
              before(grammarAccess.getNodeAccess().getValueNodeTypeEnumRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
@@ -10702,21 +11557,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__ComponentsAssignment_12"
-    // InternalDasl.g:3422:1: rule__Node__ComponentsAssignment_12 : ( ( RULE_ID ) ) ;
+    // InternalDasl.g:3671:1: rule__Node__ComponentsAssignment_12 : ( ( RULE_ID ) ) ;
     public final void rule__Node__ComponentsAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3426:1: ( ( ( RULE_ID ) ) )
-            // InternalDasl.g:3427:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3675:1: ( ( ( RULE_ID ) ) )
+            // InternalDasl.g:3676:2: ( ( RULE_ID ) )
             {
-            // InternalDasl.g:3427:2: ( ( RULE_ID ) )
-            // InternalDasl.g:3428:3: ( RULE_ID )
+            // InternalDasl.g:3676:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3677:3: ( RULE_ID )
             {
              before(grammarAccess.getNodeAccess().getComponentsComponentCrossReference_12_0()); 
-            // InternalDasl.g:3429:3: ( RULE_ID )
-            // InternalDasl.g:3430:4: RULE_ID
+            // InternalDasl.g:3678:3: ( RULE_ID )
+            // InternalDasl.g:3679:4: RULE_ID
             {
              before(grammarAccess.getNodeAccess().getComponentsComponentIDTerminalRuleCall_12_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10746,18 +11601,63 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Node__ComponentsAssignment_12"
 
 
+    // $ANTLR start "rule__Node__ControlsAssignment_13_1"
+    // InternalDasl.g:3690:1: rule__Node__ControlsAssignment_13_1 : ( ( RULE_ID ) ) ;
+    public final void rule__Node__ControlsAssignment_13_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:3694:1: ( ( ( RULE_ID ) ) )
+            // InternalDasl.g:3695:2: ( ( RULE_ID ) )
+            {
+            // InternalDasl.g:3695:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3696:3: ( RULE_ID )
+            {
+             before(grammarAccess.getNodeAccess().getControlsControlCrossReference_13_1_0()); 
+            // InternalDasl.g:3697:3: ( RULE_ID )
+            // InternalDasl.g:3698:4: RULE_ID
+            {
+             before(grammarAccess.getNodeAccess().getControlsControlIDTerminalRuleCall_13_1_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getNodeAccess().getControlsControlIDTerminalRuleCall_13_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getNodeAccess().getControlsControlCrossReference_13_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Node__ControlsAssignment_13_1"
+
+
     // $ANTLR start "rule__Component__NameAssignment_1"
-    // InternalDasl.g:3441:1: rule__Component__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDasl.g:3709:1: rule__Component__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Component__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3445:1: ( ( RULE_ID ) )
-            // InternalDasl.g:3446:2: ( RULE_ID )
+            // InternalDasl.g:3713:1: ( ( RULE_ID ) )
+            // InternalDasl.g:3714:2: ( RULE_ID )
             {
-            // InternalDasl.g:3446:2: ( RULE_ID )
-            // InternalDasl.g:3447:3: RULE_ID
+            // InternalDasl.g:3714:2: ( RULE_ID )
+            // InternalDasl.g:3715:3: RULE_ID
             {
              before(grammarAccess.getComponentAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10784,17 +11684,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__RefAssignment_4"
-    // InternalDasl.g:3456:1: rule__Component__RefAssignment_4 : ( RULE_ID ) ;
+    // InternalDasl.g:3724:1: rule__Component__RefAssignment_4 : ( RULE_ID ) ;
     public final void rule__Component__RefAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3460:1: ( ( RULE_ID ) )
-            // InternalDasl.g:3461:2: ( RULE_ID )
+            // InternalDasl.g:3728:1: ( ( RULE_ID ) )
+            // InternalDasl.g:3729:2: ( RULE_ID )
             {
-            // InternalDasl.g:3461:2: ( RULE_ID )
-            // InternalDasl.g:3462:3: RULE_ID
+            // InternalDasl.g:3729:2: ( RULE_ID )
+            // InternalDasl.g:3730:3: RULE_ID
             {
              before(grammarAccess.getComponentAccess().getRefIDTerminalRuleCall_4_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10821,17 +11721,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__StereotypeAssignment_6"
-    // InternalDasl.g:3471:1: rule__Component__StereotypeAssignment_6 : ( RULE_STRING ) ;
+    // InternalDasl.g:3739:1: rule__Component__StereotypeAssignment_6 : ( RULE_STRING ) ;
     public final void rule__Component__StereotypeAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3475:1: ( ( RULE_STRING ) )
-            // InternalDasl.g:3476:2: ( RULE_STRING )
+            // InternalDasl.g:3743:1: ( ( RULE_STRING ) )
+            // InternalDasl.g:3744:2: ( RULE_STRING )
             {
-            // InternalDasl.g:3476:2: ( RULE_STRING )
-            // InternalDasl.g:3477:3: RULE_STRING
+            // InternalDasl.g:3744:2: ( RULE_STRING )
+            // InternalDasl.g:3745:3: RULE_STRING
             {
              before(grammarAccess.getComponentAccess().getStereotypeSTRINGTerminalRuleCall_6_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -10858,17 +11758,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__VendorAssignment_7_1"
-    // InternalDasl.g:3486:1: rule__Component__VendorAssignment_7_1 : ( RULE_STRING ) ;
+    // InternalDasl.g:3754:1: rule__Component__VendorAssignment_7_1 : ( RULE_STRING ) ;
     public final void rule__Component__VendorAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3490:1: ( ( RULE_STRING ) )
-            // InternalDasl.g:3491:2: ( RULE_STRING )
+            // InternalDasl.g:3758:1: ( ( RULE_STRING ) )
+            // InternalDasl.g:3759:2: ( RULE_STRING )
             {
-            // InternalDasl.g:3491:2: ( RULE_STRING )
-            // InternalDasl.g:3492:3: RULE_STRING
+            // InternalDasl.g:3759:2: ( RULE_STRING )
+            // InternalDasl.g:3760:3: RULE_STRING
             {
              before(grammarAccess.getComponentAccess().getVendorSTRINGTerminalRuleCall_7_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -10895,17 +11795,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__DescAssignment_9"
-    // InternalDasl.g:3501:1: rule__Component__DescAssignment_9 : ( RULE_STRING ) ;
+    // InternalDasl.g:3769:1: rule__Component__DescAssignment_9 : ( RULE_STRING ) ;
     public final void rule__Component__DescAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3505:1: ( ( RULE_STRING ) )
-            // InternalDasl.g:3506:2: ( RULE_STRING )
+            // InternalDasl.g:3773:1: ( ( RULE_STRING ) )
+            // InternalDasl.g:3774:2: ( RULE_STRING )
             {
-            // InternalDasl.g:3506:2: ( RULE_STRING )
-            // InternalDasl.g:3507:3: RULE_STRING
+            // InternalDasl.g:3774:2: ( RULE_STRING )
+            // InternalDasl.g:3775:3: RULE_STRING
             {
              before(grammarAccess.getComponentAccess().getDescSTRINGTerminalRuleCall_9_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -10932,17 +11832,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__VersionAssignment_11"
-    // InternalDasl.g:3516:1: rule__Component__VersionAssignment_11 : ( RULE_STRING ) ;
+    // InternalDasl.g:3784:1: rule__Component__VersionAssignment_11 : ( RULE_STRING ) ;
     public final void rule__Component__VersionAssignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3520:1: ( ( RULE_STRING ) )
-            // InternalDasl.g:3521:2: ( RULE_STRING )
+            // InternalDasl.g:3788:1: ( ( RULE_STRING ) )
+            // InternalDasl.g:3789:2: ( RULE_STRING )
             {
-            // InternalDasl.g:3521:2: ( RULE_STRING )
-            // InternalDasl.g:3522:3: RULE_STRING
+            // InternalDasl.g:3789:2: ( RULE_STRING )
+            // InternalDasl.g:3790:3: RULE_STRING
             {
              before(grammarAccess.getComponentAccess().getVersionSTRINGTerminalRuleCall_11_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -10968,34 +11868,34 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Component__VersionAssignment_11"
 
 
-    // $ANTLR start "rule__Component__AssetsAssignment_13"
-    // InternalDasl.g:3531:1: rule__Component__AssetsAssignment_13 : ( ( ruleQualifiedName ) ) ;
-    public final void rule__Component__AssetsAssignment_13() throws RecognitionException {
+    // $ANTLR start "rule__Component__AssetsAssignment_12_1"
+    // InternalDasl.g:3799:1: rule__Component__AssetsAssignment_12_1 : ( ( ruleQualifiedName ) ) ;
+    public final void rule__Component__AssetsAssignment_12_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3535:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalDasl.g:3536:2: ( ( ruleQualifiedName ) )
+            // InternalDasl.g:3803:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalDasl.g:3804:2: ( ( ruleQualifiedName ) )
             {
-            // InternalDasl.g:3536:2: ( ( ruleQualifiedName ) )
-            // InternalDasl.g:3537:3: ( ruleQualifiedName )
+            // InternalDasl.g:3804:2: ( ( ruleQualifiedName ) )
+            // InternalDasl.g:3805:3: ( ruleQualifiedName )
             {
-             before(grammarAccess.getComponentAccess().getAssetsInformationAssetCrossReference_13_0()); 
-            // InternalDasl.g:3538:3: ( ruleQualifiedName )
-            // InternalDasl.g:3539:4: ruleQualifiedName
+             before(grammarAccess.getComponentAccess().getAssetsInformationAssetCrossReference_12_1_0()); 
+            // InternalDasl.g:3806:3: ( ruleQualifiedName )
+            // InternalDasl.g:3807:4: ruleQualifiedName
             {
-             before(grammarAccess.getComponentAccess().getAssetsInformationAssetQualifiedNameParserRuleCall_13_0_1()); 
+             before(grammarAccess.getComponentAccess().getAssetsInformationAssetQualifiedNameParserRuleCall_12_1_0_1()); 
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getComponentAccess().getAssetsInformationAssetQualifiedNameParserRuleCall_13_0_1()); 
+             after(grammarAccess.getComponentAccess().getAssetsInformationAssetQualifiedNameParserRuleCall_12_1_0_1()); 
 
             }
 
-             after(grammarAccess.getComponentAccess().getAssetsInformationAssetCrossReference_13_0()); 
+             after(grammarAccess.getComponentAccess().getAssetsInformationAssetCrossReference_12_1_0()); 
 
             }
 
@@ -11014,21 +11914,66 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Component__AssetsAssignment_13"
+    // $ANTLR end "rule__Component__AssetsAssignment_12_1"
+
+
+    // $ANTLR start "rule__Component__ControlsAssignment_13_1"
+    // InternalDasl.g:3818:1: rule__Component__ControlsAssignment_13_1 : ( ( RULE_ID ) ) ;
+    public final void rule__Component__ControlsAssignment_13_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDasl.g:3822:1: ( ( ( RULE_ID ) ) )
+            // InternalDasl.g:3823:2: ( ( RULE_ID ) )
+            {
+            // InternalDasl.g:3823:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3824:3: ( RULE_ID )
+            {
+             before(grammarAccess.getComponentAccess().getControlsControlCrossReference_13_1_0()); 
+            // InternalDasl.g:3825:3: ( RULE_ID )
+            // InternalDasl.g:3826:4: RULE_ID
+            {
+             before(grammarAccess.getComponentAccess().getControlsControlIDTerminalRuleCall_13_1_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getComponentAccess().getControlsControlIDTerminalRuleCall_13_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getComponentAccess().getControlsControlCrossReference_13_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Component__ControlsAssignment_13_1"
 
 
     // $ANTLR start "rule__Component__ComponentsAssignment_14"
-    // InternalDasl.g:3550:1: rule__Component__ComponentsAssignment_14 : ( ruleComponent ) ;
+    // InternalDasl.g:3837:1: rule__Component__ComponentsAssignment_14 : ( ruleComponent ) ;
     public final void rule__Component__ComponentsAssignment_14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3554:1: ( ( ruleComponent ) )
-            // InternalDasl.g:3555:2: ( ruleComponent )
+            // InternalDasl.g:3841:1: ( ( ruleComponent ) )
+            // InternalDasl.g:3842:2: ( ruleComponent )
             {
-            // InternalDasl.g:3555:2: ( ruleComponent )
-            // InternalDasl.g:3556:3: ruleComponent
+            // InternalDasl.g:3842:2: ( ruleComponent )
+            // InternalDasl.g:3843:3: ruleComponent
             {
              before(grammarAccess.getComponentAccess().getComponentsComponentParserRuleCall_14_0()); 
             pushFollow(FOLLOW_2);
@@ -11059,17 +12004,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__NameAssignment_1"
-    // InternalDasl.g:3565:1: rule__InformationAsset__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDasl.g:3852:1: rule__InformationAsset__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__InformationAsset__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3569:1: ( ( RULE_ID ) )
-            // InternalDasl.g:3570:2: ( RULE_ID )
+            // InternalDasl.g:3856:1: ( ( RULE_ID ) )
+            // InternalDasl.g:3857:2: ( RULE_ID )
             {
-            // InternalDasl.g:3570:2: ( RULE_ID )
-            // InternalDasl.g:3571:3: RULE_ID
+            // InternalDasl.g:3857:2: ( RULE_ID )
+            // InternalDasl.g:3858:3: RULE_ID
             {
              before(grammarAccess.getInformationAssetAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -11096,17 +12041,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__RefAssignment_4"
-    // InternalDasl.g:3580:1: rule__InformationAsset__RefAssignment_4 : ( RULE_ID ) ;
+    // InternalDasl.g:3867:1: rule__InformationAsset__RefAssignment_4 : ( RULE_ID ) ;
     public final void rule__InformationAsset__RefAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3584:1: ( ( RULE_ID ) )
-            // InternalDasl.g:3585:2: ( RULE_ID )
+            // InternalDasl.g:3871:1: ( ( RULE_ID ) )
+            // InternalDasl.g:3872:2: ( RULE_ID )
             {
-            // InternalDasl.g:3585:2: ( RULE_ID )
-            // InternalDasl.g:3586:3: RULE_ID
+            // InternalDasl.g:3872:2: ( RULE_ID )
+            // InternalDasl.g:3873:3: RULE_ID
             {
              before(grammarAccess.getInformationAssetAccess().getRefIDTerminalRuleCall_4_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -11133,17 +12078,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__DescAssignment_6"
-    // InternalDasl.g:3595:1: rule__InformationAsset__DescAssignment_6 : ( RULE_STRING ) ;
+    // InternalDasl.g:3882:1: rule__InformationAsset__DescAssignment_6 : ( RULE_STRING ) ;
     public final void rule__InformationAsset__DescAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3599:1: ( ( RULE_STRING ) )
-            // InternalDasl.g:3600:2: ( RULE_STRING )
+            // InternalDasl.g:3886:1: ( ( RULE_STRING ) )
+            // InternalDasl.g:3887:2: ( RULE_STRING )
             {
-            // InternalDasl.g:3600:2: ( RULE_STRING )
-            // InternalDasl.g:3601:3: RULE_STRING
+            // InternalDasl.g:3887:2: ( RULE_STRING )
+            // InternalDasl.g:3888:3: RULE_STRING
             {
              before(grammarAccess.getInformationAssetAccess().getDescSTRINGTerminalRuleCall_6_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -11170,17 +12115,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__ConfidentialityAssignment_8"
-    // InternalDasl.g:3610:1: rule__InformationAsset__ConfidentialityAssignment_8 : ( ruleConfidentialityType ) ;
+    // InternalDasl.g:3897:1: rule__InformationAsset__ConfidentialityAssignment_8 : ( ruleConfidentialityType ) ;
     public final void rule__InformationAsset__ConfidentialityAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3614:1: ( ( ruleConfidentialityType ) )
-            // InternalDasl.g:3615:2: ( ruleConfidentialityType )
+            // InternalDasl.g:3901:1: ( ( ruleConfidentialityType ) )
+            // InternalDasl.g:3902:2: ( ruleConfidentialityType )
             {
-            // InternalDasl.g:3615:2: ( ruleConfidentialityType )
-            // InternalDasl.g:3616:3: ruleConfidentialityType
+            // InternalDasl.g:3902:2: ( ruleConfidentialityType )
+            // InternalDasl.g:3903:3: ruleConfidentialityType
             {
              before(grammarAccess.getInformationAssetAccess().getConfidentialityConfidentialityTypeEnumRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -11211,17 +12156,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__IntegrityAssignment_10"
-    // InternalDasl.g:3625:1: rule__InformationAsset__IntegrityAssignment_10 : ( ruleIntegrityType ) ;
+    // InternalDasl.g:3912:1: rule__InformationAsset__IntegrityAssignment_10 : ( ruleIntegrityType ) ;
     public final void rule__InformationAsset__IntegrityAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3629:1: ( ( ruleIntegrityType ) )
-            // InternalDasl.g:3630:2: ( ruleIntegrityType )
+            // InternalDasl.g:3916:1: ( ( ruleIntegrityType ) )
+            // InternalDasl.g:3917:2: ( ruleIntegrityType )
             {
-            // InternalDasl.g:3630:2: ( ruleIntegrityType )
-            // InternalDasl.g:3631:3: ruleIntegrityType
+            // InternalDasl.g:3917:2: ( ruleIntegrityType )
+            // InternalDasl.g:3918:3: ruleIntegrityType
             {
              before(grammarAccess.getInformationAssetAccess().getIntegrityIntegrityTypeEnumRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
@@ -11252,17 +12197,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InformationAsset__AvailabilityAssignment_12"
-    // InternalDasl.g:3640:1: rule__InformationAsset__AvailabilityAssignment_12 : ( ruleAvailabilityType ) ;
+    // InternalDasl.g:3927:1: rule__InformationAsset__AvailabilityAssignment_12 : ( ruleAvailabilityType ) ;
     public final void rule__InformationAsset__AvailabilityAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3644:1: ( ( ruleAvailabilityType ) )
-            // InternalDasl.g:3645:2: ( ruleAvailabilityType )
+            // InternalDasl.g:3931:1: ( ( ruleAvailabilityType ) )
+            // InternalDasl.g:3932:2: ( ruleAvailabilityType )
             {
-            // InternalDasl.g:3645:2: ( ruleAvailabilityType )
-            // InternalDasl.g:3646:3: ruleAvailabilityType
+            // InternalDasl.g:3932:2: ( ruleAvailabilityType )
+            // InternalDasl.g:3933:3: ruleAvailabilityType
             {
              before(grammarAccess.getInformationAssetAccess().getAvailabilityAvailabilityTypeEnumRuleCall_12_0()); 
             pushFollow(FOLLOW_2);
@@ -11293,17 +12238,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__NameAssignment_1"
-    // InternalDasl.g:3655:1: rule__Flow__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDasl.g:3942:1: rule__Flow__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Flow__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3659:1: ( ( RULE_ID ) )
-            // InternalDasl.g:3660:2: ( RULE_ID )
+            // InternalDasl.g:3946:1: ( ( RULE_ID ) )
+            // InternalDasl.g:3947:2: ( RULE_ID )
             {
-            // InternalDasl.g:3660:2: ( RULE_ID )
-            // InternalDasl.g:3661:3: RULE_ID
+            // InternalDasl.g:3947:2: ( RULE_ID )
+            // InternalDasl.g:3948:3: RULE_ID
             {
              before(grammarAccess.getFlowAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -11330,21 +12275,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__FromAssignment_4"
-    // InternalDasl.g:3670:1: rule__Flow__FromAssignment_4 : ( ( RULE_ID ) ) ;
+    // InternalDasl.g:3957:1: rule__Flow__FromAssignment_4 : ( ( RULE_ID ) ) ;
     public final void rule__Flow__FromAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3674:1: ( ( ( RULE_ID ) ) )
-            // InternalDasl.g:3675:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3961:1: ( ( ( RULE_ID ) ) )
+            // InternalDasl.g:3962:2: ( ( RULE_ID ) )
             {
-            // InternalDasl.g:3675:2: ( ( RULE_ID ) )
-            // InternalDasl.g:3676:3: ( RULE_ID )
+            // InternalDasl.g:3962:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3963:3: ( RULE_ID )
             {
              before(grammarAccess.getFlowAccess().getFromComponentCrossReference_4_0()); 
-            // InternalDasl.g:3677:3: ( RULE_ID )
-            // InternalDasl.g:3678:4: RULE_ID
+            // InternalDasl.g:3964:3: ( RULE_ID )
+            // InternalDasl.g:3965:4: RULE_ID
             {
              before(grammarAccess.getFlowAccess().getFromComponentIDTerminalRuleCall_4_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -11375,21 +12320,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__ToAssignment_6"
-    // InternalDasl.g:3689:1: rule__Flow__ToAssignment_6 : ( ( RULE_ID ) ) ;
+    // InternalDasl.g:3976:1: rule__Flow__ToAssignment_6 : ( ( RULE_ID ) ) ;
     public final void rule__Flow__ToAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3693:1: ( ( ( RULE_ID ) ) )
-            // InternalDasl.g:3694:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3980:1: ( ( ( RULE_ID ) ) )
+            // InternalDasl.g:3981:2: ( ( RULE_ID ) )
             {
-            // InternalDasl.g:3694:2: ( ( RULE_ID ) )
-            // InternalDasl.g:3695:3: ( RULE_ID )
+            // InternalDasl.g:3981:2: ( ( RULE_ID ) )
+            // InternalDasl.g:3982:3: ( RULE_ID )
             {
              before(grammarAccess.getFlowAccess().getToComponentCrossReference_6_0()); 
-            // InternalDasl.g:3696:3: ( RULE_ID )
-            // InternalDasl.g:3697:4: RULE_ID
+            // InternalDasl.g:3983:3: ( RULE_ID )
+            // InternalDasl.g:3984:4: RULE_ID
             {
              before(grammarAccess.getFlowAccess().getToComponentIDTerminalRuleCall_6_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -11419,34 +12364,34 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Flow__ToAssignment_6"
 
 
-    // $ANTLR start "rule__Flow__AssetsAssignment_8"
-    // InternalDasl.g:3708:1: rule__Flow__AssetsAssignment_8 : ( ( ruleQualifiedName ) ) ;
-    public final void rule__Flow__AssetsAssignment_8() throws RecognitionException {
+    // $ANTLR start "rule__Flow__AssetsAssignment_7_1"
+    // InternalDasl.g:3995:1: rule__Flow__AssetsAssignment_7_1 : ( ( ruleQualifiedName ) ) ;
+    public final void rule__Flow__AssetsAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3712:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalDasl.g:3713:2: ( ( ruleQualifiedName ) )
+            // InternalDasl.g:3999:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalDasl.g:4000:2: ( ( ruleQualifiedName ) )
             {
-            // InternalDasl.g:3713:2: ( ( ruleQualifiedName ) )
-            // InternalDasl.g:3714:3: ( ruleQualifiedName )
+            // InternalDasl.g:4000:2: ( ( ruleQualifiedName ) )
+            // InternalDasl.g:4001:3: ( ruleQualifiedName )
             {
-             before(grammarAccess.getFlowAccess().getAssetsInformationAssetCrossReference_8_0()); 
-            // InternalDasl.g:3715:3: ( ruleQualifiedName )
-            // InternalDasl.g:3716:4: ruleQualifiedName
+             before(grammarAccess.getFlowAccess().getAssetsInformationAssetCrossReference_7_1_0()); 
+            // InternalDasl.g:4002:3: ( ruleQualifiedName )
+            // InternalDasl.g:4003:4: ruleQualifiedName
             {
-             before(grammarAccess.getFlowAccess().getAssetsInformationAssetQualifiedNameParserRuleCall_8_0_1()); 
+             before(grammarAccess.getFlowAccess().getAssetsInformationAssetQualifiedNameParserRuleCall_7_1_0_1()); 
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getFlowAccess().getAssetsInformationAssetQualifiedNameParserRuleCall_8_0_1()); 
+             after(grammarAccess.getFlowAccess().getAssetsInformationAssetQualifiedNameParserRuleCall_7_1_0_1()); 
 
             }
 
-             after(grammarAccess.getFlowAccess().getAssetsInformationAssetCrossReference_8_0()); 
+             after(grammarAccess.getFlowAccess().getAssetsInformationAssetCrossReference_7_1_0()); 
 
             }
 
@@ -11465,33 +12410,33 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flow__AssetsAssignment_8"
+    // $ANTLR end "rule__Flow__AssetsAssignment_7_1"
 
 
-    // $ANTLR start "rule__Flow__ControlsAssignment_10"
-    // InternalDasl.g:3727:1: rule__Flow__ControlsAssignment_10 : ( ( RULE_ID ) ) ;
-    public final void rule__Flow__ControlsAssignment_10() throws RecognitionException {
+    // $ANTLR start "rule__Flow__ControlsAssignment_8_1"
+    // InternalDasl.g:4014:1: rule__Flow__ControlsAssignment_8_1 : ( ( RULE_ID ) ) ;
+    public final void rule__Flow__ControlsAssignment_8_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3731:1: ( ( ( RULE_ID ) ) )
-            // InternalDasl.g:3732:2: ( ( RULE_ID ) )
+            // InternalDasl.g:4018:1: ( ( ( RULE_ID ) ) )
+            // InternalDasl.g:4019:2: ( ( RULE_ID ) )
             {
-            // InternalDasl.g:3732:2: ( ( RULE_ID ) )
-            // InternalDasl.g:3733:3: ( RULE_ID )
+            // InternalDasl.g:4019:2: ( ( RULE_ID ) )
+            // InternalDasl.g:4020:3: ( RULE_ID )
             {
-             before(grammarAccess.getFlowAccess().getControlsControlCrossReference_10_0()); 
-            // InternalDasl.g:3734:3: ( RULE_ID )
-            // InternalDasl.g:3735:4: RULE_ID
+             before(grammarAccess.getFlowAccess().getControlsControlCrossReference_8_1_0()); 
+            // InternalDasl.g:4021:3: ( RULE_ID )
+            // InternalDasl.g:4022:4: RULE_ID
             {
-             before(grammarAccess.getFlowAccess().getControlsControlIDTerminalRuleCall_10_0_1()); 
+             before(grammarAccess.getFlowAccess().getControlsControlIDTerminalRuleCall_8_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getFlowAccess().getControlsControlIDTerminalRuleCall_10_0_1()); 
+             after(grammarAccess.getFlowAccess().getControlsControlIDTerminalRuleCall_8_1_0_1()); 
 
             }
 
-             after(grammarAccess.getFlowAccess().getControlsControlCrossReference_10_0()); 
+             after(grammarAccess.getFlowAccess().getControlsControlCrossReference_8_1_0()); 
 
             }
 
@@ -11510,21 +12455,21 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flow__ControlsAssignment_10"
+    // $ANTLR end "rule__Flow__ControlsAssignment_8_1"
 
 
     // $ANTLR start "rule__Control__NameAssignment_1"
-    // InternalDasl.g:3746:1: rule__Control__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDasl.g:4033:1: rule__Control__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Control__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3750:1: ( ( RULE_ID ) )
-            // InternalDasl.g:3751:2: ( RULE_ID )
+            // InternalDasl.g:4037:1: ( ( RULE_ID ) )
+            // InternalDasl.g:4038:2: ( RULE_ID )
             {
-            // InternalDasl.g:3751:2: ( RULE_ID )
-            // InternalDasl.g:3752:3: RULE_ID
+            // InternalDasl.g:4038:2: ( RULE_ID )
+            // InternalDasl.g:4039:3: RULE_ID
             {
              before(grammarAccess.getControlAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -11551,17 +12496,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__RefAssignment_4"
-    // InternalDasl.g:3761:1: rule__Control__RefAssignment_4 : ( RULE_ID ) ;
+    // InternalDasl.g:4048:1: rule__Control__RefAssignment_4 : ( RULE_ID ) ;
     public final void rule__Control__RefAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3765:1: ( ( RULE_ID ) )
-            // InternalDasl.g:3766:2: ( RULE_ID )
+            // InternalDasl.g:4052:1: ( ( RULE_ID ) )
+            // InternalDasl.g:4053:2: ( RULE_ID )
             {
-            // InternalDasl.g:3766:2: ( RULE_ID )
-            // InternalDasl.g:3767:3: RULE_ID
+            // InternalDasl.g:4053:2: ( RULE_ID )
+            // InternalDasl.g:4054:3: RULE_ID
             {
              before(grammarAccess.getControlAccess().getRefIDTerminalRuleCall_4_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -11588,17 +12533,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__AreaAssignment_6"
-    // InternalDasl.g:3776:1: rule__Control__AreaAssignment_6 : ( ruleControlType ) ;
+    // InternalDasl.g:4063:1: rule__Control__AreaAssignment_6 : ( ruleControlType ) ;
     public final void rule__Control__AreaAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3780:1: ( ( ruleControlType ) )
-            // InternalDasl.g:3781:2: ( ruleControlType )
+            // InternalDasl.g:4067:1: ( ( ruleControlType ) )
+            // InternalDasl.g:4068:2: ( ruleControlType )
             {
-            // InternalDasl.g:3781:2: ( ruleControlType )
-            // InternalDasl.g:3782:3: ruleControlType
+            // InternalDasl.g:4068:2: ( ruleControlType )
+            // InternalDasl.g:4069:3: ruleControlType
             {
              before(grammarAccess.getControlAccess().getAreaControlTypeEnumRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -11629,17 +12574,17 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Control__ImplementationAssignment_8"
-    // InternalDasl.g:3791:1: rule__Control__ImplementationAssignment_8 : ( RULE_STRING ) ;
+    // InternalDasl.g:4078:1: rule__Control__ImplementationAssignment_8 : ( RULE_STRING ) ;
     public final void rule__Control__ImplementationAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDasl.g:3795:1: ( ( RULE_STRING ) )
-            // InternalDasl.g:3796:2: ( RULE_STRING )
+            // InternalDasl.g:4082:1: ( ( RULE_STRING ) )
+            // InternalDasl.g:4083:2: ( RULE_STRING )
             {
-            // InternalDasl.g:3796:2: ( RULE_STRING )
-            // InternalDasl.g:3797:3: RULE_STRING
+            // InternalDasl.g:4083:2: ( RULE_STRING )
+            // InternalDasl.g:4084:3: RULE_STRING
             {
              before(grammarAccess.getControlAccess().getImplementationSTRINGTerminalRuleCall_8_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -11671,45 +12616,42 @@ public class InternalDaslParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000002L,0x0000000111041018L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000002L,0x0000000122082030L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000008L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000100L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000200L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000200L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000C00L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000400L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000010L,0x0000000000001800L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000003800L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000400L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000000L,0x0000000000900000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000010L,0x0000000000040400L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000002L,0x0000000000040000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x01C0000000000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x1E00000000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0xE000000000000000L,0x0000000000000003L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000800L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x003FFFFFFFFFC000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000000L,0x0000000000A00000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000000L,0x0000000001081800L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000002L,0x0000000000080000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x03C0000000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x3C00000000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0xC000000000000000L,0x0000000000000007L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000001001800L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x003FFFFFFFFFC000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
 
 }

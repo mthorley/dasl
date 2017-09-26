@@ -382,6 +382,16 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getNode_Controls()
+  {
+    return (EReference)nodeEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getComponent()
   {
     return componentEClass;
@@ -462,9 +472,19 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Components()
+  public EReference getComponent_Controls()
   {
     return (EReference)componentEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComponent_Components()
+  {
+    return (EReference)componentEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -758,6 +778,7 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
     createEAttribute(nodeEClass, NODE__OS);
     createEAttribute(nodeEClass, NODE__VALUE);
     createEReference(nodeEClass, NODE__COMPONENTS);
+    createEReference(nodeEClass, NODE__CONTROLS);
 
     componentEClass = createEClass(COMPONENT);
     createEAttribute(componentEClass, COMPONENT__NAME);
@@ -767,6 +788,7 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
     createEAttribute(componentEClass, COMPONENT__DESC);
     createEAttribute(componentEClass, COMPONENT__VERSION);
     createEReference(componentEClass, COMPONENT__ASSETS);
+    createEReference(componentEClass, COMPONENT__CONTROLS);
     createEReference(componentEClass, COMPONENT__COMPONENTS);
 
     informationAssetEClass = createEClass(INFORMATION_ASSET);
@@ -859,6 +881,7 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
     initEAttribute(getNode_Os(), ecorePackage.getEString(), "os", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getNode_Value(), this.getNodeType(), "value", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNode_Components(), this.getComponent(), null, "components", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNode_Controls(), this.getControl(), null, "controls", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -868,6 +891,7 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
     initEAttribute(getComponent_Desc(), ecorePackage.getEString(), "desc", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getComponent_Version(), ecorePackage.getEString(), "version", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponent_Assets(), this.getInformationAsset(), null, "assets", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponent_Controls(), this.getControl(), null, "controls", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponent_Components(), this.getComponent(), null, "components", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(informationAssetEClass, InformationAsset.class, "InformationAsset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -944,6 +968,7 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
     initEEnum(confidentialityTypeEEnum, ConfidentialityType.class, "ConfidentialityType");
     addEEnumLiteral(confidentialityTypeEEnum, ConfidentialityType.PUBLIC);
     addEEnumLiteral(confidentialityTypeEEnum, ConfidentialityType.INTERNAL);
+    addEEnumLiteral(confidentialityTypeEEnum, ConfidentialityType.CONFIDENTIAL);
     addEEnumLiteral(confidentialityTypeEEnum, ConfidentialityType.RESTRICTED);
 
     initEEnum(integrityTypeEEnum, IntegrityType.class, "IntegrityType");

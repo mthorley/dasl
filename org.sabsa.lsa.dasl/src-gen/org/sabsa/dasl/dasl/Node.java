@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.sabsa.dasl.dasl.Node#getOs <em>Os</em>}</li>
  *   <li>{@link org.sabsa.dasl.dasl.Node#getValue <em>Value</em>}</li>
  *   <li>{@link org.sabsa.dasl.dasl.Node#getComponents <em>Components</em>}</li>
+ *   <li>{@link org.sabsa.dasl.dasl.Node#getControls <em>Controls</em>}</li>
  * </ul>
  *
  * @see org.sabsa.dasl.dasl.DaslPackage#getNode()
@@ -176,5 +177,21 @@ public interface Node extends AbstractElement
    * @generated
    */
   EList<Component> getComponents();
+
+  /**
+   * Returns the value of the '<em><b>Controls</b></em>' reference list.
+   * The list contents are of type {@link org.sabsa.dasl.dasl.Control}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Controls</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Controls</em>' reference list.
+   * @see org.sabsa.dasl.dasl.DaslPackage#getNode_Controls()
+   * @model
+   * @generated
+   */
+  EList<Control> getControls();
 
 } // Node

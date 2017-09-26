@@ -30,7 +30,7 @@ Zone:
 	'ingress'		(ingressZones+=[Zone])*
 	'egress'		(egressZones+=[Zone])*
   	'nodes' 		nodes+=[Node]*
-  	('controls' 	controls+=[Control])?
+	('controls' 	(controls+=[Control])*)?
   '}'
 ;
 
@@ -45,6 +45,7 @@ Node:
 		'os'    		os=STRING
 		'type' 			(value=NodeType)
 		'components' 	components+=[Component]*
+		('controls' 	 (controls+=[Control])*)?
 	'}';
 
 Component:
@@ -54,7 +55,8 @@ Component:
 		('vendor'    vendor=STRING)?
 		'desc'       desc=STRING
 		'version'    version=STRING
-		'assets' 	 (assets+=[InformationAsset | QualifiedName])*
+		('assets' 	 (assets+=[InformationAsset | QualifiedName])*)?
+		('controls' 	 (controls+=[Control])*)?
 		components+=Component*
 	'}';
 	
@@ -71,8 +73,8 @@ Flow:
 	'flow' name=ID '{'
 		'from'  			from=[Component]
 		'to' 				to=[Component]
-		'informationassets' (assets+=[InformationAsset | QualifiedName])*
-		'controls' 			(controls+=[Control])*
+		('assets' 			(assets+=[InformationAsset | QualifiedName])*)?
+		('controls' 	 	(controls+=[Control])*)?
 	'}';
 	
 Control:
@@ -127,12 +129,13 @@ enum ControlType:
 ;
 
 enum ConfidentialityType:
-	Public | Internal | Restricted
+	Public | Internal | Confidential | Restricted
 ;
 
 enum IntegrityType:
 	Accurate | HighlyTrusted | Trusted | Uncontrolled
 ;
+
 
 enum AvailabilityType:
 	Platinum | Gold | Silver | Bronze | Plastic

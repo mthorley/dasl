@@ -127,4 +127,8 @@ public class Validator {
 	}
 	*/
 	
+	// end to end flow must be encrypted for confirmation assets
+	
+	
+	
 }
