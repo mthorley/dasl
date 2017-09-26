@@ -92,3 +92,9 @@ flow F1 {
 	controls TLS12
 }
 ```
+## Roadmap
+
+* Doc generation as HTML
+* More rules like "All flows must be encrypted for confidential assets"
+* Automatically apply attack vectors derived from OWASP top X to key flows/assets
+* Implement controls as code, where a control runs tests to validate the security as part of CI/CD pipeline
