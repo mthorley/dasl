@@ -8,7 +8,7 @@ Domain architecture security language (DaSL) is a [DSL](https://en.wikipedia.org
 * Inline model validation highlighting syntatic (language issues) and semantic (rule violations such as invalid zone connections)
 
 ## Screenshot
-![Dasl Editor](https://mthorley.github.com/dasl/org.sabsa.lsa.dasl.examples/daslview.png?raw=true)
+![Dasl Editor](/org.sabsa.lsa.dasl.examples/daslview.png?raw=true "Dasl Editor")
 
 ## Basic Example
 
@@ -23,7 +23,7 @@ A simple DaSL for a mobile application calling an API using a security token ove
 | Information Asset | Description of the information, its confidentiality, integrity and availability rating |
 | Control | Security or process controls to manage risk |
 
-![Basic Example](https://mthorley.github.com/dasl/org.sabsa.lsa.dasl.examples/basic/basic.png?raw=true)
+![Basic Example](/org.sabsa.lsa.dasl.examples/basic/basic.png?raw=true "Basic Example")
 
 ```
 // zones that 
