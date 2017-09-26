@@ -101,3 +101,4 @@ In no particular order ...
 * Automatically apply attack vectors derived from OWASP top X to key flows/assets
 * Implement controls as code, where a control runs tests to validate the security as part of CI/CD pipeline
 * Improve visualisation and layout of views to support custom placement and UI elements
+* Generation of cloud infrastructure files such as AWS cloudformation or GCP resource templates
