@@ -1,0 +1,66 @@
+// zones that 
+zone UncontrolledZone {
+	trustLevel 0
+	ingress 
+	egress PerimeterZone
+	nodes MobileDevice
+}
+
+zone PerimeterZone {
+	trustLevel 1
+	ingress UncontrolledZone
+	egress
+	nodes Gateway
+}
+	
+node MobileDevice {
+	ref N1
+	host "public"
+	os "iOS"
+	type PHYSICAL
+	components MobileApp
+}
+
+node Gateway {
+	ref N2
+	host "aws."
+	os "AMI"
+	type VIRTUAL
+	components APIGateway
+}
+
+component MobileApp {
+	ref CP1
+	stereotype "MobileApp"
+	desc "Augmented reality"
+	version "Beta"
+	assets
+}
+
+component APIGateway {
+	ref CP2
+	stereotype "APIGateway"
+	desc "Apigee"
+	version "1.0"
+	assets
+}
+
+informationasset Token {
+	ref IA1
+	desc "Security token"
+	confidentiality Confidential
+	integrity Trusted
+	availability Gold
+}
+
+control TLS12 {
+	ref C1
+	type MessageSecurity
+	implementation "OpenSSL"
+}
+
+flow F1 {
+	from MobileApp to APIGateway
+	assets Token 
+	controls TLS12
+}

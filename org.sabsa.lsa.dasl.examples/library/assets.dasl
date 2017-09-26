@@ -1,0 +1,73 @@
+// information assets
+
+informationasset OTP {
+	ref IA7
+	desc "HOTP"
+	confidentiality Restricted
+	integrity Accurate
+	availability Platinum
+}
+
+informationasset AppPIN {
+	ref IA1
+	desc "Customer n digit PIN"
+	confidentiality Restricted
+	integrity Trusted
+	availability Platinum
+}
+
+informationasset Password {
+	ref IA2
+	desc "Customer's password"
+	confidentiality Restricted
+	integrity Trusted
+	availability Platinum
+}
+
+informationasset iOSApplicationBinary {
+	ref IA3
+	desc "mobile application binary ipa"
+	confidentiality Restricted
+	integrity Trusted
+	availability Platinum
+}
+
+informationasset AndroidApplicationBinary {
+	ref IA4
+	desc "mobile application binary apk"
+	confidentiality Restricted
+	integrity Trusted
+	availability Platinum
+}
+
+informationasset Payment {
+	ref IA7
+	desc "Payanyone, transfer, bpay"
+	confidentiality Restricted
+	integrity Accurate
+	availability Platinum
+}
+
+informationasset George {
+	ref IA99
+	desc ""
+	confidentiality Internal 
+	integrity Trusted
+	availability Plastic
+}
+
+informationasset DeviceToken {
+	ref IA5
+	desc "Device token "
+	confidentiality Restricted
+	integrity Accurate
+	availability Platinum
+}
+
+informationasset SGWConfig {
+	ref IA6
+	desc "Security Gateway Configuration "
+	confidentiality Restricted
+	integrity Accurate
+	availability Platinum
+}
