@@ -26,7 +26,6 @@ A simple DaSL for a mobile application calling an API using a security token ove
 ![Basic Example](/org.sabsa.lsa.dasl.examples/basic/basic.png?raw=true "Basic Example")
 
 ```
-// zones that 
 zone UncontrolledZone {
 	trustLevel 0
 	ingress 
