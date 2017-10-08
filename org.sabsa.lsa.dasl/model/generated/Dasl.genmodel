@@ -94,6 +94,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dasl.ecore#//Node/value"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dasl.ecore#//Node/components"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dasl.ecore#//Node/controls"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Dasl.ecore#//Node/assets"/>
     </genClasses>
     <genClasses ecoreClass="Dasl.ecore#//Component">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dasl.ecore#//Component/name"/>
@@ -127,6 +128,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dasl.ecore#//Control/area"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dasl.ecore#//Control/implementation"/>
     </genClasses>
+    <genClasses ecoreClass="Dasl.ecore#//Actor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dasl.ecore#//Actor/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dasl.ecore#//Actor/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dasl.ecore#//Actor/roles"/>
+    </genClasses>
     <genClasses ecoreClass="Dasl.ecore#//AbstractElement"/>
+    <genClasses ecoreClass="Dasl.ecore#//FlowEndpoint"/>
   </genPackages>
 </genmodel:GenModel>

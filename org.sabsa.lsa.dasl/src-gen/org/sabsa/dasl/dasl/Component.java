@@ -29,7 +29,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Component extends AbstractElement
+public interface Component extends AbstractElement, FlowEndpoint
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

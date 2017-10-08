@@ -1,5 +1,6 @@
 package org.sabsa.dasl.ui.mxgraph;
 
+import org.sabsa.dasl.DaslUtils;
 import org.sabsa.dasl.dasl.AbstractElement;
 import org.sabsa.dasl.dasl.Component;
 import org.sabsa.dasl.dasl.Flow;
@@ -70,8 +71,8 @@ public class DaslMxGraphPrinter {
 		
 		buf.append("var " + flow.getName() + 
 				"= graph.insertEdge(parent, null, '" + flow.getName() + "', " +
-				flow.getTo().getName() + ", " + 
-				flow.getFrom().getName() + ");");
+				DaslUtils.getName(flow.getTo()) + ", " + 
+				DaslUtils.getName(flow.getFrom()) + ");");
 		
 		buf.append("\n");
 		return buf.toString();

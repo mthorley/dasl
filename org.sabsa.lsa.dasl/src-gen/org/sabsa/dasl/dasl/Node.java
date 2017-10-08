@@ -21,13 +21,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.sabsa.dasl.dasl.Node#getValue <em>Value</em>}</li>
  *   <li>{@link org.sabsa.dasl.dasl.Node#getComponents <em>Components</em>}</li>
  *   <li>{@link org.sabsa.dasl.dasl.Node#getControls <em>Controls</em>}</li>
+ *   <li>{@link org.sabsa.dasl.dasl.Node#getAssets <em>Assets</em>}</li>
  * </ul>
  *
  * @see org.sabsa.dasl.dasl.DaslPackage#getNode()
  * @model
  * @generated
  */
-public interface Node extends AbstractElement
+public interface Node extends AbstractElement, FlowEndpoint
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -193,5 +194,21 @@ public interface Node extends AbstractElement
    * @generated
    */
   EList<Control> getControls();
+
+  /**
+   * Returns the value of the '<em><b>Assets</b></em>' reference list.
+   * The list contents are of type {@link org.sabsa.dasl.dasl.InformationAsset}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Assets</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Assets</em>' reference list.
+   * @see org.sabsa.dasl.dasl.DaslPackage#getNode_Assets()
+   * @model
+   * @generated
+   */
+  EList<InformationAsset> getAssets();
 
 } // Node

@@ -44,8 +44,9 @@ Node:
 		'host'  		host=STRING
 		'os'    		os=STRING
 		'type' 			(value=NodeType)
-		'components' 	components+=[Component]*
-		('controls' 	 (controls+=[Control])*)?
+		('components' 	components+=[Component]*)?
+		('controls' 	(controls+=[Control])*)?
+		('assets' 	 	(assets+=[InformationAsset | QualifiedName])*)?
 	'}';
 
 Component:
@@ -71,8 +72,8 @@ InformationAsset:
 
 Flow:
 	'flow' name=ID '{'
-		'from'  			from=[Component]
-		'to' 				to=[Component]
+		'from'  			from=[FlowEndpoint]
+		'to' 				to=[FlowEndpoint]
 		('assets' 			(assets+=[InformationAsset | QualifiedName])*)?
 		('controls' 	 	(controls+=[Control])*)?
 	'}';
@@ -82,6 +83,13 @@ Control:
 		'ref'				ref=ID
 		'type' 				area=ControlType
 		'implementation'	implementation=STRING
+	'}'
+;
+
+Actor:
+	'actor' name=ID '{'
+		'desc'				desc=STRING
+		'roles'				roles=STRING
 	'}'
 ;
 
@@ -136,11 +144,14 @@ enum IntegrityType:
 	Accurate | HighlyTrusted | Trusted | Uncontrolled
 ;
 
-
 enum AvailabilityType:
 	Platinum | Gold | Silver | Bronze | Plastic
 ;
 
 AbstractElement:
-	InformationAsset | Component | Zone | Node | Control | Flow | Import
+	InformationAsset | Component | Zone | Node | Actor | Control | Flow | Import
+;
+
+FlowEndpoint:
+	Component | Node | Actor
 ;

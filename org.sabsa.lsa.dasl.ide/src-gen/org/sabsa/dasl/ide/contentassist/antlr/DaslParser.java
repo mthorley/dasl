@@ -32,6 +32,7 @@ public class DaslParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getAbstractElementAccess().getAlternatives(), "rule__AbstractElement__Alternatives");
+					put(grammarAccess.getFlowEndpointAccess().getAlternatives(), "rule__FlowEndpoint__Alternatives");
 					put(grammarAccess.getNodeTypeAccess().getAlternatives(), "rule__NodeType__Alternatives");
 					put(grammarAccess.getControlTypeAccess().getAlternatives(), "rule__ControlType__Alternatives");
 					put(grammarAccess.getConfidentialityTypeAccess().getAlternatives(), "rule__ConfidentialityType__Alternatives");
@@ -44,6 +45,8 @@ public class DaslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getZoneAccess().getGroup(), "rule__Zone__Group__0");
 					put(grammarAccess.getZoneAccess().getGroup_11(), "rule__Zone__Group_11__0");
 					put(grammarAccess.getNodeAccess().getGroup(), "rule__Node__Group__0");
+					put(grammarAccess.getNodeAccess().getGroup_11(), "rule__Node__Group_11__0");
+					put(grammarAccess.getNodeAccess().getGroup_12(), "rule__Node__Group_12__0");
 					put(grammarAccess.getNodeAccess().getGroup_13(), "rule__Node__Group_13__0");
 					put(grammarAccess.getComponentAccess().getGroup(), "rule__Component__Group__0");
 					put(grammarAccess.getComponentAccess().getGroup_7(), "rule__Component__Group_7__0");
@@ -54,6 +57,7 @@ public class DaslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFlowAccess().getGroup_7(), "rule__Flow__Group_7__0");
 					put(grammarAccess.getFlowAccess().getGroup_8(), "rule__Flow__Group_8__0");
 					put(grammarAccess.getControlAccess().getGroup(), "rule__Control__Group__0");
+					put(grammarAccess.getActorAccess().getGroup(), "rule__Actor__Group__0");
 					put(grammarAccess.getSecurityModelAccess().getElementsAssignment(), "rule__SecurityModel__ElementsAssignment");
 					put(grammarAccess.getImportAccess().getImportURIAssignment_1(), "rule__Import__ImportURIAssignment_1");
 					put(grammarAccess.getZoneAccess().getNameAssignment_1(), "rule__Zone__NameAssignment_1");
@@ -67,8 +71,9 @@ public class DaslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNodeAccess().getHostAssignment_6(), "rule__Node__HostAssignment_6");
 					put(grammarAccess.getNodeAccess().getOsAssignment_8(), "rule__Node__OsAssignment_8");
 					put(grammarAccess.getNodeAccess().getValueAssignment_10(), "rule__Node__ValueAssignment_10");
-					put(grammarAccess.getNodeAccess().getComponentsAssignment_12(), "rule__Node__ComponentsAssignment_12");
-					put(grammarAccess.getNodeAccess().getControlsAssignment_13_1(), "rule__Node__ControlsAssignment_13_1");
+					put(grammarAccess.getNodeAccess().getComponentsAssignment_11_1(), "rule__Node__ComponentsAssignment_11_1");
+					put(grammarAccess.getNodeAccess().getControlsAssignment_12_1(), "rule__Node__ControlsAssignment_12_1");
+					put(grammarAccess.getNodeAccess().getAssetsAssignment_13_1(), "rule__Node__AssetsAssignment_13_1");
 					put(grammarAccess.getComponentAccess().getNameAssignment_1(), "rule__Component__NameAssignment_1");
 					put(grammarAccess.getComponentAccess().getRefAssignment_4(), "rule__Component__RefAssignment_4");
 					put(grammarAccess.getComponentAccess().getStereotypeAssignment_6(), "rule__Component__StereotypeAssignment_6");
@@ -93,6 +98,9 @@ public class DaslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getControlAccess().getRefAssignment_4(), "rule__Control__RefAssignment_4");
 					put(grammarAccess.getControlAccess().getAreaAssignment_6(), "rule__Control__AreaAssignment_6");
 					put(grammarAccess.getControlAccess().getImplementationAssignment_8(), "rule__Control__ImplementationAssignment_8");
+					put(grammarAccess.getActorAccess().getNameAssignment_1(), "rule__Actor__NameAssignment_1");
+					put(grammarAccess.getActorAccess().getDescAssignment_4(), "rule__Actor__DescAssignment_4");
+					put(grammarAccess.getActorAccess().getRolesAssignment_6(), "rule__Actor__RolesAssignment_6");
 				}
 			};
 		}

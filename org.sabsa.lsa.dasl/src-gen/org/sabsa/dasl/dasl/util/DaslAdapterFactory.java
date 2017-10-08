@@ -116,9 +116,19 @@ public class DaslAdapterFactory extends AdapterFactoryImpl
         return createControlAdapter();
       }
       @Override
+      public Adapter caseActor(Actor object)
+      {
+        return createActorAdapter();
+      }
+      @Override
       public Adapter caseAbstractElement(AbstractElement object)
       {
         return createAbstractElementAdapter();
+      }
+      @Override
+      public Adapter caseFlowEndpoint(FlowEndpoint object)
+      {
+        return createFlowEndpointAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -263,6 +273,21 @@ public class DaslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.sabsa.dasl.dasl.Actor <em>Actor</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.sabsa.dasl.dasl.Actor
+   * @generated
+   */
+  public Adapter createActorAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.sabsa.dasl.dasl.AbstractElement <em>Abstract Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -273,6 +298,21 @@ public class DaslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAbstractElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.sabsa.dasl.dasl.FlowEndpoint <em>Flow Endpoint</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.sabsa.dasl.dasl.FlowEndpoint
+   * @generated
+   */
+  public Adapter createFlowEndpointAdapter()
   {
     return null;
   }

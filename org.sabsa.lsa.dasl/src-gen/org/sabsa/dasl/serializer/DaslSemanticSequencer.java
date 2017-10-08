@@ -14,6 +14,7 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.sabsa.dasl.dasl.Actor;
 import org.sabsa.dasl.dasl.Component;
 import org.sabsa.dasl.dasl.Control;
 import org.sabsa.dasl.dasl.DaslPackage;
@@ -39,6 +40,9 @@ public class DaslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == DaslPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case DaslPackage.ACTOR:
+				sequence_Actor(context, (Actor) semanticObject); 
+				return; 
 			case DaslPackage.COMPONENT:
 				sequence_Component(context, (Component) semanticObject); 
 				return; 
@@ -70,8 +74,35 @@ public class DaslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Actor returns Actor
+	 *     AbstractElement returns Actor
+	 *     FlowEndpoint returns Actor
+	 *
+	 * Constraint:
+	 *     (name=ID desc=STRING roles=STRING)
+	 */
+	protected void sequence_Actor(ISerializationContext context, Actor semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DaslPackage.Literals.ACTOR__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DaslPackage.Literals.ACTOR__NAME));
+			if (transientValues.isValueTransient(semanticObject, DaslPackage.Literals.ACTOR__DESC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DaslPackage.Literals.ACTOR__DESC));
+			if (transientValues.isValueTransient(semanticObject, DaslPackage.Literals.ACTOR__ROLES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DaslPackage.Literals.ACTOR__ROLES));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getActorAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getActorAccess().getDescSTRINGTerminalRuleCall_4_0(), semanticObject.getDesc());
+		feeder.accept(grammarAccess.getActorAccess().getRolesSTRINGTerminalRuleCall_6_0(), semanticObject.getRoles());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Component returns Component
 	 *     AbstractElement returns Component
+	 *     FlowEndpoint returns Component
 	 *
 	 * Constraint:
 	 *     (
@@ -125,7 +156,7 @@ public class DaslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     AbstractElement returns Flow
 	 *
 	 * Constraint:
-	 *     (name=ID from=[Component|ID] to=[Component|ID] assets+=[InformationAsset|QualifiedName]* controls+=[Control|ID]*)
+	 *     (name=ID from=[FlowEndpoint|ID] to=[FlowEndpoint|ID] assets+=[InformationAsset|QualifiedName]* controls+=[Control|ID]*)
 	 */
 	protected void sequence_Flow(ISerializationContext context, Flow semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -196,6 +227,7 @@ public class DaslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Contexts:
 	 *     Node returns Node
 	 *     AbstractElement returns Node
+	 *     FlowEndpoint returns Node
 	 *
 	 * Constraint:
 	 *     (
@@ -205,7 +237,8 @@ public class DaslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         os=STRING 
 	 *         value=NodeType 
 	 *         components+=[Component|ID]* 
-	 *         controls+=[Control|ID]*
+	 *         controls+=[Control|ID]* 
+	 *         assets+=[InformationAsset|QualifiedName]*
 	 *     )
 	 */
 	protected void sequence_Node(ISerializationContext context, Node semanticObject) {

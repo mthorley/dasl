@@ -96,6 +96,15 @@ public interface DaslFactory extends EFactory
   Control createControl();
 
   /**
+   * Returns a new object of class '<em>Actor</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Actor</em>'.
+   * @generated
+   */
+  Actor createActor();
+
+  /**
    * Returns a new object of class '<em>Abstract Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -103,6 +112,15 @@ public interface DaslFactory extends EFactory
    * @generated
    */
   AbstractElement createAbstractElement();
+
+  /**
+   * Returns a new object of class '<em>Flow Endpoint</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Flow Endpoint</em>'.
+   * @generated
+   */
+  FlowEndpoint createFlowEndpoint();
 
   /**
    * Returns the package supported by this factory.

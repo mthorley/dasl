@@ -101,6 +101,7 @@ public class DaslSwitch<T> extends Switch<T>
         Node node = (Node)theEObject;
         T result = caseNode(node);
         if (result == null) result = caseAbstractElement(node);
+        if (result == null) result = caseFlowEndpoint(node);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -109,6 +110,7 @@ public class DaslSwitch<T> extends Switch<T>
         Component component = (Component)theEObject;
         T result = caseComponent(component);
         if (result == null) result = caseAbstractElement(component);
+        if (result == null) result = caseFlowEndpoint(component);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -136,10 +138,26 @@ public class DaslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DaslPackage.ACTOR:
+      {
+        Actor actor = (Actor)theEObject;
+        T result = caseActor(actor);
+        if (result == null) result = caseAbstractElement(actor);
+        if (result == null) result = caseFlowEndpoint(actor);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DaslPackage.ABSTRACT_ELEMENT:
       {
         AbstractElement abstractElement = (AbstractElement)theEObject;
         T result = caseAbstractElement(abstractElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DaslPackage.FLOW_ENDPOINT:
+      {
+        FlowEndpoint flowEndpoint = (FlowEndpoint)theEObject;
+        T result = caseFlowEndpoint(flowEndpoint);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -276,6 +294,22 @@ public class DaslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Actor</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Actor</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActor(Actor object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Abstract Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -287,6 +321,22 @@ public class DaslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAbstractElement(AbstractElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Flow Endpoint</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Flow Endpoint</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFlowEndpoint(FlowEndpoint object)
   {
     return null;
   }

@@ -1,6 +1,8 @@
 package org.sabsa.dasl.ui.plantuml;
 
+import org.sabsa.dasl.DaslUtils;
 import org.sabsa.dasl.dasl.AbstractElement;
+import org.sabsa.dasl.dasl.Actor;
 import org.sabsa.dasl.dasl.Component;
 import org.sabsa.dasl.dasl.Flow;
 import org.sabsa.dasl.dasl.InformationAsset;
@@ -23,12 +25,25 @@ public class DaslPlantUMLPrinter {
 			}
 		}
 		
+		// generate all actors
+		for (AbstractElement element : model.getElements()) {
+			if (element instanceof Actor) {
+				buf.append(print((Actor)element));
+			}
+		}
+		
 		// then generate all flows
 		for (AbstractElement element : model.getElements()) {
 			if (element instanceof Flow) {
 				buf.append(print((Flow)element));
 			}
 		}
+		return buf.toString();
+	}
+	
+	private static String print(Actor actor) {
+		StringBuffer buf = new StringBuffer();
+		buf.append("actor " + actor.getName() + "\n");
 		return buf.toString();
 	}
 	
@@ -44,21 +59,22 @@ public class DaslPlantUMLPrinter {
 	
 	private static String print(Node node) {
 		StringBuffer buf = new StringBuffer();
-		buf.append("rectangle \"" + node.getName() + " [" + node.getRef() + "]\" #FFFFFF {\n");
+		buf.append("rectangle \"" + node.getName() + 
+				" [" + node.getRef() + "]\" as " + node.getName() + " #FFFFFF {\n");
 		for (Component comp : node.getComponents()) {
 			buf.append(print(comp));
 		}
 		buf.append("}\n");
 		return buf.toString();
 	}
-	
+		
 	private static String print(Flow flow) {
 		StringBuffer buf = new StringBuffer();
 		if (Validator.doesFlowViolateZoneRules(flow)) {
-			buf.append(flow.getFrom().getName() + "-[#FF0000]-->" + flow.getTo().getName() + ": ");			
+			buf.append(DaslUtils.getName(flow.getFrom()) + "-[#FF0000]-->" + DaslUtils.getName(flow.getTo()) + ": ");			
 		}
 		else {
-			buf.append(flow.getFrom().getName() + "-->" + flow.getTo().getName() + ": ");
+			buf.append(DaslUtils.getName(flow.getFrom()) + "-->" + DaslUtils.getName(flow.getTo()) + ": ");
 		}
 		buf.append(flow.getName());
 //		for (InformationAsset asset : flow.getReferencedObjects()) {

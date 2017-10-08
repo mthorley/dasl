@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.sabsa.dasl.dasl.Component;
 import org.sabsa.dasl.dasl.Control;
 import org.sabsa.dasl.dasl.DaslPackage;
+import org.sabsa.dasl.dasl.InformationAsset;
 import org.sabsa.dasl.dasl.Node;
 import org.sabsa.dasl.dasl.NodeType;
 
@@ -36,6 +37,7 @@ import org.sabsa.dasl.dasl.NodeType;
  *   <li>{@link org.sabsa.dasl.dasl.impl.NodeImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.sabsa.dasl.dasl.impl.NodeImpl#getComponents <em>Components</em>}</li>
  *   <li>{@link org.sabsa.dasl.dasl.impl.NodeImpl#getControls <em>Controls</em>}</li>
+ *   <li>{@link org.sabsa.dasl.dasl.impl.NodeImpl#getAssets <em>Assets</em>}</li>
  * </ul>
  *
  * @generated
@@ -161,6 +163,16 @@ public class NodeImpl extends AbstractElementImpl implements Node
    * @ordered
    */
   protected EList<Control> controls;
+
+  /**
+   * The cached value of the '{@link #getAssets() <em>Assets</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAssets()
+   * @generated
+   * @ordered
+   */
+  protected EList<InformationAsset> assets;
 
   /**
    * <!-- begin-user-doc -->
@@ -331,6 +343,20 @@ public class NodeImpl extends AbstractElementImpl implements Node
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<InformationAsset> getAssets()
+  {
+    if (assets == null)
+    {
+      assets = new EObjectResolvingEList<InformationAsset>(InformationAsset.class, this, DaslPackage.NODE__ASSETS);
+    }
+    return assets;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -350,6 +376,8 @@ public class NodeImpl extends AbstractElementImpl implements Node
         return getComponents();
       case DaslPackage.NODE__CONTROLS:
         return getControls();
+      case DaslPackage.NODE__ASSETS:
+        return getAssets();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -388,6 +416,10 @@ public class NodeImpl extends AbstractElementImpl implements Node
         getControls().clear();
         getControls().addAll((Collection<? extends Control>)newValue);
         return;
+      case DaslPackage.NODE__ASSETS:
+        getAssets().clear();
+        getAssets().addAll((Collection<? extends InformationAsset>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -423,6 +455,9 @@ public class NodeImpl extends AbstractElementImpl implements Node
       case DaslPackage.NODE__CONTROLS:
         getControls().clear();
         return;
+      case DaslPackage.NODE__ASSETS:
+        getAssets().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -451,6 +486,8 @@ public class NodeImpl extends AbstractElementImpl implements Node
         return components != null && !components.isEmpty();
       case DaslPackage.NODE__CONTROLS:
         return controls != null && !controls.isEmpty();
+      case DaslPackage.NODE__ASSETS:
+        return assets != null && !assets.isEmpty();
     }
     return super.eIsSet(featureID);
   }

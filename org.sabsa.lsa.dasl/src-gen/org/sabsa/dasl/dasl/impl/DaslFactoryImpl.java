@@ -74,7 +74,9 @@ public class DaslFactoryImpl extends EFactoryImpl implements DaslFactory
       case DaslPackage.INFORMATION_ASSET: return createInformationAsset();
       case DaslPackage.FLOW: return createFlow();
       case DaslPackage.CONTROL: return createControl();
+      case DaslPackage.ACTOR: return createActor();
       case DaslPackage.ABSTRACT_ELEMENT: return createAbstractElement();
+      case DaslPackage.FLOW_ENDPOINT: return createFlowEndpoint();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -223,10 +225,32 @@ public class DaslFactoryImpl extends EFactoryImpl implements DaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Actor createActor()
+  {
+    ActorImpl actor = new ActorImpl();
+    return actor;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AbstractElement createAbstractElement()
   {
     AbstractElementImpl abstractElement = new AbstractElementImpl();
     return abstractElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FlowEndpoint createFlowEndpoint()
+  {
+    FlowEndpointImpl flowEndpoint = new FlowEndpointImpl();
+    return flowEndpoint;
   }
 
   /**

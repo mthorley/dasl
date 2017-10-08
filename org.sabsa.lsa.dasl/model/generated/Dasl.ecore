@@ -25,7 +25,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="controls" unique="false"
         upperBound="-1" eType="#//Control"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="#//AbstractElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="#//AbstractElement #//FlowEndpoint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="host" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -35,8 +35,10 @@
         upperBound="-1" eType="#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controls" unique="false"
         upperBound="-1" eType="#//Control"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assets" unique="false"
+        upperBound="-1" eType="#//InformationAsset"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//AbstractElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//AbstractElement #//FlowEndpoint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -60,8 +62,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Flow" eSuperTypes="#//AbstractElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//Component"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//FlowEndpoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//FlowEndpoint"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assets" unique="false"
         upperBound="-1" eType="#//InformationAsset"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controls" unique="false"
@@ -72,6 +74,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="area" eType="#//ControlType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="implementation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//AbstractElement #//FlowEndpoint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roles" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ControlType">
     <eLiterals name="IdentityValidation" literal="IdentityValidation"/>
@@ -135,4 +142,5 @@
     <eLiterals name="Plastic" value="4" literal="Plastic"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowEndpoint"/>
 </ecore:EPackage>

@@ -24,7 +24,9 @@ public class DaslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Component_ControlsKeyword_13_0_q;
 	protected AbstractElementAlias match_Flow_AssetsKeyword_7_0_q;
 	protected AbstractElementAlias match_Flow_ControlsKeyword_8_0_q;
-	protected AbstractElementAlias match_Node_ControlsKeyword_13_0_q;
+	protected AbstractElementAlias match_Node_AssetsKeyword_13_0_q;
+	protected AbstractElementAlias match_Node_ComponentsKeyword_11_0_q;
+	protected AbstractElementAlias match_Node_ControlsKeyword_12_0_q;
 	protected AbstractElementAlias match_Zone_ControlsKeyword_11_0_q;
 	
 	@Inject
@@ -34,7 +36,9 @@ public class DaslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Component_ControlsKeyword_13_0_q = new TokenAlias(false, true, grammarAccess.getComponentAccess().getControlsKeyword_13_0());
 		match_Flow_AssetsKeyword_7_0_q = new TokenAlias(false, true, grammarAccess.getFlowAccess().getAssetsKeyword_7_0());
 		match_Flow_ControlsKeyword_8_0_q = new TokenAlias(false, true, grammarAccess.getFlowAccess().getControlsKeyword_8_0());
-		match_Node_ControlsKeyword_13_0_q = new TokenAlias(false, true, grammarAccess.getNodeAccess().getControlsKeyword_13_0());
+		match_Node_AssetsKeyword_13_0_q = new TokenAlias(false, true, grammarAccess.getNodeAccess().getAssetsKeyword_13_0());
+		match_Node_ComponentsKeyword_11_0_q = new TokenAlias(false, true, grammarAccess.getNodeAccess().getComponentsKeyword_11_0());
+		match_Node_ControlsKeyword_12_0_q = new TokenAlias(false, true, grammarAccess.getNodeAccess().getControlsKeyword_12_0());
 		match_Zone_ControlsKeyword_11_0_q = new TokenAlias(false, true, grammarAccess.getZoneAccess().getControlsKeyword_11_0());
 	}
 	
@@ -58,8 +62,12 @@ public class DaslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Flow_AssetsKeyword_7_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Flow_ControlsKeyword_8_0_q.equals(syntax))
 				emit_Flow_ControlsKeyword_8_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Node_ControlsKeyword_13_0_q.equals(syntax))
-				emit_Node_ControlsKeyword_13_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Node_AssetsKeyword_13_0_q.equals(syntax))
+				emit_Node_AssetsKeyword_13_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Node_ComponentsKeyword_11_0_q.equals(syntax))
+				emit_Node_ComponentsKeyword_11_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Node_ControlsKeyword_12_0_q.equals(syntax))
+				emit_Node_ControlsKeyword_12_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Zone_ControlsKeyword_11_0_q.equals(syntax))
 				emit_Zone_ControlsKeyword_11_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -98,8 +106,8 @@ public class DaslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'assets'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     to=[Component|ID] (ambiguity) 'controls' controls+=[Control|ID]
-	 *     to=[Component|ID] (ambiguity) 'controls'? '}' (rule end)
+	 *     to=[FlowEndpoint|ID] (ambiguity) 'controls' controls+=[Control|ID]
+	 *     to=[FlowEndpoint|ID] (ambiguity) 'controls'? '}' (rule end)
 	 */
 	protected void emit_Flow_AssetsKeyword_7_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -111,9 +119,35 @@ public class DaslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     assets+=[InformationAsset|QualifiedName] (ambiguity) '}' (rule end)
-	 *     to=[Component|ID] 'assets'? (ambiguity) '}' (rule end)
+	 *     to=[FlowEndpoint|ID] 'assets'? (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Flow_ControlsKeyword_8_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'assets'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     components+=[Component|ID] 'controls'? (ambiguity) '}' (rule end)
+	 *     controls+=[Control|ID] (ambiguity) '}' (rule end)
+	 *     value=NodeType 'components'? 'controls'? (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Node_AssetsKeyword_13_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'components'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     value=NodeType (ambiguity) 'controls' controls+=[Control|ID]
+	 *     value=NodeType (ambiguity) 'controls'? 'assets' assets+=[InformationAsset|QualifiedName]
+	 *     value=NodeType (ambiguity) 'controls'? 'assets'? '}' (rule end)
+	 */
+	protected void emit_Node_ComponentsKeyword_11_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -122,10 +156,12 @@ public class DaslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'controls'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     components+=[Component|ID] (ambiguity) '}' (rule end)
-	 *     value=NodeType 'components' (ambiguity) '}' (rule end)
+	 *     components+=[Component|ID] (ambiguity) 'assets' assets+=[InformationAsset|QualifiedName]
+	 *     components+=[Component|ID] (ambiguity) 'assets'? '}' (rule end)
+	 *     value=NodeType 'components'? (ambiguity) 'assets' assets+=[InformationAsset|QualifiedName]
+	 *     value=NodeType 'components'? (ambiguity) 'assets'? '}' (rule end)
 	 */
-	protected void emit_Node_ControlsKeyword_13_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Node_ControlsKeyword_12_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

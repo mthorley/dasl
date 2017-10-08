@@ -94,7 +94,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getAbstractElement()
    * @generated
    */
-  int ABSTRACT_ELEMENT = 8;
+  int ABSTRACT_ELEMENT = 9;
 
   /**
    * The number of structural features of the '<em>Abstract Element</em>' class.
@@ -280,13 +280,22 @@ public interface DaslPackage extends EPackage
   int NODE__CONTROLS = ABSTRACT_ELEMENT_FEATURE_COUNT + 6;
 
   /**
+   * The feature id for the '<em><b>Assets</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__ASSETS = ABSTRACT_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
    * The number of structural features of the '<em>Node</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NODE_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 7;
+  int NODE_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link org.sabsa.dasl.dasl.impl.ComponentImpl <em>Component</em>}' class.
@@ -581,6 +590,71 @@ public interface DaslPackage extends EPackage
   int CONTROL_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
 
   /**
+   * The meta object id for the '{@link org.sabsa.dasl.dasl.impl.ActorImpl <em>Actor</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.sabsa.dasl.dasl.impl.ActorImpl
+   * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getActor()
+   * @generated
+   */
+  int ACTOR = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTOR__NAME = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Desc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTOR__DESC = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Roles</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTOR__ROLES = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Actor</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTOR_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.sabsa.dasl.dasl.impl.FlowEndpointImpl <em>Flow Endpoint</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.sabsa.dasl.dasl.impl.FlowEndpointImpl
+   * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getFlowEndpoint()
+   * @generated
+   */
+  int FLOW_ENDPOINT = 10;
+
+  /**
+   * The number of structural features of the '<em>Flow Endpoint</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOW_ENDPOINT_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link org.sabsa.dasl.dasl.NodeType <em>Node Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -588,7 +662,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getNodeType()
    * @generated
    */
-  int NODE_TYPE = 9;
+  int NODE_TYPE = 11;
 
   /**
    * The meta object id for the '{@link org.sabsa.dasl.dasl.ControlType <em>Control Type</em>}' enum.
@@ -598,7 +672,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getControlType()
    * @generated
    */
-  int CONTROL_TYPE = 10;
+  int CONTROL_TYPE = 12;
 
   /**
    * The meta object id for the '{@link org.sabsa.dasl.dasl.ConfidentialityType <em>Confidentiality Type</em>}' enum.
@@ -608,7 +682,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getConfidentialityType()
    * @generated
    */
-  int CONFIDENTIALITY_TYPE = 11;
+  int CONFIDENTIALITY_TYPE = 13;
 
   /**
    * The meta object id for the '{@link org.sabsa.dasl.dasl.IntegrityType <em>Integrity Type</em>}' enum.
@@ -618,7 +692,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getIntegrityType()
    * @generated
    */
-  int INTEGRITY_TYPE = 12;
+  int INTEGRITY_TYPE = 14;
 
   /**
    * The meta object id for the '{@link org.sabsa.dasl.dasl.AvailabilityType <em>Availability Type</em>}' enum.
@@ -628,7 +702,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getAvailabilityType()
    * @generated
    */
-  int AVAILABILITY_TYPE = 13;
+  int AVAILABILITY_TYPE = 15;
 
 
   /**
@@ -835,6 +909,17 @@ public interface DaslPackage extends EPackage
    * @generated
    */
   EReference getNode_Controls();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.sabsa.dasl.dasl.Node#getAssets <em>Assets</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Assets</em>'.
+   * @see org.sabsa.dasl.dasl.Node#getAssets()
+   * @see #getNode()
+   * @generated
+   */
+  EReference getNode_Assets();
 
   /**
    * Returns the meta object for class '{@link org.sabsa.dasl.dasl.Component <em>Component</em>}'.
@@ -1141,6 +1226,49 @@ public interface DaslPackage extends EPackage
   EAttribute getControl_Implementation();
 
   /**
+   * Returns the meta object for class '{@link org.sabsa.dasl.dasl.Actor <em>Actor</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Actor</em>'.
+   * @see org.sabsa.dasl.dasl.Actor
+   * @generated
+   */
+  EClass getActor();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.sabsa.dasl.dasl.Actor#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.sabsa.dasl.dasl.Actor#getName()
+   * @see #getActor()
+   * @generated
+   */
+  EAttribute getActor_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.sabsa.dasl.dasl.Actor#getDesc <em>Desc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Desc</em>'.
+   * @see org.sabsa.dasl.dasl.Actor#getDesc()
+   * @see #getActor()
+   * @generated
+   */
+  EAttribute getActor_Desc();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.sabsa.dasl.dasl.Actor#getRoles <em>Roles</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Roles</em>'.
+   * @see org.sabsa.dasl.dasl.Actor#getRoles()
+   * @see #getActor()
+   * @generated
+   */
+  EAttribute getActor_Roles();
+
+  /**
    * Returns the meta object for class '{@link org.sabsa.dasl.dasl.AbstractElement <em>Abstract Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1149,6 +1277,16 @@ public interface DaslPackage extends EPackage
    * @generated
    */
   EClass getAbstractElement();
+
+  /**
+   * Returns the meta object for class '{@link org.sabsa.dasl.dasl.FlowEndpoint <em>Flow Endpoint</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Flow Endpoint</em>'.
+   * @see org.sabsa.dasl.dasl.FlowEndpoint
+   * @generated
+   */
+  EClass getFlowEndpoint();
 
   /**
    * Returns the meta object for enum '{@link org.sabsa.dasl.dasl.NodeType <em>Node Type</em>}'.
@@ -1384,6 +1522,14 @@ public interface DaslPackage extends EPackage
     EReference NODE__CONTROLS = eINSTANCE.getNode_Controls();
 
     /**
+     * The meta object literal for the '<em><b>Assets</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NODE__ASSETS = eINSTANCE.getNode_Assets();
+
+    /**
      * The meta object literal for the '{@link org.sabsa.dasl.dasl.impl.ComponentImpl <em>Component</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1616,6 +1762,40 @@ public interface DaslPackage extends EPackage
     EAttribute CONTROL__IMPLEMENTATION = eINSTANCE.getControl_Implementation();
 
     /**
+     * The meta object literal for the '{@link org.sabsa.dasl.dasl.impl.ActorImpl <em>Actor</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.sabsa.dasl.dasl.impl.ActorImpl
+     * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getActor()
+     * @generated
+     */
+    EClass ACTOR = eINSTANCE.getActor();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACTOR__NAME = eINSTANCE.getActor_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Desc</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACTOR__DESC = eINSTANCE.getActor_Desc();
+
+    /**
+     * The meta object literal for the '<em><b>Roles</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACTOR__ROLES = eINSTANCE.getActor_Roles();
+
+    /**
      * The meta object literal for the '{@link org.sabsa.dasl.dasl.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1624,6 +1804,16 @@ public interface DaslPackage extends EPackage
      * @generated
      */
     EClass ABSTRACT_ELEMENT = eINSTANCE.getAbstractElement();
+
+    /**
+     * The meta object literal for the '{@link org.sabsa.dasl.dasl.impl.FlowEndpointImpl <em>Flow Endpoint</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.sabsa.dasl.dasl.impl.FlowEndpointImpl
+     * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getFlowEndpoint()
+     * @generated
+     */
+    EClass FLOW_ENDPOINT = eINSTANCE.getFlowEndpoint();
 
     /**
      * The meta object literal for the '{@link org.sabsa.dasl.dasl.NodeType <em>Node Type</em>}' enum.

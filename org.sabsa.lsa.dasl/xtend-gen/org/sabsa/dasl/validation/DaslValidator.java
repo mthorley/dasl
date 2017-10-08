@@ -17,15 +17,6 @@ import org.sabsa.dasl.validation.Validator;
 @SuppressWarnings("all")
 public class DaslValidator extends AbstractDaslValidator {
   @Check
-  public void checkElementsStartsWithCapital(final Node node) {
-    boolean _isUpperCase = Character.isUpperCase(node.getName().charAt(0));
-    boolean _not = (!_isUpperCase);
-    if (_not) {
-      this.warning("msg", node, null);
-    }
-  }
-  
-  @Check
   public void checkFlowHasAtLeastOneInformationAsset(final Flow f) {
     boolean _doesFlowHaveAtLeastOneInformationAsset = Validator.doesFlowHaveAtLeastOneInformationAsset(f);
     boolean _not = (!_doesFlowHaveAtLeastOneInformationAsset);

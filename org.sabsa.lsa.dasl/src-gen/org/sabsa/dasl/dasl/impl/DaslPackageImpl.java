@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.sabsa.dasl.dasl.AbstractElement;
+import org.sabsa.dasl.dasl.Actor;
 import org.sabsa.dasl.dasl.AvailabilityType;
 import org.sabsa.dasl.dasl.Component;
 import org.sabsa.dasl.dasl.ConfidentialityType;
@@ -20,6 +21,7 @@ import org.sabsa.dasl.dasl.ControlType;
 import org.sabsa.dasl.dasl.DaslFactory;
 import org.sabsa.dasl.dasl.DaslPackage;
 import org.sabsa.dasl.dasl.Flow;
+import org.sabsa.dasl.dasl.FlowEndpoint;
 import org.sabsa.dasl.dasl.Import;
 import org.sabsa.dasl.dasl.InformationAsset;
 import org.sabsa.dasl.dasl.IntegrityType;
@@ -97,7 +99,21 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass actorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass abstractElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass flowEndpointEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -392,6 +408,16 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getNode_Assets()
+  {
+    return (EReference)nodeEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getComponent()
   {
     return componentEClass;
@@ -672,9 +698,59 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getActor()
+  {
+    return actorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getActor_Name()
+  {
+    return (EAttribute)actorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getActor_Desc()
+  {
+    return (EAttribute)actorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getActor_Roles()
+  {
+    return (EAttribute)actorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAbstractElement()
   {
     return abstractElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFlowEndpoint()
+  {
+    return flowEndpointEClass;
   }
 
   /**
@@ -779,6 +855,7 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
     createEAttribute(nodeEClass, NODE__VALUE);
     createEReference(nodeEClass, NODE__COMPONENTS);
     createEReference(nodeEClass, NODE__CONTROLS);
+    createEReference(nodeEClass, NODE__ASSETS);
 
     componentEClass = createEClass(COMPONENT);
     createEAttribute(componentEClass, COMPONENT__NAME);
@@ -812,7 +889,14 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
     createEAttribute(controlEClass, CONTROL__AREA);
     createEAttribute(controlEClass, CONTROL__IMPLEMENTATION);
 
+    actorEClass = createEClass(ACTOR);
+    createEAttribute(actorEClass, ACTOR__NAME);
+    createEAttribute(actorEClass, ACTOR__DESC);
+    createEAttribute(actorEClass, ACTOR__ROLES);
+
     abstractElementEClass = createEClass(ABSTRACT_ELEMENT);
+
+    flowEndpointEClass = createEClass(FLOW_ENDPOINT);
 
     // Create enums
     nodeTypeEEnum = createEEnum(NODE_TYPE);
@@ -854,10 +938,14 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
     importEClass.getESuperTypes().add(this.getAbstractElement());
     zoneEClass.getESuperTypes().add(this.getAbstractElement());
     nodeEClass.getESuperTypes().add(this.getAbstractElement());
+    nodeEClass.getESuperTypes().add(this.getFlowEndpoint());
     componentEClass.getESuperTypes().add(this.getAbstractElement());
+    componentEClass.getESuperTypes().add(this.getFlowEndpoint());
     informationAssetEClass.getESuperTypes().add(this.getAbstractElement());
     flowEClass.getESuperTypes().add(this.getAbstractElement());
     controlEClass.getESuperTypes().add(this.getAbstractElement());
+    actorEClass.getESuperTypes().add(this.getAbstractElement());
+    actorEClass.getESuperTypes().add(this.getFlowEndpoint());
 
     // Initialize classes and features; add operations and parameters
     initEClass(securityModelEClass, SecurityModel.class, "SecurityModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -882,6 +970,7 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
     initEAttribute(getNode_Value(), this.getNodeType(), "value", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNode_Components(), this.getComponent(), null, "components", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNode_Controls(), this.getControl(), null, "controls", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNode_Assets(), this.getInformationAsset(), null, "assets", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -904,8 +993,8 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
 
     initEClass(flowEClass, Flow.class, "Flow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFlow_Name(), ecorePackage.getEString(), "name", null, 0, 1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFlow_From(), this.getComponent(), null, "from", null, 0, 1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFlow_To(), this.getComponent(), null, "to", null, 0, 1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFlow_From(), this.getFlowEndpoint(), null, "from", null, 0, 1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFlow_To(), this.getFlowEndpoint(), null, "to", null, 0, 1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFlow_Assets(), this.getInformationAsset(), null, "assets", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFlow_Controls(), this.getControl(), null, "controls", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -915,7 +1004,14 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
     initEAttribute(getControl_Area(), this.getControlType(), "area", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getControl_Implementation(), ecorePackage.getEString(), "implementation", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getActor_Name(), ecorePackage.getEString(), "name", null, 0, 1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getActor_Desc(), ecorePackage.getEString(), "desc", null, 0, 1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getActor_Roles(), ecorePackage.getEString(), "roles", null, 0, 1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(abstractElementEClass, AbstractElement.class, "AbstractElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(flowEndpointEClass, FlowEndpoint.class, "FlowEndpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Initialize enums and add enum literals
     initEEnum(nodeTypeEEnum, NodeType.class, "NodeType");

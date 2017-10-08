@@ -4,6 +4,7 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.sabsa.dasl.dasl.AbstractElement;
+import org.sabsa.dasl.dasl.Actor;
 import org.sabsa.dasl.dasl.Component;
 import org.sabsa.dasl.dasl.Flow;
 import org.sabsa.dasl.dasl.Node;
@@ -18,23 +19,45 @@ public class Validator {
 	 * @return boolean
 	 */
 	public static boolean doesFlowViolateZoneRules(Flow f) {
-		// get all nodes for the source component of the flow 
-		EList<Node> fromNodes = getNodesForComponent(f.getFrom());		
-		// if no nodes have been found, then assume a violation
-		if (fromNodes==null || fromNodes.size()==0)
-			return true; 
 		
-		// get the first (and only) zone for the source node
-		Zone fromZone = getZoneForNode(fromNodes.get(0));
-		
-		// get all nodes for the target component of the flow
-		EList<Node> toNodes = getNodesForComponent(f.getTo());
-		// if no nodes have been found, then assume a violation
-		if (toNodes==null || toNodes.size()==0)
-			return true; 
-		
-		// get the first (and only) zone for the target node
-		Zone toZone = getZoneForNode(toNodes.get(0));
+		// ensure both from and to are not actors
+		if (f.getFrom() instanceof Actor || f.getTo() instanceof Actor) {
+			return false;
+		}
+
+		Zone fromZone = null;
+		if (f.getFrom() instanceof Component) {
+			// get all nodes for the source component of the flow
+			EList<Node> fromNodes = getNodesForComponent((Component)f.getFrom());		
+			// if no nodes have been found, then assume a violation
+			if (fromNodes==null || fromNodes.size()==0)
+				return true; 
+			// get the first (and only) zone for the source node
+			fromZone = getZoneForNode(fromNodes.get(0));
+		}
+		else if (f.getFrom() instanceof Node) {
+			fromZone = getZoneForNode((Node)f.getFrom());
+		}
+		else {
+			return false;
+		}
+
+		Zone toZone = null;
+		if (f.getTo() instanceof Component) {
+			// get all nodes for the target component of the flow
+			EList<Node> toNodes = getNodesForComponent((Component)f.getTo());
+			// if no nodes have been found, then assume a violation
+			if (toNodes==null || toNodes.size()==0)
+				return true; 
+			// get the first (and only) zone for the target node
+			toZone = getZoneForNode(toNodes.get(0));
+		}
+		else if (f.getTo() instanceof Node){
+			toZone = getZoneForNode((Node)f.getTo());
+		}
+		else {
+			return false;
+		}
 		
 		// if the flow is within the same zone its ok
 		if (fromZone.equals(toZone))
@@ -46,6 +69,7 @@ public class Validator {
 		
 		// assume failure
 		return true;
+
 	}
 	
 	/**

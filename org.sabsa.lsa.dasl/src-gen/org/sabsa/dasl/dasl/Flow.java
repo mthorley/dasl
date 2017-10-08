@@ -62,12 +62,12 @@ public interface Flow extends AbstractElement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>From</em>' reference.
-   * @see #setFrom(Component)
+   * @see #setFrom(FlowEndpoint)
    * @see org.sabsa.dasl.dasl.DaslPackage#getFlow_From()
    * @model
    * @generated
    */
-  Component getFrom();
+  FlowEndpoint getFrom();
 
   /**
    * Sets the value of the '{@link org.sabsa.dasl.dasl.Flow#getFrom <em>From</em>}' reference.
@@ -77,7 +77,7 @@ public interface Flow extends AbstractElement
    * @see #getFrom()
    * @generated
    */
-  void setFrom(Component value);
+  void setFrom(FlowEndpoint value);
 
   /**
    * Returns the value of the '<em><b>To</b></em>' reference.
@@ -88,12 +88,12 @@ public interface Flow extends AbstractElement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>To</em>' reference.
-   * @see #setTo(Component)
+   * @see #setTo(FlowEndpoint)
    * @see org.sabsa.dasl.dasl.DaslPackage#getFlow_To()
    * @model
    * @generated
    */
-  Component getTo();
+  FlowEndpoint getTo();
 
   /**
    * Sets the value of the '{@link org.sabsa.dasl.dasl.Flow#getTo <em>To</em>}' reference.
@@ -103,7 +103,7 @@ public interface Flow extends AbstractElement
    * @see #getTo()
    * @generated
    */
-  void setTo(Component value);
+  void setTo(FlowEndpoint value);
 
   /**
    * Returns the value of the '<em><b>Assets</b></em>' reference list.

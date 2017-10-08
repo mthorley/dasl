@@ -10,7 +10,6 @@ import org.sabsa.dasl.dasl.Node
 import org.sabsa.dasl.dasl.Component
 import org.sabsa.dasl.dasl.InformationAsset
 import org.sabsa.dasl.dasl.Control
-import org.sabsa.dasl.dasl.Zone
 
 /**
  * Provides labels for EObjects.

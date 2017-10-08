@@ -15,13 +15,6 @@ import org.sabsa.dasl.dasl.Node
 class DaslValidator extends AbstractDaslValidator {
 	
 	@Check
-	def checkElementsStartsWithCapital(Node node) {
-		if (!Character.isUpperCase(node.name.charAt(0))) {
-			warning("msg", node, null)
-		}
-	}
-	
-	@Check
 	def checkFlowHasAtLeastOneInformationAsset(Flow f) {
 		if (!Validator.doesFlowHaveAtLeastOneInformationAsset(f)) {
 			error("Flow " + f.name + " has no information assets", f, null)

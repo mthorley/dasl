@@ -16,10 +16,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import org.sabsa.dasl.dasl.Component;
 import org.sabsa.dasl.dasl.Control;
 import org.sabsa.dasl.dasl.DaslPackage;
 import org.sabsa.dasl.dasl.Flow;
+import org.sabsa.dasl.dasl.FlowEndpoint;
 import org.sabsa.dasl.dasl.InformationAsset;
 
 /**
@@ -69,7 +69,7 @@ public class FlowImpl extends AbstractElementImpl implements Flow
    * @generated
    * @ordered
    */
-  protected Component from;
+  protected FlowEndpoint from;
 
   /**
    * The cached value of the '{@link #getTo() <em>To</em>}' reference.
@@ -79,7 +79,7 @@ public class FlowImpl extends AbstractElementImpl implements Flow
    * @generated
    * @ordered
    */
-  protected Component to;
+  protected FlowEndpoint to;
 
   /**
    * The cached value of the '{@link #getAssets() <em>Assets</em>}' reference list.
@@ -150,12 +150,12 @@ public class FlowImpl extends AbstractElementImpl implements Flow
    * <!-- end-user-doc -->
    * @generated
    */
-  public Component getFrom()
+  public FlowEndpoint getFrom()
   {
     if (from != null && from.eIsProxy())
     {
       InternalEObject oldFrom = (InternalEObject)from;
-      from = (Component)eResolveProxy(oldFrom);
+      from = (FlowEndpoint)eResolveProxy(oldFrom);
       if (from != oldFrom)
       {
         if (eNotificationRequired())
@@ -170,7 +170,7 @@ public class FlowImpl extends AbstractElementImpl implements Flow
    * <!-- end-user-doc -->
    * @generated
    */
-  public Component basicGetFrom()
+  public FlowEndpoint basicGetFrom()
   {
     return from;
   }
@@ -180,9 +180,9 @@ public class FlowImpl extends AbstractElementImpl implements Flow
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFrom(Component newFrom)
+  public void setFrom(FlowEndpoint newFrom)
   {
-    Component oldFrom = from;
+    FlowEndpoint oldFrom = from;
     from = newFrom;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DaslPackage.FLOW__FROM, oldFrom, from));
@@ -193,12 +193,12 @@ public class FlowImpl extends AbstractElementImpl implements Flow
    * <!-- end-user-doc -->
    * @generated
    */
-  public Component getTo()
+  public FlowEndpoint getTo()
   {
     if (to != null && to.eIsProxy())
     {
       InternalEObject oldTo = (InternalEObject)to;
-      to = (Component)eResolveProxy(oldTo);
+      to = (FlowEndpoint)eResolveProxy(oldTo);
       if (to != oldTo)
       {
         if (eNotificationRequired())
@@ -213,7 +213,7 @@ public class FlowImpl extends AbstractElementImpl implements Flow
    * <!-- end-user-doc -->
    * @generated
    */
-  public Component basicGetTo()
+  public FlowEndpoint basicGetTo()
   {
     return to;
   }
@@ -223,9 +223,9 @@ public class FlowImpl extends AbstractElementImpl implements Flow
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTo(Component newTo)
+  public void setTo(FlowEndpoint newTo)
   {
-    Component oldTo = to;
+    FlowEndpoint oldTo = to;
     to = newTo;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DaslPackage.FLOW__TO, oldTo, to));
@@ -300,10 +300,10 @@ public class FlowImpl extends AbstractElementImpl implements Flow
         setName((String)newValue);
         return;
       case DaslPackage.FLOW__FROM:
-        setFrom((Component)newValue);
+        setFrom((FlowEndpoint)newValue);
         return;
       case DaslPackage.FLOW__TO:
-        setTo((Component)newValue);
+        setTo((FlowEndpoint)newValue);
         return;
       case DaslPackage.FLOW__ASSETS:
         getAssets().clear();
@@ -331,10 +331,10 @@ public class FlowImpl extends AbstractElementImpl implements Flow
         setName(NAME_EDEFAULT);
         return;
       case DaslPackage.FLOW__FROM:
-        setFrom((Component)null);
+        setFrom((FlowEndpoint)null);
         return;
       case DaslPackage.FLOW__TO:
-        setTo((Component)null);
+        setTo((FlowEndpoint)null);
         return;
       case DaslPackage.FLOW__ASSETS:
         getAssets().clear();
