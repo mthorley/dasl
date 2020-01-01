@@ -4,7 +4,6 @@ import org.sabsa.dasl.DaslUtils;
 import org.sabsa.dasl.dasl.AbstractElement;
 import org.sabsa.dasl.dasl.Component;
 import org.sabsa.dasl.dasl.Flow;
-import org.sabsa.dasl.dasl.InformationAsset;
 import org.sabsa.dasl.dasl.Node;
 import org.sabsa.dasl.dasl.SecurityModel;
 import org.sabsa.dasl.dasl.Zone;
@@ -77,11 +76,7 @@ public class DaslMxGraphPrinter {
 		buf.append("\n");
 		return buf.toString();
 	}
-	
-	private String print(InformationAsset asset) {
-		return "<b>[" + asset.getRef() + "]</b> " + asset.getName() + "\n";
-	}
-	
+		
 	private String print(Component comp, Node node) {
 		StringBuffer buf = new StringBuffer();
 		buf.append("var " + comp.getName() + 

@@ -5,19 +5,21 @@
       version="0.0.1.alpha">
 
    <description url="https://github.com/mthorley/dasl">
-      Domain Architecture Security Language (DaSL) is a DSL that aims to describe any logical security architecture in terms of zones, nodes, flows, information assets and controls so that the risk and security posture of a solution can be assessed and improved.
+      Domain Architecture Security Language (DaSL) is a DSL that aims
+to describe any logical security architecture in terms of zones,
+nodes, flows, information assets and controls so that the risk
+and security posture of a solution can be assessed and improved.
    </description>
 
    <copyright>
       MIT License
-
-Copyright (c) 2017 Matt Thorley [matt.thorley@gmail.com]
+Copyright (c) 2019 Matt Thorley [matt.thorley@gmail.com]
    </copyright>
 
    <license url="">
       MIT License
 
-Copyright (c) 2017 Matt Thorley [matt.thorley@gmail.com]
+Copyright (c) 2019 Matt Thorley [matt.thorley@gmail.com]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the &quot;Software&quot;), to deal
@@ -44,6 +46,10 @@ SOFTWARE.
 
    <includes
          id="org.eclipse.xtext.redist"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.e4.rcp"
          version="0.0.0"/>
 
    <plugin

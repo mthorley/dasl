@@ -20,7 +20,6 @@ public class DaslDiagramTextProvider extends AbstractDiagramTextProvider {
     this.setEditorType(XtextEditor.class);
   }
   
-  @Override
   protected String getDiagramTextInternal(final IEditorPart editorPart, final ISelection selection) {
     String _xifexpression = null;
     if ((editorPart instanceof XtextEditor)) {
@@ -28,9 +27,11 @@ public class DaslDiagramTextProvider extends AbstractDiagramTextProvider {
       {
         final XtextEditor editor = ((XtextEditor) editorPart);
         final IXtextDocument document = editor.getDocument();
-        final IUnitOfWork<SecurityModel, XtextResource> _function = (XtextResource it) -> {
-          EObject _head = IterableExtensions.<EObject>head(it.getContents());
-          return ((SecurityModel) _head);
+        final IUnitOfWork<SecurityModel, XtextResource> _function = new IUnitOfWork<SecurityModel, XtextResource>() {
+          public SecurityModel exec(final XtextResource it) throws Exception {
+            EObject _head = IterableExtensions.<EObject>head(it.getContents());
+            return ((SecurityModel) _head);
+          }
         };
         final SecurityModel model = document.<SecurityModel>readOnly(_function);
         final String buf = DaslPlantUMLPrinter.print(model);

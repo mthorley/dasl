@@ -2,6 +2,8 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dasl" nsURI="http://www.sabsa.org/dasl/Dasl" nsPrefix="dasl">
   <eClassifiers xsi:type="ecore:EClass" name="SecurityModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//Import" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//AbstractElement" containment="true"/>
   </eClassifiers>
@@ -10,11 +12,10 @@
     <eLiterals name="VIRTUAL" value="1" literal="VIRTUAL"/>
     <eLiterals name="CONTAINER" value="2" literal="CONTAINER"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Import" eSuperTypes="#//AbstractElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Zone" eSuperTypes="#//AbstractElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="trust" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ingressZones" unique="false"
         upperBound="-1" eType="#//Zone"/>
@@ -26,7 +27,6 @@
         upperBound="-1" eType="#//Control"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="#//AbstractElement #//FlowEndpoint">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="host" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="os" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -39,7 +39,6 @@
         upperBound="-1" eType="#//InformationAsset"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//AbstractElement #//FlowEndpoint">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="vendor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -53,7 +52,6 @@
         eType="#//Component" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InformationAsset" eSuperTypes="#//AbstractElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confidentiality" eType="#//ConfidentialityType"/>
@@ -61,7 +59,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="availability" eType="#//AvailabilityType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Flow" eSuperTypes="#//AbstractElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//FlowEndpoint"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//FlowEndpoint"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assets" unique="false"
@@ -69,58 +67,40 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="controls" unique="false"
         upperBound="-1" eType="#//Control"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//AbstractElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="area" eType="#//ControlType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="implementation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//AbstractElement #//FlowEndpoint">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="roles" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ControlType">
-    <eLiterals name="IdentityValidation" literal="IdentityValidation"/>
-    <eLiterals name="UserProvisioning" value="1" literal="UserProvisioning"/>
-    <eLiterals name="SystemUserProvisioning" value="2" literal="SystemUserProvisioning"/>
-    <eLiterals name="IdentityTransformation" value="3" literal="IdentityTransformation"/>
-    <eLiterals name="UserRegistries" value="4" literal="UserRegistries"/>
-    <eLiterals name="CredentialManagement" value="5" literal="CredentialManagement"/>
-    <eLiterals name="Authentication" value="6" literal="Authentication"/>
-    <eLiterals name="Authorisation" value="7" literal="Authorisation"/>
-    <eLiterals name="PrivilegeManagement" value="8" literal="PrivilegeManagement"/>
-    <eLiterals name="ReducedSignOn" value="9" literal="ReducedSignOn"/>
-    <eLiterals name="Federation" value="10" literal="Federation"/>
-    <eLiterals name="AccessEntitlementGovernance" value="11" literal="AccessEntitlementGovernance"/>
-    <eLiterals name="FirewallsNetwork" value="12" literal="FirewallsNetwork"/>
-    <eLiterals name="FirewallsApplication" value="13" literal="FirewallsApplication"/>
-    <eLiterals name="DenialofService" value="14" literal="DenialofService"/>
-    <eLiterals name="NetworkAdmissionControl" value="15" literal="NetworkAdmissionControl"/>
-    <eLiterals name="RemoteAccessGateway" value="16" literal="RemoteAccessGateway"/>
-    <eLiterals name="IntrusionPreventionDetection" value="17" literal="IntrusionPreventionDetection"/>
-    <eLiterals name="Antivirus" value="18" literal="Antivirus"/>
-    <eLiterals name="ContentFilter" value="19" literal="ContentFilter"/>
-    <eLiterals name="MessageSecurity" value="20" literal="MessageSecurity"/>
-    <eLiterals name="TransportSecurity" value="21" literal="TransportSecurity"/>
-    <eLiterals name="StoredDataSecurity" value="22" literal="StoredDataSecurity"/>
-    <eLiterals name="DataLossPrevention" value="23" literal="DataLossPrevention"/>
-    <eLiterals name="DataObfuscation" value="24" literal="DataObfuscation"/>
-    <eLiterals name="DataDestruction" value="25" literal="DataDestruction"/>
-    <eLiterals name="FraudSecurity" value="26" literal="FraudSecurity"/>
-    <eLiterals name="DataTransactionSecurity" value="27" literal="DataTransactionSecurity"/>
-    <eLiterals name="CentralisedHSM_CA_PKI" value="28" literal="CentralisedHSM_CA_PKI"/>
-    <eLiterals name="Standalone" value="29" literal="Standalone"/>
-    <eLiterals name="SecurityTesting" value="30" literal="SecurityTesting"/>
-    <eLiterals name="PatchManagement" value="31" literal="PatchManagement"/>
-    <eLiterals name="VulnerabilityManagement" value="32" literal="VulnerabilityManagement"/>
-    <eLiterals name="CentralisedReporting" value="33" literal="CentralisedReporting"/>
-    <eLiterals name="EventCorrelation" value="34" literal="EventCorrelation"/>
-    <eLiterals name="SecurityAuditLogMonitoring" value="35" literal="SecurityAuditLogMonitoring"/>
-    <eLiterals name="ComplianceTesting" value="36" literal="ComplianceTesting"/>
-    <eLiterals name="IncidentManagement" value="37" literal="IncidentManagement"/>
-    <eLiterals name="Forensic" value="38" literal="Forensic"/>
-    <eLiterals name="Legal" value="39" literal="Legal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="#//BaseControl"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="att" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BaseControl" eSuperTypes="#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="family" eType="#//NIST80053ARev4_FamilyType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="NIST80053ARev4_FamilyType">
+    <eLiterals name="ACCESS_CONTROL" literal="ACCESS_CONTROL"/>
+    <eLiterals name="AWARENESS_AND_TRAINING" value="1" literal="AWARENESS_AND_TRAINING"/>
+    <eLiterals name="AUDIT_AND_ACCOUNTABILITY" value="2" literal="AUDIT_AND_ACCOUNTABILITY"/>
+    <eLiterals name="SECURITY_ASSESSMENT_AND_AUTHORIZATION" value="3" literal="SECURITY_ASSESSMENT_AND_AUTHORIZATION"/>
+    <eLiterals name="CONFIGURATION_MANAGEMENT" value="4" literal="CONFIGURATION_MANAGEMENT"/>
+    <eLiterals name="CONTINGENCY_PLANNING" value="5" literal="CONTINGENCY_PLANNING"/>
+    <eLiterals name="IDENTIFICATION_AND_AUTHENTICATION" value="6" literal="IDENTIFICATION_AND_AUTHENTICATION"/>
+    <eLiterals name="INCIDENT_RESPONSE" value="7" literal="INCIDENT_RESPONSE"/>
+    <eLiterals name="MAINTENANCE" value="8" literal="MAINTENANCE"/>
+    <eLiterals name="MEDIA_PROTECTION" value="9" literal="MEDIA_PROTECTION"/>
+    <eLiterals name="PHYSICAL_AND_ENVIRONMENTAL_PROTECTION" value="10" literal="PHYSICAL_AND_ENVIRONMENTAL_PROTECTION"/>
+    <eLiterals name="PLANNING" value="11" literal="PLANNING"/>
+    <eLiterals name="PROGRAM_MANAGEMENT" value="12" literal="PROGRAM_MANAGEMENT"/>
+    <eLiterals name="PERSONNEL_SECURITY" value="13" literal="PERSONNEL_SECURITY"/>
+    <eLiterals name="RISK_ASSESSMENT" value="14" literal="RISK_ASSESSMENT"/>
+    <eLiterals name="SYSTEM_AND_SERVICES_ACQUISITION" value="15" literal="SYSTEM_AND_SERVICES_ACQUISITION"/>
+    <eLiterals name="SYSTEM_AND_COMMUNICATIONS_PROTECTION" value="16" literal="SYSTEM_AND_COMMUNICATIONS_PROTECTION"/>
+    <eLiterals name="SYSTEM_AND_INFORMATION_INTEGRITY" value="17" literal="SYSTEM_AND_INFORMATION_INTEGRITY"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ConfidentialityType">
     <eLiterals name="Public" literal="Public"/>
@@ -135,12 +115,14 @@
     <eLiterals name="Uncontrolled" value="3" literal="Uncontrolled"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AvailabilityType">
-    <eLiterals name="Platinum" literal="Platinum"/>
-    <eLiterals name="Gold" value="1" literal="Gold"/>
-    <eLiterals name="Silver" value="2" literal="Silver"/>
-    <eLiterals name="Bronze" value="3" literal="Bronze"/>
+    <eLiterals name="C1" literal="C1"/>
+    <eLiterals name="C2" value="1" literal="C2"/>
+    <eLiterals name="C3" value="2" literal="C3"/>
+    <eLiterals name="C4" value="3" literal="C4"/>
     <eLiterals name="Plastic" value="4" literal="Plastic"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FlowEndpoint"/>
 </ecore:EPackage>

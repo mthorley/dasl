@@ -15,12 +15,18 @@ Require-Bundle: org.sabsa.lsa.dasl,
  org.eclipse.ui,
  org.eclipse.compare,
  org.eclipse.xtext.builder,
- org.eclipse.xtend.lib;resolution:=optional,
- org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib;bundle-version="2.14.0";resolution:=optional,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  net.sourceforge.plantuml.eclipse
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.sabsa.dasl.ui.quickfix,
+Export-Package: org.sabsa.dasl.ui,
  org.sabsa.dasl.ui.contentassist,
+ org.sabsa.dasl.ui.labeling,
+ org.sabsa.dasl.ui.mxgraph,
+ org.sabsa.dasl.ui.outline,
+ org.sabsa.dasl.ui.plantuml,
+ org.sabsa.dasl.ui.quickfix,
  org.sabsa.lsa.dasl.ui.internal
 Bundle-Activator: org.sabsa.lsa.dasl.ui.internal.DaslActivator
+Automatic-Module-Name: org.sabsa.lsa.dasl.ui

@@ -15,7 +15,6 @@ import org.sabsa.dasl.ide.DaslIdeModule;
  */
 @SuppressWarnings("all")
 public class DaslIdeSetup extends DaslStandaloneSetup {
-  @Override
   public Injector createInjector() {
     DaslRuntimeModule _daslRuntimeModule = new DaslRuntimeModule();
     DaslIdeModule _daslIdeModule = new DaslIdeModule();

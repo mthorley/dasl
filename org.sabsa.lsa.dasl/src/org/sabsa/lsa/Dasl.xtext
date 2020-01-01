@@ -5,11 +5,19 @@ generate dasl "http://www.sabsa.org/dasl/Dasl"
 // The security view of the architecture - this can be expanded to other views later.
 
 SecurityModel:
+	imports+=Import*
+//	includes+=(Include)*
 	(elements+=AbstractElement)*
 ;
 
 enum NodeType :
 	PHYSICAL | VIRTUAL | CONTAINER
+;
+
+// Override to allow . or - in IDs e.g. F1.1 or NIST.AC-1
+@Override
+terminal ID: 
+    ('^')?('a'..'z'|'A'..'Z'|'_'|'.'|'-') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'.'|'-')*
 ;
 
 QualifiedName: 
@@ -20,11 +28,19 @@ QualifiedNameWithWildcard:
   QualifiedName '.*'?
 ;
 
+//Include:
+//  'include' includedModel = [SecurityModel | STRING]
+//;
+
 Import:
   'import' importURI = STRING
-;	
+;
 
-Zone: 
+/**
+ * Zones represent trust boundaries for nodes and
+ * dictate which zones are allowed to connect.
+ */ 
+Zone:
   'zone' name=ID '{'
 	'trustLevel'	trust=INT
 	'ingress'		(ingressZones+=[Zone])*
@@ -34,10 +50,10 @@ Zone:
   '}'
 ;
 
-/** 
-Nodes represent either a physical or virtual environment
-upon which components are deployed too.
-*/ 
+/**
+ * Nodes represent either a physical or virtual environment
+ * upon which components are deployed too.
+ */ 
 Node:
 	'node' name=ID '{'
 		'ref' 		 	ref=ID
@@ -72,20 +88,13 @@ InformationAsset:
 
 Flow:
 	'flow' name=ID '{'
+		('desc'				desc=STRING)?
 		'from'  			from=[FlowEndpoint]
 		'to' 				to=[FlowEndpoint]
 		('assets' 			(assets+=[InformationAsset | QualifiedName])*)?
 		('controls' 	 	(controls+=[Control])*)?
 	'}';
 	
-Control:
-	'control' name=ID '{'
-		'ref'				ref=ID
-		'type' 				area=ControlType
-		'implementation'	implementation=STRING
-	'}'
-;
-
 Actor:
 	'actor' name=ID '{'
 		'desc'				desc=STRING
@@ -93,6 +102,55 @@ Actor:
 	'}'
 ;
 
+/*
+enum ControlType:
+	System |
+	Process |
+	Contract
+;
+*/
+
+Control:
+	'control' name=ID '{'
+		'ref'			ref=ID
+		'baseline'		base=[BaseControl]
+		'description'	desc=STRING
+		'attestation'   att=STRING
+	'}'
+;
+
+// Keyed to NIST80053A-Rev4
+BaseControl:
+	'baseControl' name=ID '{'
+		'family'      family=NIST80053ARev4_FamilyType
+		'title'	      title=STRING
+		'description' desc=STRING
+	'}'
+;
+
+enum NIST80053ARev4_FamilyType:
+	ACCESS_CONTROL |
+	AWARENESS_AND_TRAINING |
+	AUDIT_AND_ACCOUNTABILITY |
+	SECURITY_ASSESSMENT_AND_AUTHORIZATION |
+	CONFIGURATION_MANAGEMENT |
+	CONTINGENCY_PLANNING |
+	IDENTIFICATION_AND_AUTHENTICATION |
+	INCIDENT_RESPONSE |
+	MAINTENANCE |
+	MEDIA_PROTECTION |
+	PHYSICAL_AND_ENVIRONMENTAL_PROTECTION |
+	PLANNING |
+	PROGRAM_MANAGEMENT |
+	PERSONNEL_SECURITY |
+	RISK_ASSESSMENT |
+	SYSTEM_AND_SERVICES_ACQUISITION |
+	SYSTEM_AND_COMMUNICATIONS_PROTECTION |
+	SYSTEM_AND_INFORMATION_INTEGRITY
+;
+
+
+/*
 enum ControlType:
 	IdentityValidation | 
 	UserProvisioning |
@@ -135,6 +193,7 @@ enum ControlType:
 	Forensic |
 	Legal
 ;
+*/
 
 enum ConfidentialityType:
 	Public | Internal | Confidential | Restricted
@@ -145,11 +204,11 @@ enum IntegrityType:
 ;
 
 enum AvailabilityType:
-	Platinum | Gold | Silver | Bronze | Plastic
+	C1 | C2 | C3 | C4 | Plastic
 ;
 
 AbstractElement:
-	InformationAsset | Component | Zone | Node | Actor | Control | Flow | Import
+	InformationAsset | Component | Zone | Node | Actor | Control | Flow | BaseControl
 ;
 
 FlowEndpoint:

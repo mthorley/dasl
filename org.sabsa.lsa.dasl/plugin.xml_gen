@@ -3,8 +3,8 @@
 <plugin>
 	<extension point="org.eclipse.emf.ecore.generated_package">
 		<package 
-			uri = "http://www.sabsa.org/lsa/dasl/Dasl"
-			class = "org.sabsa.lsa.dasl.dasl.DaslPackage"
+			uri = "http://www.sabsa.org/dasl/Dasl"
+			class = "org.sabsa.dasl.dasl.DaslPackage"
 			genModel = "model/generated/Dasl.genmodel" />
 	</extension>
 </plugin>

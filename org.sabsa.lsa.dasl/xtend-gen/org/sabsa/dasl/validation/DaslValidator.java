@@ -5,6 +5,7 @@ package org.sabsa.dasl.validation;
 
 import org.eclipse.xtext.validation.Check;
 import org.sabsa.dasl.dasl.Flow;
+import org.sabsa.dasl.dasl.InformationAsset;
 import org.sabsa.dasl.dasl.Node;
 import org.sabsa.dasl.validation.AbstractDaslValidator;
 import org.sabsa.dasl.validation.Validator;
@@ -61,6 +62,18 @@ public class DaslValidator extends AbstractDaslValidator {
       String _plus = ("Flow " + _name);
       String _plus_1 = (_plus + " violates zone rules");
       this.error(_plus_1, f, null);
+    }
+  }
+  
+  @Check
+  public void checkInformationAssetIsStored(final InformationAsset ia) {
+    boolean _isInformationAssetStored = Validator.isInformationAssetStored(ia);
+    boolean _not = (!_isInformationAssetStored);
+    if (_not) {
+      String _name = ia.getName();
+      String _plus = ("Information asset " + _name);
+      String _plus_1 = (_plus + " is not stored on a node or component");
+      this.error(_plus_1, ia, null);
     }
   }
 }

@@ -6,8 +6,10 @@ package org.sabsa.dasl.ui.labeling;
 import com.google.inject.Inject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
+import org.sabsa.dasl.dasl.BaseControl;
 import org.sabsa.dasl.dasl.Component;
 import org.sabsa.dasl.dasl.Control;
+import org.sabsa.dasl.dasl.Flow;
 import org.sabsa.dasl.dasl.InformationAsset;
 import org.sabsa.dasl.dasl.Node;
 
@@ -50,8 +52,24 @@ public class DaslLabelProvider extends DefaultEObjectLabelProvider {
   public String text(final Control c) {
     String _ref = c.getRef();
     String _plus = ("[" + _ref);
-    String _plus_1 = (_plus + "]");
+    String _plus_1 = (_plus + "] ");
     String _name = c.getName();
     return (_plus_1 + _name);
+  }
+  
+  public String text(final Flow f) {
+    String _name = f.getName();
+    String _plus = ("[" + _name);
+    String _plus_1 = (_plus + "] ");
+    String _desc = f.getDesc();
+    return (_plus_1 + _desc);
+  }
+  
+  public String text(final BaseControl bc) {
+    String _name = bc.getName();
+    String _plus = ("[" + _name);
+    String _plus_1 = (_plus + "]");
+    String _title = bc.getTitle();
+    return (_plus_1 + _title);
   }
 }

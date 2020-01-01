@@ -7,6 +7,7 @@ import org.sabsa.dasl.dasl.AbstractElement;
 import org.sabsa.dasl.dasl.Actor;
 import org.sabsa.dasl.dasl.Component;
 import org.sabsa.dasl.dasl.Flow;
+import org.sabsa.dasl.dasl.InformationAsset;
 import org.sabsa.dasl.dasl.Node;
 import org.sabsa.dasl.dasl.SecurityModel;
 import org.sabsa.dasl.dasl.Zone;
@@ -120,6 +121,43 @@ public class Validator {
 			}
 		}
 		return false;
+	}
+	
+	/**
+	 * Is the informationasset stored on at least one component or node? 
+	 * @param n Node
+	 * @return boolean
+	 */
+	public static boolean isInformationAssetStored(InformationAsset ia) {
+		EObject eObject = ia.eContainer();
+
+		// if sec model doesn't contain zones then exit - its an include file			
+		int zoneCount = 0;
+
+		if (eObject instanceof SecurityModel) {
+			SecurityModel model = (SecurityModel)eObject;
+			
+			// traverse all components or nodes looking for information asset
+			for(AbstractElement e : model.getElements()) {
+				if (e instanceof Zone) {
+					Zone z = (Zone)e;
+					zoneCount++;
+					for(Node searchNode : z.getNodes()) {
+						if (searchNode.getAssets().contains(ia))
+							return true;
+						// search components
+						for(Component searchComp : searchNode.getComponents()) {
+							if (searchComp.getAssets().contains(ia))
+								return true;
+						}
+					}
+				}
+			}
+		}
+		if (zoneCount==0)
+			return true;
+		else
+			return false;		
 	}
 	
 	private static EList<Node> getNodesForComponent(Component c) {

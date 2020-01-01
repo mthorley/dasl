@@ -10,6 +10,8 @@ import org.sabsa.dasl.dasl.Node
 import org.sabsa.dasl.dasl.Component
 import org.sabsa.dasl.dasl.InformationAsset
 import org.sabsa.dasl.dasl.Control
+import org.sabsa.dasl.dasl.Flow
+import org.sabsa.dasl.dasl.BaseControl
 
 /**
  * Provides labels for EObjects.
@@ -38,9 +40,17 @@ class DaslLabelProvider extends DefaultEObjectLabelProvider {
 	}
 
 	def text(Control c) {
-		'[' + c.ref + ']' + c.name		
+		'[' + c.ref + '] ' + c.name		
 	}
  	
+	def text(Flow f) {
+		'[' + f.name + '] ' + f.desc		
+	}
+	
+	def text(BaseControl bc) {
+		'[' + bc.name + ']' + bc.title
+	}
+
 //	def text(Greeting ele) {
 //		'A greeting to ' + ele.name
 //	}

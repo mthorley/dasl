@@ -6,6 +6,7 @@ package org.sabsa.dasl.validation
 import org.eclipse.xtext.validation.Check
 import org.sabsa.dasl.dasl.Flow
 import org.sabsa.dasl.dasl.Node
+import org.sabsa.dasl.dasl.InformationAsset
 
 /**
  * This class contains custom validation rules. 
@@ -39,6 +40,13 @@ class DaslValidator extends AbstractDaslValidator {
 	def checkFlowDoesNotViolateZoneRules(Flow f) {
 		if (Validator.doesFlowViolateZoneRules(f)) {
 			error("Flow " + f.name + " violates zone rules", f, null)
+		}		
+	}
+
+	@Check
+	def checkInformationAssetIsStored(InformationAsset ia) {
+		if (!Validator.isInformationAssetStored(ia)) {
+			error("Information asset " + ia.name + " is not stored on a node or component", ia, null)
 		}		
 	}
 }

@@ -4,7 +4,10 @@
 package org.sabsa.dasl
 
 import org.eclipse.xtext.scoping.IGlobalScopeProvider
+import org.eclipse.xtext.resource.IDefaultResourceDescriptionStrategy
+import org.sabsa.dasl.scoping.DaslGlobalScopeProvider
 import org.eclipse.xtext.scoping.impl.ImportUriGlobalScopeProvider
+import org.sabsa.dasl.nameprovider.DaslQualifiedNameProvider
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -13,5 +16,21 @@ class DaslRuntimeModule extends AbstractDaslRuntimeModule {
 	override def Class<? extends IGlobalScopeProvider>bindIGlobalScopeProvider() {
  		return typeof(ImportUriGlobalScopeProvider);
  	} 
+ 	
+//	def Class<? extends IDefaultResourceDescriptionStrategy> bindIDefaultResourceDescriptionStrategy() {
+//		DaslResourceDescriptionStrategy
+//	}
+	
+//	override Class<? extends IGlobalScopeProvider> bindIGlobalScopeProvider() {
+//		DaslGlobalScopeProvider;
+//	}
+	
+//	override bindIGenerator2() {
+//		DaslGenerator;
+//	}
+
+//	override bindIQualifiedNameProvider() {
+//		DaslQualifiedNameProvider;		
+//	}
  	
 }
