@@ -122,8 +122,13 @@ public class DaslPlantUMLPrinter {
 		
 		buf.append("note on link #white\n");
 		// add all info assets to flow label
-		for (InformationAsset asset : flow.getAssets()) {
-			buf.append("<i>" + asset.getRef() + ' ' + asset.getName() + "</i>\n");
+		if (flow.getAssets().size() > 0 ) {
+			for (InformationAsset asset : flow.getAssets()) {
+				buf.append("<i>" + asset.getRef() + ' ' + asset.getName() + "</i>\n");
+			}
+		}
+		else {
+			buf.append("<i> No information assets</i>\n");
 		}
 		buf.append("end note");
 		buf.append("\n");
