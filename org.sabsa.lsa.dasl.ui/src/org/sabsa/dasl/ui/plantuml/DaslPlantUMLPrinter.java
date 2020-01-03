@@ -37,6 +37,10 @@ public class DaslPlantUMLPrinter {
 	public static Metadata getMetadata(SecurityModel model) {
 		
 		Metadata md = new DaslPlantUMLPrinter.Metadata();
+		
+		if (model.getMetadata()==null)
+			return md;
+		
 		if (model.getMetadata().getKeys().size()>0) {
 			md.showControlsOnComponents = model.getMetadata().getKeys().contains(MetadataType.SHOW_CONTROLS_ON_COMPONENTS) ? true : false;
 			md.showAssetsOnFlows = model.getMetadata().getKeys().contains(MetadataType.SHOW_ASSETS_ON_FLOWS) ? true : false;
