@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.sabsa.dasl.dasl.SecurityModel#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.sabsa.dasl.dasl.SecurityModel#getMetadata <em>Metadata</em>}</li>
  *   <li>{@link org.sabsa.dasl.dasl.SecurityModel#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -37,6 +38,28 @@ public interface SecurityModel extends EObject
    * @generated
    */
   EList<Import> getImports();
+
+  /**
+   * Returns the value of the '<em><b>Metadata</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Metadata</em>' containment reference.
+   * @see #setMetadata(Metadata)
+   * @see org.sabsa.dasl.dasl.DaslPackage#getSecurityModel_Metadata()
+   * @model containment="true"
+   * @generated
+   */
+  Metadata getMetadata();
+
+  /**
+   * Sets the value of the '{@link org.sabsa.dasl.dasl.SecurityModel#getMetadata <em>Metadata</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Metadata</em>' containment reference.
+   * @see #getMetadata()
+   * @generated
+   */
+  void setMetadata(Metadata value);
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

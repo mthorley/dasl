@@ -11,6 +11,12 @@
       <genEnumLiterals ecoreEnumLiteral="Dasl.ecore#//NodeType/VIRTUAL"/>
       <genEnumLiterals ecoreEnumLiteral="Dasl.ecore#//NodeType/CONTAINER"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Dasl.ecore#//MetadataType">
+      <genEnumLiterals ecoreEnumLiteral="Dasl.ecore#//MetadataType/SHOW_CONTROLS_ON_COMPONENTS"/>
+      <genEnumLiterals ecoreEnumLiteral="Dasl.ecore#//MetadataType/SHOW_CONTROLS_ON_FLOWS"/>
+      <genEnumLiterals ecoreEnumLiteral="Dasl.ecore#//MetadataType/SHOW_ASSETS_ON_FLOWS"/>
+      <genEnumLiterals ecoreEnumLiteral="Dasl.ecore#//MetadataType/SHOW_ASSETS_ON_COMPONENTS"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Dasl.ecore#//NIST80053ARev4_FamilyType">
       <genEnumLiterals ecoreEnumLiteral="Dasl.ecore#//NIST80053ARev4_FamilyType/ACCESS_CONTROL"/>
       <genEnumLiterals ecoreEnumLiteral="Dasl.ecore#//NIST80053ARev4_FamilyType/AWARENESS_AND_TRAINING"/>
@@ -52,10 +58,14 @@
     </genEnums>
     <genClasses ecoreClass="Dasl.ecore#//SecurityModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dasl.ecore#//SecurityModel/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dasl.ecore#//SecurityModel/metadata"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dasl.ecore#//SecurityModel/elements"/>
     </genClasses>
     <genClasses ecoreClass="Dasl.ecore#//Import">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dasl.ecore#//Import/importURI"/>
+    </genClasses>
+    <genClasses ecoreClass="Dasl.ecore#//Metadata">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dasl.ecore#//Metadata/keys"/>
     </genClasses>
     <genClasses ecoreClass="Dasl.ecore#//Zone">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dasl.ecore#//Zone/trust"/>

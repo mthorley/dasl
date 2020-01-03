@@ -1,3 +1,8 @@
+import "../library/NIST800-53.dasl"
+
+metadata
+	SHOW_ASSETS_ON_FLOWS
+	SHOW_ASSETS_ON_COMPONENTS
 
 zone UncontrolledZone {
 	trustLevel 0
@@ -43,6 +48,7 @@ component APIGateway {
 	desc "Apigee"
 	version "1.0"
 	assets
+		Token
 }
 
 informationasset Token {
@@ -50,16 +56,18 @@ informationasset Token {
 	desc "Security token"
 	confidentiality Confidential
 	integrity Trusted
-	availability Gold
+	availability C1
 }
 
 control TLS12 {
-	ref C1
-	type MessageSecurity
-	implementation "OpenSSL"
+	ref C01
+	baseline NIST.AC-12.1
+	description "Encryption in transit"
+	attestation "OpenSSL"
 }
 
 flow F1 {
+	desc "/api"
 	from MobileApp to APIGateway
 	assets Token 
 	controls TLS12

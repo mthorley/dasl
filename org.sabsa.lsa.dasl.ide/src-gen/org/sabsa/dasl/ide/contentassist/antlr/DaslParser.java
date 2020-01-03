@@ -34,6 +34,7 @@ public class DaslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAbstractElementAccess().getAlternatives(), "rule__AbstractElement__Alternatives");
 			builder.put(grammarAccess.getFlowEndpointAccess().getAlternatives(), "rule__FlowEndpoint__Alternatives");
 			builder.put(grammarAccess.getNodeTypeAccess().getAlternatives(), "rule__NodeType__Alternatives");
+			builder.put(grammarAccess.getMetadataTypeAccess().getAlternatives(), "rule__MetadataType__Alternatives");
 			builder.put(grammarAccess.getNIST80053ARev4_FamilyTypeAccess().getAlternatives(), "rule__NIST80053ARev4_FamilyType__Alternatives");
 			builder.put(grammarAccess.getConfidentialityTypeAccess().getAlternatives(), "rule__ConfidentialityType__Alternatives");
 			builder.put(grammarAccess.getIntegrityTypeAccess().getAlternatives(), "rule__IntegrityType__Alternatives");
@@ -43,6 +44,7 @@ public class DaslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 			builder.put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
 			builder.put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
+			builder.put(grammarAccess.getMetadataAccess().getGroup(), "rule__Metadata__Group__0");
 			builder.put(grammarAccess.getZoneAccess().getGroup(), "rule__Zone__Group__0");
 			builder.put(grammarAccess.getZoneAccess().getGroup_11(), "rule__Zone__Group_11__0");
 			builder.put(grammarAccess.getNodeAccess().getGroup(), "rule__Node__Group__0");
@@ -62,8 +64,10 @@ public class DaslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getControlAccess().getGroup(), "rule__Control__Group__0");
 			builder.put(grammarAccess.getBaseControlAccess().getGroup(), "rule__BaseControl__Group__0");
 			builder.put(grammarAccess.getSecurityModelAccess().getImportsAssignment_0(), "rule__SecurityModel__ImportsAssignment_0");
-			builder.put(grammarAccess.getSecurityModelAccess().getElementsAssignment_1(), "rule__SecurityModel__ElementsAssignment_1");
+			builder.put(grammarAccess.getSecurityModelAccess().getMetadataAssignment_1(), "rule__SecurityModel__MetadataAssignment_1");
+			builder.put(grammarAccess.getSecurityModelAccess().getElementsAssignment_2(), "rule__SecurityModel__ElementsAssignment_2");
 			builder.put(grammarAccess.getImportAccess().getImportURIAssignment_1(), "rule__Import__ImportURIAssignment_1");
+			builder.put(grammarAccess.getMetadataAccess().getKeysAssignment_2(), "rule__Metadata__KeysAssignment_2");
 			builder.put(grammarAccess.getZoneAccess().getNameAssignment_1(), "rule__Zone__NameAssignment_1");
 			builder.put(grammarAccess.getZoneAccess().getTrustAssignment_4(), "rule__Zone__TrustAssignment_4");
 			builder.put(grammarAccess.getZoneAccess().getIngressZonesAssignment_6(), "rule__Zone__IngressZonesAssignment_6");

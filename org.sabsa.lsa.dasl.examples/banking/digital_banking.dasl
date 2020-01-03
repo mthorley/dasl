@@ -1,6 +1,11 @@
-
 import "../library/controls.dasl"
 import "../library/assets.dasl"
+
+metadata 
+	SHOW_ASSETS_ON_COMPONENTS
+//	SHOW_ASSETS_ON_FLOWS
+//	SHOW_CONTROLS_ON_COMPONENTS
+//	SHOW_CONTROLS_ON_FLOWS
 
 //-----------------------------------------------------------------------------
 // Zones
@@ -269,102 +274,119 @@ component Content {
 //-----------------------------------------------------------------------------
 // Flows
 flow F1 {
+	desc "/api"
 	from iOSDevice to WAF
 	assets AppPIN Payment
 	controls AuthNDeviceTokenAndPIN mTLS
 }
 
 flow VBAD {
+	desc "/api"
 	from iOSDevice to Mainframe
 	assets Payment
 	controls mTLS
 }
 
 flow QUITEBAD {
+	desc "/api"
 	from iOSDevice to SecurityGateway_Internal
 	assets Payment
 	controls mTLS
 }
 
 flow F2 {
+	desc "/api"
 	from SecurityGateway_Perimeter to AccessManager
 	assets DeviceToken AppPIN 
 	controls mTLS
 }
 
 flow F4 {
+	desc "/api"
 	from AccessManager to DirectoryServices
 	assets AppPIN
 	controls mTLS
 }
 
 flow F5 {
+	desc "/api"
 	from InternetBanking to InternetBanking_Database
 	assets Password
 	controls mTLS
 } 
 
 flow F6 {
+	desc "/api"
 	from AndroidDevice to WAF
 	assets DeviceToken AppPIN Payment
 	controls mTLS
 }
   
 flow F7 {
+	desc "/api"
 	from WAF to SecurityGateway_Perimeter
 	assets DeviceToken AppPIN Payment
 	controls mTLS AuthoriseAPI
 }
 
 flow F8 {
+	desc "/api"
 	from SecurityGateway_Perimeter to SecurityGateway_Internal
 	assets AppPIN
 	controls mTLS AuthoriseAPI
 }
 
 flow F9 {
+	desc "/api"
 	from APIGateway to InternetBanking
 	assets Password Payment
 	controls mTLS
 }
 
 flow F10 {
+	desc "/api"
 	from SecurityGateway_Perimeter to Content
 	assets AppPIN
 	controls mTLS
 }
 
 flow F11 {
+	desc "/api"
 	from APIGateway to MobileBanking
 	assets OTP
 	controls mTLS
 }
 
 flow F12 {
+	desc "/api"
 	from SecurityGateway_Internal to APIGateway
 	assets
 	controls
 }
 
 flow F13 {
+	desc "/api"
 	from MobileBanking to ESB
 	assets
 	controls
 }
 
 flow F14 {
+	desc "/api"
 	from ESB to Mainframe
 	assets
 	controls
 }
 
 flow F15 {
+	desc "/api"
 	from IdentityManager to DirectoryServices
 	assets
 	controls
 }
 
 flow F16 {
+	desc "/api"
 	from SecurityGateway_Internal to IdentityManager
 	assets 
 	controls 

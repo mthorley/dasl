@@ -86,6 +86,11 @@ public class DaslAdapterFactory extends AdapterFactoryImpl
         return createImportAdapter();
       }
       @Override
+      public Adapter caseMetadata(Metadata object)
+      {
+        return createMetadataAdapter();
+      }
+      @Override
       public Adapter caseZone(Zone object)
       {
         return createZoneAdapter();
@@ -183,6 +188,21 @@ public class DaslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createImportAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.sabsa.dasl.dasl.Metadata <em>Metadata</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.sabsa.dasl.dasl.Metadata
+   * @generated
+   */
+  public Adapter createMetadataAdapter()
   {
     return null;
   }

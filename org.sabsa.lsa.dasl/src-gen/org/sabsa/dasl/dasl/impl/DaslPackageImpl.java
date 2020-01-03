@@ -25,6 +25,8 @@ import org.sabsa.dasl.dasl.FlowEndpoint;
 import org.sabsa.dasl.dasl.Import;
 import org.sabsa.dasl.dasl.InformationAsset;
 import org.sabsa.dasl.dasl.IntegrityType;
+import org.sabsa.dasl.dasl.Metadata;
+import org.sabsa.dasl.dasl.MetadataType;
 import org.sabsa.dasl.dasl.NIST80053ARev4_FamilyType;
 import org.sabsa.dasl.dasl.Node;
 import org.sabsa.dasl.dasl.NodeType;
@@ -52,6 +54,13 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
    * @generated
    */
   private EClass importEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass metadataEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -129,6 +138,13 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
    * @generated
    */
   private EEnum nodeTypeEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum metadataTypeEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -249,9 +265,20 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
    * @generated
    */
   @Override
-  public EReference getSecurityModel_Elements()
+  public EReference getSecurityModel_Metadata()
   {
     return (EReference)securityModelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSecurityModel_Elements()
+  {
+    return (EReference)securityModelEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -274,6 +301,28 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
   public EAttribute getImport_ImportURI()
   {
     return (EAttribute)importEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMetadata()
+  {
+    return metadataEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMetadata_Keys()
+  {
+    return (EAttribute)metadataEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -843,6 +892,17 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
    * @generated
    */
   @Override
+  public EEnum getMetadataType()
+  {
+    return metadataTypeEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EEnum getNIST80053ARev4_FamilyType()
   {
     return nist80053ARev4_FamilyTypeEEnum;
@@ -914,10 +974,14 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
     // Create classes and their features
     securityModelEClass = createEClass(SECURITY_MODEL);
     createEReference(securityModelEClass, SECURITY_MODEL__IMPORTS);
+    createEReference(securityModelEClass, SECURITY_MODEL__METADATA);
     createEReference(securityModelEClass, SECURITY_MODEL__ELEMENTS);
 
     importEClass = createEClass(IMPORT);
     createEAttribute(importEClass, IMPORT__IMPORT_URI);
+
+    metadataEClass = createEClass(METADATA);
+    createEAttribute(metadataEClass, METADATA__KEYS);
 
     zoneEClass = createEClass(ZONE);
     createEAttribute(zoneEClass, ZONE__TRUST);
@@ -981,6 +1045,7 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
 
     // Create enums
     nodeTypeEEnum = createEEnum(NODE_TYPE);
+    metadataTypeEEnum = createEEnum(METADATA_TYPE);
     nist80053ARev4_FamilyTypeEEnum = createEEnum(NIST80053A_REV4_FAMILY_TYPE);
     confidentialityTypeEEnum = createEEnum(CONFIDENTIALITY_TYPE);
     integrityTypeEEnum = createEEnum(INTEGRITY_TYPE);
@@ -1031,10 +1096,14 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
     // Initialize classes and features; add operations and parameters
     initEClass(securityModelEClass, SecurityModel.class, "SecurityModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSecurityModel_Imports(), this.getImport(), null, "imports", null, 0, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSecurityModel_Metadata(), this.getMetadata(), null, "metadata", null, 0, 1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSecurityModel_Elements(), this.getAbstractElement(), null, "elements", null, 0, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getImport_ImportURI(), ecorePackage.getEString(), "importURI", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(metadataEClass, Metadata.class, "Metadata", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMetadata_Keys(), this.getMetadataType(), "keys", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(zoneEClass, Zone.class, "Zone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getZone_Trust(), ecorePackage.getEInt(), "trust", null, 0, 1, Zone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1101,6 +1170,12 @@ public class DaslPackageImpl extends EPackageImpl implements DaslPackage
     addEEnumLiteral(nodeTypeEEnum, NodeType.PHYSICAL);
     addEEnumLiteral(nodeTypeEEnum, NodeType.VIRTUAL);
     addEEnumLiteral(nodeTypeEEnum, NodeType.CONTAINER);
+
+    initEEnum(metadataTypeEEnum, MetadataType.class, "MetadataType");
+    addEEnumLiteral(metadataTypeEEnum, MetadataType.SHOW_CONTROLS_ON_COMPONENTS);
+    addEEnumLiteral(metadataTypeEEnum, MetadataType.SHOW_CONTROLS_ON_FLOWS);
+    addEEnumLiteral(metadataTypeEEnum, MetadataType.SHOW_ASSETS_ON_FLOWS);
+    addEEnumLiteral(metadataTypeEEnum, MetadataType.SHOW_ASSETS_ON_COMPONENTS);
 
     initEEnum(nist80053ARev4_FamilyTypeEEnum, NIST80053ARev4_FamilyType.class, "NIST80053ARev4_FamilyType");
     addEEnumLiteral(nist80053ARev4_FamilyTypeEEnum, NIST80053ARev4_FamilyType.ACCESS_CONTROL);

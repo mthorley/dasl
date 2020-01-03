@@ -42,6 +42,15 @@ public interface DaslFactory extends EFactory
   Import createImport();
 
   /**
+   * Returns a new object of class '<em>Metadata</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metadata</em>'.
+   * @generated
+   */
+  Metadata createMetadata();
+
+  /**
    * Returns a new object of class '<em>Zone</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

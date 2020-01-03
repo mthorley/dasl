@@ -7,6 +7,7 @@ generate dasl "http://www.sabsa.org/dasl/Dasl"
 SecurityModel:
 	imports+=Import*
 //	includes+=(Include)*
+	(metadata=Metadata)?
 	(elements+=AbstractElement)*
 ;
 
@@ -34,6 +35,20 @@ QualifiedNameWithWildcard:
 
 Import:
   'import' importURI = STRING
+;
+
+Metadata:
+  {Metadata} 'metadata' (keys+=MetadataType)*
+;
+
+/**
+ * Metadata for visualisation and report generation
+ */
+enum MetadataType:
+	SHOW_CONTROLS_ON_COMPONENTS |
+	SHOW_CONTROLS_ON_FLOWS |
+	SHOW_ASSETS_ON_FLOWS |
+	SHOW_ASSETS_ON_COMPONENTS
 ;
 
 /**

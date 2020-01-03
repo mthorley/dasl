@@ -78,13 +78,22 @@ public interface DaslPackage extends EPackage
   int SECURITY_MODEL__IMPORTS = 0;
 
   /**
+   * The feature id for the '<em><b>Metadata</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECURITY_MODEL__METADATA = 1;
+
+  /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SECURITY_MODEL__ELEMENTS = 1;
+  int SECURITY_MODEL__ELEMENTS = 2;
 
   /**
    * The number of structural features of the '<em>Security Model</em>' class.
@@ -93,7 +102,7 @@ public interface DaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SECURITY_MODEL_FEATURE_COUNT = 2;
+  int SECURITY_MODEL_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.sabsa.dasl.dasl.impl.ImportImpl <em>Import</em>}' class.
@@ -124,6 +133,34 @@ public interface DaslPackage extends EPackage
   int IMPORT_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.sabsa.dasl.dasl.impl.MetadataImpl <em>Metadata</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.sabsa.dasl.dasl.impl.MetadataImpl
+   * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getMetadata()
+   * @generated
+   */
+  int METADATA = 2;
+
+  /**
+   * The feature id for the '<em><b>Keys</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA__KEYS = 0;
+
+  /**
+   * The number of structural features of the '<em>Metadata</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METADATA_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.sabsa.dasl.dasl.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -131,7 +168,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getAbstractElement()
    * @generated
    */
-  int ABSTRACT_ELEMENT = 10;
+  int ABSTRACT_ELEMENT = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -159,7 +196,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getZone()
    * @generated
    */
-  int ZONE = 2;
+  int ZONE = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -232,7 +269,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getNode()
    * @generated
    */
-  int NODE = 3;
+  int NODE = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -323,7 +360,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getComponent()
    * @generated
    */
-  int COMPONENT = 4;
+  int COMPONENT = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -423,7 +460,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getInformationAsset()
    * @generated
    */
-  int INFORMATION_ASSET = 5;
+  int INFORMATION_ASSET = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -496,7 +533,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getFlow()
    * @generated
    */
-  int FLOW = 6;
+  int FLOW = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -569,7 +606,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getActor()
    * @generated
    */
-  int ACTOR = 7;
+  int ACTOR = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -615,7 +652,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getControl()
    * @generated
    */
-  int CONTROL = 8;
+  int CONTROL = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -679,7 +716,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getBaseControl()
    * @generated
    */
-  int BASE_CONTROL = 9;
+  int BASE_CONTROL = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -734,7 +771,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getFlowEndpoint()
    * @generated
    */
-  int FLOW_ENDPOINT = 11;
+  int FLOW_ENDPOINT = 12;
 
   /**
    * The number of structural features of the '<em>Flow Endpoint</em>' class.
@@ -753,7 +790,17 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getNodeType()
    * @generated
    */
-  int NODE_TYPE = 12;
+  int NODE_TYPE = 13;
+
+  /**
+   * The meta object id for the '{@link org.sabsa.dasl.dasl.MetadataType <em>Metadata Type</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.sabsa.dasl.dasl.MetadataType
+   * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getMetadataType()
+   * @generated
+   */
+  int METADATA_TYPE = 14;
 
   /**
    * The meta object id for the '{@link org.sabsa.dasl.dasl.NIST80053ARev4_FamilyType <em>NIST80053A Rev4 Family Type</em>}' enum.
@@ -763,7 +810,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getNIST80053ARev4_FamilyType()
    * @generated
    */
-  int NIST80053A_REV4_FAMILY_TYPE = 13;
+  int NIST80053A_REV4_FAMILY_TYPE = 15;
 
   /**
    * The meta object id for the '{@link org.sabsa.dasl.dasl.ConfidentialityType <em>Confidentiality Type</em>}' enum.
@@ -773,7 +820,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getConfidentialityType()
    * @generated
    */
-  int CONFIDENTIALITY_TYPE = 14;
+  int CONFIDENTIALITY_TYPE = 16;
 
   /**
    * The meta object id for the '{@link org.sabsa.dasl.dasl.IntegrityType <em>Integrity Type</em>}' enum.
@@ -783,7 +830,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getIntegrityType()
    * @generated
    */
-  int INTEGRITY_TYPE = 15;
+  int INTEGRITY_TYPE = 17;
 
   /**
    * The meta object id for the '{@link org.sabsa.dasl.dasl.AvailabilityType <em>Availability Type</em>}' enum.
@@ -793,7 +840,7 @@ public interface DaslPackage extends EPackage
    * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getAvailabilityType()
    * @generated
    */
-  int AVAILABILITY_TYPE = 16;
+  int AVAILABILITY_TYPE = 18;
 
 
   /**
@@ -816,6 +863,17 @@ public interface DaslPackage extends EPackage
    * @generated
    */
   EReference getSecurityModel_Imports();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.sabsa.dasl.dasl.SecurityModel#getMetadata <em>Metadata</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Metadata</em>'.
+   * @see org.sabsa.dasl.dasl.SecurityModel#getMetadata()
+   * @see #getSecurityModel()
+   * @generated
+   */
+  EReference getSecurityModel_Metadata();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.sabsa.dasl.dasl.SecurityModel#getElements <em>Elements</em>}'.
@@ -848,6 +906,27 @@ public interface DaslPackage extends EPackage
    * @generated
    */
   EAttribute getImport_ImportURI();
+
+  /**
+   * Returns the meta object for class '{@link org.sabsa.dasl.dasl.Metadata <em>Metadata</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Metadata</em>'.
+   * @see org.sabsa.dasl.dasl.Metadata
+   * @generated
+   */
+  EClass getMetadata();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.sabsa.dasl.dasl.Metadata#getKeys <em>Keys</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Keys</em>'.
+   * @see org.sabsa.dasl.dasl.Metadata#getKeys()
+   * @see #getMetadata()
+   * @generated
+   */
+  EAttribute getMetadata_Keys();
 
   /**
    * Returns the meta object for class '{@link org.sabsa.dasl.dasl.Zone <em>Zone</em>}'.
@@ -1400,6 +1479,16 @@ public interface DaslPackage extends EPackage
   EEnum getNodeType();
 
   /**
+   * Returns the meta object for enum '{@link org.sabsa.dasl.dasl.MetadataType <em>Metadata Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Metadata Type</em>'.
+   * @see org.sabsa.dasl.dasl.MetadataType
+   * @generated
+   */
+  EEnum getMetadataType();
+
+  /**
    * Returns the meta object for enum '{@link org.sabsa.dasl.dasl.NIST80053ARev4_FamilyType <em>NIST80053A Rev4 Family Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1481,6 +1570,14 @@ public interface DaslPackage extends EPackage
     EReference SECURITY_MODEL__IMPORTS = eINSTANCE.getSecurityModel_Imports();
 
     /**
+     * The meta object literal for the '<em><b>Metadata</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SECURITY_MODEL__METADATA = eINSTANCE.getSecurityModel_Metadata();
+
+    /**
      * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1505,6 +1602,24 @@ public interface DaslPackage extends EPackage
      * @generated
      */
     EAttribute IMPORT__IMPORT_URI = eINSTANCE.getImport_ImportURI();
+
+    /**
+     * The meta object literal for the '{@link org.sabsa.dasl.dasl.impl.MetadataImpl <em>Metadata</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.sabsa.dasl.dasl.impl.MetadataImpl
+     * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getMetadata()
+     * @generated
+     */
+    EClass METADATA = eINSTANCE.getMetadata();
+
+    /**
+     * The meta object literal for the '<em><b>Keys</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute METADATA__KEYS = eINSTANCE.getMetadata_Keys();
 
     /**
      * The meta object literal for the '{@link org.sabsa.dasl.dasl.impl.ZoneImpl <em>Zone</em>}' class.
@@ -1935,6 +2050,16 @@ public interface DaslPackage extends EPackage
      * @generated
      */
     EEnum NODE_TYPE = eINSTANCE.getNodeType();
+
+    /**
+     * The meta object literal for the '{@link org.sabsa.dasl.dasl.MetadataType <em>Metadata Type</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.sabsa.dasl.dasl.MetadataType
+     * @see org.sabsa.dasl.dasl.impl.DaslPackageImpl#getMetadataType()
+     * @generated
+     */
+    EEnum METADATA_TYPE = eINSTANCE.getMetadataType();
 
     /**
      * The meta object literal for the '{@link org.sabsa.dasl.dasl.NIST80053ARev4_FamilyType <em>NIST80053A Rev4 Family Type</em>}' enum.

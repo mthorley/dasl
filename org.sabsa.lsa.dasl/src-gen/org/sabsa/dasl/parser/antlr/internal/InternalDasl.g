@@ -99,9 +99,28 @@ ruleSecurityModel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSecurityModelAccess().getElementsAbstractElementParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getSecurityModelAccess().getMetadataMetadataParserRuleCall_1_0());
 				}
-				lv_elements_1_0=ruleAbstractElement
+				lv_metadata_1_0=ruleMetadata
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSecurityModelRule());
+					}
+					set(
+						$current,
+						"metadata",
+						lv_metadata_1_0,
+						"org.sabsa.dasl.Dasl.Metadata");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSecurityModelAccess().getElementsAbstractElementParserRuleCall_2_0());
+				}
+				lv_elements_2_0=ruleAbstractElement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSecurityModelRule());
@@ -109,7 +128,7 @@ ruleSecurityModel returns [EObject current=null]
 					add(
 						$current,
 						"elements",
-						lv_elements_1_0,
+						lv_elements_2_0,
 						"org.sabsa.dasl.Dasl.AbstractElement");
 					afterParserOrEnumRuleCall();
 				}
@@ -196,6 +215,55 @@ ruleImport returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleMetadata
+entryRuleMetadata returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMetadataRule()); }
+	iv_ruleMetadata=ruleMetadata
+	{ $current=$iv_ruleMetadata.current; }
+	EOF;
+
+// Rule Metadata
+ruleMetadata returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getMetadataAccess().getMetadataAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='metadata'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getMetadataAccess().getMetadataKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMetadataAccess().getKeysMetadataTypeEnumRuleCall_2_0());
+				}
+				lv_keys_2_0=ruleMetadataType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMetadataRule());
+					}
+					add(
+						$current,
+						"keys",
+						lv_keys_2_0,
+						"org.sabsa.dasl.Dasl.MetadataType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
 	)
 ;
 
@@ -1530,6 +1598,49 @@ ruleNodeType returns [Enumerator current=null]
 			{
 				$current = grammarAccess.getNodeTypeAccess().getCONTAINEREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_2, grammarAccess.getNodeTypeAccess().getCONTAINEREnumLiteralDeclaration_2());
+			}
+		)
+	)
+;
+
+// Rule MetadataType
+ruleMetadataType returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='SHOW_CONTROLS_ON_COMPONENTS'
+			{
+				$current = grammarAccess.getMetadataTypeAccess().getSHOW_CONTROLS_ON_COMPONENTSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getMetadataTypeAccess().getSHOW_CONTROLS_ON_COMPONENTSEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='SHOW_CONTROLS_ON_FLOWS'
+			{
+				$current = grammarAccess.getMetadataTypeAccess().getSHOW_CONTROLS_ON_FLOWSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getMetadataTypeAccess().getSHOW_CONTROLS_ON_FLOWSEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='SHOW_ASSETS_ON_FLOWS'
+			{
+				$current = grammarAccess.getMetadataTypeAccess().getSHOW_ASSETS_ON_FLOWSEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getMetadataTypeAccess().getSHOW_ASSETS_ON_FLOWSEnumLiteralDeclaration_2());
+			}
+		)
+		    |
+		(
+			enumLiteral_3='SHOW_ASSETS_ON_COMPONENTS'
+			{
+				$current = grammarAccess.getMetadataTypeAccess().getSHOW_ASSETS_ON_COMPONENTSEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getMetadataTypeAccess().getSHOW_ASSETS_ON_COMPONENTSEnumLiteralDeclaration_3());
 			}
 		)
 	)

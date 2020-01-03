@@ -5,6 +5,7 @@ package org.sabsa.dasl.dasl.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -20,6 +22,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.sabsa.dasl.dasl.AbstractElement;
 import org.sabsa.dasl.dasl.DaslPackage;
 import org.sabsa.dasl.dasl.Import;
+import org.sabsa.dasl.dasl.Metadata;
 import org.sabsa.dasl.dasl.SecurityModel;
 
 /**
@@ -31,6 +34,7 @@ import org.sabsa.dasl.dasl.SecurityModel;
  * </p>
  * <ul>
  *   <li>{@link org.sabsa.dasl.dasl.impl.SecurityModelImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.sabsa.dasl.dasl.impl.SecurityModelImpl#getMetadata <em>Metadata</em>}</li>
  *   <li>{@link org.sabsa.dasl.dasl.impl.SecurityModelImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -47,6 +51,16 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
    * @ordered
    */
   protected EList<Import> imports;
+
+  /**
+   * The cached value of the '{@link #getMetadata() <em>Metadata</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMetadata()
+   * @generated
+   * @ordered
+   */
+  protected Metadata metadata;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -100,6 +114,56 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
    * @generated
    */
   @Override
+  public Metadata getMetadata()
+  {
+    return metadata;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetMetadata(Metadata newMetadata, NotificationChain msgs)
+  {
+    Metadata oldMetadata = metadata;
+    metadata = newMetadata;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DaslPackage.SECURITY_MODEL__METADATA, oldMetadata, newMetadata);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMetadata(Metadata newMetadata)
+  {
+    if (newMetadata != metadata)
+    {
+      NotificationChain msgs = null;
+      if (metadata != null)
+        msgs = ((InternalEObject)metadata).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DaslPackage.SECURITY_MODEL__METADATA, null, msgs);
+      if (newMetadata != null)
+        msgs = ((InternalEObject)newMetadata).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DaslPackage.SECURITY_MODEL__METADATA, null, msgs);
+      msgs = basicSetMetadata(newMetadata, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DaslPackage.SECURITY_MODEL__METADATA, newMetadata, newMetadata));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<AbstractElement> getElements()
   {
     if (elements == null)
@@ -121,6 +185,8 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
     {
       case DaslPackage.SECURITY_MODEL__IMPORTS:
         return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
+      case DaslPackage.SECURITY_MODEL__METADATA:
+        return basicSetMetadata(null, msgs);
       case DaslPackage.SECURITY_MODEL__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
@@ -139,6 +205,8 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
     {
       case DaslPackage.SECURITY_MODEL__IMPORTS:
         return getImports();
+      case DaslPackage.SECURITY_MODEL__METADATA:
+        return getMetadata();
       case DaslPackage.SECURITY_MODEL__ELEMENTS:
         return getElements();
     }
@@ -159,6 +227,9 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
       case DaslPackage.SECURITY_MODEL__IMPORTS:
         getImports().clear();
         getImports().addAll((Collection<? extends Import>)newValue);
+        return;
+      case DaslPackage.SECURITY_MODEL__METADATA:
+        setMetadata((Metadata)newValue);
         return;
       case DaslPackage.SECURITY_MODEL__ELEMENTS:
         getElements().clear();
@@ -181,6 +252,9 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
       case DaslPackage.SECURITY_MODEL__IMPORTS:
         getImports().clear();
         return;
+      case DaslPackage.SECURITY_MODEL__METADATA:
+        setMetadata((Metadata)null);
+        return;
       case DaslPackage.SECURITY_MODEL__ELEMENTS:
         getElements().clear();
         return;
@@ -200,6 +274,8 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
     {
       case DaslPackage.SECURITY_MODEL__IMPORTS:
         return imports != null && !imports.isEmpty();
+      case DaslPackage.SECURITY_MODEL__METADATA:
+        return metadata != null;
       case DaslPackage.SECURITY_MODEL__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }

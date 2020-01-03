@@ -6,6 +6,7 @@ package org.sabsa.dasl.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
@@ -31,18 +32,21 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cImportsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cImportsImportParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
-		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementsAbstractElementParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
+		private final Assignment cMetadataAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cMetadataMetadataParserRuleCall_1_0 = (RuleCall)cMetadataAssignment_1.eContents().get(0);
+		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cElementsAbstractElementParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
 		
 		//// The security view of the architecture - this can be expanded to other views later.
 		//SecurityModel:
 		//	imports+=Import*
 		//	//	includes+=(Include)*
+		//	metadata=Metadata?
 		//	elements+=AbstractElement*;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//imports+=Import* //	includes+=(Include)*
-		//elements+=AbstractElement*
+		//metadata=Metadata? elements+=AbstractElement*
 		public Group getGroup() { return cGroup; }
 		
 		//imports+=Import*
@@ -52,11 +56,17 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getImportsImportParserRuleCall_0_0() { return cImportsImportParserRuleCall_0_0; }
 		
 		////	includes+=(Include)*
+		//metadata=Metadata?
+		public Assignment getMetadataAssignment_1() { return cMetadataAssignment_1; }
+		
+		//Metadata
+		public RuleCall getMetadataMetadataParserRuleCall_1_0() { return cMetadataMetadataParserRuleCall_1_0; }
+		
 		//elements+=AbstractElement*
-		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
+		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
 		
 		//AbstractElement
-		public RuleCall getElementsAbstractElementParserRuleCall_1_0() { return cElementsAbstractElementParserRuleCall_1_0; }
+		public RuleCall getElementsAbstractElementParserRuleCall_2_0() { return cElementsAbstractElementParserRuleCall_2_0; }
 	}
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.sabsa.dasl.Dasl.QualifiedName");
@@ -129,6 +139,33 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//STRING
 		public RuleCall getImportURISTRINGTerminalRuleCall_1_0() { return cImportURISTRINGTerminalRuleCall_1_0; }
+	}
+	public class MetadataElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.sabsa.dasl.Dasl.Metadata");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMetadataAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cMetadataKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cKeysAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cKeysMetadataTypeEnumRuleCall_2_0 = (RuleCall)cKeysAssignment_2.eContents().get(0);
+		
+		//Metadata:
+		//	{Metadata} 'metadata' keys+=MetadataType*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Metadata} 'metadata' keys+=MetadataType*
+		public Group getGroup() { return cGroup; }
+		
+		//{Metadata}
+		public Action getMetadataAction_0() { return cMetadataAction_0; }
+		
+		//'metadata'
+		public Keyword getMetadataKeyword_1() { return cMetadataKeyword_1; }
+		
+		//keys+=MetadataType*
+		public Assignment getKeysAssignment_2() { return cKeysAssignment_2; }
+		
+		//MetadataType
+		public RuleCall getKeysMetadataTypeEnumRuleCall_2_0() { return cKeysMetadataTypeEnumRuleCall_2_0; }
 	}
 	public class ZoneElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.sabsa.dasl.Dasl.Zone");
@@ -1097,6 +1134,52 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		//"CONTAINER"
 		public Keyword getCONTAINERCONTAINERKeyword_2_0() { return cCONTAINERCONTAINERKeyword_2_0; }
 	}
+	public class MetadataTypeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.sabsa.dasl.Dasl.MetadataType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cSHOW_CONTROLS_ON_COMPONENTSEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cSHOW_CONTROLS_ON_COMPONENTSSHOW_CONTROLS_ON_COMPONENTSKeyword_0_0 = (Keyword)cSHOW_CONTROLS_ON_COMPONENTSEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cSHOW_CONTROLS_ON_FLOWSEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cSHOW_CONTROLS_ON_FLOWSSHOW_CONTROLS_ON_FLOWSKeyword_1_0 = (Keyword)cSHOW_CONTROLS_ON_FLOWSEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cSHOW_ASSETS_ON_FLOWSEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cSHOW_ASSETS_ON_FLOWSSHOW_ASSETS_ON_FLOWSKeyword_2_0 = (Keyword)cSHOW_ASSETS_ON_FLOWSEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cSHOW_ASSETS_ON_COMPONENTSEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cSHOW_ASSETS_ON_COMPONENTSSHOW_ASSETS_ON_COMPONENTSKeyword_3_0 = (Keyword)cSHOW_ASSETS_ON_COMPONENTSEnumLiteralDeclaration_3.eContents().get(0);
+		
+		//enum MetadataType:
+		//	SHOW_CONTROLS_ON_COMPONENTS |
+		//	SHOW_CONTROLS_ON_FLOWS |
+		//	SHOW_ASSETS_ON_FLOWS |
+		//	SHOW_ASSETS_ON_COMPONENTS;
+		public EnumRule getRule() { return rule; }
+		
+		//SHOW_CONTROLS_ON_COMPONENTS | SHOW_CONTROLS_ON_FLOWS | SHOW_ASSETS_ON_FLOWS | SHOW_ASSETS_ON_COMPONENTS
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//SHOW_CONTROLS_ON_COMPONENTS
+		public EnumLiteralDeclaration getSHOW_CONTROLS_ON_COMPONENTSEnumLiteralDeclaration_0() { return cSHOW_CONTROLS_ON_COMPONENTSEnumLiteralDeclaration_0; }
+		
+		//"SHOW_CONTROLS_ON_COMPONENTS"
+		public Keyword getSHOW_CONTROLS_ON_COMPONENTSSHOW_CONTROLS_ON_COMPONENTSKeyword_0_0() { return cSHOW_CONTROLS_ON_COMPONENTSSHOW_CONTROLS_ON_COMPONENTSKeyword_0_0; }
+		
+		//SHOW_CONTROLS_ON_FLOWS
+		public EnumLiteralDeclaration getSHOW_CONTROLS_ON_FLOWSEnumLiteralDeclaration_1() { return cSHOW_CONTROLS_ON_FLOWSEnumLiteralDeclaration_1; }
+		
+		//"SHOW_CONTROLS_ON_FLOWS"
+		public Keyword getSHOW_CONTROLS_ON_FLOWSSHOW_CONTROLS_ON_FLOWSKeyword_1_0() { return cSHOW_CONTROLS_ON_FLOWSSHOW_CONTROLS_ON_FLOWSKeyword_1_0; }
+		
+		//SHOW_ASSETS_ON_FLOWS
+		public EnumLiteralDeclaration getSHOW_ASSETS_ON_FLOWSEnumLiteralDeclaration_2() { return cSHOW_ASSETS_ON_FLOWSEnumLiteralDeclaration_2; }
+		
+		//"SHOW_ASSETS_ON_FLOWS"
+		public Keyword getSHOW_ASSETS_ON_FLOWSSHOW_ASSETS_ON_FLOWSKeyword_2_0() { return cSHOW_ASSETS_ON_FLOWSSHOW_ASSETS_ON_FLOWSKeyword_2_0; }
+		
+		//SHOW_ASSETS_ON_COMPONENTS
+		public EnumLiteralDeclaration getSHOW_ASSETS_ON_COMPONENTSEnumLiteralDeclaration_3() { return cSHOW_ASSETS_ON_COMPONENTSEnumLiteralDeclaration_3; }
+		
+		//"SHOW_ASSETS_ON_COMPONENTS"
+		public Keyword getSHOW_ASSETS_ON_COMPONENTSSHOW_ASSETS_ON_COMPONENTSKeyword_3_0() { return cSHOW_ASSETS_ON_COMPONENTSSHOW_ASSETS_ON_COMPONENTSKeyword_3_0; }
+	}
 	public class NIST80053ARev4_FamilyTypeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.sabsa.dasl.Dasl.NIST80053ARev4_FamilyType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1417,6 +1500,8 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 	private final QualifiedNameElements pQualifiedName;
 	private final QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
 	private final ImportElements pImport;
+	private final MetadataElements pMetadata;
+	private final MetadataTypeElements eMetadataType;
 	private final ZoneElements pZone;
 	private final NodeElements pNode;
 	private final ComponentElements pComponent;
@@ -1447,6 +1532,8 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pQualifiedNameWithWildcard = new QualifiedNameWithWildcardElements();
 		this.pImport = new ImportElements();
+		this.pMetadata = new MetadataElements();
+		this.eMetadataType = new MetadataTypeElements();
 		this.pZone = new ZoneElements();
 		this.pNode = new NodeElements();
 		this.pComponent = new ComponentElements();
@@ -1494,6 +1581,7 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 	//SecurityModel:
 	//	imports+=Import*
 	//	//	includes+=(Include)*
+	//	metadata=Metadata?
 	//	elements+=AbstractElement*;
 	public SecurityModelElements getSecurityModelAccess() {
 		return pSecurityModel;
@@ -1551,6 +1639,29 @@ public class DaslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getImportRule() {
 		return getImportAccess().getRule();
+	}
+	
+	//Metadata:
+	//	{Metadata} 'metadata' keys+=MetadataType*;
+	public MetadataElements getMetadataAccess() {
+		return pMetadata;
+	}
+	
+	public ParserRule getMetadataRule() {
+		return getMetadataAccess().getRule();
+	}
+	
+	//enum MetadataType:
+	//	SHOW_CONTROLS_ON_COMPONENTS |
+	//	SHOW_CONTROLS_ON_FLOWS |
+	//	SHOW_ASSETS_ON_FLOWS |
+	//	SHOW_ASSETS_ON_COMPONENTS;
+	public MetadataTypeElements getMetadataTypeAccess() {
+		return eMetadataType;
+	}
+	
+	public EnumRule getMetadataTypeRule() {
+		return getMetadataTypeAccess().getRule();
 	}
 	
 	///**

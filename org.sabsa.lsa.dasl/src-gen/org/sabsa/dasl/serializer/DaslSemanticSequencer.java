@@ -22,6 +22,7 @@ import org.sabsa.dasl.dasl.DaslPackage;
 import org.sabsa.dasl.dasl.Flow;
 import org.sabsa.dasl.dasl.Import;
 import org.sabsa.dasl.dasl.InformationAsset;
+import org.sabsa.dasl.dasl.Metadata;
 import org.sabsa.dasl.dasl.Node;
 import org.sabsa.dasl.dasl.SecurityModel;
 import org.sabsa.dasl.dasl.Zone;
@@ -61,6 +62,9 @@ public class DaslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case DaslPackage.INFORMATION_ASSET:
 				sequence_InformationAsset(context, (InformationAsset) semanticObject); 
+				return; 
+			case DaslPackage.METADATA:
+				sequence_Metadata(context, (Metadata) semanticObject); 
 				return; 
 			case DaslPackage.NODE:
 				sequence_Node(context, (Node) semanticObject); 
@@ -266,6 +270,18 @@ public class DaslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Metadata returns Metadata
+	 *
+	 * Constraint:
+	 *     keys+=MetadataType*
+	 */
+	protected void sequence_Metadata(ISerializationContext context, Metadata semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Node returns Node
 	 *     AbstractElement returns Node
 	 *     FlowEndpoint returns Node
@@ -292,7 +308,7 @@ public class DaslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     SecurityModel returns SecurityModel
 	 *
 	 * Constraint:
-	 *     ((imports+=Import+ elements+=AbstractElement+) | elements+=AbstractElement+)?
+	 *     ((imports+=Import* metadata=Metadata elements+=AbstractElement+) | (imports+=Import* elements+=AbstractElement+) | elements+=AbstractElement+)?
 	 */
 	protected void sequence_SecurityModel(ISerializationContext context, SecurityModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

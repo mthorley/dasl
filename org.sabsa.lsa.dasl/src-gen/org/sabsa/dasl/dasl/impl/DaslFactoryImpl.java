@@ -68,6 +68,7 @@ public class DaslFactoryImpl extends EFactoryImpl implements DaslFactory
     {
       case DaslPackage.SECURITY_MODEL: return createSecurityModel();
       case DaslPackage.IMPORT: return createImport();
+      case DaslPackage.METADATA: return createMetadata();
       case DaslPackage.ZONE: return createZone();
       case DaslPackage.NODE: return createNode();
       case DaslPackage.COMPONENT: return createComponent();
@@ -95,6 +96,8 @@ public class DaslFactoryImpl extends EFactoryImpl implements DaslFactory
     {
       case DaslPackage.NODE_TYPE:
         return createNodeTypeFromString(eDataType, initialValue);
+      case DaslPackage.METADATA_TYPE:
+        return createMetadataTypeFromString(eDataType, initialValue);
       case DaslPackage.NIST80053A_REV4_FAMILY_TYPE:
         return createNIST80053ARev4_FamilyTypeFromString(eDataType, initialValue);
       case DaslPackage.CONFIDENTIALITY_TYPE:
@@ -120,6 +123,8 @@ public class DaslFactoryImpl extends EFactoryImpl implements DaslFactory
     {
       case DaslPackage.NODE_TYPE:
         return convertNodeTypeToString(eDataType, instanceValue);
+      case DaslPackage.METADATA_TYPE:
+        return convertMetadataTypeToString(eDataType, instanceValue);
       case DaslPackage.NIST80053A_REV4_FAMILY_TYPE:
         return convertNIST80053ARev4_FamilyTypeToString(eDataType, instanceValue);
       case DaslPackage.CONFIDENTIALITY_TYPE:
@@ -155,6 +160,18 @@ public class DaslFactoryImpl extends EFactoryImpl implements DaslFactory
   {
     ImportImpl import_ = new ImportImpl();
     return import_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Metadata createMetadata()
+  {
+    MetadataImpl metadata = new MetadataImpl();
+    return metadata;
   }
 
   /**
@@ -295,6 +312,28 @@ public class DaslFactoryImpl extends EFactoryImpl implements DaslFactory
    * @generated
    */
   public String convertNodeTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MetadataType createMetadataTypeFromString(EDataType eDataType, String initialValue)
+  {
+    MetadataType result = MetadataType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertMetadataTypeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

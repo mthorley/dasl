@@ -5,7 +5,7 @@ informationasset OTP {
 	desc "HOTP"
 	confidentiality Restricted
 	integrity Accurate
-	availability Platinum
+	availability C1
 }
 
 informationasset AppPIN {
@@ -13,7 +13,7 @@ informationasset AppPIN {
 	desc "Customer n digit PIN"
 	confidentiality Restricted
 	integrity Trusted
-	availability Platinum
+	availability C1
 }
 
 informationasset Password {
@@ -21,7 +21,7 @@ informationasset Password {
 	desc "Customer's password"
 	confidentiality Restricted
 	integrity Trusted
-	availability Platinum
+	availability C1
 }
 
 informationasset iOSApplicationBinary {
@@ -29,7 +29,7 @@ informationasset iOSApplicationBinary {
 	desc "mobile application binary ipa"
 	confidentiality Restricted
 	integrity Trusted
-	availability Platinum
+	availability C1
 }
 
 informationasset AndroidApplicationBinary {
@@ -37,7 +37,7 @@ informationasset AndroidApplicationBinary {
 	desc "mobile application binary apk"
 	confidentiality Restricted
 	integrity Trusted
-	availability Platinum
+	availability C1
 }
 
 informationasset Payment {
@@ -45,7 +45,7 @@ informationasset Payment {
 	desc "Payanyone, transfer, bpay"
 	confidentiality Restricted
 	integrity Accurate
-	availability Platinum
+	availability C1
 }
 
 informationasset George {
@@ -61,7 +61,7 @@ informationasset DeviceToken {
 	desc "Device token "
 	confidentiality Restricted
 	integrity Accurate
-	availability Platinum
+	availability C1
 }
 
 informationasset SGWConfig {
@@ -69,5 +69,5 @@ informationasset SGWConfig {
 	desc "Security Gateway Configuration "
 	confidentiality Restricted
 	integrity Accurate
-	availability Platinum
+	availability C1
 }
